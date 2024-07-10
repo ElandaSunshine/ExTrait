@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1ends_with" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::endsWith</compoundname>
+    <basecompoundref refid="structextrait_1_1detail_1_1ends_with" prot="public" virt="non-virtual">extrait::detail::endsWith&lt; T, EndTypes... &gt;</basecompoundref>
+    <includes refid="type__list_8h" local="no">type_list.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref></type>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>EndTypes</declname>
+        <defname>EndTypes</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>Determines whether a class template&apos;s parameter-list ends with a set of types. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>If the parameter-list of type T ends with the same types as specified in EndTypes and in the same order (left to right), a static &quot;value&quot; constant will be provided that evaluates to true, otherwise evaluates to false.</para>
+<para>If T is not a class template or is a class template with at least one non-type template parameter, compilation will fail.</para>
+<para>Any modification to T, such as pointer, reference, array or cv-qualification of the original type, will render the type a non-class template type and compilation will fail. <linebreak/>
+ In these cases you can use <ref refid="structextrait_1_1strip" kindref="compound">extrait::strip</ref> to strip any of these modifications off the type beforehand.</para>
+<para>Adding custom template specialisations to this template results in undefined behaviour.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Any valid type-only class template instantiation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EndTypes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list of types the class template instantiation T&apos;s parameter-list should end with</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structextrait_1_1starts_with" kindref="compound">extrait::startsWith</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1strip" kindref="compound">extrait::strip</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1instantiates_class_template" kindref="compound">extrait::instantiatesClassTemplate</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1_type_array" kindref="compound">extrait::T</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>extrait::detail::endsWith&lt; T, EndTypes... &gt;</label>
+        <link refid="structextrait_1_1detail_1_1ends_with"/>
+      </node>
+      <node id="1">
+        <label>extrait::endsWith&lt; T, EndTypes &gt;</label>
+        <link refid="structextrait_1_1ends_with"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>extrait::detail::endsWith&lt; T, EndTypes... &gt;</label>
+        <link refid="structextrait_1_1detail_1_1ends_with"/>
+      </node>
+      <node id="1">
+        <label>extrait::endsWith&lt; T, EndTypes &gt;</label>
+        <link refid="structextrait_1_1ends_with"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_list.h" line="320" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_list.h" bodystart="320" bodyend="320"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1index_of" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::indexOf</compoundname>
+    <basecompoundref refid="structextrait_1_1detail_1_1index_of" prot="public" virt="non-virtual">extrait::detail::indexOf&lt; T, Key &gt;</basecompoundref>
+    <includes refid="type__list_8h" local="no">type_list.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref></type>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref></type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>Determines the index of the first matching type inside a template parameter-list. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>If type Key was found to be in the parameter-list of class template instantiation T, then a static &quot;value&quot; constant will be provided that gives back the 0-based index of that type inside the parameter-list. <linebreak/>
+ If, however, the type could not be found, the constant will evaluate to <ref refid="type__list_8h_1a8972fb9c0ed6b56a014ecd4cb6cdbf64" kindref="member">extrait::endOfParameterList</ref>.</para>
+<para>If T is not a class template or is a class template with at least one non-type template parameter, compilation will fail.</para>
+<para>Any modification to T, such as pointer, reference, array or cv-qualification of the original type, will render the type a non-class template type and compilation will fail. <linebreak/>
+ In these cases you can use <ref refid="structextrait_1_1strip" kindref="compound">extrait::strip</ref> to strip any of these modifications off the type beforehand.</para>
+<para>Adding custom template specialisations to this template results in undefined behaviour.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Any valid type-only class template instantiation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Any type the index should be found for in the parameter-list of instantiation T</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structextrait_1_1last_index_of" kindref="compound">extrait::lastIndexOf</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1strip" kindref="compound">extrait::strip</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1instantiates_class_template" kindref="compound">extrait::instantiatesClassTemplate</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1_type_array" kindref="compound">extrait::T</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>extrait::detail::indexOf&lt; T, Key &gt;</label>
+        <link refid="structextrait_1_1detail_1_1index_of"/>
+      </node>
+      <node id="1">
+        <label>extrait::indexOf&lt; T, Key &gt;</label>
+        <link refid="structextrait_1_1index_of"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>extrait::detail::indexOf&lt; T, Key &gt;</label>
+        <link refid="structextrait_1_1detail_1_1index_of"/>
+      </node>
+      <node id="1">
+        <label>extrait::indexOf&lt; T, Key &gt;</label>
+        <link refid="structextrait_1_1index_of"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_list.h" line="557" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_list.h" bodystart="557" bodyend="557"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

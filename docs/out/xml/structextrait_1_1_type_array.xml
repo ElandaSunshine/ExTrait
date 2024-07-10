@@ -1,0 +1,1553 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1_type_array" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::T</compoundname>
+    <includes refid="type__container_8h" local="no">type_container.h</includes>
+    <innerclass refid="structextrait_1_1_type_array_1_1deindex" prot="private">extrait::T::deindex</innerclass>
+    <innerclass refid="structextrait_1_1_type_array_1_1deindex_3_01_reverse_type_iterator_3_01_this_00_01_index_01_4_00_01_index_01_4" prot="private">extrait::T::deindex&lt; ReverseTypeIterator&lt; This, Index &gt;, Index &gt;</innerclass>
+    <innerclass refid="structextrait_1_1_type_array_1_1deindex_3_01std_1_1size__t_00_01_index_01_4" prot="private">extrait::T::deindex&lt; std::size_t, Index &gt;</innerclass>
+    <innerclass refid="structextrait_1_1_type_array_1_1deindex_3_01_type_iterator_3_01_this_00_01_index_01_4_00_01_index_01_4" prot="private">extrait::T::deindex&lt; TypeIterator&lt; This, Index &gt;, Index &gt;</innerclass>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Types</declname>
+        <defname>Types</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1ade14ebad58e21899004c4c1923aaa950" prot="private" static="no">
+        <type><ref refid="structextrait_1_1_type_array" kindref="compound">T</ref></type>
+        <definition>using extrait::T&lt; Types &gt;::This =  T</definition>
+        <argsstring></argsstring>
+        <name>This</name>
+        <qualifiedname>extrait::T::This</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="264" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a04c4e8488d0be15a6b6faf9d240fec43" prot="public" static="no">
+        <type><ref refid="structextrait_1_1_type_iterator" kindref="compound">TypeIterator</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, 0 &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::begin_t =  TypeIterator&lt;This, 0&gt;</definition>
+        <argsstring></argsstring>
+        <name>begin_t</name>
+        <qualifiedname>extrait::T::begin_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The type of a StaticTypeIterator pointing to the beginning of the type-list. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="298" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a9eb0ebe4cd868bc40d466e24bbe66b2a" prot="public" static="no">
+        <type><ref refid="structextrait_1_1_type_iterator" kindref="compound">TypeIterator</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, sizeof...(<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Types</ref>)&gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::end_t =  TypeIterator&lt;This, sizeof...(Types)&gt;</definition>
+        <argsstring></argsstring>
+        <name>end_t</name>
+        <qualifiedname>extrait::T::end_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The type of a StaticTypeIterator pointing to the end of the type-list. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="301" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a3988dd9670982acea5cead66bbe152fb" prot="public" static="no">
+        <type><ref refid="structextrait_1_1_reverse_type_iterator" kindref="compound">ReverseTypeIterator</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, 0 &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::rbegin_t =  ReverseTypeIterator&lt;This, 0&gt;</definition>
+        <argsstring></argsstring>
+        <name>rbegin_t</name>
+        <qualifiedname>extrait::T::rbegin_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The type of a StaticTypeIterator pointing to the reverse beginning of the type-list. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="304" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1ac7311f6f90a9425c5059dd8e915cf4a9" prot="public" static="no">
+        <type><ref refid="structextrait_1_1_reverse_type_iterator" kindref="compound">ReverseTypeIterator</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, sizeof...(<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Types</ref>)&gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::rend_t =  ReverseTypeIterator&lt;This, sizeof...(Types)&gt;</definition>
+        <argsstring></argsstring>
+        <name>rend_t</name>
+        <qualifiedname>extrait::T::rend_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The type of a StaticTypeIterator pointing to the reverse end of the type-list. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="307" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a1f52de890d595f212dcaed0de881c544" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; class... &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref>&lt; Types... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::to =  T&lt;Types...&gt;</definition>
+        <argsstring></argsstring>
+        <name>to</name>
+        <qualifiedname>extrait::T::to</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts this struct to a different class type and copies the type-list. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The class to adopt this&apos; type-list </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="395" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="395" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a7e403375dee82583508002083b90d95e" prot="public" static="no">
+        <type><ref refid="structextrait_1_1_type_array_1a1f52de890d595f212dcaed0de881c544" kindref="member">to</ref>&lt; std::variant &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::toStdVariant =  to&lt;std::variant&gt;</definition>
+        <argsstring></argsstring>
+        <name>toStdVariant</name>
+        <qualifiedname>extrait::T::toStdVariant</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A convenience helper that creates a std::variant with the types of this type array. If the type array is empty, the variant will be a std::monostate variant. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="401" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="401" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a5174528c61c70916ab05ffa76157a780" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>std::array&lt; <ref refid="structextrait_1_1_type_array_1a7e403375dee82583508002083b90d95e" kindref="member">toStdVariant</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">N</ref> &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::toStdArray =  std::array&lt;toStdVariant, N&gt;</definition>
+        <argsstring></argsstring>
+        <name>toStdArray</name>
+        <qualifiedname>extrait::T::toStdArray</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A convenience helper that creates a variant array type with the types of this type array.<linebreak/>
+ For example, if this type array is &quot;T&amp;lt;int, long, short&amp;gt;&quot;, the resulting array will be &quot;std::array&amp;lt;std::variant&amp;lt;int, long, short&amp;gt;, N&amp;gt;&quot;.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the array </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="411" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="411" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a1306fc0c3492c3c3c3b2543734ec4af9" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__container_8h_1a89eae85411cf78c554977c93a88419f2" kindref="member">toTypeArray_t</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref> &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::of =  toTypeArray_t&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>of</name>
+        <qualifiedname>extrait::T::of</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array from another type-list. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type-list to adopt the types from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="418" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="418" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a9675fc4eb670fe7d6ef3f669a71e778d" prot="public" static="no">
+        <type><ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>&lt;&gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::clear =  T&lt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>clear</name>
+        <qualifiedname>extrait::T::clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets an empty <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="422" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="422" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1ad2dc15a229fd0d33e4fc393c9eab59d2" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>Index</declname>
+            <defname>Index</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typeAt_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Index</ref> &gt; &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::at =  typeAt_t&lt;This, deindex_v&lt;Index&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>at</name>
+        <qualifiedname>extrait::T::at</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the type at a specified index in this type array.<linebreak/>
+ If the index is out of bounds, this is a compiler error.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>I</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the type to fetch </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="431" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="431" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1abe3a890a826ce180506339ba12c44d3e" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">first</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref> &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::front =  first&lt;This&gt;</definition>
+        <argsstring></argsstring>
+        <name>front</name>
+        <qualifiedname>extrait::T::front</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the first type of this type array.<linebreak/>
+ If the type array is empty, this is a compiler error. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="437" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="437" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1abc72412beecf837e8abfe0efb86d1f4e" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">last</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref> &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::back =  last&lt;This&gt;</definition>
+        <argsstring></argsstring>
+        <name>back</name>
+        <qualifiedname>extrait::T::back</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the last type of this type array.<linebreak/>
+ If the type array is empty, this is a compiler error. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="443" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="443" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a72ab03d884a8ddd36112d3346b834c1c" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Add</declname>
+            <defname>Add</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>&lt; Types..., Add... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::add =  T&lt;Types..., Add...&gt;</definition>
+        <argsstring></argsstring>
+        <name>add</name>
+        <qualifiedname>extrait::T::add</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array and adds the specified types to the end of the type-list. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Add</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types to add </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="451" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="451" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1ac96b211b7470cdfe2219a0dea8543a58" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Prepend</declname>
+            <defname>Prepend</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>&lt; Prepend..., Types... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::prepend =  T&lt;Prepend..., Types...&gt;</definition>
+        <argsstring></argsstring>
+        <name>prepend</name>
+        <qualifiedname>extrait::T::prepend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array and adds the specified types to the start of the type-list. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Prepend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types to prepend to the start of the type-list </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="458" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="458" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a79a5301fff3f2379d3e5c7db8b11b6ec" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Add</declname>
+            <defname>Add</defname>
+          </param>
+        </templateparamlist>
+        <type>addIfAbsent_t&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, Add... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::addIfAbsent =  addIfAbsent_t&lt;This, Add...&gt;</definition>
+        <argsstring></argsstring>
+        <name>addIfAbsent</name>
+        <qualifiedname>extrait::T::addIfAbsent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array and adds the specified types to the end of the type-list if they aren&apos;t already contained.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Add</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types to add </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="467" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="467" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a12faa79bd3ecc4e7e5fdf2e585ac5c43" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>Index</declname>
+            <defname>Index</defname>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Insertions</declname>
+            <defname>Insertions</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1a9dc409a613fbed78dde44b4a043be709" kindref="member">insert_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Index</ref>, Insertions... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::insert =  insert_t&lt;This, Index, Insertions...&gt;</definition>
+        <argsstring></argsstring>
+        <name>insert</name>
+        <qualifiedname>extrait::T::insert</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with the given types at the specified index inserted.<linebreak/>
+ If the index is out of bounds, this is a compiler error, however, you can specify one past the end to insert in the back of the type array.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index to insert into </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Insertions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types to insert </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="478" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="478" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1acf8ad9d25bc4f97fad1f4381ebc7fb0f" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Remove</declname>
+            <defname>Remove</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1adf6134aeb9d9f19aa53e203a645dff63" kindref="member">remove_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, Remove... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::remove =  remove_t&lt;This, Remove...&gt;</definition>
+        <argsstring></argsstring>
+        <name>remove</name>
+        <qualifiedname>extrait::T::remove</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with the specified types removed exactly once. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Remove</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types to remove </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="486" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="486" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a83e8213e2a5169a6de59774e806d98c5" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Remove</declname>
+            <defname>Remove</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1a404f8c7fb789c90ec632ec5ec66741b7" kindref="member">removeAll_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, Remove... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::removeAll =  removeAll_t&lt;This, Remove...&gt;</definition>
+        <argsstring></argsstring>
+        <name>removeAll</name>
+        <qualifiedname>extrait::T::removeAll</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with the specified types removed completely. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Remove</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types to remove </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="493" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="493" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1acc118e1010d0d5d2d21c690ac264834a" prot="public" static="no">
+        <type><ref refid="type__list_8h_1a672dffe3da3f8302f15ed73a88cdea37" kindref="member">removeFirst_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref> &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::removeFirst =  removeFirst_t&lt;This&gt;</definition>
+        <argsstring></argsstring>
+        <name>removeFirst</name>
+        <qualifiedname>extrait::T::removeFirst</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array without the first type in the type-list.<linebreak/>
+ If the type array is empty, this will do nothing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="499" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="499" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1ac51ef4a4afeae4c195d33f7ce87ce6ef" prot="public" static="no">
+        <type><ref refid="type__list_8h_1afeaa59086f6c6bf210aefdf3b57f81b0" kindref="member">removeLast_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref> &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::removeLast =  removeLast_t&lt;This&gt;</definition>
+        <argsstring></argsstring>
+        <name>removeLast</name>
+        <qualifiedname>extrait::T::removeLast</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array without the last type in the type-list.<linebreak/>
+ If the type array is empty, this will do nothing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="505" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="505" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1aab254d76848242268bf938c63013aa18" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>Index</declname>
+            <defname>Index</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1aefed03e200321df1876b6a49a71d4eaa" kindref="member">removeAt_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Index</ref> &gt; &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::removeAt =  removeAt_t&lt;This, deindex_v&lt;Index&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>removeAt</name>
+        <qualifiedname>extrait::T::removeAt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array without the type at the specified index.<linebreak/>
+ If the index is out of bounds, this is a compiler error.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index or a valid static type iterator </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="514" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="514" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a492ea4b583e645559aa863735b4f99a4" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>Start</declname>
+            <defname>Start</defname>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>End</declname>
+            <defname>End</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1a1ecf1e6e5ba728a0d899a382b3f05ddd" kindref="member">removeRange_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Start</ref> &gt;, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">End</ref> &gt; &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::removeRange =  removeRange_t&lt;This, deindex_v&lt;Start&gt;, deindex_v&lt;End&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>removeRange</name>
+        <qualifiedname>extrait::T::removeRange</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array without the types in the specified range.<linebreak/>
+ If either index is out of bounds (End can be one past the end), this is a compiler error.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The start index or a valid static type iterator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>End</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The end index or a valid static type iterator </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="524" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="524" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1ae50fb10d7eac243e3e2b06540bee993d" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Predicate</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1abb547423018d9b4f7d31d2551ce8ccf3" kindref="member">filter_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Predicate</ref> &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::filter =  filter_t&lt;This, Predicate&gt;</definition>
+        <argsstring></argsstring>
+        <name>filter</name>
+        <qualifiedname>extrait::T::filter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with only that types that matched with the predicate. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Predicate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The predicate to be matched against</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>jaut::Predicate </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="533" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="533" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a9358d81dc15f1360cce7ac1e49df23f3" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref></type>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Replacement</declname>
+            <defname>Replacement</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1abccb4294354146b461f0b417342de173" kindref="member">replace_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref>, Replacement... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::replace =  replace_t&lt;This, Key, Replacement...&gt;</definition>
+        <argsstring></argsstring>
+        <name>replace</name>
+        <qualifiedname>extrait::T::replace</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with the specified type replaced exactly once.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to replace </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Replacement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The replacements </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="543" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="543" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a3a3a6139543a94ff679f031c486697a6" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref></type>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Replacement</declname>
+            <defname>Replacement</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1a57213117efa65d614e5c94a1de11a76c" kindref="member">replaceAll_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref>, Replacement... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::replaceAll =  replaceAll_t&lt;This, Key, Replacement...&gt;</definition>
+        <argsstring></argsstring>
+        <name>replaceAll</name>
+        <qualifiedname>extrait::T::replaceAll</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with the specified type replaced completely.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to replace </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Replacement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The replacements </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="552" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="552" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a0704ddeebed7423593a66cf3751932a0" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Replacement</declname>
+            <defname>Replacement</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1a054ede9855b3e2aa66785d2d88c3cb8b" kindref="member">replaceFirst_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, Replacement... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::replaceFirst =  replaceFirst_t&lt;This, Replacement...&gt;</definition>
+        <argsstring></argsstring>
+        <name>replaceFirst</name>
+        <qualifiedname>extrait::T::replaceFirst</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with the first type replaced by the replacement types.<linebreak/>
+ If the type array is empty, this will do nothing.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Replacement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The replacements </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="561" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="561" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a43ee0af4fce54a07d973e72df4eae947" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Replacement</declname>
+            <defname>Replacement</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1a6ea0349716a89bed7f65937ffb9836a0" kindref="member">replaceLast_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, Replacement... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::replaceLast =  replaceLast_t&lt;This, Replacement...&gt;</definition>
+        <argsstring></argsstring>
+        <name>replaceLast</name>
+        <qualifiedname>extrait::T::replaceLast</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with the last type replaced by the replacement types.<linebreak/>
+ If the type array is empty, this will do nothing.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Replacement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The replacements </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="570" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="570" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a80edbe31e843ce76f222e1a22e96b6c6" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>Index</declname>
+            <defname>Index</defname>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Replacement</declname>
+            <defname>Replacement</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1a79d013b31b6fd0783ec488f80e867bd6" kindref="member">replaceAt_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Index</ref> &gt;, Replacement... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::replaceAt =  replaceAt_t&lt;This, deindex_v&lt;Index&gt;, Replacement...&gt;</definition>
+        <argsstring></argsstring>
+        <name>replaceAt</name>
+        <qualifiedname>extrait::T::replaceAt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with the type at the specified index replaced by the replacement types.<linebreak/>
+ If the index is out of bounds, this is a compiler error.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index or a valid static type iterator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Replacement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The replacements </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="580" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="580" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1adb05916d323620d6a40ffd200039cf6c" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>Start</declname>
+            <defname>Start</defname>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>End</declname>
+            <defname>End</defname>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Replacement</declname>
+            <defname>Replacement</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1a213677cd0fa659676e4bba9f06b9a0e5" kindref="member">replaceRange_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Start</ref> &gt;, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">End</ref> &gt;, Replacement... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::replaceRange =  replaceRange_t&lt;This, deindex_v&lt;Start&gt;, deindex_v&lt;End&gt;, Replacement...&gt;</definition>
+        <argsstring></argsstring>
+        <name>replaceRange</name>
+        <qualifiedname>extrait::T::replaceRange</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with the types at the specified range replaced by the replacement types.<linebreak/>
+ If either index is out of bounds (End can be one past the end), this is a compiler error.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The start index or a valid static type iterator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>End</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The end index or a valid static type iterator </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="590" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="590" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a8d4e0c066be4be9071e4f92eb13bbc40" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Predicate</ref></type>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Replacement</declname>
+            <defname>Replacement</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1a049d06e8a5f65ad16c908fc4392f5b5e" kindref="member">replaceIf_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Predicate</ref>, Replacement... &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::replaceIf =  replaceIf_t&lt;This, Predicate, Replacement...&gt;</definition>
+        <argsstring></argsstring>
+        <name>replaceIf</name>
+        <qualifiedname>extrait::T::replaceIf</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with the types that match the predicate replaced by the replacement types. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Predicate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The predicate to be matched against</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>jaut::Predicate </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="599" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="599" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a77b2c2937b09c3c66cceb48f195ece6f" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>Start</declname>
+            <defname>Start</defname>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>End</declname>
+            <defname>End</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1ae4a986b9ea4b99b5f9bf21e4c72d6719" kindref="member">sublist_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Start</ref> &gt;, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">End</ref> &gt; &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::subarray =  sublist_t&lt;This, deindex_v&lt;Start&gt;, deindex_v&lt;End&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>subarray</name>
+        <qualifiedname>extrait::T::subarray</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with only the types in the specified range.<linebreak/>
+ If either index is out of bounds (End can be one past the end), this is a compiler error.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The start index or a valid static type iterator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>End</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The end index or a valid static type iterator </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="610" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="610" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a82cac9736ff8ff84e3b25ae8fd0ee7b9" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">shiftBackward_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref> &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::shiftBackward =  shiftBackward_t&lt;This&gt;</definition>
+        <argsstring></argsstring>
+        <name>shiftBackward</name>
+        <qualifiedname>extrait::T::shiftBackward</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Shifts the type-list backward. (right) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="614" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="614" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1ae27356c358ee2de02ab4a0eb3b86170c" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">shiftForward_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref> &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::shiftForward =  shiftForward_t&lt;This&gt;</definition>
+        <argsstring></argsstring>
+        <name>shiftForward</name>
+        <qualifiedname>extrait::T::shiftForward</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Shifts the type-list forward. (left) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="617" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="617" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1ad047d65eaa23a6fb48e086cce52566db" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>Index</declname>
+            <defname>Index</defname>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>Dest</declname>
+            <defname>Dest</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1a728f1c342f1971ba9e913995cb406ea3" kindref="member">move_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Index</ref> &gt;, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Dest</ref> &gt; &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::move =  move_t&lt;This, deindex_v&lt;Index&gt;, deindex_v&lt;Dest&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>move</name>
+        <qualifiedname>extrait::T::move</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Moves the type at index to dest, other than swap, this will also shift the types.<linebreak/>
+ If either index is out of bounds (Dest can be one past the end), this is a compiler error.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index or a valid type iterator of the type to move </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index or a valid type iterator of the destination to move the type to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="627" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="627" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1a9b1ee9b5ef92c48cae5940fb9c3e9d30" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>Index1</declname>
+            <defname>Index1</defname>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>Index2</declname>
+            <defname>Index2</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1a10470acb5abedc90593241ed0ec834db" kindref="member">swap_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Index1</ref> &gt;, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Index2</ref> &gt; &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::swap =  swap_t&lt;This, deindex_v&lt;Index1&gt;, deindex_v&lt;Index2&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>swap</name>
+        <qualifiedname>extrait::T::swap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Swaps out two elements at the given indices, other than move, this will NOT shift the types.<linebreak/>
+ If either index is out of bounds (Dest can be one past the end), this is a compiler error.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Index1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index or a valid type iterator of the first type to swap </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Index2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index or a valid type iterator of the second type to swap </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="637" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="637" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1_type_array_1ae457999c7e09ffec0cee41450268847a" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>Start</declname>
+            <defname>Start</defname>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>Middle</declname>
+            <defname>Middle</defname>
+          </param>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>End</declname>
+            <defname>End</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="type__list_8h_1a486a7c24c7afcb56c36ca89f6fceca62" kindref="member">rotate_t</ref>&lt; <ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Start</ref> &gt;, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Middle</ref> &gt;, deindex_v&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">End</ref> &gt; &gt;</type>
+        <definition>using extrait::T&lt; Types &gt;::rotate =  rotate_t&lt;This, deindex_v&lt;Start&gt;, deindex_v&lt;Middle&gt;, deindex_v&lt;End&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>rotate</name>
+        <qualifiedname>extrait::T::rotate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new type array with the specified range (Start -&gt; End) left rotated until Middle is at Start.<linebreak/>
+ This is heavily inspired by std::rotate, it wouldn&apos;t hurt to take a look there too: <ulink url="https://en.cppreference.com/w/cpp/algorithm/rotate">https://en.cppreference.com/w/cpp/algorithm/rotate</ulink></para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Index1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index or a valid type iterator of the first type to swap </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Index2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index or a valid type iterator of the second type to swap </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="648" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="648" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a7030c34b2b9a1f9222aa6bb504ef0853" prot="private" static="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+            <declname>I</declname>
+            <defname>I</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a6ba49602a991431d5274a29e1a5e5b61" kindref="member">index_t</ref></type>
+        <definition>EXTRAIT_CONSTEXINI index_t extrait::T&lt; Types &gt;::deindex_v</definition>
+        <argsstring></argsstring>
+        <name>deindex_v</name>
+        <qualifiedname>extrait::T::deindex_v</qualifiedname>
+        <initializer>= deindex&lt;std::decay_t&lt;<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">decltype</ref>(<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">I</ref>)&gt;, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">I</ref>&gt;::value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="294" column="43" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="294" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a4a046d5842e5275be2e7ae791e10d687" prot="public" static="yes" mutable="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+        <definition>EXTRAIT_CONSTEXINI auto extrait::T&lt; Types &gt;::begin</definition>
+        <argsstring></argsstring>
+        <name>begin</name>
+        <qualifiedname>extrait::T::begin</qualifiedname>
+        <initializer>= <ref refid="structextrait_1_1_type_array_1a04c4e8488d0be15a6b6faf9d240fec43" kindref="member">begin_t</ref>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a static type iterator that &quot;points&quot; to the first element. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="310" column="40" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="310" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a3392faadda8a297a1fd5910f85469366" prot="public" static="yes" mutable="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+        <definition>EXTRAIT_CONSTEXINI auto extrait::T&lt; Types &gt;::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <qualifiedname>extrait::T::end</qualifiedname>
+        <initializer>= <ref refid="structextrait_1_1_type_array_1a9eb0ebe4cd868bc40d466e24bbe66b2a" kindref="member">end_t</ref>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a static type iterator that &quot;points&quot; to the end of the type array. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="313" column="40" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="313" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1adef5b1f71a20d4d660fb12573cac3468" prot="public" static="yes" mutable="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+        <definition>EXTRAIT_CONSTEXINI auto extrait::T&lt; Types &gt;::rbegin</definition>
+        <argsstring></argsstring>
+        <name>rbegin</name>
+        <qualifiedname>extrait::T::rbegin</qualifiedname>
+        <initializer>= <ref refid="structextrait_1_1_type_array_1a3988dd9670982acea5cead66bbe152fb" kindref="member">rbegin_t</ref>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a static type iterator that &quot;points&quot; to the end of the type array. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="316" column="40" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="316" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a905ce7ecce145269fa067f5179425101" prot="public" static="yes" mutable="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+        <definition>EXTRAIT_CONSTEXINI auto extrait::T&lt; Types &gt;::rend</definition>
+        <argsstring></argsstring>
+        <name>rend</name>
+        <qualifiedname>extrait::T::rend</qualifiedname>
+        <initializer>= <ref refid="structextrait_1_1_type_array_1ac7311f6f90a9425c5059dd8e915cf4a9" kindref="member">rend_t</ref>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a static type iterator that &quot;points&quot; to the first element. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="319" column="40" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="319" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a69d84b49c0b98beeb6d17c26a26f8a30" prot="public" static="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Other</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>EXTRAIT_CONSTEXINI bool extrait::T&lt; Types &gt;::equals</definition>
+        <argsstring></argsstring>
+        <name>equals</name>
+        <qualifiedname>extrait::T::equals</qualifiedname>
+        <initializer>= std::is_same_v&lt;<ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Other</ref>&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets whether this <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref> and the specified <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref> are equal.<linebreak/>
+ This means same class and same type-list.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref> to check against </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="329" column="40" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a08c47340b99f718f6459fcc017c60f25" prot="public" static="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Other</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>EXTRAIT_CONSTEXINI bool extrait::T&lt; Types &gt;::sameTypeList</definition>
+        <argsstring></argsstring>
+        <name>sameTypeList</name>
+        <qualifiedname>extrait::T::sameTypeList</qualifiedname>
+        <initializer>= <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">hasSameTypeList_v</ref>&lt;<ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Other</ref>&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets whether the type-list of this <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref> and the specified type-list are equal. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref> to check against </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="336" column="40" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="336" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a3b96d8128fa04fd3c0b50af427314051" prot="public" static="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>EXTRAIT_CONSTEXINI bool extrait::T&lt; Types &gt;::contains</definition>
+        <argsstring></argsstring>
+        <name>contains</name>
+        <qualifiedname>extrait::T::contains</qualifiedname>
+        <initializer>= <ref refid="type__list_8h_1aceeed850cba035a4707066de57cc4566" kindref="member">contains_v</ref>&lt;<ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref>&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="339" column="40" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="339" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a2e50cbd77b109dac573f37f5bfb43995" prot="public" static="yes" mutable="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>EXTRAIT_CONSTEXINI bool extrait::T&lt; Types &gt;::isEmpty</definition>
+        <argsstring></argsstring>
+        <name>isEmpty</name>
+        <qualifiedname>extrait::T::isEmpty</qualifiedname>
+        <initializer>= <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">false</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets whether this <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref> contains any types. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="342" column="40" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1ac50bfb8fad91d5d030a492ab9b34fbbc" prot="public" static="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Find</declname>
+            <defname>Find</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>EXTRAIT_CONSTEXINI bool extrait::T&lt; Types &gt;::startsWith</definition>
+        <argsstring></argsstring>
+        <name>startsWith</name>
+        <qualifiedname>extrait::T::startsWith</qualifiedname>
+        <initializer>= <ref refid="type__list_8h_1a90de1de7361373d79084b2af6f6b7d2b" kindref="member">startsWith_v</ref>&lt;<ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, Types...&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets whether this type list starts with types Find. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Find</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types to find at the start of the list </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="349" column="40" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="349" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a398845990a198818a6fb70d7d3580f60" prot="public" static="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+            <declname>Find</declname>
+            <defname>Find</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>EXTRAIT_CONSTEXINI bool extrait::T&lt; Types &gt;::endsWith</definition>
+        <argsstring></argsstring>
+        <name>endsWith</name>
+        <qualifiedname>extrait::T::endsWith</qualifiedname>
+        <initializer>= <ref refid="type__list_8h_1a2ddb8e22c00386658296451d7d832de3" kindref="member">endsWith_v</ref>&lt;<ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, Types...&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets whether this type list ends with types Find. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Find</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types to find at the end of the list </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="356" column="40" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="356" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a8fabbda206afd7b67b3c27c4f94bd3ec" prot="public" static="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a6ba49602a991431d5274a29e1a5e5b61" kindref="member">index_t</ref></type>
+        <definition>EXTRAIT_CONSTEXINI index_t extrait::T&lt; Types &gt;::indexOf</definition>
+        <argsstring></argsstring>
+        <name>indexOf</name>
+        <qualifiedname>extrait::T::indexOf</qualifiedname>
+        <initializer>= <ref refid="type__list_8h_1ad73ae54a2c94ea8166ffb9292891dace" kindref="member">indexOf_v</ref>&lt;<ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref>&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the index of the specified type in this <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>.<linebreak/>
+ If the <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref> is empty or the type was not found, this will return <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">extrait::endOfTypeList</ref>.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to find the index for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="366" column="43" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a4f2c7429ab9220b6da614e9fad24cef7" prot="public" static="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> <ref refid="common_8h_1a6ba49602a991431d5274a29e1a5e5b61" kindref="member">index_t</ref></type>
+        <definition>EXTRAIT_CONSTEXINI index_t extrait::T&lt; Types &gt;::lastIndexOf</definition>
+        <argsstring></argsstring>
+        <name>lastIndexOf</name>
+        <qualifiedname>extrait::T::lastIndexOf</qualifiedname>
+        <initializer>= <ref refid="type__list_8h_1a01c9b0118c600947c8e01ac55abbab60" kindref="member">lastIndexOf_v</ref>&lt;<ref refid="structextrait_1_1_type_array" kindref="compound">This</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref>&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the index of the specified type in this <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref> that comes last.<linebreak/>
+ If the <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref> is empty or the type was not found, this will return <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">extrait::endOfTypeList</ref>.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to find the last index for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="375" column="43" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="375" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a9f0988554e5874e780c662b99a47dbdc" prot="public" static="yes" mutable="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> std::size_t</type>
+        <definition>EXTRAIT_CONSTEXINI std::size_t extrait::T&lt; Types &gt;::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>extrait::T::size</qualifiedname>
+        <initializer>= sizeof...(<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Types</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the amount of types in this <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>.<linebreak/>
+ This is the same as jaut::T::length. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="381" column="47" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="381" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1_type_array_1a8201ef39962f2e412b00aa1f08ffd211" prot="public" static="yes" mutable="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXINI</ref> std::size_t</type>
+        <definition>EXTRAIT_CONSTEXINI std::size_t extrait::T&lt; Types &gt;::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <qualifiedname>extrait::T::length</qualifiedname>
+        <initializer>= <ref refid="structextrait_1_1_type_array_1a9f0988554e5874e780c662b99a47dbdc" kindref="member">size</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the amount of types in this <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>.<linebreak/>
+ This is the same as jaut::T::size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="387" column="47" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="387" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A useful type-list utility that declares a lot of useful helper functions to work ON and WITH lists of types directly and convenient.<linebreak/>
+ This is just a convenience struct, any of the helpers in here are also available inside the std and the extrait namespace.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Types</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list of types </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="261" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="262" bodyend="649"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1_type_array_1a72ab03d884a8ddd36112d3346b834c1c" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>add</name></member>
+      <member refid="structextrait_1_1_type_array_1a79a5301fff3f2379d3e5c7db8b11b6ec" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>addIfAbsent</name></member>
+      <member refid="structextrait_1_1_type_array_1ad2dc15a229fd0d33e4fc393c9eab59d2" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>at</name></member>
+      <member refid="structextrait_1_1_type_array_1abc72412beecf837e8abfe0efb86d1f4e" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>back</name></member>
+      <member refid="structextrait_1_1_type_array_1a4a046d5842e5275be2e7ae791e10d687" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>begin</name></member>
+      <member refid="structextrait_1_1_type_array_1a04c4e8488d0be15a6b6faf9d240fec43" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>begin_t</name></member>
+      <member refid="structextrait_1_1_type_array_1a9675fc4eb670fe7d6ef3f669a71e778d" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>clear</name></member>
+      <member refid="structextrait_1_1_type_array_1a3b96d8128fa04fd3c0b50af427314051" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>contains</name></member>
+      <member refid="structextrait_1_1_type_array_1a7030c34b2b9a1f9222aa6bb504ef0853" prot="private" virt="non-virtual"><scope>extrait::T</scope><name>deindex_v</name></member>
+      <member refid="structextrait_1_1_type_array_1a3392faadda8a297a1fd5910f85469366" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>end</name></member>
+      <member refid="structextrait_1_1_type_array_1a9eb0ebe4cd868bc40d466e24bbe66b2a" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>end_t</name></member>
+      <member refid="structextrait_1_1_type_array_1a398845990a198818a6fb70d7d3580f60" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>endsWith</name></member>
+      <member refid="structextrait_1_1_type_array_1a69d84b49c0b98beeb6d17c26a26f8a30" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>equals</name></member>
+      <member refid="structextrait_1_1_type_array_1ae50fb10d7eac243e3e2b06540bee993d" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>filter</name></member>
+      <member refid="structextrait_1_1_type_array_1abe3a890a826ce180506339ba12c44d3e" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>front</name></member>
+      <member refid="structextrait_1_1_type_array_1a8fabbda206afd7b67b3c27c4f94bd3ec" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>indexOf</name></member>
+      <member refid="structextrait_1_1_type_array_1a12faa79bd3ecc4e7e5fdf2e585ac5c43" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>insert</name></member>
+      <member refid="structextrait_1_1_type_array_1a2e50cbd77b109dac573f37f5bfb43995" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>isEmpty</name></member>
+      <member refid="structextrait_1_1_type_array_1a4f2c7429ab9220b6da614e9fad24cef7" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>lastIndexOf</name></member>
+      <member refid="structextrait_1_1_type_array_1a8201ef39962f2e412b00aa1f08ffd211" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>length</name></member>
+      <member refid="structextrait_1_1_type_array_1ad047d65eaa23a6fb48e086cce52566db" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>move</name></member>
+      <member refid="structextrait_1_1_type_array_1a1306fc0c3492c3c3c3b2543734ec4af9" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>of</name></member>
+      <member refid="structextrait_1_1_type_array_1ac96b211b7470cdfe2219a0dea8543a58" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>prepend</name></member>
+      <member refid="structextrait_1_1_type_array_1adef5b1f71a20d4d660fb12573cac3468" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>rbegin</name></member>
+      <member refid="structextrait_1_1_type_array_1a3988dd9670982acea5cead66bbe152fb" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>rbegin_t</name></member>
+      <member refid="structextrait_1_1_type_array_1acf8ad9d25bc4f97fad1f4381ebc7fb0f" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>remove</name></member>
+      <member refid="structextrait_1_1_type_array_1a83e8213e2a5169a6de59774e806d98c5" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>removeAll</name></member>
+      <member refid="structextrait_1_1_type_array_1aab254d76848242268bf938c63013aa18" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>removeAt</name></member>
+      <member refid="structextrait_1_1_type_array_1acc118e1010d0d5d2d21c690ac264834a" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>removeFirst</name></member>
+      <member refid="structextrait_1_1_type_array_1ac51ef4a4afeae4c195d33f7ce87ce6ef" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>removeLast</name></member>
+      <member refid="structextrait_1_1_type_array_1a492ea4b583e645559aa863735b4f99a4" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>removeRange</name></member>
+      <member refid="structextrait_1_1_type_array_1a905ce7ecce145269fa067f5179425101" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>rend</name></member>
+      <member refid="structextrait_1_1_type_array_1ac7311f6f90a9425c5059dd8e915cf4a9" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>rend_t</name></member>
+      <member refid="structextrait_1_1_type_array_1a9358d81dc15f1360cce7ac1e49df23f3" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>replace</name></member>
+      <member refid="structextrait_1_1_type_array_1a3a3a6139543a94ff679f031c486697a6" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>replaceAll</name></member>
+      <member refid="structextrait_1_1_type_array_1a80edbe31e843ce76f222e1a22e96b6c6" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>replaceAt</name></member>
+      <member refid="structextrait_1_1_type_array_1a0704ddeebed7423593a66cf3751932a0" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>replaceFirst</name></member>
+      <member refid="structextrait_1_1_type_array_1a8d4e0c066be4be9071e4f92eb13bbc40" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>replaceIf</name></member>
+      <member refid="structextrait_1_1_type_array_1a43ee0af4fce54a07d973e72df4eae947" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>replaceLast</name></member>
+      <member refid="structextrait_1_1_type_array_1adb05916d323620d6a40ffd200039cf6c" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>replaceRange</name></member>
+      <member refid="structextrait_1_1_type_array_1ae457999c7e09ffec0cee41450268847a" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>rotate</name></member>
+      <member refid="structextrait_1_1_type_array_1a08c47340b99f718f6459fcc017c60f25" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>sameTypeList</name></member>
+      <member refid="structextrait_1_1_type_array_1a82cac9736ff8ff84e3b25ae8fd0ee7b9" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>shiftBackward</name></member>
+      <member refid="structextrait_1_1_type_array_1ae27356c358ee2de02ab4a0eb3b86170c" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>shiftForward</name></member>
+      <member refid="structextrait_1_1_type_array_1a9f0988554e5874e780c662b99a47dbdc" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>size</name></member>
+      <member refid="structextrait_1_1_type_array_1ac50bfb8fad91d5d030a492ab9b34fbbc" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>startsWith</name></member>
+      <member refid="structextrait_1_1_type_array_1a77b2c2937b09c3c66cceb48f195ece6f" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>subarray</name></member>
+      <member refid="structextrait_1_1_type_array_1a9b1ee9b5ef92c48cae5940fb9c3e9d30" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>swap</name></member>
+      <member refid="structextrait_1_1_type_array_1ade14ebad58e21899004c4c1923aaa950" prot="private" virt="non-virtual"><scope>extrait::T</scope><name>This</name></member>
+      <member refid="structextrait_1_1_type_array_1a1f52de890d595f212dcaed0de881c544" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>to</name></member>
+      <member refid="structextrait_1_1_type_array_1a5174528c61c70916ab05ffa76157a780" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>toStdArray</name></member>
+      <member refid="structextrait_1_1_type_array_1a7e403375dee82583508002083b90d95e" prot="public" virt="non-virtual"><scope>extrait::T</scope><name>toStdVariant</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

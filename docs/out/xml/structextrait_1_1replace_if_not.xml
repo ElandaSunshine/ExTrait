@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1replace_if_not" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::replaceIfNot</compoundname>
+    <basecompoundref refid="structextrait_1_1detail_1_1replace_if" prot="public" virt="non-virtual">extrait::detail::replaceIf&lt; T, Predicate, true, Replacement... &gt;</basecompoundref>
+    <includes refid="type__list_8h" local="no">type_list.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref></type>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>Predicate</declname>
+        <defname>Predicate</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Replacement</declname>
+        <defname>Replacement</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>Replaces all types inside a template parameter-list that did not match a certain predicate with a list of replacement types. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides a member alias &quot;type&quot;, that is copy of the original class template instantiation T with all types that did not match Predicate replaced by types Replacement. <linebreak/>
+ If Replacement does not provide any types, compilation will fail.</para>
+<para>Where Predicate is a class template that takes the currently (one at a time) inspected type from the parameter-list of class template instantiation T as template argument and provides a static &quot;value&quot; constant expression that is a bool that determines true if the type should not be replaced.</para>
+<para>If T is not a class template or is a class template with at least one non-type template parameter, compilation will fail.</para>
+<para>Any modification to T or Predicate, such as pointer, reference, array or cv-qualification of the original type, will render the type a non-class template type and compilation will fail. <linebreak/>
+ In these cases you can use <ref refid="structextrait_1_1strip" kindref="compound">extrait::strip</ref> to strip any of these modifications off the type beforehand.</para>
+<para>Adding custom template specialisations to this template results in undefined behaviour.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Any valid type-only class template instantiation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Predicate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A predicate determining whether a type should be left as-is </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Replacement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list of types a matching type should be replaced with (preserving order)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structextrait_1_1replace" kindref="compound">extrait::replace</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1replace_all" kindref="compound">extrait::replaceAll</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1replace_at" kindref="compound">extrait::replaceAt</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1replace_range" kindref="compound">extrait::replaceRange</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1replace_if" kindref="compound">extrait::replaceIf</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1strip" kindref="compound">extrait::strip</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1instantiates_class_template" kindref="compound">extrait::instantiatesClassTemplate</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1_type_array" kindref="compound">extrait::T</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>extrait::replaceIfNot&lt; T, Predicate, Replacement &gt;</label>
+        <link refid="structextrait_1_1replace_if_not"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>extrait::detail::replaceIf&lt; T, Predicate, true, Replacement... &gt;</label>
+        <link refid="structextrait_1_1detail_1_1replace_if"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>extrait::replaceIfNot&lt; T, Predicate, Replacement &gt;</label>
+        <link refid="structextrait_1_1replace_if_not"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>extrait::detail::replaceIf&lt; T, Predicate, true, Replacement... &gt;</label>
+        <link refid="structextrait_1_1detail_1_1replace_if"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_list.h" line="1058" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_list.h" bodystart="1058" bodyend="1058"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

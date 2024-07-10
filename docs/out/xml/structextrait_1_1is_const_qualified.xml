@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1is_const_qualified" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::isConstQualified</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::bool_constant&lt; Function&lt; Func &gt;::isConstQualified &gt;</basecompoundref>
+    <includes refid="reflection_8h" local="no">reflection.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+        <declname>Func</declname>
+        <defname>Func</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Gets whether a given function pointer is a const-qualified member function.<linebreak/>
+ If the given function pointer is not a member-function, this will always return false.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function pointer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>extrait::isConstQualified&lt; Func &gt;</label>
+        <link refid="structextrait_1_1is_const_qualified"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::bool_constant&lt; Function&lt; Func &gt;::isConstQualified &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>extrait::isConstQualified&lt; Func &gt;</label>
+        <link refid="structextrait_1_1is_const_qualified"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::bool_constant&lt; Function&lt; Func &gt;::isConstQualified &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/reflection.h" line="421" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/reflection.h" bodystart="421" bodyend="421"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

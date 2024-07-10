@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1is_empty__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01std_1_1void__t_3_098edb93b2d1d5d2f1c1d9a37f7ae6414" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::isEmpty_impl&lt; T&lt; Types... &gt;, std::void_t&lt; decltype(std::declval&lt; T&lt;&gt; &gt;())&gt; &gt;</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::bool_constant&lt; std::is_same_v&lt; T&lt; Types... &gt;, T&lt;&gt; &gt; &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; class... &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Types</declname>
+        <defname>Types</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>extrait::detail::isEmpty_impl&lt; T&lt; Types... &gt;, std::void_t&lt; decltype(std::declval&lt; T&lt;&gt; &gt;())&gt; &gt;</label>
+        <link refid="structextrait_1_1detail_1_1is_empty__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01std_1_1void__t_3_098edb93b2d1d5d2f1c1d9a37f7ae6414"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::bool_constant&lt; std::is_same_v&lt; T&lt; Types... &gt;, T&lt;&gt; &gt; &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>extrait::detail::isEmpty_impl&lt; T&lt; Types... &gt;, std::void_t&lt; decltype(std::declval&lt; T&lt;&gt; &gt;())&gt; &gt;</label>
+        <link refid="structextrait_1_1detail_1_1is_empty__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01std_1_1void__t_3_098edb93b2d1d5d2f1c1d9a37f7ae6414"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::bool_constant&lt; std::is_same_v&lt; T&lt; Types... &gt;, T&lt;&gt; &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="99" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="100" bodyend="100"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

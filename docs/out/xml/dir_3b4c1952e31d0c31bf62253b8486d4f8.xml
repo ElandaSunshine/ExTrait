@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_3b4c1952e31d0c31bf62253b8486d4f8" kind="dir">
+    <compoundname>D:/Development/Coding/cpp/ExTrait/include/extrait/detail</compoundname>
+    <innerfile refid="common__impl_8h">common_impl.h</innerfile>
+    <innerfile refid="type__list__impl_8h">type_list_impl.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/"/>
+  </compounddef>
+</doxygen>

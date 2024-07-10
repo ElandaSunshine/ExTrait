@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Signature</ref></type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858_1a9fa1b3ec1d045ff9e40e63b97eba2616" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Signature</ref></type>
+        <definition>using extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;::signature_t =  Signature</definition>
+        <argsstring></argsstring>
+        <name>signature_t</name>
+        <qualifiedname>extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;::signature_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The signature type of the overload. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/reflection.h" line="373" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/reflection.h" bodystart="373" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858_1a8c408f3888606fd8ab55c542e65073f0" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXVAL</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+        <definition>static EXTRAIT_CONSTEXVAL auto extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;::of</definition>
+        <argsstring>(Signature *func) noexcept</argsstring>
+        <name>of</name>
+        <qualifiedname>extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;::of</qualifiedname>
+        <param>
+          <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Signature</ref> *</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the pointer of the specific overload.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function pointer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The overloaded function pointer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/reflection.h" line="383" column="40" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/reflection.h" bodystart="383" bodyend="386"/>
+      </memberdef>
+      <memberdef kind="function" id="structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858_1abc3629e1d80b8603f880d85140992c82" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Owner</ref></type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">EXTRAIT_CONSTEXVAL</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+        <definition>static EXTRAIT_CONSTEXVAL auto extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;::of</definition>
+        <argsstring>(Signature Owner::*func) noexcept</argsstring>
+        <name>of</name>
+        <qualifiedname>extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;::of</qualifiedname>
+        <param>
+          <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Signature</ref> Owner::*</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the pointer of the specific overload.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function pointer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The overloaded function pointer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/reflection.h" line="396" column="40" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/reflection.h" bodystart="396" bodyend="399"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/reflection.h" line="369" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/reflection.h" bodystart="370" bodyend="400"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858_1a8c408f3888606fd8ab55c542e65073f0" prot="public" virt="non-virtual"><scope>extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;</scope><name>of</name></member>
+      <member refid="structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858_1abc3629e1d80b8603f880d85140992c82" prot="public" virt="non-virtual"><scope>extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;</scope><name>of</name></member>
+      <member refid="structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858_1a9fa1b3ec1d045ff9e40e63b97eba2616" prot="public" virt="non-virtual"><scope>extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;</scope><name>signature_t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

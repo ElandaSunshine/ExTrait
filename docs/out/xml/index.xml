@@ -1,0 +1,937 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.10.0" xml:lang="en-US">
+  <compound refid="structextrait_1_1add" kind="struct"><name>extrait::add</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1add" kind="struct"><name>extrait::detail::add</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1add_3_01_t_3_01_t_types_8_8_8_01_4_00_01_add_8_8_8_01_4" kind="struct"><name>extrait::detail::add&lt; T&lt; Types... &gt;, Add... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1add_3_01_t_3_01_t_types_8_8_8_01_4_00_01_add_8_8_8_01_4_1a62623db80bc13eceebe0e2790745ee94" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1add_if_absent" kind="struct"><name>extrait::addIfAbsent</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1add_if_absent" kind="struct"><name>extrait::detail::addIfAbsent</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1add_if_absent_3_01_t_3_01_t_types_8_8_8_01_4_00_01_add_8_8_8_01_4" kind="struct"><name>extrait::detail::addIfAbsent&lt; T&lt; Types... &gt;, Add... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1add_if_absent_3_01_t_3_01_t_types_8_8_8_01_4_00_01_add_8_8_8_01_4_1afe9ae0526e839ea6f25e28ef883d14a3" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1add_if_absent__impl" kind="struct"><name>extrait::detail::addIfAbsent_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1add_if_absent__impl_3_01_t_3_01_t_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::addIfAbsent_impl&lt; T&lt; Types... &gt; &gt;</name>
+    <member refid="structextrait_1_1detail_1_1add_if_absent__impl_3_01_t_3_01_t_types_8_8_8_01_4_01_4_1af5f5b2fbd1de3b18adfc4f6486c1a163" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1add_if_absent__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_next_00_01_add_8_8_8_01_4" kind="struct"><name>extrait::detail::addIfAbsent_impl&lt; T&lt; Types... &gt;, Next, Add... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1add_if_absent__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_next_00_01_add_8_8_8_01_4_1a8dd5c75911a9f352e8e53f28bd468581" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1assemble" kind="struct"><name>extrait::assemble</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1assemble" kind="struct"><name>extrait::detail::assemble</name>
+    <member refid="structextrait_1_1detail_1_1assemble_1ae20b55979371df91e676707095eccef8" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1assemble__impl" kind="struct"><name>extrait::detail::assemble_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::assemble_impl&lt; T&lt; Types... &gt; &gt;</name>
+    <member refid="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_01_4_1abb49f4a1acfcd837ed045e1f4a094524" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_branch_3_01_u_00_956874e0b7bba7e3df2620040462c2c3" kind="struct"><name>extrait::detail::assemble_impl&lt; T&lt; Types... &gt;, Branch&lt; U, false &gt;, Branches... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_branch_3_01_u_00_956874e0b7bba7e3df2620040462c2c3_1a7b2cfa7ce9271de7cad76c72a9c22ff2" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_branch_3_01_u_00_29b7b2456f3cb177032dda2f15692372" kind="struct"><name>extrait::detail::assemble_impl&lt; T&lt; Types... &gt;, Branch&lt; U, true &gt;, Branches... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_branch_3_01_u_00_29b7b2456f3cb177032dda2f15692372_1a7a81a784d4aac08011b38456b8b7ac13" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_next_00_01_branches_8_8_8_01_4" kind="struct"><name>extrait::detail::assemble_impl&lt; T&lt; Types... &gt;, Next, Branches... &gt;</name>
+  </compound>
+  <compound refid="structjaut_1_1detail_1_1_associative_impl" kind="struct"><name>jaut::detail::AssociativeImpl</name>
+    <member refid="structjaut_1_1detail_1_1_associative_impl_1ac499f2a18af757087d99476b830abb7c" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="structextrait_1_1branch" kind="struct"><name>extrait::branch</name>
+  </compound>
+  <compound refid="structextrait_1_1contains" kind="struct"><name>extrait::contains</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1contains" kind="struct"><name>extrait::detail::contains</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1contains_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4" kind="struct"><name>extrait::detail::contains&lt; T&lt; Types... &gt;, Key &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1contains_3_01_t_3_4_00_01_key_01_4" kind="struct"><name>extrait::detail::contains&lt; T&lt;&gt;, Key &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1convert" kind="struct"><name>extrait::convert</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1convert" kind="struct"><name>extrait::detail::convert</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1convert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_u_01_4" kind="struct"><name>extrait::detail::convert&lt; T&lt; Types... &gt;, U &gt;</name>
+    <member refid="structextrait_1_1detail_1_1convert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_u_01_4_1a9255e86f9d85c24264ef6f534bab2fb9" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1deduplicate" kind="struct"><name>extrait::deduplicate</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1deduplicate" kind="struct"><name>extrait::detail::deduplicate</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1deduplicate_3_01_t_3_01_t_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::deduplicate&lt; T&lt; Types... &gt; &gt;</name>
+    <member refid="structextrait_1_1detail_1_1deduplicate_3_01_t_3_01_t_types_8_8_8_01_4_01_4_1a4cc0a027af5f173d80583b99cedad1ee" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_type_array_1_1deindex" kind="struct"><name>extrait::T::deindex</name>
+  </compound>
+  <compound refid="structextrait_1_1_type_array_1_1deindex_3_01_reverse_type_iterator_3_01_this_00_01_index_01_4_00_01_index_01_4" kind="struct"><name>extrait::T::deindex&lt; ReverseTypeIterator&lt; This, Index &gt;, Index &gt;</name>
+    <member refid="structextrait_1_1_type_array_1_1deindex_3_01_reverse_type_iterator_3_01_this_00_01_index_01_4_00_01_index_01_4_1a3d8f64a00a311a75bd10e9c7787f467d" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_type_array_1_1deindex_3_01std_1_1size__t_00_01_index_01_4" kind="struct"><name>extrait::T::deindex&lt; std::size_t, Index &gt;</name>
+    <member refid="structextrait_1_1_type_array_1_1deindex_3_01std_1_1size__t_00_01_index_01_4_1ad0cff1331e39b007333532d79b239ac8" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_type_array_1_1deindex_3_01_type_iterator_3_01_this_00_01_index_01_4_00_01_index_01_4" kind="struct"><name>extrait::T::deindex&lt; TypeIterator&lt; This, Index &gt;, Index &gt;</name>
+    <member refid="structextrait_1_1_type_array_1_1deindex_3_01_type_iterator_3_01_this_00_01_index_01_4_00_01_index_01_4_1aeec865d58a6609c65e1da9d192f86b41" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_empty_type" kind="struct"><name>extrait::EmptyType</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1ends_with" kind="struct"><name>extrait::detail::endsWith</name>
+  </compound>
+  <compound refid="structextrait_1_1ends_with" kind="struct"><name>extrait::endsWith</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1ends_with_3_01_t_3_01_t_types_8_8_8_01_4_00_01_end_types_8_8_8_01_4" kind="struct"><name>extrait::detail::endsWith&lt; T&lt; Types... &gt;, EndTypes... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1ends_with_3_01_t_3_01_t_types_8_8_8_01_4_00_01_end_types_8_8_8_01_4_1a4932e2f49b0d1cb5c9b92e64830e3e7a" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1ends_with__impl" kind="struct"><name>extrait::detail::endsWith_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1ends_with__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_end_3_01_end_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::endsWith_impl&lt; T&lt; Types... &gt;, End&lt; EndTypes... &gt; &gt;</name>
+    <member refid="structextrait_1_1detail_1_1ends_with__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_end_3_01_end_types_8_8_8_01_4_01_4_1af625a1b6288eafe7c0989158afa93db6" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1filter" kind="struct"><name>extrait::filter</name>
+  </compound>
+  <compound refid="classextrait_1_1_function" kind="class"><name>extrait::Function</name>
+  </compound>
+  <compound refid="structextrait_1_1_function_3_01_func_01_4" kind="struct"><name>extrait::Function&lt; Func &gt;</name>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1a1eac06008af38582ad216ef1c62372f4" kind="typedef"><name>parameters_t</name></member>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1a1cbde1106fa379e72eff8e4bc950f574" kind="typedef"><name>return_t</name></member>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1a221a3aa9d0105ba2810571ad718f1af0" kind="typedef"><name>owner_t</name></member>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1a0ded9f3e6ba7a61b9d8e57d3cc51c6fa" kind="typedef"><name>pointer_t</name></member>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1a0dc4be090de00f770791aa622e888367" kind="variable"><name>parameterCount</name></member>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1a4fff240966dac45706e97fd3657db957" kind="variable"><name>isMemberFunction</name></member>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1ad4bab1444db30fe48a55079f86592981" kind="variable"><name>isNoexcept</name></member>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1af9e5e52861fd17bafec1c17f1851f006" kind="variable"><name>isConst</name></member>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1a743ca0a506947582fd1bd13cf923033b" kind="variable"><name>isVolatile</name></member>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1ab15e70ac974e9f17d7dc86247464120a" kind="variable"><name>isLValueQualified</name></member>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1adb338c3a87f36a44b77590b07596d373" kind="variable"><name>isRValueQualified</name></member>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1a9a2d05016027aa6658c071f232fc45a2" kind="function"><name>invoke</name></member>
+    <member refid="structextrait_1_1_function_3_01_func_01_4_1af38d22819514716081de6f98d66ca25a" kind="function"><name>getFullyQualifiedName</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1get" kind="struct"><name>extrait::detail::get</name>
+  </compound>
+  <compound refid="structextrait_1_1get" kind="struct"><name>extrait::get</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1get_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_01_4" kind="struct"><name>extrait::detail::get&lt; T&lt; Types... &gt;, I &gt;</name>
+    <member refid="structextrait_1_1detail_1_1get_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_01_4_1a5ec8c3bf1ddaa9fd3e98122e706f3baf" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1get__impl" kind="struct"><name>extrait::detail::get_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1get__impl_3_010_00_01_next_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::get_impl&lt; 0, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1get__impl_3_010_00_01_next_00_01_types_8_8_8_01_4_1a6611edd682e5449387ca20b733a335f5" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1get__impl_3_01_i_00_01_next_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::get_impl&lt; I, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1get__impl_3_01_i_00_01_next_00_01_types_8_8_8_01_4_1ae13eedeea237c188d2f2609f8ed7c6d8" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1index_of" kind="struct"><name>extrait::detail::indexOf</name>
+  </compound>
+  <compound refid="structextrait_1_1index_of" kind="struct"><name>extrait::indexOf</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1index_of_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4" kind="struct"><name>extrait::detail::indexOf&lt; T&lt; Types... &gt;, Key &gt;</name>
+    <member refid="structextrait_1_1detail_1_1index_of_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4_1a103b331d47e5ec760a658b67d702d9e6" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1index_of__impl" kind="struct"><name>extrait::detail::indexOf_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1index_of__impl_3_01_key_00_01_i_01_4" kind="struct"><name>extrait::detail::indexOf_impl&lt; Key, I &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1index_of__impl_3_01_key_00_01_i_00_01_key_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::indexOf_impl&lt; Key, I, Key, Types... &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1index_of__impl_3_01_key_00_01_i_00_01_next_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::indexOf_impl&lt; Key, I, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1index_of__impl_3_01_key_00_01_i_00_01_next_00_01_types_8_8_8_01_4_1a802828a89afeb241ea3100a8b35143f3" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1insert" kind="struct"><name>extrait::detail::insert</name>
+  </compound>
+  <compound refid="structextrait_1_1insert" kind="struct"><name>extrait::insert</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1insert_3_01_t_3_01_t_types_8_8_8_01_4_00_010_00_01_add_8_8_8_01_4" kind="struct"><name>extrait::detail::insert&lt; T&lt; Types... &gt;, 0, Add... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1insert_3_01_t_3_01_t_types_8_8_8_01_4_00_010_00_01_add_8_8_8_01_4_1a7b0632dd4581056cbbe1444c4c6ca103" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_add_8_8_8_01_4" kind="struct"><name>extrait::detail::insert&lt; T&lt; Types... &gt;, I, Add... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_add_8_8_8_01_4_1aefebf341964ca948c17f58e3b3445db4" kind="typedef"><name>range</name></member>
+    <member refid="structextrait_1_1detail_1_1insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_add_8_8_8_01_4_1ad01f3f317fd0a07cf3d01861fe5d9572" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01sizeof_8_8_8_07_t_types_08_00_01_add_8_8_8_01_4" kind="struct"><name>extrait::detail::insert&lt; T&lt; Types... &gt;, sizeof...(Types), Add... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01sizeof_8_8_8_07_t_types_08_00_01_add_8_8_8_01_4_1a10eb54d31df97e74f93a078b4dc88ff9" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1insert_3_01_t_3_4_00_010_00_01_add_8_8_8_01_4" kind="struct"><name>extrait::detail::insert&lt; T&lt;&gt;, 0, Add... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1insert_3_01_t_3_4_00_010_00_01_add_8_8_8_01_4_1a2f37b13855b3f5a158c2e617da597352" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1instantiates_class_template" kind="struct"><name>extrait::detail::instantiatesClassTemplate</name>
+  </compound>
+  <compound refid="structextrait_1_1instantiates_class_template" kind="struct"><name>extrait::instantiatesClassTemplate</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1instantiates_class_template_3_01_t_3_01_t_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::instantiatesClassTemplate&lt; T&lt; Types... &gt; &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1instantiates_same_class_template" kind="struct"><name>extrait::detail::instantiatesSameClassTemplate</name>
+  </compound>
+  <compound refid="structextrait_1_1instantiates_same_class_template" kind="struct"><name>extrait::instantiatesSameClassTemplate</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1instantiates_same_class_template_3_01_t_3_01_t_types_8_8_8_01_4_00_01_t_3_01_u_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::instantiatesSameClassTemplate&lt; T&lt; Types... &gt;, T&lt; UTypes... &gt; &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1instantiates_same_class_template_3_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::instantiatesSameClassTemplate&lt; T&lt; Types... &gt;, U&lt; UTypes... &gt; &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1is_const_qualified" kind="struct"><name>extrait::isConstQualified</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1is_empty" kind="struct"><name>extrait::detail::isEmpty</name>
+  </compound>
+  <compound refid="structextrait_1_1is_empty" kind="struct"><name>extrait::isEmpty</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1is_empty_3_01_t_3_01_t_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::isEmpty&lt; T&lt; Types... &gt; &gt;</name>
+    <member refid="structextrait_1_1detail_1_1is_empty_3_01_t_3_01_t_types_8_8_8_01_4_01_4_1a1f54944e70053afb4f5113b1950e880d" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1is_empty__impl" kind="struct"><name>extrait::detail::isEmpty_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1is_empty__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01std_1_1void__t_3_098edb93b2d1d5d2f1c1d9a37f7ae6414" kind="struct"><name>extrait::detail::isEmpty_impl&lt; T&lt; Types... &gt;, std::void_t&lt; decltype(std::declval&lt; T&lt;&gt; &gt;())&gt; &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1is_empty_instantiated" kind="struct"><name>extrait::detail::isEmptyInstantiated</name>
+  </compound>
+  <compound refid="structextrait_1_1is_empty_instantiated" kind="struct"><name>extrait::isEmptyInstantiated</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1is_empty_instantiated_3_01_t_3_01_first_00_01_t_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::isEmptyInstantiated&lt; T&lt; First, Types... &gt; &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1is_empty_instantiated_3_01_t_3_01_t_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::isEmptyInstantiated&lt; T&lt; Types... &gt; &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1is_lvalue_qualified" kind="struct"><name>extrait::isLvalueQualified</name>
+  </compound>
+  <compound refid="structextrait_1_1is_member_function" kind="struct"><name>extrait::isMemberFunction</name>
+  </compound>
+  <compound refid="structextrait_1_1is_rvalue_qualified" kind="struct"><name>extrait::isRvalueQualified</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1is_valid_mapper" kind="struct"><name>extrait::detail::isValidMapper</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1is_valid_mapper_3_01_m_00_01std_1_1void__t_3_01decltype_07std_1_1declb27c8faa29c4a28f6b85a5dd31b21389" kind="struct"><name>extrait::detail::isValidMapper&lt; M, std::void_t&lt; decltype(std::declval&lt; M&lt; void &gt;::type &gt;())&gt; &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1is_valid_predicate" kind="struct"><name>extrait::detail::isValidPredicate</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1is_valid_predicate_3_01_p_00_01std_1_1void__t_3_01decltype_07_p_3_01void_01_4_1_1value_08_4_01_4" kind="struct"><name>extrait::detail::isValidPredicate&lt; P, std::void_t&lt; decltype(P&lt; void &gt;::value)&gt; &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1is_volatile_qualified" kind="struct"><name>extrait::isVolatileQualified</name>
+  </compound>
+  <compound refid="structextrait_1_1_iterator_end" kind="struct"><name>extrait::IteratorEnd</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1join" kind="struct"><name>extrait::detail::join</name>
+    <member refid="structextrait_1_1detail_1_1join_1a61ddf7cb2c8ef04565a29b0cfaee58af" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1join" kind="struct"><name>extrait::join</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1join__impl" kind="struct"><name>extrait::detail::join_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1join__impl_3_01_t_3_01_t_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::join_impl&lt; T&lt; Types... &gt; &gt;</name>
+    <member refid="structextrait_1_1detail_1_1join__impl_3_01_t_3_01_t_types_8_8_8_01_4_01_4_1a71d861aff6dcbaaa5bb6eefc52d8b7fc" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1join__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_next_00_01_u_8_8_8_01_4" kind="struct"><name>extrait::detail::join_impl&lt; T&lt; Types... &gt;, Next, U... &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1join__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_next_3_01_n_types_8_8_8_01_4_00_01_u_8_8_8_01_4" kind="struct"><name>extrait::detail::join_impl&lt; T&lt; Types... &gt;, Next&lt; NTypes... &gt;, U... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1join__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_next_3_01_n_types_8_8_8_01_4_00_01_u_8_8_8_01_4_1a6d7caadc6bf43414b63b296f1ce2ef19" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1last_index_of" kind="struct"><name>extrait::detail::lastIndexOf</name>
+  </compound>
+  <compound refid="structextrait_1_1last_index_of" kind="struct"><name>extrait::lastIndexOf</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1last_index_of_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4" kind="struct"><name>extrait::detail::lastIndexOf&lt; T&lt; Types... &gt;, Key &gt;</name>
+    <member refid="structextrait_1_1detail_1_1last_index_of_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4_1af326182813dfb9484af77dab1be329ba" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1last_index_of__impl" kind="struct"><name>extrait::detail::lastIndexOf_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1last_index_of__impl_3_01_key_00_01_i_00_01_found_01_4" kind="struct"><name>extrait::detail::lastIndexOf_impl&lt; Key, I, Found &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1last_index_of__impl_3_01_key_00_01_i_00_01_found_00_01_key_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::lastIndexOf_impl&lt; Key, I, Found, Key, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1last_index_of__impl_3_01_key_00_01_i_00_01_found_00_01_key_00_01_types_8_8_8_01_4_1af547109a4e9c8320dde83c50a8b98bd4" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1last_index_of__impl_3_01_key_00_01_i_00_01_found_00_01_next_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::lastIndexOf_impl&lt; Key, I, Found, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1last_index_of__impl_3_01_key_00_01_i_00_01_found_00_01_next_00_01_types_8_8_8_01_4_1ad5d1e2d48cf6242805b47558c76b8345" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1length" kind="struct"><name>extrait::detail::length</name>
+  </compound>
+  <compound refid="structextrait_1_1length" kind="struct"><name>extrait::length</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1length_3_01_t_3_01_t_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::length&lt; T&lt; Types... &gt; &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1map" kind="struct"><name>extrait::detail::map</name>
+  </compound>
+  <compound refid="structextrait_1_1map" kind="struct"><name>extrait::map</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1map_3_01_t_3_01_t_types_8_8_8_01_4_00_01_m_01_4" kind="struct"><name>extrait::detail::map&lt; T&lt; Types... &gt;, M &gt;</name>
+    <member refid="structextrait_1_1detail_1_1map_3_01_t_3_01_t_types_8_8_8_01_4_00_01_m_01_4_1ab2461444819c78c40a1997f91e5f1650" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1match" kind="struct"><name>extrait::detail::match</name>
+  </compound>
+  <compound refid="structextrait_1_1match" kind="struct"><name>extrait::match</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1match_3_01_t_3_01_t_types_8_8_8_01_4_00_01_p_00_01_invert_01_4" kind="struct"><name>extrait::detail::match&lt; T&lt; Types... &gt;, P, Invert &gt;</name>
+    <member refid="structextrait_1_1detail_1_1match_3_01_t_3_01_t_types_8_8_8_01_4_00_01_p_00_01_invert_01_4_1a6904eb5982fe542cc8459388ddd96372" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1match__impl" kind="struct"><name>extrait::detail::match_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1match__impl_3_01_p_00_01_invert_01_4" kind="struct"><name>extrait::detail::match_impl&lt; P, Invert &gt;</name>
+    <member refid="structextrait_1_1detail_1_1match__impl_3_01_p_00_01_invert_01_4_1a5bd4833f1d15858bce5ba658a971a849" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1match__impl_3_01_p_00_01_invert_00_01_next_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::match_impl&lt; P, Invert, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1match__impl_3_01_p_00_01_invert_00_01_next_00_01_types_8_8_8_01_4_1aff0c49cc3c840a47bcc83a99d9ca08f8" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1match_all" kind="struct"><name>extrait::matchAll</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1match_any" kind="struct"><name>extrait::detail::matchAny</name>
+  </compound>
+  <compound refid="structextrait_1_1match_any" kind="struct"><name>extrait::matchAny</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1match_any_3_01_t_3_01_t_types_8_8_8_01_4_00_01_p_01_4" kind="struct"><name>extrait::detail::matchAny&lt; T&lt; Types... &gt;, P &gt;</name>
+    <member refid="structextrait_1_1detail_1_1match_any_3_01_t_3_01_t_types_8_8_8_01_4_00_01_p_01_4_1acfcb9e4d75b8fae6b2a605cb39daf814" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1match_any__impl" kind="struct"><name>extrait::detail::matchAny_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1match_any__impl_3_01_p_01_4" kind="struct"><name>extrait::detail::matchAny_impl&lt; P &gt;</name>
+    <member refid="structextrait_1_1detail_1_1match_any__impl_3_01_p_01_4_1aa50af066bdb76ae47fda0ad824847ca9" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1match_any__impl_3_01_p_00_01_next_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::matchAny_impl&lt; P, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1match_any__impl_3_01_p_00_01_next_00_01_types_8_8_8_01_4_1a905e1bbd66abf0afcbb1170a61680c5c" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1match_none" kind="struct"><name>extrait::matchNone</name>
+  </compound>
+  <compound refid="structextrait_1_1max_type" kind="struct"><name>extrait::maxType</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1_mem_base" kind="struct"><name>extrait::detail::MemBase</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca" kind="struct"><name>extrait::detail::MemBase&lt; T, IsNoexcept, Ret, T&lt; ParamTypes... &gt;, Func, LV, RV, CN, VOL &gt;</name>
+    <member refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca_1a4a6f071170f5811756488e72cbdab611" kind="typedef"><name>parameters_t</name></member>
+    <member refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca_1a79b15b61ce1ee04bb4b57e555efd9d12" kind="typedef"><name>return_t</name></member>
+    <member refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca_1a38c6331f3feec245a1a2cd925d64b713" kind="typedef"><name>owner_t</name></member>
+    <member refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca_1a0ee95cfe3f198bd71f1859fd74aede58" kind="typedef"><name>pointer_t</name></member>
+    <member refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca_1a0cb0f201d72f3b5ced874b7d0b9d8202" kind="variable"><name>parameterCount</name></member>
+    <member refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca_1a2b91f3bd29d49d483b78266387711ffd" kind="variable"><name>isMemberFunction</name></member>
+    <member refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca_1abc150acb1ed374beea4da542f1ec0f26" kind="variable"><name>isNoexcept</name></member>
+    <member refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca_1a04e1520deebfaffbed96d27caae107df" kind="variable"><name>isConstQualified</name></member>
+    <member refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca_1ad5392d84c1c1ea84309f9a58424cbfdb" kind="variable"><name>isVolatileQualified</name></member>
+    <member refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca_1a1444ebc5d03d1e9dfccadd89b8da462c" kind="variable"><name>isLvalueQualified</name></member>
+    <member refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca_1ac47ee329e0ae35a107092c83dfb34145" kind="variable"><name>isRvalueQualified</name></member>
+    <member refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca_1ae476cc13269dc351c525a585baf95e30" kind="function"><name>invoke</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1minmax" kind="struct"><name>extrait::detail::minmax</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1minmax_3_01_t_3_01_t_types_8_8_8_01_4_00_01_c_00_01_invert_01_4" kind="struct"><name>extrait::detail::minmax&lt; T&lt; Types... &gt;, C, Invert &gt;</name>
+    <member refid="structextrait_1_1detail_1_1minmax_3_01_t_3_01_t_types_8_8_8_01_4_00_01_c_00_01_invert_01_4_1a6afdbed3b9c821507eb8ab4eb54a80cf" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1minmax__impl" kind="struct"><name>extrait::detail::minmax_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1minmax__impl_3_01_c_00_01_invert_00_01_key_01_4" kind="struct"><name>extrait::detail::minmax_impl&lt; C, Invert, Key &gt;</name>
+    <member refid="structextrait_1_1detail_1_1minmax__impl_3_01_c_00_01_invert_00_01_key_01_4_1afe4a42cce428cce2a2a23a3c566c2694" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1minmax__impl_3_01_c_00_01_invert_00_01_key_00_01_next_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::minmax_impl&lt; C, Invert, Key, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1minmax__impl_3_01_c_00_01_invert_00_01_key_00_01_next_00_01_types_8_8_8_01_4_1a17b57178ef805722a7aba6897866b23c" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1min_type" kind="struct"><name>extrait::minType</name>
+  </compound>
+  <compound refid="structextrait_1_1mismatch" kind="struct"><name>extrait::mismatch</name>
+  </compound>
+  <compound refid="structjaut_1_1detail_1_1_missing_object_proxy" kind="struct"><name>jaut::detail::MissingObjectProxy</name>
+  </compound>
+  <compound refid="structjaut_1_1detail_1_1_missing_type_name_proxy" kind="struct"><name>jaut::detail::MissingTypeNameProxy</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1move" kind="struct"><name>extrait::detail::move</name>
+  </compound>
+  <compound refid="structextrait_1_1move" kind="struct"><name>extrait::move</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1move_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4" kind="struct"><name>extrait::detail::move&lt; T&lt; Types... &gt;, I, Dest &gt;</name>
+    <member refid="structextrait_1_1detail_1_1move_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4_1ac8edb1b24531ab4f5b16055ff8067030" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1move__impl" kind="struct"><name>extrait::detail::move_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1move__impl_3_01_t_00_01_i_00_01_dest_00_01false_01_4" kind="struct"><name>extrait::detail::move_impl&lt; T, I, Dest, false &gt;</name>
+    <member refid="structextrait_1_1detail_1_1move__impl_3_01_t_00_01_i_00_01_dest_00_01false_01_4_1adeb4412dd647595dbceeec409fa36dcb" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1move__impl_3_01_t_00_01_i_00_01_dest_00_01true_01_4" kind="struct"><name>extrait::detail::move_impl&lt; T, I, Dest, true &gt;</name>
+    <member refid="structextrait_1_1detail_1_1move__impl_3_01_t_00_01_i_00_01_dest_00_01true_01_4_1ae9f4d689f74e90d3fcb89aa241f663e0" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_overload" kind="struct"><name>extrait::Overload</name>
+    <member refid="structextrait_1_1_overload_1aef0b7fbb7f1d6742313ab8c9d4340195" kind="typedef"><name>signature_t</name></member>
+    <member refid="structextrait_1_1_overload_1a74cb3e025c54686c5a28a869796cde69" kind="function"><name>of</name></member>
+    <member refid="structextrait_1_1_overload_1a8de79b47f35524397ba168bc909bd5f0" kind="function"><name>of</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858" kind="struct"><name>extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;</name>
+    <member refid="structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858_1a9fa1b3ec1d045ff9e40e63b97eba2616" kind="typedef"><name>signature_t</name></member>
+    <member refid="structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858_1a8c408f3888606fd8ab55c542e65073f0" kind="function"><name>of</name></member>
+    <member refid="structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858_1abc3629e1d80b8603f880d85140992c82" kind="function"><name>of</name></member>
+  </compound>
+  <compound refid="structextrait_1_1owner_type" kind="struct"><name>extrait::ownerType</name>
+  </compound>
+  <compound refid="structextrait_1_1parameter_count" kind="struct"><name>extrait::parameterCount</name>
+  </compound>
+  <compound refid="structextrait_1_1parameter_list" kind="struct"><name>extrait::parameterList</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1_ranged_list" kind="struct"><name>extrait::detail::RangedList</name>
+    <member refid="structextrait_1_1detail_1_1_ranged_list_1a23e3fbd1b2f941cffc9971aa1a8700ed" kind="typedef"><name>prefix</name></member>
+    <member refid="structextrait_1_1detail_1_1_ranged_list_1a2d88c5fc66d6dd6fd56b33a66bf963a8" kind="typedef"><name>range</name></member>
+    <member refid="structextrait_1_1detail_1_1_ranged_list_1a299303871a9194a2ce4036f2ff6be03e" kind="typedef"><name>suffix</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1_ranged_list__impl" kind="struct"><name>extrait::detail::RangedList_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1_ranged_list__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_010_00_010_01_4" kind="struct"><name>extrait::detail::RangedList_impl&lt; T&lt; Types... &gt;, 0, 0 &gt;</name>
+    <member refid="structextrait_1_1detail_1_1_ranged_list__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_010_00_010_01_4_1ae3456a8a8829098f4e155fcbb958fa55" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1_ranged_list__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_010_00_010_00_01_next_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::RangedList_impl&lt; T&lt; Types... &gt;, 0, 0, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1_ranged_list__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_010_00_010_00_01_next_00_01_types_8_8_8_01_4_1a59a0f669a8bc0f36dc7ed48ff4133d38" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1_ranged_list__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_010_00_01_end_00_01_next_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::RangedList_impl&lt; T&lt; Types... &gt;, 0, End, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1_ranged_list__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_010_00_01_end_00_01_next_00_01_types_8_8_8_01_4_1a9570ff46091582d97f3ee971963f8db0" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1_ranged_list__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_e0cc31920db059ba8dbc5265ccf810b0f" kind="struct"><name>extrait::detail::RangedList_impl&lt; T&lt; Types... &gt;, Start, End, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1_ranged_list__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_e0cc31920db059ba8dbc5265ccf810b0f_1ab32bbecdc870bef9b92bc2cff2b6aaa4" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1reinstantiate" kind="struct"><name>extrait::detail::reinstantiate</name>
+  </compound>
+  <compound refid="structextrait_1_1reinstantiate" kind="struct"><name>extrait::reinstantiate</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1reinstantiate_3_01_t_3_01_t_types_8_8_8_01_4_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::reinstantiate&lt; T&lt; Types... &gt;, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1reinstantiate_3_01_t_3_01_t_types_8_8_8_01_4_00_01_types_8_8_8_01_4_1a10e968bbdd12a1f6c96cfc1919ec0710" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1remove" kind="struct"><name>extrait::detail::remove</name>
+  </compound>
+  <compound refid="structextrait_1_1remove" kind="struct"><name>extrait::remove</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1remove_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4" kind="struct"><name>extrait::detail::remove&lt; T&lt; Types... &gt;, Key &gt;</name>
+    <member refid="structextrait_1_1detail_1_1remove_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4_1ae06f90950768dd50b60d0aebb0da3483" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1remove_all" kind="struct"><name>extrait::detail::removeAll</name>
+  </compound>
+  <compound refid="structextrait_1_1remove_all" kind="struct"><name>extrait::removeAll</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1remove_all_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4" kind="struct"><name>extrait::detail::removeAll&lt; T&lt; Types... &gt;, Key &gt;</name>
+    <member refid="structextrait_1_1detail_1_1remove_all_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4_1a94901c25462bdc99027aab869108f029" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1remove_at" kind="struct"><name>extrait::detail::removeAt</name>
+  </compound>
+  <compound refid="structextrait_1_1remove_at" kind="struct"><name>extrait::removeAt</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1remove_at_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_01_4" kind="struct"><name>extrait::detail::removeAt&lt; T&lt; Types... &gt;, I &gt;</name>
+    <member refid="structextrait_1_1detail_1_1remove_at_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_01_4_1aa47b63e4cab6d7888215694acc758e05" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1remove_if" kind="struct"><name>extrait::detail::removeIf</name>
+  </compound>
+  <compound refid="structextrait_1_1remove_if" kind="struct"><name>extrait::removeIf</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1remove_if_3_01_t_3_01_t_types_8_8_8_01_4_00_01_p_00_01_invert_01_4" kind="struct"><name>extrait::detail::removeIf&lt; T&lt; Types... &gt;, P, Invert &gt;</name>
+    <member refid="structextrait_1_1detail_1_1remove_if_3_01_t_3_01_t_types_8_8_8_01_4_00_01_p_00_01_invert_01_4_1a43e562dd142829963c3b3401b793065f" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1remove_range" kind="struct"><name>extrait::detail::removeRange</name>
+  </compound>
+  <compound refid="structextrait_1_1remove_range" kind="struct"><name>extrait::removeRange</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1remove_range_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_end_01_4" kind="struct"><name>extrait::detail::removeRange&lt; T&lt; Types... &gt;, Start, End &gt;</name>
+    <member refid="structextrait_1_1detail_1_1remove_range_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_end_01_4_1a9b48c70f8d16b35762685c96646e9f8b" kind="typedef"><name>range</name></member>
+    <member refid="structextrait_1_1detail_1_1remove_range_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_end_01_4_1a266cee4c13f501cee24eabd9b2634b67" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace" kind="struct"><name>extrait::detail::replace</name>
+  </compound>
+  <compound refid="structextrait_1_1replace" kind="struct"><name>extrait::replace</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_repl_8_8_8_01_4" kind="struct"><name>extrait::detail::replace&lt; T&lt; Types... &gt;, Key, Repl... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_repl_8_8_8_01_4_1ad9276deb24833b849213401cfeecb36d" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace__impl" kind="struct"><name>extrait::detail::replace_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::replace_impl&lt; Key, T&lt; Types... &gt;, U&lt; UTypes... &gt; &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u_types_8_8_8_01_4_01_4_1aa404b5bd7de407fd35e355ba43edbd71" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_ubd430c07e4bffcb9574c400c63061f14" kind="struct"><name>extrait::detail::replace_impl&lt; Key, T&lt; Types... &gt;, U&lt; UTypes... &gt;, Key, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_ubd430c07e4bffcb9574c400c63061f14_1a406afa800b68a63c4daf752e7342d32b" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u5c0b49fb32f51562333409e88de4b965" kind="struct"><name>extrait::detail::replace_impl&lt; Key, T&lt; Types... &gt;, U&lt; UTypes... &gt;, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u5c0b49fb32f51562333409e88de4b965_1a2025d7cf0b892f200042288cfc38a97a" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_all" kind="struct"><name>extrait::detail::replaceAll</name>
+  </compound>
+  <compound refid="structextrait_1_1replace_all" kind="struct"><name>extrait::replaceAll</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_all_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_repl_8_8_8_01_4" kind="struct"><name>extrait::detail::replaceAll&lt; T&lt; Types... &gt;, Key, Repl... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace_all_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_repl_8_8_8_01_4_1ac2887a8a8255bd03cf136a596cd322fc" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_all__impl" kind="struct"><name>extrait::detail::replaceAll_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_all__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::replaceAll_impl&lt; Key, T&lt; Types... &gt;, U&lt; UTypes... &gt; &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace_all__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u_types_8_8_8_01_4_01_4_1abb40aa281ee7c102efc5ebdaf3a21c2f" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_all__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_49e7fa76b9b8ab9526dc2d1d750a6415" kind="struct"><name>extrait::detail::replaceAll_impl&lt; Key, T&lt; Types... &gt;, U&lt; UTypes... &gt;, Key, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace_all__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_49e7fa76b9b8ab9526dc2d1d750a6415_1acfa0a20d74789927ba776a9b4bed266a" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_all__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_f4c7d07a0c9da0307f3f460891a8d31f" kind="struct"><name>extrait::detail::replaceAll_impl&lt; Key, T&lt; Types... &gt;, U&lt; UTypes... &gt;, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace_all__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_f4c7d07a0c9da0307f3f460891a8d31f_1aa2b689ab4cac8265fadddd98fbdaa571" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_at" kind="struct"><name>extrait::detail::replaceAt</name>
+  </compound>
+  <compound refid="structextrait_1_1replace_at" kind="struct"><name>extrait::replaceAt</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_at_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_repl_8_8_8_01_4" kind="struct"><name>extrait::detail::replaceAt&lt; T&lt; Types... &gt;, I, Repl... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace_at_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_repl_8_8_8_01_4_1aa6f59ad904fc22a8645a42fafe9ef9f1" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_at__impl" kind="struct"><name>extrait::detail::replaceAt_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_at__impl_3_010_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_uc3b22ecf2367efd489e3a3f8fad1e958" kind="struct"><name>extrait::detail::replaceAt_impl&lt; 0, T&lt; Types... &gt;, U&lt; UTypes... &gt;, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace_at__impl_3_010_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_uc3b22ecf2367efd489e3a3f8fad1e958_1afe15f82efd44765148311888255217f1" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_at__impl_3_01_i_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_4f8869a1eefcab26cd8cb4b853aa873b" kind="struct"><name>extrait::detail::replaceAt_impl&lt; I, T&lt; Types... &gt;, U&lt; UTypes... &gt;, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace_at__impl_3_01_i_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_4f8869a1eefcab26cd8cb4b853aa873b_1abfb550f39ada287545220305969418ea" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_if" kind="struct"><name>extrait::detail::replaceIf</name>
+  </compound>
+  <compound refid="structextrait_1_1replace_if" kind="struct"><name>extrait::replaceIf</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_if_3_01_t_3_01_t_types_8_8_8_01_4_00_01_p_00_01_invert_00_01_repl_8_8_8_01_4" kind="struct"><name>extrait::detail::replaceIf&lt; T&lt; Types... &gt;, P, Invert, Repl... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace_if_3_01_t_3_01_t_types_8_8_8_01_4_00_01_p_00_01_invert_00_01_repl_8_8_8_01_4_1a89f905e4943cdcb5c79acbf5be2cb8e7" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_if__impl" kind="struct"><name>extrait::detail::replaceIf_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_if__impl_3_01_p_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_df781cdb5aadf6c5deba4ee87f2e3a42" kind="struct"><name>extrait::detail::replaceIf_impl&lt; P, T&lt; Types... &gt;, U&lt; UTypes... &gt;, I, Invert &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace_if__impl_3_01_p_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_df781cdb5aadf6c5deba4ee87f2e3a42_1a58c3da223323066d004c1b53b6474aea" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_if__impl_3_01_p_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_6af2bc37177c7b14f5231f81d7378361" kind="struct"><name>extrait::detail::replaceIf_impl&lt; P, T&lt; Types... &gt;, U&lt; UTypes... &gt;, I, Invert, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace_if__impl_3_01_p_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_6af2bc37177c7b14f5231f81d7378361_1a514a0b6d588ec69c135ed685759ba572" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1replace_if_not" kind="struct"><name>extrait::replaceIfNot</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_range" kind="struct"><name>extrait::detail::replaceRange</name>
+  </compound>
+  <compound refid="structextrait_1_1replace_range" kind="struct"><name>extrait::replaceRange</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1replace_range_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_end_00_01_repl_8_8_8_01_4" kind="struct"><name>extrait::detail::replaceRange&lt; T&lt; Types... &gt;, Start, End, Repl... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1replace_range_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_end_00_01_repl_8_8_8_01_4_1a4471b39d9d63f030e55329663a1402d2" kind="typedef"><name>range</name></member>
+    <member refid="structextrait_1_1detail_1_1replace_range_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_end_00_01_repl_8_8_8_01_4_1aae600e6bfbfcac3dc70ac3692df0449d" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1return_type" kind="struct"><name>extrait::returnType</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1reverse" kind="struct"><name>extrait::detail::reverse</name>
+  </compound>
+  <compound refid="structextrait_1_1reverse" kind="struct"><name>extrait::reverse</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1reverse_3_01_t_3_01_t_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::reverse&lt; T&lt; Types... &gt; &gt;</name>
+    <member refid="structextrait_1_1detail_1_1reverse_3_01_t_3_01_t_types_8_8_8_01_4_01_4_1a02ba1cecea170b4d87f63dfcb726f4a6" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1reverse__impl" kind="struct"><name>extrait::detail::reverse_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1reverse__impl_3_01_t_00_01_u_3_01_u_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::reverse_impl&lt; T, U&lt; UTypes... &gt; &gt;</name>
+    <member refid="structextrait_1_1detail_1_1reverse__impl_3_01_t_00_01_u_3_01_u_types_8_8_8_01_4_01_4_1aea111a8758580c31391119b0bd9b6f05" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1reverse__impl_3_01_t_00_01_u_3_01_u_types_8_8_8_01_4_00_01_next_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::reverse_impl&lt; T, U&lt; UTypes... &gt;, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1reverse__impl_3_01_t_00_01_u_3_01_u_types_8_8_8_01_4_00_01_next_00_01_types_8_8_8_01_4_1a0670b862b6262d14cf87faf4b180d439" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_reverse_type_iterator" kind="struct"><name>extrait::ReverseTypeIterator</name>
+  </compound>
+  <compound refid="structextrait_1_1_reverse_type_iterator_3_01_type_array_3_01_types_8_8_8_01_4_00_01_index_01_4" kind="struct"><name>extrait::ReverseTypeIterator&lt; T&lt; Types... &gt;, Index &gt;</name>
+    <member refid="structextrait_1_1_reverse_type_iterator_3_01_type_array_3_01_types_8_8_8_01_4_00_01_index_01_4_1a562626ffe7e557c40c9d59e1ac8a054f" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_reverse_type_iterator_3_01_type_array_3_01_types_8_8_8_01_4_00_01sizeof_8_8_8_07_types_08_4" kind="struct"><name>extrait::ReverseTypeIterator&lt; T&lt; Types... &gt;, sizeof...(Types)&gt;</name>
+    <member refid="structextrait_1_1_reverse_type_iterator_3_01_type_array_3_01_types_8_8_8_01_4_00_01sizeof_8_8_8_07_types_08_4_1a91b3e4c0683cab9f9f11ec46ea287cfc" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1rotate" kind="struct"><name>extrait::detail::rotate</name>
+  </compound>
+  <compound refid="structextrait_1_1rotate" kind="struct"><name>extrait::rotate</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1rotate_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_middle_00_01_end_01_4" kind="struct"><name>extrait::detail::rotate&lt; T&lt; Types... &gt;, Start, Middle, End &gt;</name>
+    <member refid="structextrait_1_1detail_1_1rotate_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_middle_00_01_end_01_4_1a034649d8c2d50c7b261ce0214d976935" kind="typedef"><name>range</name></member>
+    <member refid="structextrait_1_1detail_1_1rotate_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_middle_00_01_end_01_4_1a57b568f466d4aecac0ce242c4f9b89b4" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1rotate_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_start_00_01_start_01_4" kind="struct"><name>extrait::detail::rotate&lt; T&lt; Types... &gt;, Start, Start, Start &gt;</name>
+    <member refid="structextrait_1_1detail_1_1rotate_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_start_00_01_start_01_4_1adc0a91d996838c658a994af11f31e961" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1rotate__impl" kind="struct"><name>extrait::detail::rotate_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1rotate__impl_3_01_t_3_01_next_00_01_t_types_8_8_8_01_4_00_010_00_01_end_01_4" kind="struct"><name>extrait::detail::rotate_impl&lt; T&lt; Next, Types... &gt;, 0, End &gt;</name>
+    <member refid="structextrait_1_1detail_1_1rotate__impl_3_01_t_3_01_next_00_01_t_types_8_8_8_01_4_00_010_00_01_end_01_4_1a4c0a21b0bad45a1fcedfbfa9e4d2d154" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1rotate__impl_3_01_t_3_01_next_00_01_t_types_8_8_8_01_4_00_01_end_00_01_end_01_4" kind="struct"><name>extrait::detail::rotate_impl&lt; T&lt; Next, Types... &gt;, End, End &gt;</name>
+    <member refid="structextrait_1_1detail_1_1rotate__impl_3_01_t_3_01_next_00_01_t_types_8_8_8_01_4_00_01_end_00_01_end_01_4_1a5700eeea177884a202a633504ff3fa5f" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1rotate__impl_3_01_t_3_01_next_00_01_t_types_8_8_8_01_4_00_01_i_00_01_end_01_4" kind="struct"><name>extrait::detail::rotate_impl&lt; T&lt; Next, Types... &gt;, I, End &gt;</name>
+    <member refid="structextrait_1_1detail_1_1rotate__impl_3_01_t_3_01_next_00_01_t_types_8_8_8_01_4_00_01_i_00_01_end_01_4_1a7fe3a7a69ea9f2e7929620be0ec4e650" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1same_template_arguments" kind="struct"><name>extrait::detail::sameTemplateArguments</name>
+  </compound>
+  <compound refid="structextrait_1_1same_template_arguments" kind="struct"><name>extrait::sameTemplateArguments</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1same_template_arguments_3_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_t_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::sameTemplateArguments&lt; T&lt; Types... &gt;, U&lt; Types... &gt; &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1same_template_arguments_3_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::sameTemplateArguments&lt; T&lt; Types... &gt;, U&lt; UTypes... &gt; &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1select" kind="struct"><name>extrait::detail::select</name>
+  </compound>
+  <compound refid="structextrait_1_1select" kind="struct"><name>extrait::select</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1select_3_01_branch_3_01_t_00_01false_01_4_00_01_branches_8_8_8_01_4" kind="struct"><name>extrait::detail::select&lt; Branch&lt; T, false &gt;, Branches... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1select_3_01_branch_3_01_t_00_01false_01_4_00_01_branches_8_8_8_01_4_1a39fa69a7cab03f1ec1188a14f76c4a83" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1select_3_01_branch_3_01_t_00_01true_01_4_00_01_branches_8_8_8_01_4" kind="struct"><name>extrait::detail::select&lt; Branch&lt; T, true &gt;, Branches... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1select_3_01_branch_3_01_t_00_01true_01_4_00_01_branches_8_8_8_01_4_1ab79f3b408140a3e1a4f148d74ad7110f" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1select_3_01_t_00_01_branches_8_8_8_01_4" kind="struct"><name>extrait::detail::select&lt; T, Branches... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1select_3_01_t_00_01_branches_8_8_8_01_4_1ae58d2e3654465d6d4df4f2cb60cd2a04" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structjaut_1_1detail_1_1_sequenced_impl" kind="struct"><name>jaut::detail::SequencedImpl</name>
+    <member refid="structjaut_1_1detail_1_1_sequenced_impl_1a56a4c293b601badd9f5443552ea2868e" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1sort" kind="struct"><name>extrait::detail::sort</name>
+  </compound>
+  <compound refid="structextrait_1_1sort" kind="struct"><name>extrait::sort</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1sort_3_01_t_3_01_t_types_8_8_8_01_4_00_01_c_01_4" kind="struct"><name>extrait::detail::sort&lt; T&lt; Types... &gt;, C &gt;</name>
+    <member refid="structextrait_1_1detail_1_1sort_3_01_t_3_01_t_types_8_8_8_01_4_00_01_c_01_4_1a7ba5ac8d3f1361cd99135bef821a80d9" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1sort__compare_and_insert" kind="struct"><name>extrait::detail::sort_compareAndInsert</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1sort__compare_and_insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_c_00_01_i_01_4" kind="struct"><name>extrait::detail::sort_compareAndInsert&lt; T&lt; Types... &gt;, Key, C, I &gt;</name>
+    <member refid="structextrait_1_1detail_1_1sort__compare_and_insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_c_00_01_i_01_4_1ad05ea8fe84b59394004201f217c8fa99" kind="typedef"><name>Arg</name></member>
+    <member refid="structextrait_1_1detail_1_1sort__compare_and_insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_c_00_01_i_01_4_1a250803597c0875e8b59ce0f5eb4a550d" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1sort__compare_and_insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_cmp_00_01-1_01_4" kind="struct"><name>extrait::detail::sort_compareAndInsert&lt; T&lt; Types... &gt;, Key, Cmp, -1 &gt;</name>
+    <member refid="structextrait_1_1detail_1_1sort__compare_and_insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_cmp_00_01-1_01_4_1adc01863a1233b6691b13ecd7e2b56913" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1sort__impl" kind="struct"><name>extrait::detail::sort_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1sort__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_c_01_4" kind="struct"><name>extrait::detail::sort_impl&lt; T&lt; Types... &gt;, I, C &gt;</name>
+    <member refid="structextrait_1_1detail_1_1sort__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_c_01_4_1ab022c9a5518a7664051168219f6dd5c6" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1sort__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_c_00_01_next_00_01_types_8_8_8_01_4" kind="struct"><name>extrait::detail::sort_impl&lt; T&lt; Types... &gt;, I, C, Next, Types... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1sort__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_c_00_01_next_00_01_types_8_8_8_01_4_1a4c705ad1f4cb937e033060946d7fcbc1" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1starts_with" kind="struct"><name>extrait::detail::startsWith</name>
+  </compound>
+  <compound refid="structextrait_1_1starts_with" kind="struct"><name>extrait::startsWith</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1starts_with_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_types_8_8_8_01_4" kind="struct"><name>extrait::detail::startsWith&lt; T&lt; Types... &gt;, StartTypes... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1starts_with_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_types_8_8_8_01_4_1ad2c7504916b514fa19180d84ab591553" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1starts_with__impl" kind="struct"><name>extrait::detail::startsWith_impl</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1starts_with__impl_3_01_t_3_01_start_next_00_01_t_types_8_8_8_01_4_00_4166ef15c7e68b27a38b7fd3768d1365" kind="struct"><name>extrait::detail::startsWith_impl&lt; T&lt; StartNext, Types... &gt;, StartNext, StartTypes... &gt;</name>
+    <member refid="structextrait_1_1detail_1_1starts_with__impl_3_01_t_3_01_start_next_00_01_t_types_8_8_8_01_4_00_4166ef15c7e68b27a38b7fd3768d1365_1aaaf6b5edbde62467a609791f2cc43254" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1starts_with__impl_3_01_t_3_01_t_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::detail::startsWith_impl&lt; T&lt; Types... &gt; &gt;</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1starts_with__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_next_00_01_start_types_8_8_8_01_4" kind="struct"><name>extrait::detail::startsWith_impl&lt; T&lt; Types... &gt;, StartNext, StartTypes... &gt;</name>
+  </compound>
+  <compound refid="structjaut_1_1_stringable" kind="struct"><name>jaut::Stringable</name>
+    <member refid="structjaut_1_1_stringable_1a348369fa5a3b38e0dcae29cd3c404295" kind="function"><name>toString</name></member>
+    <member refid="structjaut_1_1_stringable_1ae84f754539faf90be838dd973e4d3366" kind="function"><name>name</name></member>
+  </compound>
+  <compound refid="structjaut_1_1_stringable_3_01detail_1_1_missing_object_proxy_3_01_t_01_4_01_4" kind="struct"><name>jaut::Stringable&lt; detail::MissingObjectProxy&lt; T &gt; &gt;</name>
+    <member refid="structjaut_1_1_stringable_3_01detail_1_1_missing_object_proxy_3_01_t_01_4_01_4_1a3e690d766dc53ce70c0128fda240793e" kind="function"><name>name</name></member>
+  </compound>
+  <compound refid="structjaut_1_1_stringable_3_01detail_1_1_missing_type_name_proxy_3_01_t_01_4_01_4" kind="struct"><name>jaut::Stringable&lt; detail::MissingTypeNameProxy&lt; T &gt; &gt;</name>
+    <member refid="structjaut_1_1_stringable_3_01detail_1_1_missing_type_name_proxy_3_01_t_01_4_01_4_1ac0450c0329f63df88e438e22b42a2a52" kind="function"><name>name</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip" kind="struct"><name>extrait::detail::strip</name>
+    <member refid="structextrait_1_1detail_1_1strip_1add8beab608f42cd89eadda4d388ce06b" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1strip" kind="struct"><name>extrait::strip</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01const_01_t_01_4" kind="struct"><name>extrait::detail::strip&lt; const T &gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01const_01_t_01_4_1ad7574370c73c99bda47f8af29c83242a" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01const_01_t_0f_n_0e_4" kind="struct"><name>extrait::detail::strip&lt; const T[N]&gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01const_01_t_0f_n_0e_4_1af67a50fdb0bfd7895f8d7b81ce5022ae" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01const_01volatile_01_t_01_4" kind="struct"><name>extrait::detail::strip&lt; const volatile T &gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01const_01volatile_01_t_01_4_1aa4b57aef57c5d6f4fe4fc98eadf5addf" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01const_01volatile_01_t_0f_n_0e_4" kind="struct"><name>extrait::detail::strip&lt; const volatile T[N]&gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01const_01volatile_01_t_0f_n_0e_4_1aa3c32b5acc13796c8aae4f880fcc278a" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01_r_01_t_1_1_5_01_4" kind="struct"><name>extrait::detail::strip&lt; R T::* &gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01_r_01_t_1_1_5_01_4_1a152d75ad54ab72ab311f032b9af65520" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01_r_07_5_08_07_p_8_8_8_08_4" kind="struct"><name>extrait::detail::strip&lt; R(*)(P...)&gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01_r_07_5_08_07_p_8_8_8_08_4_1ac7fb460bb51beb54542f2395becfb39a" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01_r_07_t_1_1_5_08_07_p_8_8_8_08_4" kind="struct"><name>extrait::detail::strip&lt; R(T::*)(P...)&gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01_r_07_t_1_1_5_08_07_p_8_8_8_08_4_1a639d0d218b0150645f897b6bbab4e112" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01_t_01_6_01_4" kind="struct"><name>extrait::detail::strip&lt; T &amp; &gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01_t_01_6_01_4_1aa44fc29478e87bcabff57c3a8c1ff09c" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01_t_01_6_6_01_4" kind="struct"><name>extrait::detail::strip&lt; T &amp;&amp; &gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01_t_01_6_6_01_4_1a49de8ed545975eeb92e5adc885eb54d1" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01_t_01_5_01_4" kind="struct"><name>extrait::detail::strip&lt; T * &gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01_t_01_5_01_4_1afe293b1d51a46524be9640552383097d" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01_t_01_5const_01_4" kind="struct"><name>extrait::detail::strip&lt; T *const &gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01_t_01_5const_01_4_1a7cf7910e7d03e0e46c4c5a140de02469" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01_t_01_5const_01volatile_01_4" kind="struct"><name>extrait::detail::strip&lt; T *const volatile &gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01_t_01_5const_01volatile_01_4_1a34c0c3f33a0ffe7db8840288bca4bba9" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01_t_01_5volatile_01_4" kind="struct"><name>extrait::detail::strip&lt; T *volatile &gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01_t_01_5volatile_01_4_1a9cf87f9c06940f5ab68d4b8c60f04ca3" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01_t_0f_0e_4" kind="struct"><name>extrait::detail::strip&lt; T[]&gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01_t_0f_0e_4_1ab7fb9b98e5b67a14d8d3fa64cc3b4569" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01_t_0f_n_0e_4" kind="struct"><name>extrait::detail::strip&lt; T[N]&gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01_t_0f_n_0e_4_1adf3b66245ddc3350ce5f5408f7614176" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01volatile_01_t_01_4" kind="struct"><name>extrait::detail::strip&lt; volatile T &gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01volatile_01_t_01_4_1af548ec3490c1f3eb825717721b836e7d" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1strip_3_01volatile_01_t_0f_n_0e_4" kind="struct"><name>extrait::detail::strip&lt; volatile T[N]&gt;</name>
+    <member refid="structextrait_1_1detail_1_1strip_3_01volatile_01_t_0f_n_0e_4_1af4026e5c0f20732187811ced4614c0e5" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1sublist" kind="struct"><name>extrait::detail::sublist</name>
+  </compound>
+  <compound refid="structextrait_1_1sublist" kind="struct"><name>extrait::sublist</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1sublist_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_end_01_4" kind="struct"><name>extrait::detail::sublist&lt; T&lt; Types... &gt;, Start, End &gt;</name>
+    <member refid="structextrait_1_1detail_1_1sublist_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_end_01_4_1a7289bf401be9eb376088555bf608010c" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1swap" kind="struct"><name>extrait::detail::swap</name>
+  </compound>
+  <compound refid="structextrait_1_1swap" kind="struct"><name>extrait::swap</name>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1swap_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4" kind="struct"><name>extrait::detail::swap&lt; T&lt; Types... &gt;, I, Dest &gt;</name>
+    <member refid="structextrait_1_1detail_1_1swap_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4_1a3a38433f3d371bcf7e6d6e144ce5aef9" kind="typedef"><name>IndexType</name></member>
+    <member refid="structextrait_1_1detail_1_1swap_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4_1a04e57ecdafc5fd8a0bf790f28bfde583" kind="typedef"><name>DestType</name></member>
+    <member refid="structextrait_1_1detail_1_1swap_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4_1af691b9dcc8abd35cea38e3ac649352cc" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1to_type_array" kind="struct"><name>extrait::toTypeArray</name>
+  </compound>
+  <compound refid="structextrait_1_1to_type_array_3_01_t_3_01_types_8_8_8_01_4_01_4" kind="struct"><name>extrait::toTypeArray&lt; T&lt; Types... &gt; &gt;</name>
+    <member refid="structextrait_1_1to_type_array_3_01_t_3_01_types_8_8_8_01_4_01_4_1a8fcb6caa9d92eb6ca89fdc33e00a2eb4" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_type_array" kind="struct"><name>extrait::T</name>
+    <member refid="structextrait_1_1_type_array_1ade14ebad58e21899004c4c1923aaa950" kind="typedef"><name>This</name></member>
+    <member refid="structextrait_1_1_type_array_1a04c4e8488d0be15a6b6faf9d240fec43" kind="typedef"><name>begin_t</name></member>
+    <member refid="structextrait_1_1_type_array_1a9eb0ebe4cd868bc40d466e24bbe66b2a" kind="typedef"><name>end_t</name></member>
+    <member refid="structextrait_1_1_type_array_1a3988dd9670982acea5cead66bbe152fb" kind="typedef"><name>rbegin_t</name></member>
+    <member refid="structextrait_1_1_type_array_1ac7311f6f90a9425c5059dd8e915cf4a9" kind="typedef"><name>rend_t</name></member>
+    <member refid="structextrait_1_1_type_array_1a1f52de890d595f212dcaed0de881c544" kind="typedef"><name>to</name></member>
+    <member refid="structextrait_1_1_type_array_1a7e403375dee82583508002083b90d95e" kind="typedef"><name>toStdVariant</name></member>
+    <member refid="structextrait_1_1_type_array_1a5174528c61c70916ab05ffa76157a780" kind="typedef"><name>toStdArray</name></member>
+    <member refid="structextrait_1_1_type_array_1a1306fc0c3492c3c3c3b2543734ec4af9" kind="typedef"><name>of</name></member>
+    <member refid="structextrait_1_1_type_array_1a9675fc4eb670fe7d6ef3f669a71e778d" kind="typedef"><name>clear</name></member>
+    <member refid="structextrait_1_1_type_array_1ad2dc15a229fd0d33e4fc393c9eab59d2" kind="typedef"><name>at</name></member>
+    <member refid="structextrait_1_1_type_array_1abe3a890a826ce180506339ba12c44d3e" kind="typedef"><name>front</name></member>
+    <member refid="structextrait_1_1_type_array_1abc72412beecf837e8abfe0efb86d1f4e" kind="typedef"><name>back</name></member>
+    <member refid="structextrait_1_1_type_array_1a72ab03d884a8ddd36112d3346b834c1c" kind="typedef"><name>add</name></member>
+    <member refid="structextrait_1_1_type_array_1ac96b211b7470cdfe2219a0dea8543a58" kind="typedef"><name>prepend</name></member>
+    <member refid="structextrait_1_1_type_array_1a79a5301fff3f2379d3e5c7db8b11b6ec" kind="typedef"><name>addIfAbsent</name></member>
+    <member refid="structextrait_1_1_type_array_1a12faa79bd3ecc4e7e5fdf2e585ac5c43" kind="typedef"><name>insert</name></member>
+    <member refid="structextrait_1_1_type_array_1acf8ad9d25bc4f97fad1f4381ebc7fb0f" kind="typedef"><name>remove</name></member>
+    <member refid="structextrait_1_1_type_array_1a83e8213e2a5169a6de59774e806d98c5" kind="typedef"><name>removeAll</name></member>
+    <member refid="structextrait_1_1_type_array_1acc118e1010d0d5d2d21c690ac264834a" kind="typedef"><name>removeFirst</name></member>
+    <member refid="structextrait_1_1_type_array_1ac51ef4a4afeae4c195d33f7ce87ce6ef" kind="typedef"><name>removeLast</name></member>
+    <member refid="structextrait_1_1_type_array_1aab254d76848242268bf938c63013aa18" kind="typedef"><name>removeAt</name></member>
+    <member refid="structextrait_1_1_type_array_1a492ea4b583e645559aa863735b4f99a4" kind="typedef"><name>removeRange</name></member>
+    <member refid="structextrait_1_1_type_array_1ae50fb10d7eac243e3e2b06540bee993d" kind="typedef"><name>filter</name></member>
+    <member refid="structextrait_1_1_type_array_1a9358d81dc15f1360cce7ac1e49df23f3" kind="typedef"><name>replace</name></member>
+    <member refid="structextrait_1_1_type_array_1a3a3a6139543a94ff679f031c486697a6" kind="typedef"><name>replaceAll</name></member>
+    <member refid="structextrait_1_1_type_array_1a0704ddeebed7423593a66cf3751932a0" kind="typedef"><name>replaceFirst</name></member>
+    <member refid="structextrait_1_1_type_array_1a43ee0af4fce54a07d973e72df4eae947" kind="typedef"><name>replaceLast</name></member>
+    <member refid="structextrait_1_1_type_array_1a80edbe31e843ce76f222e1a22e96b6c6" kind="typedef"><name>replaceAt</name></member>
+    <member refid="structextrait_1_1_type_array_1adb05916d323620d6a40ffd200039cf6c" kind="typedef"><name>replaceRange</name></member>
+    <member refid="structextrait_1_1_type_array_1a8d4e0c066be4be9071e4f92eb13bbc40" kind="typedef"><name>replaceIf</name></member>
+    <member refid="structextrait_1_1_type_array_1a77b2c2937b09c3c66cceb48f195ece6f" kind="typedef"><name>subarray</name></member>
+    <member refid="structextrait_1_1_type_array_1a82cac9736ff8ff84e3b25ae8fd0ee7b9" kind="typedef"><name>shiftBackward</name></member>
+    <member refid="structextrait_1_1_type_array_1ae27356c358ee2de02ab4a0eb3b86170c" kind="typedef"><name>shiftForward</name></member>
+    <member refid="structextrait_1_1_type_array_1ad047d65eaa23a6fb48e086cce52566db" kind="typedef"><name>move</name></member>
+    <member refid="structextrait_1_1_type_array_1a9b1ee9b5ef92c48cae5940fb9c3e9d30" kind="typedef"><name>swap</name></member>
+    <member refid="structextrait_1_1_type_array_1ae457999c7e09ffec0cee41450268847a" kind="typedef"><name>rotate</name></member>
+    <member refid="structextrait_1_1_type_array_1a7030c34b2b9a1f9222aa6bb504ef0853" kind="variable"><name>deindex_v</name></member>
+    <member refid="structextrait_1_1_type_array_1a4a046d5842e5275be2e7ae791e10d687" kind="variable"><name>begin</name></member>
+    <member refid="structextrait_1_1_type_array_1a3392faadda8a297a1fd5910f85469366" kind="variable"><name>end</name></member>
+    <member refid="structextrait_1_1_type_array_1adef5b1f71a20d4d660fb12573cac3468" kind="variable"><name>rbegin</name></member>
+    <member refid="structextrait_1_1_type_array_1a905ce7ecce145269fa067f5179425101" kind="variable"><name>rend</name></member>
+    <member refid="structextrait_1_1_type_array_1a69d84b49c0b98beeb6d17c26a26f8a30" kind="variable"><name>equals</name></member>
+    <member refid="structextrait_1_1_type_array_1a08c47340b99f718f6459fcc017c60f25" kind="variable"><name>sameTypeList</name></member>
+    <member refid="structextrait_1_1_type_array_1a3b96d8128fa04fd3c0b50af427314051" kind="variable"><name>contains</name></member>
+    <member refid="structextrait_1_1_type_array_1a2e50cbd77b109dac573f37f5bfb43995" kind="variable"><name>isEmpty</name></member>
+    <member refid="structextrait_1_1_type_array_1ac50bfb8fad91d5d030a492ab9b34fbbc" kind="variable"><name>startsWith</name></member>
+    <member refid="structextrait_1_1_type_array_1a398845990a198818a6fb70d7d3580f60" kind="variable"><name>endsWith</name></member>
+    <member refid="structextrait_1_1_type_array_1a8fabbda206afd7b67b3c27c4f94bd3ec" kind="variable"><name>indexOf</name></member>
+    <member refid="structextrait_1_1_type_array_1a4f2c7429ab9220b6da614e9fad24cef7" kind="variable"><name>lastIndexOf</name></member>
+    <member refid="structextrait_1_1_type_array_1a9f0988554e5874e780c662b99a47dbdc" kind="variable"><name>size</name></member>
+    <member refid="structextrait_1_1_type_array_1a8201ef39962f2e412b00aa1f08ffd211" kind="variable"><name>length</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_type_array_index" kind="struct"><name>extrait::TypeArrayIndex</name>
+  </compound>
+  <compound refid="structextrait_1_1type_constant" kind="struct"><name>extrait::typeConstant</name>
+    <member refid="structextrait_1_1type_constant_1a2a1e361b3a0268bf49286497bc67aada" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_type_iterator" kind="struct"><name>extrait::TypeIterator</name>
+  </compound>
+  <compound refid="structextrait_1_1_type_iterator_3_01_type_array_3_01_types_8_8_8_01_4_00_01_index_01_4" kind="struct"><name>extrait::TypeIterator&lt; T&lt; Types... &gt;, Index &gt;</name>
+    <member refid="structextrait_1_1_type_iterator_3_01_type_array_3_01_types_8_8_8_01_4_00_01_index_01_4_1ae0fa221f235d3269af22c5c3c9a18171" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_type_iterator_3_01_type_array_3_01_types_8_8_8_01_4_00_01sizeof_8_8_8_07_types_08_4" kind="struct"><name>extrait::TypeIterator&lt; T&lt; Types... &gt;, sizeof...(Types)&gt;</name>
+    <member refid="structextrait_1_1_type_iterator_3_01_type_array_3_01_types_8_8_8_01_4_00_01sizeof_8_8_8_07_types_08_4_1ac47fc8c31f81407b74c1e3022dcecc8a" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1_type_iterator_base" kind="struct"><name>extrait::detail::TypeIteratorBase</name>
+    <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" kind="typedef"><name>ArrayType</name></member>
+    <member refid="structextrait_1_1detail_1_1_type_iterator_base_1aed64a95b128b789645e8176f54e11051" kind="typedef"><name>next</name></member>
+    <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a9eb3160266761919e562db31b4159522" kind="typedef"><name>prev</name></member>
+    <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a83b0d1d71cbcbbf816b0ab3a6ce39d52" kind="typedef"><name>inc</name></member>
+    <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a4d4aa5f424d418d8fb6611c6e4c8be1c" kind="typedef"><name>dec</name></member>
+    <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" kind="variable"><name>index</name></member>
+    <member refid="structextrait_1_1detail_1_1_type_iterator_base_1ad3426d4c5254850d72d301ce94e0a249" kind="variable"><name>isEqual</name></member>
+    <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a5316832c8a07e23ea448702eeeb93f0e" kind="variable"><name>isNotEqual</name></member>
+    <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a262c05a6482e0b51871887cc984ed181" kind="variable"><name>isLessThan</name></member>
+    <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a269bf36857df60b754e609112e7db334" kind="variable"><name>isLessThanOrEqual</name></member>
+    <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a2a25b073954b1eb0ac2a8e463b954811" kind="variable"><name>isGreaterThan</name></member>
+    <member refid="structextrait_1_1detail_1_1_type_iterator_base_1abd5df38dde0ad3f5394a174f26cf3723" kind="variable"><name>isGreaterThanOrEqual</name></member>
+  </compound>
+  <compound refid="structextrait_1_1detail_1_1_type_list" kind="struct"><name>extrait::detail::TypeList</name>
+    <member refid="structextrait_1_1detail_1_1_type_list_1aecf5a2463ac5fd1b8a98c3919a0f8f6c" kind="typedef"><name>to</name></member>
+  </compound>
+  <compound refid="structextrait_1_1_type_view" kind="struct"><name>extrait::TypeView</name>
+  </compound>
+  <compound refid="structextrait_1_1_value_view" kind="struct"><name>extrait::ValueView</name>
+  </compound>
+  <compound refid="namespacedetail" kind="namespace"><name>detail</name>
+  </compound>
+  <compound refid="namespaceextrait" kind="namespace"><name>extrait</name>
+    <member refid="common_8h_1addf0cd2d78f9d6e41d739b39b7ef5ba2" kind="typedef"><name>strip_t</name></member>
+    <member refid="common_8h_1a6ba49602a991431d5274a29e1a5e5b61" kind="typedef"><name>index_t</name></member>
+    <member refid="common_8h_1a4ec07b2008107f54304e4dcd07ef8d5b" kind="typedef"><name>indexConstant</name></member>
+    <member refid="common_8h_1a837bed0c30459314db95ff17a19993de" kind="typedef"><name>select_t</name></member>
+    <member refid="common_8h_1ad17992b15c8062cf818daebfb502cb9a" kind="typedef"><name>assemble_t</name></member>
+    <member refid="reflection_8h_1a86eff14fcd27d6154cc1f36885c78e14" kind="typedef"><name>FunctionPointer_t</name></member>
+    <member refid="reflection_8h_1a2bd3dcb30b1d6610941c10ff84ba4423" kind="typedef"><name>MemberFunctionPointer_t</name></member>
+    <member refid="reflection_8h_1a5c4ccd9a84744a349e9ec3806a46926a" kind="typedef"><name>MemberObjectPointer_t</name></member>
+    <member refid="reflection_8h_1a1c44dc5e06d4746828968d341ba9edb5" kind="typedef"><name>parameterList_t</name></member>
+    <member refid="reflection_8h_1a78cbf8531a0ea67be6fa52247732a07a" kind="typedef"><name>returnType_t</name></member>
+    <member refid="reflection_8h_1a8139447549798c8c6b9e50c492722a26" kind="typedef"><name>ownerType_t</name></member>
+    <member refid="type__container_8h_1a89eae85411cf78c554977c93a88419f2" kind="typedef"><name>toTypeArray_t</name></member>
+    <member refid="type__list_8h_1a793b6a7e76ba0b9bb75cb3539d6c5b77" kind="typedef"><name>join_t</name></member>
+    <member refid="type__list_8h_1a26450a1e6241565cdcd12fb7556af299" kind="typedef"><name>reverse_t</name></member>
+    <member refid="type__list_8h_1ae4a986b9ea4b99b5f9bf21e4c72d6719" kind="typedef"><name>sublist_t</name></member>
+    <member refid="type__list_8h_1aaea2b4f65e4c5500820eed685ca12365" kind="typedef"><name>get_t</name></member>
+    <member refid="type__list_8h_1a8acbf7b59a67e22af001d80cc5d4dca9" kind="typedef"><name>first_t</name></member>
+    <member refid="type__list_8h_1a463f90b65dcac09ddc9ade9195a0a5c3" kind="typedef"><name>last_t</name></member>
+    <member refid="type__list_8h_1abccb4294354146b461f0b417342de173" kind="typedef"><name>replace_t</name></member>
+    <member refid="type__list_8h_1a57213117efa65d614e5c94a1de11a76c" kind="typedef"><name>replaceAll_t</name></member>
+    <member refid="type__list_8h_1a79d013b31b6fd0783ec488f80e867bd6" kind="typedef"><name>replaceAt_t</name></member>
+    <member refid="type__list_8h_1a054ede9855b3e2aa66785d2d88c3cb8b" kind="typedef"><name>replaceFirst_t</name></member>
+    <member refid="type__list_8h_1a6ea0349716a89bed7f65937ffb9836a0" kind="typedef"><name>replaceLast_t</name></member>
+    <member refid="type__list_8h_1ac747689277c933bf5dbc5b816f7b4003" kind="typedef"><name>set_t</name></member>
+    <member refid="type__list_8h_1a213677cd0fa659676e4bba9f06b9a0e5" kind="typedef"><name>replaceRange_t</name></member>
+    <member refid="type__list_8h_1a049d06e8a5f65ad16c908fc4392f5b5e" kind="typedef"><name>replaceIf_t</name></member>
+    <member refid="type__list_8h_1aa03f55be6dfd2238e89bea7165c1394f" kind="typedef"><name>replaceIfNot_t</name></member>
+    <member refid="type__list_8h_1adf6134aeb9d9f19aa53e203a645dff63" kind="typedef"><name>remove_t</name></member>
+    <member refid="type__list_8h_1a404f8c7fb789c90ec632ec5ec66741b7" kind="typedef"><name>removeAll_t</name></member>
+    <member refid="type__list_8h_1aefed03e200321df1876b6a49a71d4eaa" kind="typedef"><name>removeAt_t</name></member>
+    <member refid="type__list_8h_1a672dffe3da3f8302f15ed73a88cdea37" kind="typedef"><name>removeFirst_t</name></member>
+    <member refid="type__list_8h_1afeaa59086f6c6bf210aefdf3b57f81b0" kind="typedef"><name>removeLast_t</name></member>
+    <member refid="type__list_8h_1a1ecf1e6e5ba728a0d899a382b3f05ddd" kind="typedef"><name>removeRange_t</name></member>
+    <member refid="type__list_8h_1a7d1a06c7627b365b9cef2eed906f31c9" kind="typedef"><name>removeIf_t</name></member>
+    <member refid="type__list_8h_1abb547423018d9b4f7d31d2551ce8ccf3" kind="typedef"><name>filter_t</name></member>
+    <member refid="type__list_8h_1a53adea3cf369087ba6459fae6f5025bb" kind="typedef"><name>deduplicate_t</name></member>
+    <member refid="type__list_8h_1a994721ac553cf215c56eee7af916e34b" kind="typedef"><name>add_t</name></member>
+    <member refid="type__list_8h_1a0bdc0f9a1163f132b53c68c93b5d8976" kind="typedef"><name>addIfAbsent_t</name></member>
+    <member refid="type__list_8h_1a9dc409a613fbed78dde44b4a043be709" kind="typedef"><name>insert_t</name></member>
+    <member refid="type__list_8h_1a486a7c24c7afcb56c36ca89f6fceca62" kind="typedef"><name>rotate_t</name></member>
+    <member refid="type__list_8h_1a728f1c342f1971ba9e913995cb406ea3" kind="typedef"><name>move_t</name></member>
+    <member refid="type__list_8h_1a10470acb5abedc90593241ed0ec834db" kind="typedef"><name>swap_t</name></member>
+    <member refid="type__list_8h_1a3e338de41bf7e781aefcbee388fd5544" kind="typedef"><name>map_t</name></member>
+    <member refid="type__list_8h_1aaae5fd6d2c83248b1a88a8facfb84e46" kind="typedef"><name>sort_t</name></member>
+    <member refid="type__list_8h_1a21d82cc1de914bf5d0b8cc095c64fe53" kind="typedef"><name>minType_t</name></member>
+    <member refid="type__list_8h_1a397f43d02612520d39cac886cafa4126" kind="typedef"><name>maxType_t</name></member>
+    <member refid="type__list_8h_1a5a92a525c92bdea9893619996a5e3694" kind="typedef"><name>convert_t</name></member>
+    <member refid="type__list_8h_1a2a268915a77509ee5d742f5aa71c7353" kind="typedef"><name>reinstantiate_t</name></member>
+    <member refid="common_8h_1a1b030f296d81fb7b7556fa48b19ad112" kind="variable"><name>assertDep_type</name></member>
+    <member refid="common_8h_1a0c0285ae8b344d34425d2a7c192bc440" kind="variable"><name>assertDep_value</name></member>
+    <member refid="reflection_8h_1a3f147bfaa7cddd8857c642fc8c3ea2a3" kind="variable"><name>isMemberFunction_v</name></member>
+    <member refid="reflection_8h_1a5345cce9350f50686ee3c38004407432" kind="variable"><name>isConstQualified_v</name></member>
+    <member refid="reflection_8h_1ac3581782ae1d9df06424a0e197eaae1a" kind="variable"><name>isVolatileQualified_v</name></member>
+    <member refid="reflection_8h_1a324b6b431fb212a5f747178995dcf7c1" kind="variable"><name>isLvalueQualified_v</name></member>
+    <member refid="reflection_8h_1a5858366e3d237211965cf351e7c4c43e" kind="variable"><name>isRvalueQualified_v</name></member>
+    <member refid="reflection_8h_1adb30037c71a59f819b9df3bf2eb883dd" kind="variable"><name>parameterCount_v</name></member>
+    <member refid="type__list_8h_1a8972fb9c0ed6b56a014ecd4cb6cdbf64" kind="variable"><name>endOfParameterList</name></member>
+    <member refid="type__list_8h_1ac190fedef7ce5781b9ac13d0474a0613" kind="variable"><name>instantiatesClassTemplate_v</name></member>
+    <member refid="type__list_8h_1a63ebc0e3fa91df33cf3ec430d10f10e9" kind="variable"><name>instantiatesSameClassTemplate_v</name></member>
+    <member refid="type__list_8h_1aceeed850cba035a4707066de57cc4566" kind="variable"><name>contains_v</name></member>
+    <member refid="type__list_8h_1a3db1db7035fbbceef5bd807efe072b89" kind="variable"><name>isEmpty_v</name></member>
+    <member refid="type__list_8h_1a380594f10bc75e37ccfafb535bc1a36e" kind="variable"><name>isEmptyInstantiated_v</name></member>
+    <member refid="type__list_8h_1a80c607235d245007d89cc8e12fc4738b" kind="variable"><name>sameTemplateArguments_v</name></member>
+    <member refid="type__list_8h_1a90de1de7361373d79084b2af6f6b7d2b" kind="variable"><name>startsWith_v</name></member>
+    <member refid="type__list_8h_1a2ddb8e22c00386658296451d7d832de3" kind="variable"><name>endsWith_v</name></member>
+    <member refid="type__list_8h_1a510dc13f1253a41e21cc4748bf0e75a7" kind="variable"><name>match_v</name></member>
+    <member refid="type__list_8h_1a145f6b0fcd13aabe3b5426dcf36d29a0" kind="variable"><name>mismatch_v</name></member>
+    <member refid="type__list_8h_1abd775ea48cc4540f1b8206d6a7edcec4" kind="variable"><name>matchAny_v</name></member>
+    <member refid="type__list_8h_1ab9a1dd1ed5ac39c7ca6d30c08c36efaa" kind="variable"><name>matchAll_v</name></member>
+    <member refid="type__list_8h_1ad2c6ebf0ef742fe6f7116ae5ede117c5" kind="variable"><name>matchNone_v</name></member>
+    <member refid="type__list_8h_1ad73ae54a2c94ea8166ffb9292891dace" kind="variable"><name>indexOf_v</name></member>
+    <member refid="type__list_8h_1a01c9b0118c600947c8e01ac55abbab60" kind="variable"><name>lastIndexOf_v</name></member>
+    <member refid="type__list_8h_1aeceb00ee7290175462d337fbbf2e5acf" kind="variable"><name>length_v</name></member>
+    <member refid="common_8h_1a09e504879569026454b0aa254c56be04" kind="function"><name>getActualTypeName</name></member>
+    <member refid="common_8h_1a3cf0270de7450d57e77b79b3326b2a46" kind="function"><name>getActualTypeName</name></member>
+    <member refid="common_8h_1ab5dfcbfe5c68c139ed6984b120c023f4" kind="function"><name>getActualTypeName</name></member>
+    <member refid="common_8h_1aa69262f5af68e50b298cdd1e57d29c01" kind="function"><name>stynamic_cast</name></member>
+    <member refid="common_8h_1aed75f8e48f12c2782eabbe279a99740b" kind="function"><name>stynamic_cast</name></member>
+    <member refid="type__container_8h_1a7c0800e9f11561b2d418953ac34d5414" kind="function"><name>makeVariant</name></member>
+    <member refid="type__container_8h_1a2e5a704978077a9e1923fbff26443374" kind="function"><name>construct</name></member>
+    <member refid="type__container_8h_1a2647f8e719023e6cd597ef2435826486" kind="function"><name>allocate</name></member>
+    <member refid="type__container_8h_1a9222700a161c0da3dbdeb37acdbb0cfb" kind="function"><name>makeUnique</name></member>
+    <member refid="type__container_8h_1a7a4f88619605e7e886c7dcb0040ff893" kind="function"><name>makeShared</name></member>
+    <member refid="type__container_8h_1a0ae3cc41d2b52221e6aeefe6dadff504" kind="function"><name>forEach</name></member>
+    <member refid="type__container_8h_1a13742e86b5e7f4f22596d396a3c46631" kind="function"><name>forAll</name></member>
+  </compound>
+  <compound refid="namespaceextrait_1_1detail" kind="namespace"><name>extrait::detail</name>
+    <member refid="common__impl_8h_1a5c2a4d0b122cd4b0a1cbe3a3d9eaace5" kind="typedef"><name>index_t</name></member>
+    <member refid="type__container_8h_1aaf654667debdfe5e15901fa0ce1e4c96" kind="function"><name>makeVariant</name></member>
+    <member refid="type__container_8h_1a7fa9eaf461fa98c7dddd89c2de47e468" kind="function"><name>allocate</name></member>
+    <member refid="type__container_8h_1a99cf0c1a60ec26e9e5afb171201c186c" kind="function"><name>makeUnique</name></member>
+    <member refid="type__container_8h_1a3408ee75742ec6e70e8fc06446123a04" kind="function"><name>makeShared</name></member>
+    <member refid="type__container_8h_1a3b4c21c7d9ce066d93e585ac2204085c" kind="function"><name>forEach</name></member>
+  </compound>
+  <compound refid="namespacejaut" kind="namespace"><name>jaut</name>
+    <member refid="_stringable_8h_1a24243c8a26bdf330c663d55988a93a9c" kind="function"><name>toString</name></member>
+    <member refid="_stringable_8h_1a41ea0336fc267fd9aacabc87bf7f561f" kind="function"><name>toString</name></member>
+    <member refid="_stringable_8h_1a6923b6e0516be2046ef0ac07c9e82f00" kind="function"><name>toString</name></member>
+    <member refid="_stringable_8h_1aa04b5b960e7286d6b12ab9a2f5f0107f" kind="function"><name>toName</name></member>
+    <member refid="_stringable_8h_1ae47e2363bf315312d31a8950594ef348" kind="function"><name>toName</name></member>
+    <member refid="_stringable_8h_1a2c2f50658c9aa79cbc298b92cc9c1a90" kind="function"><name>toString</name></member>
+    <member refid="_stringable_8h_1a3728c1baf12e79bfb5cc85b491e2e33e" kind="function"><name>toString</name></member>
+    <member refid="_stringable_8h_1a6e6cc64b93c7e3a4516a87e52a5f75d0" kind="function"><name>toString</name></member>
+    <member refid="_stringable_8h_1ab695176751e6dbd94e7e7c2769610b45" kind="function"><name>toName</name></member>
+    <member refid="_stringable_8h_1a2f7e60e2bc5b2d9a702fadb198bf25f3" kind="function"><name>toName</name></member>
+  </compound>
+  <compound refid="namespacejaut_1_1detail" kind="namespace"><name>jaut::detail</name>
+    <member refid="_stringable_8h_1aac3b9b103e97d6571fac7f0d612ef3dd" kind="function"><name>addressToString</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="common_8h" kind="file"><name>common.h</name>
+  </compound>
+  <compound refid="define_8h" kind="file"><name>define.h</name>
+    <member refid="define_8h_1aa4687e845afd668e992993c0c1f62514" kind="define"><name>EXTRAIT_PREDICATE_MAX_PARAMETER_COUNT</name></member>
+  </compound>
+  <compound refid="common__impl_8h" kind="file"><name>common_impl.h</name>
+  </compound>
+  <compound refid="type__list__impl_8h" kind="file"><name>type_list_impl.h</name>
+  </compound>
+  <compound refid="type__list__lib_8h" kind="file"><name>type_list_lib.h</name>
+  </compound>
+  <compound refid="reflection_8h" kind="file"><name>reflection.h</name>
+  </compound>
+  <compound refid="_stringable_8h" kind="file"><name>Stringable.h</name>
+  </compound>
+  <compound refid="type__container_8h" kind="file"><name>type_container.h</name>
+  </compound>
+  <compound refid="type__list_8h" kind="file"><name>type_list.h</name>
+  </compound>
+  <compound refid="group__strip" kind="group"><name>strip</name>
+  </compound>
+  <compound refid="group__type__container" kind="group"><name>type_container</name>
+  </compound>
+  <compound refid="group__extrait" kind="group"><name>extrait</name>
+  </compound>
+  <compound refid="type_list_lib" kind="page"><name>type_list_lib</name>
+  </compound>
+  <compound refid="dir_3b4c1952e31d0c31bf62253b8486d4f8" kind="dir"><name>D:/Development/Coding/cpp/ExTrait/include/extrait/detail</name>
+  </compound>
+  <compound refid="dir_773313e7b05f402e071d92cbbe25a3db" kind="dir"><name>D:/Development/Coding/cpp/ExTrait/include/extrait/docs</name>
+  </compound>
+  <compound refid="dir_62c2affd23c573eb399a9f74871b680d" kind="dir"><name>D:/Development/Coding/cpp/ExTrait/include/extrait</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>D:/Development/Coding/cpp/ExTrait/include</name>
+  </compound>
+</doxygenindex>

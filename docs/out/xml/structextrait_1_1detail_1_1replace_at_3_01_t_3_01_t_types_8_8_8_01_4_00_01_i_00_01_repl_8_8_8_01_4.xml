@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1replace_at_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_repl_8_8_8_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::replaceAt&lt; T&lt; Types... &gt;, I, Repl... &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; class... &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+      <param>
+        <type>index_t</type>
+        <declname>I</declname>
+        <defname>I</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Repl</declname>
+        <defname>Repl</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Types</declname>
+        <defname>Types</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1replace_at_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_repl_8_8_8_01_4_1aa6f59ad904fc22a8645a42fafe9ef9f1" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> <ref refid="structextrait_1_1detail_1_1replace_at__impl" kindref="compound">replaceAt_impl</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">I</ref>, <ref refid="structextrait_1_1detail_1_1_type_list" kindref="compound">TypeList</ref>&lt;&gt;, <ref refid="structextrait_1_1detail_1_1_type_list" kindref="compound">TypeList</ref>&lt; Repl... &gt;, Types... &gt;::type::template to&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref> &gt;</type>
+        <definition>using extrait::detail::replaceAt&lt; T&lt; Types... &gt;, I, Repl... &gt;::type =  typename replaceAt_impl&lt;I, TypeList&lt;&gt;, TypeList&lt;Repl...&gt;, Types...&gt;::type::template to&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>extrait::detail::replaceAt&lt; T&lt; Types... &gt;, I, Repl... &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="575" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="575" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="570" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="571" bodyend="576"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1detail_1_1replace_at_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_repl_8_8_8_01_4_1aa6f59ad904fc22a8645a42fafe9ef9f1" prot="public" virt="non-virtual"><scope>extrait::detail::replaceAt&lt; T&lt; Types... &gt;, I, Repl... &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

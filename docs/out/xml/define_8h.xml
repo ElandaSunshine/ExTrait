@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="define_8h" kind="file" language="C++">
+    <compoundname>define.h</compoundname>
+    <includedby refid="common_8h" local="yes">D:/Development/Coding/cpp/ExTrait/include/extrait/common.h</includedby>
+    <includedby refid="common__impl_8h" local="yes">D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h</includedby>
+    <includedby refid="reflection_8h" local="no">D:/Development/Coding/cpp/ExTrait/include/extrait/reflection.h</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/Development/Coding/cpp/ExTrait/include/extrait/common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/Development/Coding/cpp/ExTrait/include/extrait/define.h</label>
+        <link refid="define_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h</label>
+        <link refid="common__impl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h</label>
+        <link refid="type__list__impl_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/Development/Coding/cpp/ExTrait/include/extrait/docs/type_list_lib.h</label>
+        <link refid="type__list__lib_8h_source"/>
+      </node>
+      <node id="6">
+        <label>D:/Development/Coding/cpp/ExTrait/include/extrait/reflection.h</label>
+        <link refid="reflection_8h_source"/>
+      </node>
+      <node id="7">
+        <label>D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h</label>
+        <link refid="type__container_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>D:/Development/Coding/cpp/ExTrait/include/extrait/type_list.h</label>
+        <link refid="type__list_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="define_8h_1aa4687e845afd668e992993c0c1f62514" prot="public" static="no">
+        <name>EXTRAIT_PREDICATE_MAX_PARAMETER_COUNT</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/define.h" line="54" column="13" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/define.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/><itemizedlist>
+<listitem><para>__.....__ .<ndash/>. +</para>
+</listitem><listitem><para>.-&apos;&apos; &apos;. |__| -</para>
+</listitem><listitem><para>/ .-&apos;&apos;&quot;&apos;-. <lsquo/>. .| .-,.--. .--. .| +</para>
+</listitem><listitem><para>/ /________\ \ ____ _____ .<rsquo/> |_ | .-. | __ | | .&apos; |_ -</para>
+</listitem><listitem><para>| |<lsquo/>. \ .<rsquo/> / .&apos; || | | | .:<ndash/>.&apos;. | | .&apos; | +</para>
+</listitem><listitem><para>\ .----------<mdash/>&apos; <computeroutput>.</computeroutput>&apos; .&apos; &apos;<ndash/>. .-&apos;| | | |/ | \ || |&apos;<ndash/>. .-&apos; -</para>
+</listitem><listitem><para>\ &apos;-.____...<mdash/>. &apos;. .&apos; | | | | &apos;- <computeroutput>&quot; __ | ||  |   |  |                      +
++&lt;/tt&gt;.             .&apos;     .&apos;     &amp;lsquo;.     |  |  | |      .&amp;rsquo;.&apos;&apos;| ||__|   |  |                      -
+-                    &amp;lsquo;&amp;rsquo;&apos;-...... -&apos;     .&apos;  .&apos;&lt;tt&gt;.&lt;/tt&gt;.   |  &apos;.&apos;| |     / /   | |_      |  &apos;.&apos;                    +
++                                    .&apos;   /    &lt;tt&gt;.&lt;/tt&gt;. |   / |_|     \ \._,\ &apos;/      |   /                     -
+-                                   &apos;-&amp;mdash;&apos;       &apos;-&amp;mdash;&apos;&amp;lsquo;&amp;rsquo;-&apos;           &amp;lsquo;--&amp;rsquo;  &lt;tt&gt;&quot;</computeroutput>&apos;-&apos; + ++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/>++<ndash/></para>
+</listitem></itemizedlist>
+</para>
+<para>MIT License</para>
+<para>Copyright (c) 2024 ElandaSunshine</para>
+<para>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</para>
+<para>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</para>
+<para>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</para>
+<para><hruler/>
+</para>
+<para><simplesect kind="author"><para>Elanda</para>
+</simplesect>
+<simplesect kind="date"><para>10, May 2024</para>
+</simplesect>
+<hruler/>
+ </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EXTRAIT_PREDICATE_MAX_PARAMETER_COUNT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>EXTRAIT_PREDICATE_MAX_PARAMETER_COUNT<sp/>20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/define.h"/>
+  </compounddef>
+</doxygen>

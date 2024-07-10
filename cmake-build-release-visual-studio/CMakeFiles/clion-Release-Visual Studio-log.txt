@@ -1,0 +1,4 @@
+C:\Users\Elanda\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=C:/Users/Elanda/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -DEXTRAIT_BUILD_TESTS=ON -DEXTRAIT_EXPERIMENTAL_FEATURES=ON -G Ninja -S D:\Development\Coding\cpp\ExTrait -B D:\Development\Coding\cpp\ExTrait\cmake-build-release-visual-studio
+-- Configuring done (0.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: D:/Development/Coding/cpp/ExTrait/cmake-build-release-visual-studio

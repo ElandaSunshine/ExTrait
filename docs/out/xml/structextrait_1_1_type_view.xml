@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1_type_view" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::TypeView</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class...</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>If the IDE supports it, provides a quick and dirty template expression result viewer for template types in the hover docs. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" line="134" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" bodystart="134" bodyend="-1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

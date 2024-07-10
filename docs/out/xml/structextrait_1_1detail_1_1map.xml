@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1map" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::map</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref></type>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>M</declname>
+        <defname>M</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="947" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="948" bodyend="951"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

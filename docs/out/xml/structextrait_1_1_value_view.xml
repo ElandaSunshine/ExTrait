@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1_value_view" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::ValueView</compoundname>
+    <templateparamlist>
+      <param>
+        <type>auto...</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>If the IDE supports it, provides a quick and dirty template expression result viewer for constant expressions in the hover docs. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" line="141" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" bodystart="141" bodyend="-1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

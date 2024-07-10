@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1strip_3_01const_01volatile_01_t_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::strip&lt; const volatile T &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref></type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1strip_3_01const_01volatile_01_t_01_4_1aa4b57aef57c5d6f4fe4fc98eadf5addf" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> <ref refid="structextrait_1_1detail_1_1strip" kindref="compound">strip</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref> &gt;::type</type>
+        <definition>using extrait::detail::strip&lt; const volatile T &gt;::type =  typename strip&lt;T&gt;::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>extrait::detail::strip&lt; const volatile T &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" line="128" column="36" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" line="128" column="15" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" bodystart="128" bodyend="128"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1detail_1_1strip_3_01const_01volatile_01_t_01_4_1aa4b57aef57c5d6f4fe4fc98eadf5addf" prot="public" virt="non-virtual"><scope>extrait::detail::strip&lt; const volatile T &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structjaut_1_1detail_1_1_missing_type_name_proxy" kind="struct" language="C++" prot="public">
+    <compoundname>jaut::detail::MissingTypeNameProxy</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/Stringable.h" line="73" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/Stringable.h" bodystart="73" bodyend="73"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

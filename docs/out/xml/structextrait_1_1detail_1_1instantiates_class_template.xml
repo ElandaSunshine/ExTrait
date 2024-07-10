@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1instantiates_class_template" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::instantiatesClassTemplate</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::false_type</basecompoundref>
+    <derivedcompoundref refid="structextrait_1_1instantiates_class_template" prot="public" virt="non-virtual">extrait::instantiatesClassTemplate&lt; T &gt;</derivedcompoundref>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref></type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>extrait::detail::instantiatesClassTemplate&lt; T &gt;</label>
+        <link refid="structextrait_1_1detail_1_1instantiates_class_template"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>extrait::instantiatesClassTemplate&lt; T &gt;</label>
+        <link refid="structextrait_1_1instantiates_class_template"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::false_type</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>extrait::detail::instantiatesClassTemplate&lt; T &gt;</label>
+        <link refid="structextrait_1_1detail_1_1instantiates_class_template"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::false_type</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="62" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="62" bodyend="62"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

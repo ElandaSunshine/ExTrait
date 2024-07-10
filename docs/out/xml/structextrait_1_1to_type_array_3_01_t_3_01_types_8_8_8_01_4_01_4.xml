@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1to_type_array_3_01_t_3_01_types_8_8_8_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::toTypeArray&lt; T&lt; Types... &gt; &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; class... &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Types</declname>
+        <defname>Types</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structextrait_1_1to_type_array_3_01_t_3_01_types_8_8_8_01_4_01_4_1a8fcb6caa9d92eb6ca89fdc33e00a2eb4" prot="public" static="no">
+        <type><ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>&lt; Types... &gt;</type>
+        <definition>using extrait::toTypeArray&lt; T&lt; Types... &gt; &gt;::type =  T&lt;Types...&gt;</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>extrait::toTypeArray&lt; T&lt; Types... &gt; &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="80" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="78" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="79" bodyend="81"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1to_type_array_3_01_t_3_01_types_8_8_8_01_4_01_4_1a8fcb6caa9d92eb6ca89fdc33e00a2eb4" prot="public" virt="non-virtual"><scope>extrait::toTypeArray&lt; T&lt; Types... &gt; &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

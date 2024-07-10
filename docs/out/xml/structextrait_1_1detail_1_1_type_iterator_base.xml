@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1_type_iterator_base" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::TypeIteratorBase</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref>, index_t &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>Self</declname>
+        <defname>Self</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Array</ref></type>
+      </param>
+      <param>
+        <type>std::size_t</type>
+        <declname>Index</declname>
+        <defname>Index</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Array</ref></type>
+        <definition>using extrait::detail::TypeIteratorBase&lt; Self, Array, Index &gt;::ArrayType =  Array</definition>
+        <argsstring></argsstring>
+        <name>ArrayType</name>
+        <qualifiedname>extrait::detail::TypeIteratorBase::ArrayType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The type array this iterator refers to. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="112" column="13" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1_type_iterator_base_1aed64a95b128b789645e8176f54e11051" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Self</ref>&lt; <ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" kindref="member">ArrayType</ref>,(<ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" kindref="member">index</ref>+1)&gt;</type>
+        <definition>using extrait::detail::TypeIteratorBase&lt; Self, Array, Index &gt;::next =  Self&lt;ArrayType, (index + 1)&gt;</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>extrait::detail::TypeIteratorBase::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Increments the iterator to the next type.<linebreak/>
+ If the iterator is at the end, this will do nothing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="165" column="13" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1_type_iterator_base_1a9eb3160266761919e562db31b4159522" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Self</ref>&lt; <ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" kindref="member">ArrayType</ref>,(<ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" kindref="member">index</ref> - 1)&gt;</type>
+        <definition>using extrait::detail::TypeIteratorBase&lt; Self, Array, Index &gt;::prev =  Self&lt;ArrayType, (index - 1)&gt;</definition>
+        <argsstring></argsstring>
+        <name>prev</name>
+        <qualifiedname>extrait::detail::TypeIteratorBase::prev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Increments the iterator to the previous type.<linebreak/>
+ If the iterator is at the beginning, this will do nothing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="171" column="13" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1_type_iterator_base_1a83b0d1d71cbcbbf816b0ab3a6ce39d52" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Self</ref>&lt; <ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" kindref="member">ArrayType</ref>,(<ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" kindref="member">index</ref>+<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">N</ref>)&gt;</type>
+        <definition>using extrait::detail::TypeIteratorBase&lt; Self, Array, Index &gt;::inc =  Self&lt;ArrayType, (index + N)&gt;</definition>
+        <argsstring></argsstring>
+        <name>inc</name>
+        <qualifiedname>extrait::detail::TypeIteratorBase::inc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Increments the iterator by N amount.<linebreak/>
+ If the iterator goes past the end, it will be clamped to the end. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="178" column="13" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1_type_iterator_base_1a4d4aa5f424d418d8fb6611c6e4c8be1c" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Self</ref>&lt; <ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" kindref="member">ArrayType</ref>,(<ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" kindref="member">index</ref> - <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">N</ref>)&gt;</type>
+        <definition>using extrait::detail::TypeIteratorBase&lt; Self, Array, Index &gt;::dec =  Self&lt;ArrayType, (index - N)&gt;</definition>
+        <argsstring></argsstring>
+        <name>dec</name>
+        <qualifiedname>extrait::detail::TypeIteratorBase::dec</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Increments the iterator by N amount. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="182" column="13" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">constexpr</ref> std::size_t</type>
+        <definition>constexpr std::size_t extrait::detail::TypeIteratorBase&lt; Self, Array, Index &gt;::index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <qualifiedname>extrait::detail::TypeIteratorBase::index</qualifiedname>
+        <initializer>= <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Index</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The current index of the iterator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="115" column="42" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1detail_1_1_type_iterator_base_1ad3426d4c5254850d72d301ce94e0a249" prot="public" static="yes" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Other</ref></type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; std::is_same_v&lt; <ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" kindref="member">ArrayType</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> Other::T &gt; &gt; *</type>
+            <defval><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">nullptr</ref></defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">constexpr</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>constexpr bool extrait::detail::TypeIteratorBase&lt; Self, Array, Index &gt;::isEqual</definition>
+        <argsstring></argsstring>
+        <name>isEqual</name>
+        <qualifiedname>extrait::detail::TypeIteratorBase::isEqual</qualifiedname>
+        <initializer>= (<ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" kindref="member">index</ref> == Other::index)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks whether two same type iterators point to the same index. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="structextrait_1_1_type_iterator" kindref="compound">TypeIterator</ref> of same type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="123" column="35" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1detail_1_1_type_iterator_base_1a5316832c8a07e23ea448702eeeb93f0e" prot="public" static="yes" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Other</ref></type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; std::is_same_v&lt; <ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" kindref="member">ArrayType</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> Other::T &gt; &gt; *</type>
+            <defval><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">nullptr</ref></defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">constexpr</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>constexpr bool extrait::detail::TypeIteratorBase&lt; Self, Array, Index &gt;::isNotEqual</definition>
+        <argsstring></argsstring>
+        <name>isNotEqual</name>
+        <qualifiedname>extrait::detail::TypeIteratorBase::isNotEqual</qualifiedname>
+        <initializer>= (<ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" kindref="member">index</ref> != Other::index)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks whether two same type iterators point to a different index. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="structextrait_1_1_type_iterator" kindref="compound">TypeIterator</ref> of same type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="130" column="35" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1detail_1_1_type_iterator_base_1a262c05a6482e0b51871887cc984ed181" prot="public" static="yes" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Other</ref></type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; std::is_same_v&lt; <ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" kindref="member">ArrayType</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> Other::T &gt; &gt; *</type>
+            <defval><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">nullptr</ref></defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">constexpr</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>constexpr bool extrait::detail::TypeIteratorBase&lt; Self, Array, Index &gt;::isLessThan</definition>
+        <argsstring></argsstring>
+        <name>isLessThan</name>
+        <qualifiedname>extrait::detail::TypeIteratorBase::isLessThan</qualifiedname>
+        <initializer>= (<ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" kindref="member">index</ref> &lt; Other::index)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks whether this type iterator is less than the other. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="structextrait_1_1_type_iterator" kindref="compound">TypeIterator</ref> of same type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="137" column="35" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1detail_1_1_type_iterator_base_1a269bf36857df60b754e609112e7db334" prot="public" static="yes" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Other</ref></type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; std::is_same_v&lt; <ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" kindref="member">ArrayType</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> Other::T &gt; &gt; *</type>
+            <defval><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">nullptr</ref></defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">constexpr</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>constexpr bool extrait::detail::TypeIteratorBase&lt; Self, Array, Index &gt;::isLessThanOrEqual</definition>
+        <argsstring></argsstring>
+        <name>isLessThanOrEqual</name>
+        <qualifiedname>extrait::detail::TypeIteratorBase::isLessThanOrEqual</qualifiedname>
+        <initializer>= (<ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" kindref="member">index</ref> &lt;= Other::index)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks whether this type iterator is less than or equal the other. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="structextrait_1_1_type_iterator" kindref="compound">TypeIterator</ref> of same type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="144" column="35" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1detail_1_1_type_iterator_base_1a2a25b073954b1eb0ac2a8e463b954811" prot="public" static="yes" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Other</ref></type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; std::is_same_v&lt; <ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" kindref="member">ArrayType</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> Other::T &gt; &gt; *</type>
+            <defval><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">nullptr</ref></defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">constexpr</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>constexpr bool extrait::detail::TypeIteratorBase&lt; Self, Array, Index &gt;::isGreaterThan</definition>
+        <argsstring></argsstring>
+        <name>isGreaterThan</name>
+        <qualifiedname>extrait::detail::TypeIteratorBase::isGreaterThan</qualifiedname>
+        <initializer>= (<ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" kindref="member">index</ref> &gt; Other::index)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks whether this type iterator is greater than the other. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="structextrait_1_1_type_iterator" kindref="compound">TypeIterator</ref> of same type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="151" column="35" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structextrait_1_1detail_1_1_type_iterator_base_1abd5df38dde0ad3f5394a174f26cf3723" prot="public" static="yes" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Other</ref></type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; std::is_same_v&lt; <ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" kindref="member">ArrayType</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> Other::T &gt; &gt; *</type>
+            <defval><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">nullptr</ref></defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">constexpr</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>constexpr bool extrait::detail::TypeIteratorBase&lt; Self, Array, Index &gt;::isGreaterThanOrEqual</definition>
+        <argsstring></argsstring>
+        <name>isGreaterThanOrEqual</name>
+        <qualifiedname>extrait::detail::TypeIteratorBase::isGreaterThanOrEqual</qualifiedname>
+        <initializer>= (<ref refid="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" kindref="member">index</ref> &gt;= Other::index)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks whether this type iterator is greater than or equal the other. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="structextrait_1_1_type_iterator" kindref="compound">TypeIterator</ref> of same type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="158" column="35" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="105" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="106" bodyend="183"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a1b939bc7317b124fc912b294560e2204" prot="public" virt="non-virtual"><scope>extrait::detail::TypeIteratorBase</scope><name>ArrayType</name></member>
+      <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a4d4aa5f424d418d8fb6611c6e4c8be1c" prot="public" virt="non-virtual"><scope>extrait::detail::TypeIteratorBase</scope><name>dec</name></member>
+      <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a83b0d1d71cbcbbf816b0ab3a6ce39d52" prot="public" virt="non-virtual"><scope>extrait::detail::TypeIteratorBase</scope><name>inc</name></member>
+      <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a6b70938890480420c4725ed8181229a4" prot="public" virt="non-virtual"><scope>extrait::detail::TypeIteratorBase</scope><name>index</name></member>
+      <member refid="structextrait_1_1detail_1_1_type_iterator_base_1ad3426d4c5254850d72d301ce94e0a249" prot="public" virt="non-virtual"><scope>extrait::detail::TypeIteratorBase</scope><name>isEqual</name></member>
+      <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a2a25b073954b1eb0ac2a8e463b954811" prot="public" virt="non-virtual"><scope>extrait::detail::TypeIteratorBase</scope><name>isGreaterThan</name></member>
+      <member refid="structextrait_1_1detail_1_1_type_iterator_base_1abd5df38dde0ad3f5394a174f26cf3723" prot="public" virt="non-virtual"><scope>extrait::detail::TypeIteratorBase</scope><name>isGreaterThanOrEqual</name></member>
+      <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a262c05a6482e0b51871887cc984ed181" prot="public" virt="non-virtual"><scope>extrait::detail::TypeIteratorBase</scope><name>isLessThan</name></member>
+      <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a269bf36857df60b754e609112e7db334" prot="public" virt="non-virtual"><scope>extrait::detail::TypeIteratorBase</scope><name>isLessThanOrEqual</name></member>
+      <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a5316832c8a07e23ea448702eeeb93f0e" prot="public" virt="non-virtual"><scope>extrait::detail::TypeIteratorBase</scope><name>isNotEqual</name></member>
+      <member refid="structextrait_1_1detail_1_1_type_iterator_base_1aed64a95b128b789645e8176f54e11051" prot="public" virt="non-virtual"><scope>extrait::detail::TypeIteratorBase</scope><name>next</name></member>
+      <member refid="structextrait_1_1detail_1_1_type_iterator_base_1a9eb3160266761919e562db31b4159522" prot="public" virt="non-virtual"><scope>extrait::detail::TypeIteratorBase</scope><name>prev</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

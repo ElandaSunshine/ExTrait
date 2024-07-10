@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1swap_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::swap&lt; T&lt; Types... &gt;, I, Dest &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; class... &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+      <param>
+        <type>index_t</type>
+        <declname>I</declname>
+        <defname>I</defname>
+      </param>
+      <param>
+        <type>index_t</type>
+        <declname>Dest</declname>
+        <defname>Dest</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Types</declname>
+        <defname>Types</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1swap_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4_1a3a38433f3d371bcf7e6d6e144ce5aef9" prot="private" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> <ref refid="structextrait_1_1detail_1_1get" kindref="compound">get</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref>&lt; Types... &gt;, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">I</ref> &gt;::type</type>
+        <definition>using extrait::detail::swap&lt; T&lt; Types... &gt;, I, Dest &gt;::IndexType =  typename get&lt;T&lt;Types...&gt;, I&gt;::type</definition>
+        <argsstring></argsstring>
+        <name>IndexType</name>
+        <qualifiedname>extrait::detail::swap&lt; T&lt; Types... &gt;, I, Dest &gt;::IndexType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="934" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="934" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1swap_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4_1a04e57ecdafc5fd8a0bf790f28bfde583" prot="private" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> <ref refid="structextrait_1_1detail_1_1get" kindref="compound">get</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref>&lt; Types... &gt;, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Dest</ref> &gt; ::type</type>
+        <definition>using extrait::detail::swap&lt; T&lt; Types... &gt;, I, Dest &gt;::DestType =  typename get&lt;T&lt;Types...&gt;, Dest&gt; ::type</definition>
+        <argsstring></argsstring>
+        <name>DestType</name>
+        <qualifiedname>extrait::detail::swap&lt; T&lt; Types... &gt;, I, Dest &gt;::DestType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="935" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="935" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1swap_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4_1af691b9dcc8abd35cea38e3ac649352cc" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> <ref refid="structextrait_1_1detail_1_1replace_at" kindref="compound">replaceAt</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> <ref refid="structextrait_1_1detail_1_1replace_at" kindref="compound">replaceAt</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref>&lt; Types... &gt;, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">I</ref>, DestType &gt;::type, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Dest</ref>, IndexType &gt;::type</type>
+        <definition>using extrait::detail::swap&lt; T&lt; Types... &gt;, I, Dest &gt;::type =  typename replaceAt&lt;
+            typename replaceAt&lt;T&lt;Types...&gt;, I, DestType&gt;::type,
+            Dest,
+            IndexType
+        &gt;::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>extrait::detail::swap&lt; T&lt; Types... &gt;, I, Dest &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="938" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="938" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="931" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="932" bodyend="943"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1detail_1_1swap_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4_1a04e57ecdafc5fd8a0bf790f28bfde583" prot="private" virt="non-virtual"><scope>extrait::detail::swap&lt; T&lt; Types... &gt;, I, Dest &gt;</scope><name>DestType</name></member>
+      <member refid="structextrait_1_1detail_1_1swap_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4_1a3a38433f3d371bcf7e6d6e144ce5aef9" prot="private" virt="non-virtual"><scope>extrait::detail::swap&lt; T&lt; Types... &gt;, I, Dest &gt;</scope><name>IndexType</name></member>
+      <member refid="structextrait_1_1detail_1_1swap_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4_1af691b9dcc8abd35cea38e3ac649352cc" prot="public" virt="non-virtual"><scope>extrait::detail::swap&lt; T&lt; Types... &gt;, I, Dest &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1index_of__impl_3_01_key_00_01_i_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::indexOf_impl&lt; Key, I &gt;</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">indexConstant&lt;-1 &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref></type>
+      </param>
+      <param>
+        <type>index_t</type>
+        <declname>I</declname>
+        <defname>I</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>extrait::detail::indexOf_impl&lt; Key, I &gt;</label>
+        <link refid="structextrait_1_1detail_1_1index_of__impl_3_01_key_00_01_i_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>indexConstant&lt;-1 &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>extrait::detail::indexOf_impl&lt; Key, I &gt;</label>
+        <link refid="structextrait_1_1detail_1_1index_of__impl_3_01_key_00_01_i_01_4"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>indexConstant&lt;-1 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="293" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="293" bodyend="293"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

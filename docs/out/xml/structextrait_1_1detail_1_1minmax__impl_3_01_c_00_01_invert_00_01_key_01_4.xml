@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1minmax__impl_3_01_c_00_01_invert_00_01_key_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::minmax_impl&lt; C, Invert, Key &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>C</declname>
+        <defname>C</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <declname>Invert</declname>
+        <defname>Invert</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref></type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1minmax__impl_3_01_c_00_01_invert_00_01_key_01_4_1afe4a42cce428cce2a2a23a3c566c2694" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref></type>
+        <definition>using extrait::detail::minmax_impl&lt; C, Invert, Key &gt;::type =  Key</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>extrait::detail::minmax_impl&lt; C, Invert, Key &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="1038" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="1038" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="1036" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="1037" bodyend="1039"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1detail_1_1minmax__impl_3_01_c_00_01_invert_00_01_key_01_4_1afe4a42cce428cce2a2a23a3c566c2694" prot="public" virt="non-virtual"><scope>extrait::detail::minmax_impl&lt; C, Invert, Key &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

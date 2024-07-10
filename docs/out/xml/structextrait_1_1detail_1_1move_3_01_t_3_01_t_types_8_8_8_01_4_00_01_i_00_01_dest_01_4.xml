@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1move_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::move&lt; T&lt; Types... &gt;, I, Dest &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; class... &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+      <param>
+        <type>index_t</type>
+        <declname>I</declname>
+        <defname>I</defname>
+      </param>
+      <param>
+        <type>index_t</type>
+        <declname>Dest</declname>
+        <defname>Dest</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Types</declname>
+        <defname>Types</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1move_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4_1ac8edb1b24531ab4f5b16055ff8067030" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> <ref refid="structextrait_1_1detail_1_1move__impl" kindref="compound">move_impl</ref>&lt; <ref refid="structextrait_1_1detail_1_1_type_list" kindref="compound">TypeList</ref>&lt; Types... &gt;, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">I</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Dest</ref>,(<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">I</ref> &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Dest</ref>)&gt;::type::template to&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref> &gt;</type>
+        <definition>using extrait::detail::move&lt; T&lt; Types... &gt;, I, Dest &gt;::type =  typename move_impl&lt;TypeList&lt;Types...&gt;, I, Dest, (I &gt; Dest)&gt;::type::template to&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>extrait::detail::move&lt; T&lt; Types... &gt;, I, Dest &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="920" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="920" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="918" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="919" bodyend="921"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1detail_1_1move_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4_1ac8edb1b24531ab4f5b16055ff8067030" prot="public" virt="non-virtual"><scope>extrait::detail::move&lt; T&lt; Types... &gt;, I, Dest &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

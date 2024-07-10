@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1_empty_type" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::EmptyType</compoundname>
+    <includes refid="type__container_8h" local="no">type_container.h</includes>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The type to be returned by T&lt;&gt; operations that can&apos;t be made on an empty <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>. </para>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="89" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="89" bodyend="89"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

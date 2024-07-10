@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1_reverse_type_iterator" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::ReverseTypeIterator</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Array</ref></type>
+      </param>
+      <param>
+        <type>std::size_t</type>
+        <declname>Index</declname>
+        <defname>Index</defname>
+        <defval>0</defval>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Declares a pseudo reverse iterator to the given <ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>.<linebreak/>
+ Static type iterators can &quot;iterate&quot; through the types by template means, like through recursion.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structextrait_1_1_type_array" kindref="compound">extrait::T</ref> to create an iterator from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current index inside the type array, will start at 0 if left out </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="226" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="226" bodyend="-1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

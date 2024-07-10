@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1sort__compare_and_insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_c_00_01_i_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::sort_compareAndInsert&lt; T&lt; Types... &gt;, Key, C, I &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; class... &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref></type>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>C</declname>
+        <defname>C</defname>
+      </param>
+      <param>
+        <type>index_t</type>
+        <declname>I</declname>
+        <defname>I</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Types</declname>
+        <defname>Types</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1sort__compare_and_insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_c_00_01_i_01_4_1ad05ea8fe84b59394004201f217c8fa99" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> <ref refid="structextrait_1_1detail_1_1get" kindref="compound">get</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref>&lt; Types... &gt;, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">I</ref> &gt;::type</type>
+        <definition>using extrait::detail::sort_compareAndInsert&lt; T&lt; Types... &gt;, Key, C, I &gt;::Arg =  typename get&lt;T&lt;Types...&gt;, I&gt;::type</definition>
+        <argsstring></argsstring>
+        <name>Arg</name>
+        <qualifiedname>extrait::detail::sort_compareAndInsert&lt; T&lt; Types... &gt;, Key, C, I &gt;::Arg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="967" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="967" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1sort__compare_and_insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_c_00_01_i_01_4_1a250803597c0875e8b59ce0f5eb4a550d" prot="public" static="no">
+        <type>std::conditional_t&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">C</ref>&lt; Arg, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref> &gt;::value, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> <ref refid="structextrait_1_1detail_1_1sort__compare_and_insert" kindref="compound">sort_compareAndInsert</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref>&lt; Types... &gt;, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">C</ref>,(<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">I</ref> - 1)&gt;::type, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> <ref refid="structextrait_1_1detail_1_1insert" kindref="compound">insert</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref>&lt; Types... &gt;,(<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">I</ref>+1), <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref> &gt;::type &gt;</type>
+        <definition>using extrait::detail::sort_compareAndInsert&lt; T&lt; Types... &gt;, Key, C, I &gt;::type =  std::conditional_t&lt;
+            C&lt;Arg, Key&gt;::value,
+                typename sort_compareAndInsert&lt;T&lt;Types...&gt;, Key, C, (I - 1)&gt;::type,
+                typename insert&lt;T&lt;Types...&gt;, (I + 1), Key&gt;::type
+        &gt;</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>extrait::detail::sort_compareAndInsert&lt; T&lt; Types... &gt;, Key, C, I &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="968" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="968" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="965" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="966" bodyend="973"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1detail_1_1sort__compare_and_insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_c_00_01_i_01_4_1ad05ea8fe84b59394004201f217c8fa99" prot="public" virt="non-virtual"><scope>extrait::detail::sort_compareAndInsert&lt; T&lt; Types... &gt;, Key, C, I &gt;</scope><name>Arg</name></member>
+      <member refid="structextrait_1_1detail_1_1sort__compare_and_insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_c_00_01_i_01_4_1a250803597c0875e8b59ce0f5eb4a550d" prot="public" virt="non-virtual"><scope>extrait::detail::sort_compareAndInsert&lt; T&lt; Types... &gt;, Key, C, I &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

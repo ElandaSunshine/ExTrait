@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structjaut_1_1detail_1_1_associative_impl" kind="struct" language="C++" prot="public">
+    <compoundname>jaut::detail::AssociativeImpl</compoundname>
+    <templateparamlist>
+      <param>
+        <type>template&lt; class... &gt; class</type>
+        <declname>C</declname>
+        <defname>C</defname>
+      </param>
+      <param>
+        <type>class T</type>
+      </param>
+      <param>
+        <type>class U</type>
+      </param>
+      <param>
+        <type>class ...</type>
+        <declname>Ect</declname>
+        <defname>Ect</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structjaut_1_1detail_1_1_associative_impl_1ac499f2a18af757087d99476b830abb7c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>JAUT_NODISCARD juce::String</type>
+        <definition>static JAUT_NODISCARD juce::String jaut::detail::AssociativeImpl&lt; C, T, U, Ect &gt;::toString</definition>
+        <argsstring>(const C&lt; T, U, Ect... &gt; &amp;object)</argsstring>
+        <name>toString</name>
+        <qualifiedname>jaut::detail::AssociativeImpl::toString</qualifiedname>
+        <param>
+          <type>const C&lt; T, U, Ect... &gt; &amp;</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/Stringable.h" line="102" column="33" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/Stringable.h" bodystart="102" bodyend="113"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/Stringable.h" line="99" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/Stringable.h" bodystart="100" bodyend="114"/>
+    <listofallmembers>
+      <member refid="structjaut_1_1detail_1_1_associative_impl_1ac499f2a18af757087d99476b830abb7c" prot="public" virt="non-virtual"><scope>jaut::detail::AssociativeImpl</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

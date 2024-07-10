@@ -1,0 +1,15 @@
+# ninja log v5
+31	1601	7406790232376352	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	ccd04dd806ac011c
+3	885	7422616482649265	build.ninja	f85cd9aa329f16c1
+28	2528	7406790241628686	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	455458827a83c724
+2528	2585	7406790242188754	lib/gtest.lib	eb90e805e8296ecd
+2585	2620	7406790242583790	lib/gtest_main.lib	3df204ad412601de
+5	3916	7406795781009463	test/CMakeFiles/TestTYPETRAITS.dir/TypeTraits.cpp.obj	f27024c862e02605
+3162	3287	7421845298525320	test/TestTYPELIST.exe	2b335836373f45f2
+3916	4070	7406795782314561	test/TestTYPETRAITS.exe	f75e053c46a94d74
+288	365	7394682316603295	ExtraitQuickTest.exe	f2621e7d8f3befd6
+2	3162	7421845297494369	test/CMakeFiles/TestTYPELIST.dir/TypeList.cpp.obj	d57c47ef2a1c5245
+3	792	7422399910881686	test/CMakeFiles/TestCOMMON.dir/Common.cpp.obj	2522d59e50d31994
+792	896	7422399911727697	test/TestCOMMON.exe	a928e0a003957f13
+2	630	7422524688662870	test/CMakeFiles/TestREFLECTION.dir/Reflection.cpp.obj	d03f812b1904014
+630	745	7422524689553559	test/TestREFLECTION.exe	8701fdea5033d872

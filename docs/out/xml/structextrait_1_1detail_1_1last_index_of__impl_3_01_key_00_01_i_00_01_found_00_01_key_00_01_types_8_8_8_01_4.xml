@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1last_index_of__impl_3_01_key_00_01_i_00_01_found_00_01_key_00_01_types_8_8_8_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::lastIndexOf_impl&lt; Key, I, Found, Key, Types... &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref></type>
+      </param>
+      <param>
+        <type>index_t</type>
+        <declname>I</declname>
+        <defname>I</defname>
+      </param>
+      <param>
+        <type>index_t</type>
+        <declname>Found</declname>
+        <defname>Found</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Types</declname>
+        <defname>Types</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structextrait_1_1detail_1_1last_index_of__impl_3_01_key_00_01_i_00_01_found_00_01_key_00_01_types_8_8_8_01_4_1af547109a4e9c8320dde83c50a8b98bd4" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">constexpr</ref> index_t</type>
+        <definition>constexpr index_t extrait::detail::lastIndexOf_impl&lt; Key, I, Found, Key, Types... &gt;::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>extrait::detail::lastIndexOf_impl&lt; Key, I, Found, Key, Types... &gt;::value</qualifiedname>
+        <initializer>= <ref refid="structextrait_1_1detail_1_1last_index_of__impl" kindref="compound">lastIndexOf_impl</ref>&lt;<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Key</ref>, (<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">I</ref> + 1), <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">I</ref>, Types...&gt;::value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="322" column="34" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="322" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="320" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="321" bodyend="323"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1detail_1_1last_index_of__impl_3_01_key_00_01_i_00_01_found_00_01_key_00_01_types_8_8_8_01_4_1af547109a4e9c8320dde83c50a8b98bd4" prot="public" virt="non-virtual"><scope>extrait::detail::lastIndexOf_impl&lt; Key, I, Found, Key, Types... &gt;</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

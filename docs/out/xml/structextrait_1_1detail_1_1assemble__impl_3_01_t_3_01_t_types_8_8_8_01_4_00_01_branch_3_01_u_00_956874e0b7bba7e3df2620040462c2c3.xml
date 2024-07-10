@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_branch_3_01_u_00_956874e0b7bba7e3df2620040462c2c3" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::assemble_impl&lt; T&lt; Types... &gt;, Branch&lt; U, false &gt;, Branches... &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; class... &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref>, <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref> &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>Branch</declname>
+        <defname>Branch</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Branches</declname>
+        <defname>Branches</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">U</ref></type>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Types</declname>
+        <defname>Types</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_branch_3_01_u_00_956874e0b7bba7e3df2620040462c2c3_1a7b2cfa7ce9271de7cad76c72a9c22ff2" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">typename</ref> <ref refid="structextrait_1_1detail_1_1assemble__impl" kindref="compound">assemble_impl</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref>&lt; Types... &gt;, Branches... &gt;::type</type>
+        <definition>using extrait::detail::assemble_impl&lt; T&lt; Types... &gt;, Branch&lt; U, false &gt;, Branches... &gt;::type =  typename assemble_impl&lt;T&lt;Types...&gt;, Branches...&gt;::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>extrait::detail::assemble_impl&lt; T&lt; Types... &gt;, Branch&lt; U, false &gt;, Branches... &gt;::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" line="187" column="9" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" line="185" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" bodystart="186" bodyend="188"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_branch_3_01_u_00_956874e0b7bba7e3df2620040462c2c3_1a7b2cfa7ce9271de7cad76c72a9c22ff2" prot="public" virt="non-virtual"><scope>extrait::detail::assemble_impl&lt; T&lt; Types... &gt;, Branch&lt; U, false &gt;, Branches... &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

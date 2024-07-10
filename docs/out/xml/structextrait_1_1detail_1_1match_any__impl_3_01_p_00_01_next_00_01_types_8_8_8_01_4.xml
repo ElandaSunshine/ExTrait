@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1detail_1_1match_any__impl_3_01_p_00_01_next_00_01_types_8_8_8_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::detail::matchAny_impl&lt; P, Next, Types... &gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">template</ref>&lt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> &gt; <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref></type>
+        <declname>P</declname>
+        <defname>P</defname>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Next</ref></type>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> ...</type>
+        <declname>Types</declname>
+        <defname>Types</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structextrait_1_1detail_1_1match_any__impl_3_01_p_00_01_next_00_01_types_8_8_8_01_4_1a905e1bbd66abf0afcbb1170a61680c5c" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">constexpr</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <definition>constexpr bool extrait::detail::matchAny_impl&lt; P, Next, Types... &gt;::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>extrait::detail::matchAny_impl&lt; P, Next, Types... &gt;::value</qualifiedname>
+        <initializer>= (<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">P</ref>&lt;<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Next</ref>&gt;::value || <ref refid="structextrait_1_1detail_1_1match_any__impl" kindref="compound">matchAny_impl</ref>&lt;<ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">P</ref>, Types...&gt;::value)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="253" column="31" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" line="251" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/type_list_impl.h" bodystart="252" bodyend="254"/>
+    <listofallmembers>
+      <member refid="structextrait_1_1detail_1_1match_any__impl_3_01_p_00_01_next_00_01_types_8_8_8_01_4_1a905e1bbd66abf0afcbb1170a61680c5c" prot="public" virt="non-virtual"><scope>extrait::detail::matchAny_impl&lt; P, Next, Types... &gt;</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

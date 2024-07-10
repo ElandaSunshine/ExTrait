@@ -1,0 +1,410 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespaceextrait_1_1detail" kind="namespace" language="C++">
+    <compoundname>extrait::detail</compoundname>
+    <innerclass refid="structextrait_1_1detail_1_1add" prot="public">extrait::detail::add</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1add_3_01_t_3_01_t_types_8_8_8_01_4_00_01_add_8_8_8_01_4" prot="public">extrait::detail::add&lt; T&lt; Types... &gt;, Add... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1add_if_absent" prot="public">extrait::detail::addIfAbsent</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1add_if_absent_3_01_t_3_01_t_types_8_8_8_01_4_00_01_add_8_8_8_01_4" prot="public">extrait::detail::addIfAbsent&lt; T&lt; Types... &gt;, Add... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1add_if_absent__impl" prot="public">extrait::detail::addIfAbsent_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1add_if_absent__impl_3_01_t_3_01_t_types_8_8_8_01_4_01_4" prot="public">extrait::detail::addIfAbsent_impl&lt; T&lt; Types... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1add_if_absent__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_next_00_01_add_8_8_8_01_4" prot="public">extrait::detail::addIfAbsent_impl&lt; T&lt; Types... &gt;, Next, Add... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1assemble" prot="public">extrait::detail::assemble</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1assemble__impl" prot="public">extrait::detail::assemble_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_01_4" prot="public">extrait::detail::assemble_impl&lt; T&lt; Types... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_branch_3_01_u_00_956874e0b7bba7e3df2620040462c2c3" prot="public">extrait::detail::assemble_impl&lt; T&lt; Types... &gt;, Branch&lt; U, false &gt;, Branches... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_branch_3_01_u_00_29b7b2456f3cb177032dda2f15692372" prot="public">extrait::detail::assemble_impl&lt; T&lt; Types... &gt;, Branch&lt; U, true &gt;, Branches... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1assemble__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_next_00_01_branches_8_8_8_01_4" prot="public">extrait::detail::assemble_impl&lt; T&lt; Types... &gt;, Next, Branches... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1contains" prot="public">extrait::detail::contains</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1contains_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4" prot="public">extrait::detail::contains&lt; T&lt; Types... &gt;, Key &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1contains_3_01_t_3_4_00_01_key_01_4" prot="public">extrait::detail::contains&lt; T&lt;&gt;, Key &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1convert" prot="public">extrait::detail::convert</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1convert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_u_01_4" prot="public">extrait::detail::convert&lt; T&lt; Types... &gt;, U &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1deduplicate" prot="public">extrait::detail::deduplicate</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1deduplicate_3_01_t_3_01_t_types_8_8_8_01_4_01_4" prot="public">extrait::detail::deduplicate&lt; T&lt; Types... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1ends_with" prot="public">extrait::detail::endsWith</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1ends_with_3_01_t_3_01_t_types_8_8_8_01_4_00_01_end_types_8_8_8_01_4" prot="public">extrait::detail::endsWith&lt; T&lt; Types... &gt;, EndTypes... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1ends_with__impl" prot="public">extrait::detail::endsWith_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1ends_with__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_end_3_01_end_types_8_8_8_01_4_01_4" prot="public">extrait::detail::endsWith_impl&lt; T&lt; Types... &gt;, End&lt; EndTypes... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1get" prot="public">extrait::detail::get</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1get_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_01_4" prot="public">extrait::detail::get&lt; T&lt; Types... &gt;, I &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1get__impl" prot="public">extrait::detail::get_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1get__impl_3_010_00_01_next_00_01_types_8_8_8_01_4" prot="public">extrait::detail::get_impl&lt; 0, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1get__impl_3_01_i_00_01_next_00_01_types_8_8_8_01_4" prot="public">extrait::detail::get_impl&lt; I, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1index_of" prot="public">extrait::detail::indexOf</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1index_of_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4" prot="public">extrait::detail::indexOf&lt; T&lt; Types... &gt;, Key &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1index_of__impl" prot="public">extrait::detail::indexOf_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1index_of__impl_3_01_key_00_01_i_01_4" prot="public">extrait::detail::indexOf_impl&lt; Key, I &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1index_of__impl_3_01_key_00_01_i_00_01_key_00_01_types_8_8_8_01_4" prot="public">extrait::detail::indexOf_impl&lt; Key, I, Key, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1index_of__impl_3_01_key_00_01_i_00_01_next_00_01_types_8_8_8_01_4" prot="public">extrait::detail::indexOf_impl&lt; Key, I, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1insert" prot="public">extrait::detail::insert</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1insert_3_01_t_3_01_t_types_8_8_8_01_4_00_010_00_01_add_8_8_8_01_4" prot="public">extrait::detail::insert&lt; T&lt; Types... &gt;, 0, Add... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_add_8_8_8_01_4" prot="public">extrait::detail::insert&lt; T&lt; Types... &gt;, I, Add... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01sizeof_8_8_8_07_t_types_08_00_01_add_8_8_8_01_4" prot="public">extrait::detail::insert&lt; T&lt; Types... &gt;, sizeof...(Types), Add... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1insert_3_01_t_3_4_00_010_00_01_add_8_8_8_01_4" prot="public">extrait::detail::insert&lt; T&lt;&gt;, 0, Add... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1instantiates_class_template" prot="public">extrait::detail::instantiatesClassTemplate</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1instantiates_class_template_3_01_t_3_01_t_types_8_8_8_01_4_01_4" prot="public">extrait::detail::instantiatesClassTemplate&lt; T&lt; Types... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1instantiates_same_class_template" prot="public">extrait::detail::instantiatesSameClassTemplate</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1instantiates_same_class_template_3_01_t_3_01_t_types_8_8_8_01_4_00_01_t_3_01_u_types_8_8_8_01_4_01_4" prot="public">extrait::detail::instantiatesSameClassTemplate&lt; T&lt; Types... &gt;, T&lt; UTypes... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1instantiates_same_class_template_3_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u_types_8_8_8_01_4_01_4" prot="public">extrait::detail::instantiatesSameClassTemplate&lt; T&lt; Types... &gt;, U&lt; UTypes... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1is_empty" prot="public">extrait::detail::isEmpty</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1is_empty_3_01_t_3_01_t_types_8_8_8_01_4_01_4" prot="public">extrait::detail::isEmpty&lt; T&lt; Types... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1is_empty__impl" prot="public">extrait::detail::isEmpty_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1is_empty__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01std_1_1void__t_3_098edb93b2d1d5d2f1c1d9a37f7ae6414" prot="public">extrait::detail::isEmpty_impl&lt; T&lt; Types... &gt;, std::void_t&lt; decltype(std::declval&lt; T&lt;&gt; &gt;())&gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1is_empty_instantiated" prot="public">extrait::detail::isEmptyInstantiated</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1is_empty_instantiated_3_01_t_3_01_first_00_01_t_types_8_8_8_01_4_01_4" prot="public">extrait::detail::isEmptyInstantiated&lt; T&lt; First, Types... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1is_empty_instantiated_3_01_t_3_01_t_types_8_8_8_01_4_01_4" prot="public">extrait::detail::isEmptyInstantiated&lt; T&lt; Types... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1is_valid_mapper" prot="public">extrait::detail::isValidMapper</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1is_valid_mapper_3_01_m_00_01std_1_1void__t_3_01decltype_07std_1_1declb27c8faa29c4a28f6b85a5dd31b21389" prot="public">extrait::detail::isValidMapper&lt; M, std::void_t&lt; decltype(std::declval&lt; M&lt; void &gt;::type &gt;())&gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1is_valid_predicate" prot="public">extrait::detail::isValidPredicate</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1is_valid_predicate_3_01_p_00_01std_1_1void__t_3_01decltype_07_p_3_01void_01_4_1_1value_08_4_01_4" prot="public">extrait::detail::isValidPredicate&lt; P, std::void_t&lt; decltype(P&lt; void &gt;::value)&gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1join" prot="public">extrait::detail::join</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1join__impl" prot="public">extrait::detail::join_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1join__impl_3_01_t_3_01_t_types_8_8_8_01_4_01_4" prot="public">extrait::detail::join_impl&lt; T&lt; Types... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1join__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_next_00_01_u_8_8_8_01_4" prot="public">extrait::detail::join_impl&lt; T&lt; Types... &gt;, Next, U... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1join__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_next_3_01_n_types_8_8_8_01_4_00_01_u_8_8_8_01_4" prot="public">extrait::detail::join_impl&lt; T&lt; Types... &gt;, Next&lt; NTypes... &gt;, U... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1last_index_of" prot="public">extrait::detail::lastIndexOf</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1last_index_of_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4" prot="public">extrait::detail::lastIndexOf&lt; T&lt; Types... &gt;, Key &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1last_index_of__impl" prot="public">extrait::detail::lastIndexOf_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1last_index_of__impl_3_01_key_00_01_i_00_01_found_01_4" prot="public">extrait::detail::lastIndexOf_impl&lt; Key, I, Found &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1last_index_of__impl_3_01_key_00_01_i_00_01_found_00_01_key_00_01_types_8_8_8_01_4" prot="public">extrait::detail::lastIndexOf_impl&lt; Key, I, Found, Key, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1last_index_of__impl_3_01_key_00_01_i_00_01_found_00_01_next_00_01_types_8_8_8_01_4" prot="public">extrait::detail::lastIndexOf_impl&lt; Key, I, Found, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1length" prot="public">extrait::detail::length</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1length_3_01_t_3_01_t_types_8_8_8_01_4_01_4" prot="public">extrait::detail::length&lt; T&lt; Types... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1map" prot="public">extrait::detail::map</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1map_3_01_t_3_01_t_types_8_8_8_01_4_00_01_m_01_4" prot="public">extrait::detail::map&lt; T&lt; Types... &gt;, M &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1match" prot="public">extrait::detail::match</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1match_3_01_t_3_01_t_types_8_8_8_01_4_00_01_p_00_01_invert_01_4" prot="public">extrait::detail::match&lt; T&lt; Types... &gt;, P, Invert &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1match__impl" prot="public">extrait::detail::match_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1match__impl_3_01_p_00_01_invert_01_4" prot="public">extrait::detail::match_impl&lt; P, Invert &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1match__impl_3_01_p_00_01_invert_00_01_next_00_01_types_8_8_8_01_4" prot="public">extrait::detail::match_impl&lt; P, Invert, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1match_any" prot="public">extrait::detail::matchAny</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1match_any_3_01_t_3_01_t_types_8_8_8_01_4_00_01_p_01_4" prot="public">extrait::detail::matchAny&lt; T&lt; Types... &gt;, P &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1match_any__impl" prot="public">extrait::detail::matchAny_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1match_any__impl_3_01_p_01_4" prot="public">extrait::detail::matchAny_impl&lt; P &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1match_any__impl_3_01_p_00_01_next_00_01_types_8_8_8_01_4" prot="public">extrait::detail::matchAny_impl&lt; P, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1_mem_base" prot="public">extrait::detail::MemBase</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1_mem_base_3_01_t_00_01_is_noexcept_00_01_ret_00_01_type_array_3_01_pae4651c9a525f56ca29c9af3f966d64ca" prot="public">extrait::detail::MemBase&lt; T, IsNoexcept, Ret, T&lt; ParamTypes... &gt;, Func, LV, RV, CN, VOL &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1minmax" prot="public">extrait::detail::minmax</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1minmax_3_01_t_3_01_t_types_8_8_8_01_4_00_01_c_00_01_invert_01_4" prot="public">extrait::detail::minmax&lt; T&lt; Types... &gt;, C, Invert &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1minmax__impl" prot="public">extrait::detail::minmax_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1minmax__impl_3_01_c_00_01_invert_00_01_key_01_4" prot="public">extrait::detail::minmax_impl&lt; C, Invert, Key &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1minmax__impl_3_01_c_00_01_invert_00_01_key_00_01_next_00_01_types_8_8_8_01_4" prot="public">extrait::detail::minmax_impl&lt; C, Invert, Key, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1move" prot="public">extrait::detail::move</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1move_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4" prot="public">extrait::detail::move&lt; T&lt; Types... &gt;, I, Dest &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1move__impl" prot="public">extrait::detail::move_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1move__impl_3_01_t_00_01_i_00_01_dest_00_01false_01_4" prot="public">extrait::detail::move_impl&lt; T, I, Dest, false &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1move__impl_3_01_t_00_01_i_00_01_dest_00_01true_01_4" prot="public">extrait::detail::move_impl&lt; T, I, Dest, true &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1_ranged_list" prot="public">extrait::detail::RangedList</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1_ranged_list__impl" prot="public">extrait::detail::RangedList_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1_ranged_list__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_010_00_010_01_4" prot="public">extrait::detail::RangedList_impl&lt; T&lt; Types... &gt;, 0, 0 &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1_ranged_list__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_010_00_010_00_01_next_00_01_types_8_8_8_01_4" prot="public">extrait::detail::RangedList_impl&lt; T&lt; Types... &gt;, 0, 0, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1_ranged_list__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_010_00_01_end_00_01_next_00_01_types_8_8_8_01_4" prot="public">extrait::detail::RangedList_impl&lt; T&lt; Types... &gt;, 0, End, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1_ranged_list__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_e0cc31920db059ba8dbc5265ccf810b0f" prot="public">extrait::detail::RangedList_impl&lt; T&lt; Types... &gt;, Start, End, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1reinstantiate" prot="public">extrait::detail::reinstantiate</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1reinstantiate_3_01_t_3_01_t_types_8_8_8_01_4_00_01_types_8_8_8_01_4" prot="public">extrait::detail::reinstantiate&lt; T&lt; Types... &gt;, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1remove" prot="public">extrait::detail::remove</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1remove_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4" prot="public">extrait::detail::remove&lt; T&lt; Types... &gt;, Key &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1remove_all" prot="public">extrait::detail::removeAll</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1remove_all_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_01_4" prot="public">extrait::detail::removeAll&lt; T&lt; Types... &gt;, Key &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1remove_at" prot="public">extrait::detail::removeAt</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1remove_at_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_01_4" prot="public">extrait::detail::removeAt&lt; T&lt; Types... &gt;, I &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1remove_if" prot="public">extrait::detail::removeIf</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1remove_if_3_01_t_3_01_t_types_8_8_8_01_4_00_01_p_00_01_invert_01_4" prot="public">extrait::detail::removeIf&lt; T&lt; Types... &gt;, P, Invert &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1remove_range" prot="public">extrait::detail::removeRange</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1remove_range_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_end_01_4" prot="public">extrait::detail::removeRange&lt; T&lt; Types... &gt;, Start, End &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace" prot="public">extrait::detail::replace</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_repl_8_8_8_01_4" prot="public">extrait::detail::replace&lt; T&lt; Types... &gt;, Key, Repl... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace__impl" prot="public">extrait::detail::replace_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u_types_8_8_8_01_4_01_4" prot="public">extrait::detail::replace_impl&lt; Key, T&lt; Types... &gt;, U&lt; UTypes... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_ubd430c07e4bffcb9574c400c63061f14" prot="public">extrait::detail::replace_impl&lt; Key, T&lt; Types... &gt;, U&lt; UTypes... &gt;, Key, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u5c0b49fb32f51562333409e88de4b965" prot="public">extrait::detail::replace_impl&lt; Key, T&lt; Types... &gt;, U&lt; UTypes... &gt;, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_all" prot="public">extrait::detail::replaceAll</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_all_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_repl_8_8_8_01_4" prot="public">extrait::detail::replaceAll&lt; T&lt; Types... &gt;, Key, Repl... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_all__impl" prot="public">extrait::detail::replaceAll_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_all__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u_types_8_8_8_01_4_01_4" prot="public">extrait::detail::replaceAll_impl&lt; Key, T&lt; Types... &gt;, U&lt; UTypes... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_all__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_49e7fa76b9b8ab9526dc2d1d750a6415" prot="public">extrait::detail::replaceAll_impl&lt; Key, T&lt; Types... &gt;, U&lt; UTypes... &gt;, Key, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_all__impl_3_01_key_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_f4c7d07a0c9da0307f3f460891a8d31f" prot="public">extrait::detail::replaceAll_impl&lt; Key, T&lt; Types... &gt;, U&lt; UTypes... &gt;, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_at" prot="public">extrait::detail::replaceAt</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_at_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_repl_8_8_8_01_4" prot="public">extrait::detail::replaceAt&lt; T&lt; Types... &gt;, I, Repl... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_at__impl" prot="public">extrait::detail::replaceAt_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_at__impl_3_010_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_uc3b22ecf2367efd489e3a3f8fad1e958" prot="public">extrait::detail::replaceAt_impl&lt; 0, T&lt; Types... &gt;, U&lt; UTypes... &gt;, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_at__impl_3_01_i_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_4f8869a1eefcab26cd8cb4b853aa873b" prot="public">extrait::detail::replaceAt_impl&lt; I, T&lt; Types... &gt;, U&lt; UTypes... &gt;, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_if" prot="public">extrait::detail::replaceIf</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_if_3_01_t_3_01_t_types_8_8_8_01_4_00_01_p_00_01_invert_00_01_repl_8_8_8_01_4" prot="public">extrait::detail::replaceIf&lt; T&lt; Types... &gt;, P, Invert, Repl... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_if__impl" prot="public">extrait::detail::replaceIf_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_if__impl_3_01_p_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_df781cdb5aadf6c5deba4ee87f2e3a42" prot="public">extrait::detail::replaceIf_impl&lt; P, T&lt; Types... &gt;, U&lt; UTypes... &gt;, I, Invert &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_if__impl_3_01_p_00_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_6af2bc37177c7b14f5231f81d7378361" prot="public">extrait::detail::replaceIf_impl&lt; P, T&lt; Types... &gt;, U&lt; UTypes... &gt;, I, Invert, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_range" prot="public">extrait::detail::replaceRange</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1replace_range_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_end_00_01_repl_8_8_8_01_4" prot="public">extrait::detail::replaceRange&lt; T&lt; Types... &gt;, Start, End, Repl... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1reverse" prot="public">extrait::detail::reverse</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1reverse_3_01_t_3_01_t_types_8_8_8_01_4_01_4" prot="public">extrait::detail::reverse&lt; T&lt; Types... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1reverse__impl" prot="public">extrait::detail::reverse_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1reverse__impl_3_01_t_00_01_u_3_01_u_types_8_8_8_01_4_01_4" prot="public">extrait::detail::reverse_impl&lt; T, U&lt; UTypes... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1reverse__impl_3_01_t_00_01_u_3_01_u_types_8_8_8_01_4_00_01_next_00_01_types_8_8_8_01_4" prot="public">extrait::detail::reverse_impl&lt; T, U&lt; UTypes... &gt;, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1rotate" prot="public">extrait::detail::rotate</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1rotate_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_middle_00_01_end_01_4" prot="public">extrait::detail::rotate&lt; T&lt; Types... &gt;, Start, Middle, End &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1rotate_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_start_00_01_start_01_4" prot="public">extrait::detail::rotate&lt; T&lt; Types... &gt;, Start, Start, Start &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1rotate__impl" prot="public">extrait::detail::rotate_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1rotate__impl_3_01_t_3_01_next_00_01_t_types_8_8_8_01_4_00_010_00_01_end_01_4" prot="public">extrait::detail::rotate_impl&lt; T&lt; Next, Types... &gt;, 0, End &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1rotate__impl_3_01_t_3_01_next_00_01_t_types_8_8_8_01_4_00_01_end_00_01_end_01_4" prot="public">extrait::detail::rotate_impl&lt; T&lt; Next, Types... &gt;, End, End &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1rotate__impl_3_01_t_3_01_next_00_01_t_types_8_8_8_01_4_00_01_i_00_01_end_01_4" prot="public">extrait::detail::rotate_impl&lt; T&lt; Next, Types... &gt;, I, End &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1same_template_arguments" prot="public">extrait::detail::sameTemplateArguments</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1same_template_arguments_3_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_t_types_8_8_8_01_4_01_4" prot="public">extrait::detail::sameTemplateArguments&lt; T&lt; Types... &gt;, U&lt; Types... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1same_template_arguments_3_01_t_3_01_t_types_8_8_8_01_4_00_01_u_3_01_u_types_8_8_8_01_4_01_4" prot="public">extrait::detail::sameTemplateArguments&lt; T&lt; Types... &gt;, U&lt; UTypes... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1select" prot="public">extrait::detail::select</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1select_3_01_branch_3_01_t_00_01false_01_4_00_01_branches_8_8_8_01_4" prot="public">extrait::detail::select&lt; Branch&lt; T, false &gt;, Branches... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1select_3_01_branch_3_01_t_00_01true_01_4_00_01_branches_8_8_8_01_4" prot="public">extrait::detail::select&lt; Branch&lt; T, true &gt;, Branches... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1select_3_01_t_00_01_branches_8_8_8_01_4" prot="public">extrait::detail::select&lt; T, Branches... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1sort" prot="public">extrait::detail::sort</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1sort_3_01_t_3_01_t_types_8_8_8_01_4_00_01_c_01_4" prot="public">extrait::detail::sort&lt; T&lt; Types... &gt;, C &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1sort__compare_and_insert" prot="public">extrait::detail::sort_compareAndInsert</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1sort__compare_and_insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_c_00_01_i_01_4" prot="public">extrait::detail::sort_compareAndInsert&lt; T&lt; Types... &gt;, Key, C, I &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1sort__compare_and_insert_3_01_t_3_01_t_types_8_8_8_01_4_00_01_key_00_01_cmp_00_01-1_01_4" prot="public">extrait::detail::sort_compareAndInsert&lt; T&lt; Types... &gt;, Key, Cmp, -1 &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1sort__impl" prot="public">extrait::detail::sort_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1sort__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_c_01_4" prot="public">extrait::detail::sort_impl&lt; T&lt; Types... &gt;, I, C &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1sort__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_c_00_01_next_00_01_types_8_8_8_01_4" prot="public">extrait::detail::sort_impl&lt; T&lt; Types... &gt;, I, C, Next, Types... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1starts_with" prot="public">extrait::detail::startsWith</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1starts_with_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_types_8_8_8_01_4" prot="public">extrait::detail::startsWith&lt; T&lt; Types... &gt;, StartTypes... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1starts_with__impl" prot="public">extrait::detail::startsWith_impl</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1starts_with__impl_3_01_t_3_01_start_next_00_01_t_types_8_8_8_01_4_00_4166ef15c7e68b27a38b7fd3768d1365" prot="public">extrait::detail::startsWith_impl&lt; T&lt; StartNext, Types... &gt;, StartNext, StartTypes... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1starts_with__impl_3_01_t_3_01_t_types_8_8_8_01_4_01_4" prot="public">extrait::detail::startsWith_impl&lt; T&lt; Types... &gt; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1starts_with__impl_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_next_00_01_start_types_8_8_8_01_4" prot="public">extrait::detail::startsWith_impl&lt; T&lt; Types... &gt;, StartNext, StartTypes... &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip" prot="public">extrait::detail::strip</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01const_01_t_01_4" prot="public">extrait::detail::strip&lt; const T &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01const_01_t_0f_n_0e_4" prot="public">extrait::detail::strip&lt; const T[N]&gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01const_01volatile_01_t_01_4" prot="public">extrait::detail::strip&lt; const volatile T &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01const_01volatile_01_t_0f_n_0e_4" prot="public">extrait::detail::strip&lt; const volatile T[N]&gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01_r_01_t_1_1_5_01_4" prot="public">extrait::detail::strip&lt; R T::* &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01_r_07_5_08_07_p_8_8_8_08_4" prot="public">extrait::detail::strip&lt; R(*)(P...)&gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01_r_07_t_1_1_5_08_07_p_8_8_8_08_4" prot="public">extrait::detail::strip&lt; R(T::*)(P...)&gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01_t_01_6_01_4" prot="public">extrait::detail::strip&lt; T &amp; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01_t_01_6_6_01_4" prot="public">extrait::detail::strip&lt; T &amp;&amp; &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01_t_01_5_01_4" prot="public">extrait::detail::strip&lt; T * &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01_t_01_5const_01_4" prot="public">extrait::detail::strip&lt; T *const &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01_t_01_5const_01volatile_01_4" prot="public">extrait::detail::strip&lt; T *const volatile &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01_t_01_5volatile_01_4" prot="public">extrait::detail::strip&lt; T *volatile &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01_t_0f_0e_4" prot="public">extrait::detail::strip&lt; T[]&gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01_t_0f_n_0e_4" prot="public">extrait::detail::strip&lt; T[N]&gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01volatile_01_t_01_4" prot="public">extrait::detail::strip&lt; volatile T &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1strip_3_01volatile_01_t_0f_n_0e_4" prot="public">extrait::detail::strip&lt; volatile T[N]&gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1sublist" prot="public">extrait::detail::sublist</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1sublist_3_01_t_3_01_t_types_8_8_8_01_4_00_01_start_00_01_end_01_4" prot="public">extrait::detail::sublist&lt; T&lt; Types... &gt;, Start, End &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1swap" prot="public">extrait::detail::swap</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1swap_3_01_t_3_01_t_types_8_8_8_01_4_00_01_i_00_01_dest_01_4" prot="public">extrait::detail::swap&lt; T&lt; Types... &gt;, I, Dest &gt;</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1_type_iterator_base" prot="public">extrait::detail::TypeIteratorBase</innerclass>
+    <innerclass refid="structextrait_1_1detail_1_1_type_list" prot="public">extrait::detail::TypeList</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="common__impl_8h_1a5c2a4d0b122cd4b0a1cbe3a3d9eaace5" prot="public" static="no">
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">int</ref></type>
+        <definition>using extrait::detail::index_t =  int</definition>
+        <argsstring></argsstring>
+        <name>index_t</name>
+        <qualifiedname>extrait::detail::index_t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" line="69" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="type__container_8h_1aaf654667debdfe5e15901fa0ce1e4c96" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>index_t</type>
+            <declname>Index</declname>
+            <defname>Index</defname>
+          </param>
+          <param>
+            <type>class ...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+          <param>
+            <type>class ...</type>
+            <declname>Types</declname>
+            <defname>Types</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">constexpr</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+        <definition>static constexpr auto extrait::detail::makeVariant</definition>
+        <argsstring>(T&lt; Types... &gt;, Args &amp;&amp;...args) EXTRAIT_NOEXDED((toStdVariant(std</argsstring>
+        <name>makeVariant</name>
+        <qualifiedname>extrait::detail::makeVariant</qualifiedname>
+        <param>
+          <type><ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>&lt; Types... &gt;</type>
+        </param>
+        <param>
+          <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Args</ref> &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="657" column="38" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="657" bodyend="689"/>
+      </memberdef>
+      <memberdef kind="function" id="type__container_8h_1a7fa9eaf461fa98c7dddd89c2de47e468" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>index_t</type>
+            <declname>Index</declname>
+            <defname>Index</defname>
+          </param>
+          <param>
+            <type>class Allocator</type>
+          </param>
+          <param>
+            <type>class ...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+          <param>
+            <type>class ...</type>
+            <declname>Types</declname>
+            <defname>Types</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+        <definition>static auto extrait::detail::allocate</definition>
+        <argsstring>(T&lt; Types... &gt;, Args &amp;&amp;...args) -&gt; typeAt_t&lt; T&lt; Types... &gt;, Index &gt; *</argsstring>
+        <name>allocate</name>
+        <qualifiedname>extrait::detail::allocate</qualifiedname>
+        <param>
+          <type><ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>&lt; Types... &gt;</type>
+        </param>
+        <param>
+          <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Args</ref> &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="694" column="28" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="694" bodyend="705"/>
+      </memberdef>
+      <memberdef kind="function" id="type__container_8h_1a99cf0c1a60ec26e9e5afb171201c186c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>Index</declname>
+            <defname>Index</defname>
+          </param>
+          <param>
+            <type>class ...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+          <param>
+            <type>class ...</type>
+            <declname>Types</declname>
+            <defname>Types</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+        <definition>static auto extrait::detail::makeUnique</definition>
+        <argsstring>(T&lt; Types... &gt;, Args &amp;&amp;...args) -&gt; std::unique_ptr&lt; typeAt_t&lt; T&lt; Types... &gt;, Index &gt; &gt;</argsstring>
+        <name>makeUnique</name>
+        <qualifiedname>extrait::detail::makeUnique</qualifiedname>
+        <param>
+          <type><ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>&lt; Types... &gt;</type>
+        </param>
+        <param>
+          <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Args</ref> &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="710" column="28" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="710" bodyend="715"/>
+      </memberdef>
+      <memberdef kind="function" id="type__container_8h_1a3408ee75742ec6e70e8fc06446123a04" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::size_t</type>
+            <declname>Index</declname>
+            <defname>Index</defname>
+          </param>
+          <param>
+            <type>class ...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+          <param>
+            <type>class ...</type>
+            <declname>Types</declname>
+            <defname>Types</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+        <definition>static auto extrait::detail::makeShared</definition>
+        <argsstring>(T&lt; Types... &gt;, Args &amp;&amp;...args) -&gt; std::shared_ptr&lt; typeAt_t&lt; T&lt; Types... &gt;, Index &gt; &gt;</argsstring>
+        <name>makeShared</name>
+        <qualifiedname>extrait::detail::makeShared</qualifiedname>
+        <param>
+          <type><ref refid="structextrait_1_1_type_array" kindref="compound">T</ref>&lt; Types... &gt;</type>
+        </param>
+        <param>
+          <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Args</ref> &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="719" column="28" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="719" bodyend="724"/>
+      </memberdef>
+      <memberdef kind="function" id="type__container_8h_1a3b4c21c7d9ce066d93e585ac2204085c" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Start</type>
+          </param>
+          <param>
+            <type>class Fn</type>
+          </param>
+          <param>
+            <type>index_t ...</type>
+            <declname>Index</declname>
+            <defname>Index</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">constexpr</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">auto</ref></type>
+        <definition>static constexpr auto extrait::detail::forEach</definition>
+        <argsstring>(std::index_sequence&lt; Index... &gt;, Fn &amp;&amp;fn) EXTRAIT_NOEXDED((std</argsstring>
+        <name>forEach</name>
+        <qualifiedname>extrait::detail::forEach</qualifiedname>
+        <param>
+          <type>std::index_sequence&lt; Index... &gt;</type>
+        </param>
+        <param>
+          <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">Fn</ref> &amp;&amp;</type>
+          <declname>fn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" line="729" column="38" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_container.h" bodystart="729" bodyend="757"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" line="66" column="1"/>
+  </compounddef>
+</doxygen>

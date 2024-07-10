@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1instantiates_class_template" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::instantiatesClassTemplate</compoundname>
+    <basecompoundref refid="structextrait_1_1detail_1_1instantiates_class_template" prot="public" virt="non-virtual">extrait::detail::instantiatesClassTemplate&lt; T &gt;</basecompoundref>
+    <includes refid="type__list_8h" local="no">type_list.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref></type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>Determines whether a given type is an instantiation of a class-template with only types. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>If type T is an instantiation of a class-template with a type-only parameter-list (regardless if it is empty or not), a static &quot;value&quot; constant will be provided that evaluates to true, if on the other hand T is a non-class template type or a class template type that contains at least one non-type template parameter, this evaluates to false.</para>
+<para>Any modification to T, such as pointer, reference, array or cv-qualification of the original type, will render the type a non-class template type and so will evaluate to false.</para>
+<para>This can be used to make sure that any of the other parameter-list type traits in this library is supplied with a valid type.</para>
+<para>Adding custom template specialisations to this template results in undefined behaviour.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Any type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>extrait::detail::instantiatesClassTemplate&lt; T &gt;</label>
+        <link refid="structextrait_1_1detail_1_1instantiates_class_template"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>extrait::instantiatesClassTemplate&lt; T &gt;</label>
+        <link refid="structextrait_1_1instantiates_class_template"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::false_type</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>extrait::detail::instantiatesClassTemplate&lt; T &gt;</label>
+        <link refid="structextrait_1_1detail_1_1instantiates_class_template"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>extrait::instantiatesClassTemplate&lt; T &gt;</label>
+        <link refid="structextrait_1_1instantiates_class_template"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::false_type</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_list.h" line="86" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_list.h" bodystart="86" bodyend="86"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1is_empty" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::isEmpty</compoundname>
+    <basecompoundref refid="structextrait_1_1detail_1_1is_empty" prot="public" virt="non-virtual">extrait::detail::isEmpty&lt; T &gt;</basecompoundref>
+    <includes refid="type__list_8h" local="no">type_list.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref></type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>Determines whether a given parameter-list of a class template is empty. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>If any type was found in the parameter-list of type T, a static &quot;value&quot; constant will be provided that evaluates to false, otherwise evaluates to true. <linebreak/>
+ In contrast to <ref refid="structextrait_1_1is_empty_instantiated" kindref="compound">extrait::isEmptyInstantiated</ref>, this will ignore any default template parameters of class template T and evaluate to true even if the class template contains any default template parameters. <linebreak/>
+ However, if the template explicity specifies a default template parameter with the same type as what the defaulted type is, this will also count as empty.</para>
+<para>If T is not a class template or is a class template with at least one non-type template parameter, compilation will fail.</para>
+<para>Any modification to T, such as pointer, reference, array or cv-qualification of the original type, will render the type a non-class template type and compilation will fail. <linebreak/>
+ In these cases you can use <ref refid="structextrait_1_1strip" kindref="compound">extrait::strip</ref> to strip any of these modifications off the type beforehand.</para>
+<para>Adding custom template specialisations to this template results in undefined behaviour.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Any valid type-only class template instantiation</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structextrait_1_1is_empty_instantiated" kindref="compound">extrait::isEmptyInstantiated</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1strip" kindref="compound">extrait::strip</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1instantiates_class_template" kindref="compound">extrait::instantiatesClassTemplate</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structextrait_1_1_type_array" kindref="compound">extrait::T</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>extrait::detail::isEmpty&lt; T, class &gt;</label>
+        <link refid="structextrait_1_1detail_1_1is_empty"/>
+      </node>
+      <node id="1">
+        <label>extrait::isEmpty&lt; T &gt;</label>
+        <link refid="structextrait_1_1is_empty"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>extrait::detail::isEmpty&lt; T, class &gt;</label>
+        <link refid="structextrait_1_1detail_1_1is_empty"/>
+      </node>
+      <node id="1">
+        <label>extrait::isEmpty&lt; T &gt;</label>
+        <link refid="structextrait_1_1is_empty"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/type_list.h" line="185" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/type_list.h" bodystart="185" bodyend="185"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

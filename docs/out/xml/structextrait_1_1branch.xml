@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structextrait_1_1branch" kind="struct" language="C++" prot="public">
+    <compoundname>extrait::branch</compoundname>
+    <includes refid="common_8h" local="no">common.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">class</ref> <ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">T</ref></type>
+      </param>
+      <param>
+        <type><ref refid="common_8h_1a09e504879569026454b0aa254c56be04" kindref="member">bool</ref></type>
+        <declname>Condition</declname>
+        <defname>Condition</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>A helper for <ref refid="structextrait_1_1assemble" kindref="compound">extrait::assemble</ref> and <ref refid="structextrait_1_1select" kindref="compound">extrait::select</ref> providing T as the associated type and Condition as a bool value that determines whether this branch passes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" line="207" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" bodystart="207" bodyend="207"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

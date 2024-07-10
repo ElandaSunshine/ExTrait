@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__common__lib" kind="group">
+    <compoundname>common_lib</compoundname>
+    <title>Common library</title>
+    <innerclass refid="structextrait_1_1_type_view" prot="public">extrait::TypeView</innerclass>
+    <innerclass refid="structextrait_1_1_value_view" prot="public">extrait::ValueView</innerclass>
+    <innergroup refid="group__strip">extrait::strip</innergroup>
+    <innergroup refid="group__select">extrait::select</innergroup>
+    <innergroup refid="group__assemble">extrait::assemble</innergroup>
+    <innergroup refid="group__get_actual_type_name">extrait::getActualTypeName</innergroup>
+    <innergroup refid="group__stynamic__cast">extrait::stynamic_cast</innergroup>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__common__lib_1ga6ba49602a991431d5274a29e1a5e5b61" prot="public" static="no">
+        <type>int</type>
+        <definition>using extrait::index_t =  int</definition>
+        <argsstring></argsstring>
+        <name>index_t</name>
+        <qualifiedname>extrait::index_t</qualifiedname>
+        <briefdescription>
+<para>An alias for int, representing a type that can take any (theorethical) index value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" line="113" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__common__lib_1ga4ec07b2008107f54304e4dcd07ef8d5b" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>index_t</type>
+            <declname>Index</declname>
+            <defname>Index</defname>
+          </param>
+        </templateparamlist>
+        <type>std::integral_constant&lt; index_t, Index &gt;</type>
+        <definition>using extrait::indexConstant =  std::integral_constant&lt;index_t, Index&gt;</definition>
+        <argsstring></argsstring>
+        <name>indexConstant</name>
+        <qualifiedname>extrait::indexConstant</qualifiedname>
+        <briefdescription>
+<para>An alias for std::integral_constant specialised for <ref refid="group__common__lib_1ga6ba49602a991431d5274a29e1a5e5b61" kindref="member">extrait::index_t</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" line="121" column="5" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="group__common__lib_1ga1b030f296d81fb7b7556fa48b19ad112" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>class ...</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>const bool extrait::assertDep_type</definition>
+        <argsstring></argsstring>
+        <name>assertDep_type</name>
+        <qualifiedname>extrait::assertDep_type</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>A helper for static_asserts that always evaluates to false, making the static_assert dependent on types T. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" line="130" column="27" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" bodystart="130" bodyend="-1" declfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" declline="60" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__common__lib_1ga0c0285ae8b344d34425d2a7c192bc440" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>auto ...</type>
+            <declname>V</declname>
+            <defname>V</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr bool</type>
+        <definition>const bool extrait::assertDep_value</definition>
+        <argsstring></argsstring>
+        <name>assertDep_value</name>
+        <qualifiedname>extrait::assertDep_value</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>A helper for static_asserts that always evaluates to false, making the static_assert dependent on values V. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" line="138" column="27" bodyfile="D:/Development/Coding/cpp/ExTrait/include/extrait/common.h" bodystart="138" bodyend="-1" declfile="D:/Development/Coding/cpp/ExTrait/include/extrait/detail/common_impl.h" declline="63" declcolumn="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A library of common tools used across the variety of utils of this library. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Unless specified otherwise, adding user-defined template specialisations to any template in this library is UB. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
