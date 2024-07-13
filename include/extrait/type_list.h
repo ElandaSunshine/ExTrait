@@ -57,587 +57,124 @@
 namespace extrait
 {
     //==================================================================================================================
-    /**
-     *  @brief An alias for int, used for parameter-list indexing.
-     */
     using index_t = detail::index_t;
     
     //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief An alias for std::integral_constant specialised for index_t.
-     */
     template<index_t Index>
     using indexConstant = std::integral_constant<index_t, Index>;
     
-    //==================================================================================================================
-    /**
-     *  @brief A constant initialised to -1, that should indicate the end of a class template parameter-list.
-     */
+    //------------------------------------------------------------------------------------------------------------------
     constexpr inline int endOfTypeList = -1;
 
     //==================================================================================================================
-    /**
-     *  @ingroup type_list
-     *  @brief Determines whether a given type is an instantiation of a class-template with only types.
-     *  
-     *  If type T is an instantiation of a class-template with a type-only
-     *  parameter-list (regardless if it is empty or not), a static "value" constant will be provided
-     *  that evaluates to true, if on the other hand T is a non-class template type or a class template type that
-     *  contains at least one non-type template parameter, this evaluates to false.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and so will evaluate to false.
-     *  
-     *  This can be used to make sure that any of the other parameter-list type traits in this library
-     *  is supplied with a valid type.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T Any type
-     */
     template<class T>
     struct hasTypeList : detail::hasTypeList<T> {};
     
-    /**
-     *  @brief Value helper for extrait::hasTypeList.
-     */
     template<class T>
     constexpr inline bool hasTypeList_v = hasTypeList<T>::value;
     
     //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines whether two types instantiate the same template
-     *  
-     *  If both T and U instantiate the same class template, a static "value" constant will be provided that evaluates
-     *  to true, otherwise false.  
-     *  If either T or U is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T or U, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T Any valid type-only class template instantiation
-     *  @tparam U Any valid type-only class template instantiation
-     *  
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
     template<class T, class U>
     struct sameClassTemplate : detail::sameClassTemplate<T, U> {};
-    
-    /**
-     *  @brief Type helper for extrait::sameClassTemplate.
-     */
+
     template<class T, class U>
     constexpr inline bool sameClassTemplate_v = sameClassTemplate<T, U>::value;
     
     //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines whether two class template parameter-lists are exactly the same.
-     *  
-     *  If the parameter-list of T and U are exactly equal, by that means, every template argument in T is the same
-     *  template argument in U and at the same position, a static "value" constant will be provided that
-     *  evaluates to true, otherwise evaluates to false.
-     *  
-     *  If T or U is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T or U, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T Any valid type-only class template instantiation
-     *  @tparam U Any valid type-only class template instantiation
-     *  
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
     template<class T, class U>
     struct sameTemplateArguments : detail::sameTemplateArguments<T, U> {};
-    
-    /**
-     *  @brief Value helper for extrait::sameTemplateArguments.
-     */
+
     template<class T, class U>
     constexpr inline bool sameTemplateArguments_v = sameTemplateArguments<T, U>::value;
     
     //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines whether a parameter-list contains a certain type.
-     *  
-     *  If type Key could be found at least once in the template parameter-list of type T, a static "value" constant
-     *  will be provided that evaluates to true, otherwise evaluates to false.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T   Any valid type-only class template instantiation
-     *  @tparam Key Any type that should be found in the parameter-list of instantiation T
-     *  
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
     template<class T, class Key>
     struct contains : detail::contains<T, Key> {};
     
-    /**
-     *  @brief Value helper for extrait::contains.
-     */
     template<class T, class Key>
     constexpr inline bool contains_v = contains<T, Key>::value;
     
     //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines whether a given parameter-list of a class template is empty.
-     *  
-     *  If any type was found in the parameter-list of type T, a static "value" constant will be provided that
-     *  evaluates to false, otherwise evaluates to true.  
-     *  In contrast to extrait::isEmptyInstantiated, this will ignore any default template parameters of class template
-     *  T and evaluate to true even if the class template contains any default template parameters.  
-     *  However, if the template explicity specifies a default template parameter with the same type as what the
-     *  defaulted type is, this will also count as empty.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *
-     *  @tparam T Any valid type-only class template instantiation
-     * 
-     *  @see extrait::isEmptyInstantiated
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
     template<class T>
     struct isEmpty : detail::isEmpty<T> {};
-    
-    /**
-     *  @brief Value helper for extrait::isEmpty.
-     */
+
     template<class T>
     constexpr inline bool isEmpty_v = isEmpty<T>::value;
     
     //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines whether a given instantiation of a class-template has an empty parameter-list.
-     *  
-     *  If any type was found in the parameter-list of type T, a static "value" constant will be provided that
-     *  evaluates to false, otherwise evaluates to true.  
-     *  In contrast to extrait::isEmpty, this will not ignore default template parameters of class template T and
-     *  also consider whether the passed in class template instantiation contains any defaulted template parameters.
-     *  If, in this case, T represents Type<> and Type has defaulted template parameters, it will not count as empty.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *
-     *  @tparam T Any valid type-only class template instantiation
-     * 
-     *  @see extrait::isEmpty
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
     template<class T>
     struct isEmptyInstantiated : detail::isEmptyInstantiated<T> {};
-    
-    /**
-     *  @brief Value helper for extrait::isEmptyInstantiated.
-     */
+
     template<class T>
     constexpr inline bool isEmptyInstantiated_v = isEmptyInstantiated<T>::value;
     
     //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines whether a class template's parameter-list starts with a set of types.
-     *  
-     *  If the parameter-list of type T starts with the same types as specified in StartTypes and in the same order,
-     *  a static "value" constant will be provided that evaluates to true, otherwise evaluates to false.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T          Any valid type-only class template instantiation
-     *  @tparam StartTypes A list of types the class template instantiation T's parameter-list should start with
-     *  
-     *  @see extrait::endsWith
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
-    template<class T, class ...StartTypes>
-    struct startsWith : detail::startsWith<T, StartTypes...> {};
+    template<class T, class ...Types>
+    struct startsWith : detail::startsWith<T, Types...> {};
+
+    template<class T, class ...Types>
+    constexpr inline bool startsWith_v = startsWith<T, Types...>::value;
     
-    /**
-     *  @brief Value helper for extrait::startsWith.
-     */
-    template<class T, class ...StartTypes>
-    constexpr inline bool startsWith_v = startsWith<T, StartTypes...>::value;
+    //.............
+    template<class T, class ...Types>
+    struct endsWith : detail::endsWith<T, Types...> {};
+    
+    template<class T, class ...Types>
+    constexpr inline bool endsWith_v = endsWith<T, Types...>::value;
     
     //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines whether a class template's parameter-list ends with a set of types.
-     *  
-     *  If the parameter-list of type T ends with the same types as specified in EndTypes and in the
-     *  same order (left to right), a static "value" constant will be provided that evaluates to true,
-     *  otherwise evaluates to false.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T        Any valid type-only class template instantiation
-     *  @tparam EndTypes A list of types the class template instantiation T's parameter-list should end with
-     *  
-     *  @see extrait::startsWith
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
-    template<class T, class ...EndTypes>
-    struct endsWith : detail::endsWith<T, EndTypes...> {};
-    
-    /**
-     *  @brief Value helper for extrait::endsWith.
-     */
-    template<class T, class ...EndTypes>
-    constexpr inline bool endsWith_v = endsWith<T, EndTypes...>::value;
-    
-    //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines how many of the types in a parameter-list match a predicate.
-     *  
-     *  Provides a static "value" constant expression that represents the number of types in the parameter-list of
-     *  class template instantiation T that matched a given predicate.
-     *  
-     *  Where Predicate is a class template that takes the currently (one at a time) inspected type from the
-     *  parameter-list of class template instantiation T as template argument and provides a static "value" constant
-     *  expression that is a bool that determines true if the type should be counted.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T         Any valid type-only class template instantiation
-     *  @tparam Predicate A predicate determining whether a type should be counted
-     *  
-     *  @see extrait::mismatch
-     *  @see extrait::matchAny
-     *  @see extrait::matchAll
-     *  @see extrait::matchNone
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
     template<class T, template<class> class Predicate>
     struct match : detail::match<T, Predicate, false> {};
     
-    /**
-     *  @brief Value helper for extrait::match.
-     */
     template<class T, template<class> class Predicate>
     constexpr inline std::size_t match_v = match<T, Predicate>::value;
     
-    //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines how many of the types in a parameter-list did not match a predicate.
-     *  
-     *  Provides a static "value" constant expression that represents the number of types in the parameter-list of
-     *  class template instantiation T that did not match a given predicate.
-     *  
-     *  Where Predicate is a class template that takes the currently (one at a time) inspected type from the
-     *  parameter-list of class template instantiation T as template argument and provides a static "value" constant
-     *  expression that is a bool that determines true if the type should be ignored and thus not counted.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T         Any valid type-only class template instantiation
-     *  @tparam Predicate A predicate determining whether a type should be ignored
-     *  
-     *  @see extrait::match
-     *  @see extrait::matchAny
-     *  @see extrait::matchAll
-     *  @see extrait::matchNone
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
+    //.............
     template<class T, template<class> class Predicate>
     struct mismatch : detail::match<T, Predicate, true> {};
     
-    /**
-     *  @brief Value helper for extrait::mismatch.
-     */
     template<class T, template<class> class Predicate>
     constexpr inline std::size_t mismatch_v = mismatch<T, Predicate>::value;
     
-    //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines if any type in a parameter-list matched a given Predicate.
-     *  
-     *  Provides a static "value" constant expression that evaluates to true if at least one type in the parameter-list
-     *  of class template instantiation T matched Predicate.  
-     *  This will always return false if the given parameter-list is empty.
-     *  
-     *  Where Predicate is a class template that takes the currently (one at a time) inspected type from the
-     *  parameter-list of class template instantiation T as template argument and provides a static "value" constant
-     *  expression that is a bool that determines whether a type matches.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T         Any valid type-only class template instantiation
-     *  @tparam Predicate A predicate determining whether a type has matched
-     *  
-     *  @see extrait::match
-     *  @see extrait::mismatch
-     *  @see extrait::matchAll
-     *  @see extrait::matchNone
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
+    //.............
     template<class T, template<class> class Predicate>
-    struct matchAny : detail::matchAny<T, Predicate> {};
-    
-    /**
-     *  @brief Value helper for extrait::matchAny.
-     */
+    struct matchAny : std::bool_constant<(match_v<T, Predicate> > 0)> {};
+
     template<class T, template<class> class Predicate>
     constexpr inline bool matchAny_v = matchAny<T, Predicate>::value;
     
-    //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines if all types in a parameter-list matched a given Predicate.
-     *  
-     *  Provides a static "value" constant expression that evaluates to true if all types in the parameter-list
-     *  of class template instantiation T matched Predicate.  
-     *  This will always return true if the given parameter-list is empty.
-     *  
-     *  Where Predicate is a class template that takes the currently (one at a time) inspected type from the
-     *  parameter-list of class template instantiation T as template argument and provides a static "value" constant
-     *  expression that is a bool that determines whether a type matches.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T         Any valid type-only class template instantiation
-     *  @tparam Predicate A predicate determining whether a type has matched
-     *  
-     *  @see extrait::match
-     *  @see extrait::mismatch
-     *  @see extrait::matchAny
-     *  @see extrait::matchNone
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
+    //.............
     template<class T, template<class> class Predicate>
     struct matchAll : std::bool_constant<(match_v<T, Predicate> == detail::length<T>::value)> {};
-    
-    /**
-     *  @brief Value helper for extrait::matchAll.
-     */
+
     template<class T, template<class> class Predicate>
     constexpr inline bool matchAll_v = matchAll<T, Predicate>::value;
     
-    //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines if none of the types in a parameter-list matched a given Predicate.
-     *  
-     *  Provides a static "value" constant expression that evaluates to true if not a single type in the parameter-list
-     *  of class template instantiation T matched Predicate, that means, if all types returned false, this is true.  
-     *  This will always return true if the given parameter-list is empty.
-     *  
-     *  Where Predicate is a class template that takes the currently (one at a time) inspected type from the
-     *  parameter-list of class template instantiation T as template argument and provides a static "value" constant
-     *  expression that is a bool that determines whether a type matches.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T         Any valid type-only class template instantiation
-     *  @tparam Predicate A predicate determining whether a type has matched
-     *  
-     *  @see extrait::match
-     *  @see extrait::mismatch
-     *  @see extrait::matchAny
-     *  @see extrait::matchAll
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
+    //.............
     template<class T, template<class> class Predicate>
     struct matchNone : std::bool_constant<(match_v<T, Predicate> == 0)> {};
     
-    /**
-     *  @brief Value helper for extrait::matchNone.
-     */
     template<class T, template<class> class Predicate>
     constexpr inline bool matchNone_v = matchNone<T, Predicate>::value;
     
     //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines the index of the first matching type inside a template parameter-list.
-     *  
-     *  If type Key was found to be in the parameter-list of class template instantiation T, then a static "value"
-     *  constant will be provided that gives back the 0-based index of that type inside the parameter-list.  
-     *  If, however, the type could not be found, the constant will evaluate to extrait::endOfTypeList.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T   Any valid type-only class template instantiation
-     *  @tparam Key Any type the index should be found for in the parameter-list of instantiation T
-     *  
-     *  @see extrait::lastIndexOf
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
     template<class T, class Key>
     struct indexOf : detail::indexOf<T, Key> {};
-    
-    /**
-     *  @brief Value helper for extrait::indexOf.
-     */
+
     template<class T, class Key>
     constexpr inline index_t indexOf_v = indexOf<T, Key>::value;
     
-    //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines the index of the last matching type inside a template parameter-list.
-     *  
-     *  If type Key was found to be in the parameter-list of class template instantiation T, then a static "value"
-     *  constant will be provided that gives back the 0-based index of the last match of that type inside the
-     *  parameter-list.  
-     *  If, however, the type could not be found, the constant will evaluate to extrait::endOfTypeList.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T   Any valid type-only class template instantiation
-     *  @tparam Key Any type the last index should be found for in the parameter-list of instantiation T
-     *  
-     *  @see extrait::lastIndexOf
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
+    //.............
     template<class T, class Key>
     struct lastIndexOf : detail::lastIndexOf<T, Key> {};
-    
-    /**
-     *  @brief Value helper for extrait::lastIndexOf.
-     */
+
     template<class T, class Key>
     constexpr inline index_t lastIndexOf_v = lastIndexOf<T, Key>::value;
     
     //------------------------------------------------------------------------------------------------------------------
-    /**
-     *  @brief Determines the number of template arguments inside a template parameter-list.
-     *  
-     *  Provides a static constant "value" that determines the number of template parameters in the parameter-list
-     *  of class template instantiation T.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
-     *  
-     *  @tparam T Any valid type-only class template instantiation
-     *  
-     *  @see extrait::strip
-     *  @see extrait::hasTypeList
-     *  @see extrait::TypeArray
-     */
     template<class T>
     struct length : detail::length<T> {};
-    
-    /** 
-     *  @brief Value helper for extrait::length.
-     */
+
     template<class T>
     constexpr inline int length_v = length<T>::value;
     
@@ -645,20 +182,13 @@ namespace extrait
     /**
      *  @brief Unifies a list of template parameter-lists into one template parameter-list.
      *  
-     *  Provides a member alias "type" that is a unification of all template arguments of every class template
-     *  instantiation of U and instantiates class template T with all of these arguments.  
-     *  The order is as given to template parameter U where all of the template arguments of all the given
-     *  class template instantiations of U are adopted in appearance order to class template T, from left to right.
-     *  
-     *  If any of the class template instantiations of U is not a class template or is a class template with at least
-     *  one non-type template parameter, compilation will fail.
-     *  
-     *  Any modification to any of the class template instantiations of U, such as pointer, reference,
-     *  array or cv-qualification of the original type, will render the type a non-class template type and
-     *  compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
+Provides a member alias "type" that is a unification of all template arguments of every class template instantiation of U and instantiates class template T with all of these arguments. The order is as given to template parameter U where all of the template arguments of all the given class template instantiations of U are adopted in appearance order to class template T, from left to right.
+
+If any of the class template instantiations of U is not a class template or is a class template with at least one non-type template parameter, compilation will fail.
+
+Any modification to any of the class template instantiations of U, such as pointer, reference, array or cv-qualification of the original type, will render the type a non-class template type and compilation will fail.  
+
+Adding custom template specialisations to this template results in undefined behaviour.
      *  
      *  @tparam T Any valid type-only class template that can take enough arguments
      *  @tparam U A list of class template instantiations that should be joined into a new instance of class template T
@@ -816,24 +346,24 @@ namespace extrait
     /**
      *  @brief Gets a type at a certain index inside a template parameter-list.
      *  
-     *  Provides a member alias "type" that refers to the type at the specified index I,
-     *  starting at 0 for the first type, inside the parameter-list of class template instantiation T.  
-     *  A class template of instantiation T with default template parameters will count these default template
-     *  parameters as part of the parameter-list.
-     *  
-     *  If I is not less than the number of template arguments in the template parameter-list of T,
-     *  then compilation will fail.  
-     *  For an empty class template instantiation of T, index will always be out of bounds and so cause compilation
-     *  to fail.
-     *  
-     *  If T is not a class template or is a class template with at least one non-type template parameter,
-     *  compilation will fail.
-     *  
-     *  Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
-     *  will render the type a non-class template type and compilation will fail.  
-     *  In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
-     *  
-     *  Adding custom template specialisations to this template results in undefined behaviour.
+Provides a member alias "type" that refers to the type at the specified index I,
+starting at 0 for the first type, inside the parameter-list of class template instantiation T.  
+A class template of instantiation T with default template parameters will count these default template
+parameters as part of the parameter-list.
+
+If I is not less than the number of template arguments in the template parameter-list of T,
+then compilation will fail.  
+For an empty class template instantiation of T, index will always be out of bounds and so cause compilation
+to fail.
+
+If T is not a class template or is a class template with at least one non-type template parameter,
+compilation will fail.
+
+Any modification to T, such as pointer, reference, array or cv-qualification of the original type,
+will render the type a non-class template type and compilation will fail.  
+In these cases you can use extrait::strip to strip any of these modifications off the type beforehand.
+
+Adding custom template specialisations to this template results in undefined behaviour.
      *  
      *  @tparam T Any valid type-only class template instantiation
      *  @tparam I The index of the type to get
@@ -867,15 +397,8 @@ namespace extrait
     /**
      *  @brief Gets the minimum type in a parameter-list.
      *  
-     *  Provides a member alias "type" that is one of the types that was compared to all other types in the
-     *  parameter-list of class template instantiation T and based on the given type Comparator, was evaluated to be
-     *  the smallest among them.
      *  
-     *  Where Comparator is a class template that takes two types as arguments, where the first argument is a type that
-     *  in the current comparison pass is compared to the key type and the second argument is the key type that is
-     *  compared to the type in the next comparison pass, this class template must provide a static constant expression
-     *  "value" that determines true if the first argument is smaller than the second argument (key).  
-     *  If there are several types with an equal result, the first encountered type will be taken.
+     *  Where Comparator is a class template that takes two types as arguments, where the first argument is a type that in the current comparison pass is compared to the key type and the second argument is the key type that is compared to the type in the next comparison pass, this class template must provide a static constant expression "value" that determines true if the first argument is smaller than the second argument (key). If there are several types with an equal result, the first encountered type will be taken.
      *  
      *  If T is not a class template or is a class template with at least one non-type template parameter,
      *  compilation will fail.

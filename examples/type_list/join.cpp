@@ -14,8 +14,8 @@ struct Proxy {};
 template<template<class...> class T, class First, class ...Types>
 std::string printTypeList(Proxy<T<First, Types...>>)
 {
-    return (extrait::getActualTypeName<First>()
-        + ((", " + extrait::getActualTypeName<Types>()) + ...) + "\n");
+    const std::string first(extrait::getActualTypeName<First>());
+    return (first + ((", " + std::string(extrait::getActualTypeName<Types>())) + ...) + "\n");
 }
 
 template<template<class...> class T>

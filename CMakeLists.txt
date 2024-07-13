@@ -13,7 +13,8 @@ project(ExTrait
 set(CMAKE_CXX_STANDARD 17)
 
 
-option(EXTRAIT_BUILD_TESTS "Build all included tests" OFF)
+option(EXTRAIT_BUILD_TESTS           "Build all included tests"     OFF)
+option(EXTRAIT_BUILD_EXAMPLES        "Build all included tests"     OFF)
 option(EXTRAIT_EXPERIMENTAL_FEATURES "If set to ON, will enable experimental features that are still in testing" OFF)
 
 
@@ -32,4 +33,8 @@ target_compile_definitions(${PROJECT_NAME}
 if (EXTRAIT_BUILD_TESTS)
     include(CTest)
     add_subdirectory(test)
+endif()
+
+if (EXTRAIT_BUILD_EXAMPLES)
+    add_subdirectory(examples)
 endif()

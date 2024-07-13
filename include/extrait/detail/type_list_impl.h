@@ -284,31 +284,6 @@ namespace extrait::detail
     };
     
     //==================================================================================================================
-    template<template<class> class P, class ...Types>
-    struct matchAny_impl;
-    
-    template<template<class> class P, class Next, class ...Types>
-    struct matchAny_impl<P, Next, Types...>
-        : std::bool_constant<(P<Next>::value || matchAny_impl<P, Types...>::value)> {};
-    
-    template<template<class> class P>
-    struct matchAny_impl<P> : std::false_type {};
-    
-    //------------------------------------------------------------------------------------------------------------------
-    template<class T, template<class> class P>
-    struct matchAny
-    {
-        static_assert(isValidPredicate<P>::value, "invalid predicate type");
-        static_assert(assertDep_type<T>, "invalid type, must be a class template with a type only parameter-list");
-    };
-    
-    template<template<class...> class T, template<class> class P, class ...TTypes>
-    struct matchAny<T<TTypes...>, P> : matchAny_impl<P, TTypes...>
-    {
-        static_assert(isValidPredicate<P>::value, "invalid predicate type");
-    };
-    
-    //==================================================================================================================
     template<class Key, index_t I, class ...Types>
     struct indexOf_impl;
     

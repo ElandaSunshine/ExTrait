@@ -232,6 +232,7 @@ TEST(TypeTraitSuite, TestTraits)
     //....................
     EXPECT_TRUE ((isEmpty_v<std::tuple<>>));
     EXPECT_TRUE ((isEmpty_v<::withDefaultParameter<>>));
+    EXPECT_TRUE ((isEmpty_v<::withDefaultParameter<void>>));
     EXPECT_FALSE((isEmpty_v<std::tuple<int>>));
     
 #if EXTRAIT_TEST_SUITE_TYPE_TRAITS_TEST_ASSERTS
@@ -242,6 +243,7 @@ TEST(TypeTraitSuite, TestTraits)
     //....................
     EXPECT_TRUE ((isEmptyInstantiated_v<std::tuple<>>));
     EXPECT_FALSE((isEmptyInstantiated_v<::withDefaultParameter<>>));
+    EXPECT_FALSE((isEmptyInstantiated_v<::withDefaultParameter<void>>));
     EXPECT_FALSE((isEmptyInstantiated_v<std::tuple<int>>));
     
 #if EXTRAIT_TEST_SUITE_TYPE_TRAITS_TEST_ASSERTS

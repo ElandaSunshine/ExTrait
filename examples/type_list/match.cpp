@@ -32,13 +32,6 @@ struct FloatingPointPredicate : std::bool_constant<std::is_floating_point_v<T>> 
 int main()
 {
     using Input = std::tuple<int, float, long, short, char, double, float>;
-
-    EXPECT_EQ((match_v   <MatchInput, ::FloatingPointPredicate>), 3);
-    EXPECT_EQ((mismatch_v<MatchInput, ::FloatingPointPredicate>), 4);
-    
-    EXPECT_TRUE ((matchAny_v <MatchInput, ::FloatingPointPredicate>));
-    EXPECT_FALSE((matchAll_v <MatchInput, ::FloatingPointPredicate>));
-    EXPECT_FALSE((matchNone_v<MatchInput, ::FloatingPointPredicate>));
     
     std::cout
         << "Floating point types: " << extrait::match_v<Input, FloatingPointPredicate> << "\n"
