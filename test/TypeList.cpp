@@ -778,7 +778,7 @@ TEST(TypeTraitSuite, TestContainer)
     }
     
     //....................
-    std::vector<TestList::toVariant> res_list;
+    std::vector<TestList::to<std::variant>> res_list;
     
     extrait::forEach(TestList::begin, TestList::end, [&res_list](auto it)
     {
@@ -796,7 +796,7 @@ TEST(TypeTraitSuite, TestContainer)
     
     //....................
     auto fe_array = extrait::forEach(TestList::begin_t::inc<2>{}, TestList::end, [](auto it)
-        -> TestList::toVariant
+        -> TestList::to<std::variant>
     {
         using It = decltype(it);
         return typename It::type{};
@@ -812,7 +812,7 @@ TEST(TypeTraitSuite, TestContainer)
     
     //....................
     auto ap_array = extrait::apply(TestList::begin, TestList::end, [](auto ...it)
-        -> TestList::toVarArray<TestList::length>
+        -> std::array<TestList::to<std::variant>, TestList::length>
     {
         return { typename decltype(it)::type{}... };
     });

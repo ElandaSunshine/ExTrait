@@ -17,16 +17,6 @@ option(EXTRAIT_BUILD_TESTS           "Build all included tests"     OFF)
 option(EXTRAIT_BUILD_EXAMPLES        "Build all included tests"     OFF)
 option(EXTRAIT_EXPERIMENTAL_FEATURES "If set to ON, will enable experimental features that are still in testing" OFF)
 
-set(input hello hello2 hello3 hello4)
-
-list(TRANSFORM input
-    REPLACE "(.+)" "\"\\1\""
-    OUTPUT_VARIABLE input)
-list(JOIN input "," input_string)
-
-message(FATAL_ERROR "${input_string}")
-
-return()
 
 
 ########################################################################################################################
