@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['of_0',['of',['../structextrait_1_1_overload.html#a74cb3e025c54686c5a28a869796cde69',1,'extrait::Overload::of(...) noexcept'],['../structextrait_1_1_overload.html#a8de79b47f35524397ba168bc909bd5f0',1,'extrait::Overload::of(Signature Owner::*func) noexcept'],['../structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858.html#a8c408f3888606fd8ab55c542e65073f0',1,'extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;::of(Signature *func) noexcept'],['../structextrait_1_1_overload_3_01_signature_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_016a692dd87d6f7e08026643d8e9570858.html#abc3629e1d80b8603f880d85140992c82',1,'extrait::Overload&lt; Signature, std::void_t&lt; decltype(std::declval&lt; Signature * &gt;())&gt; &gt;::of(Signature Owner::*func) noexcept']]]
-];

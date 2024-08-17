@@ -118,36 +118,92 @@ namespace extrait::detail
     struct FuncBase<Func, T, R, TypeArray<Params...>, IsMember, QualNoex, QualLV, QualRV, QualCon, QualVol>
     {
         //==============================================================================================================
+        /** 
+         *  @brief The current Function's invocable parameter list as extrait::TypeArray.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         using Parameters = TypeArray<Params...>;
         
+        /** 
+         *  @brief The current Function's invocable class it is a member of.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         using Owner = T;
         
+        /** 
+         *  @brief The current Function's invocable return type.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         using Return = R;
         
+        /** 
+         *  @brief The current Function's invocable pointer type.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         using Pointer = typename toFunctionPointer<T, R, QualNoex, QualLV, QualRV, QualCon, QualVol, Params...>::type;
         
+        /** 
+         *  @brief The current Function's invocable signature type.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         using Signature = strip_t<Pointer>;
         
         //--------------------------------------------------------------------------------------------------------------
+        /** 
+         *  @brief The current Function's invocable pointer.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         constexpr static auto funcPtr = Func;
         
         //--------------------------------------------------------------------------------------------------------------
+        /** 
+         *  @brief The number of the current Function's invocable parameters.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         constexpr static int parameterCount = sizeof...(Params);
         
+        /** 
+         *  @brief Determines whether the current Function's invocable is a member function pointer.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         constexpr static bool isMemberFunction = IsMember;
         
         //--------------------------------------------------------------------------------------------------------------
+        /** 
+         *  @brief Determines whether the current Function's invocable is noexcept specified.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         constexpr static bool isNoexcept = QualNoex;
         
+        /** 
+         *  @brief Determines whether the current Function's invocable is const qualified.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         constexpr static bool isConstQualified = QualCon;
         
+        /** 
+         *  @brief Determines whether the current Function's invocable is volatile qualified.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         constexpr static bool isVolatileQualified = QualVol;
         
+        /** 
+         *  @brief Determines whether the current Function's invocable is LValue qualified.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         constexpr static bool isLvalueQualified = QualLV;
         
+        /** 
+         *  @brief Determines whether the current Function's invocable is RValue qualified.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         */
         constexpr static bool isRvalueQualified = QualRV;
         
         //--------------------------------------------------------------------------------------------------------------
+        /** 
+         *  @brief Invokes the current invocable with the specified parameters.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/invoke
+         */
         template<class U, class ...Args>
         constexpr static inline auto invoke(U &owner, Args &&...args)
             noexcept(noexcept((owner.*Func)(std::forward<Args>(args)...)))
@@ -156,6 +212,10 @@ namespace extrait::detail
             return (owner.*Func)(std::forward<Args>(args)...);
         }
         
+        /** 
+         *  @brief Invokes the current invocable with the specified parameters.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/invoke
+         */
         template<class U, class ...Args>
         constexpr static inline auto invoke(U *owner, Args &&...args)
             noexcept(noexcept((owner->*Func)(std::forward<Args>(args)...)))
@@ -165,6 +225,10 @@ namespace extrait::detail
             return (owner->*Func)(std::forward<Args>(args)...);
         }
         
+        /** 
+         *  @brief Invokes the current invocable with the specified parameters.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/invoke
+         */
         template<class ...Args>
         constexpr static inline auto invoke([[maybe_unused]] std::nullptr_t owner, Args &&...args)
             noexcept(noexcept((Func)(std::forward<Args>(args)...)))
@@ -174,6 +238,10 @@ namespace extrait::detail
         }
         
         //--------------------------------------------------------------------------------------------------------------
+        /**
+         *  @brief Gets the function signature of this Function's invocable as compile time string.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/toString
+         */
         constexpr static inline std::string_view toString() noexcept
         {
             return getSignature<Func>();
@@ -300,9 +368,17 @@ namespace extrait::detail
     struct Overload
     {
         //==============================================================================================================
+        /**
+         *  @brief The signature type of the function overload.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Overload
+         */
         using Signature = T;
         
         //--------------------------------------------------------------------------------------------------------------
+        /**
+         *  @brief Gets the overloaded function pointer for the specified function signature type.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Overload/of
+         */
         template<class U = Signature>
         [[nodiscard]]
         constexpr static auto of(...) noexcept
@@ -310,6 +386,10 @@ namespace extrait::detail
             static_assert(assertDep_type<U>, "Argument is not a function pointer or an overload that doesn't exist");
         }
         
+        /**
+         *  @brief Gets the overloaded function pointer for the specified function signature type.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Overload/of
+         */
         template<class Owner>
         [[nodiscard]]
         constexpr static auto of(Signature Owner::* func) noexcept
@@ -322,15 +402,27 @@ namespace extrait::detail
     struct Overload<T, std::void_t<decltype(std::declval<T*>())>>
     {
         //==============================================================================================================
+        /**
+         *  @brief The signature type of the function overload.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Overload
+         */
         using Signature = T;
         
         //--------------------------------------------------------------------------------------------------------------
+        /**
+         *  @brief Gets the overloaded function pointer for the specified function signature type.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Overload/of
+         */
         [[nodiscard]]
         constexpr static auto of(Signature* func) noexcept
         {
             return func;
         }
         
+        /**
+         *  @brief Gets the overloaded function pointer for the specified function signature type.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Overload/of
+         */
         template<class Owner>
         [[nodiscard]]
         constexpr static auto of(Signature Owner::* func) noexcept

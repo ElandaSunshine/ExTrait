@@ -69,7 +69,16 @@
 
 namespace extrait
 {
+    /** 
+     *  @addtogroup reflection
+     *  @{
+     */
+    
     //==================================================================================================================
+    /**
+     *  @brief A template that describes a type in a way so as to that it can be represented as a string.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     */
     template<class T>
     struct Stringable
     {
@@ -81,6 +90,10 @@ namespace extrait
     };
 
     //==================================================================================================================
+    /**
+     *  @brief Converts a type into a string.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection
+     */
     template<class T>
     [[nodiscard]]
     inline std::string toString(const T &object)
@@ -238,4 +251,6 @@ namespace extrait
             return ss.str();
         }
     };
+    
+    /** @} */
 }

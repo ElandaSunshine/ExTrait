@@ -59,67 +59,133 @@
 //======================================================================================================================
 namespace extrait
 {
+    /** 
+     *  @defgroup reflection "Reflection"
+     *  @{
+     */
+    
     //==================================================================================================================
+    /**
+     *  @brief A helper class that disassembles any invocable in its single parts like parameters, name ect. and
+     *         publishes this information in a concise interface.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+     */
     template<auto Fn>
     struct Function : detail::Function<Fn> {};
     
     //==================================================================================================================
+    /**
+     *  @brief A helper class for extrait::Function, that allows selecting a specific overload of a function.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Overload
+     */
     template<class T>
     struct Overload : detail::Overload<T> {};
     
     //==================================================================================================================
+    /**
+     *  @brief A helper alias for declaring the type of a function pointer.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection
+     */
     template<class T>
     using FunctionPointer_t = typename detail::Function<nullptr, std::remove_pointer_t<T>*>::Pointer;
     
+    /**
+     *  @brief A helper alias for declaring the type of a member function pointer.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection
+     */
     template<class T, class U>
     using MemberFunctionPointer_t = typename detail::Function<nullptr, std::remove_pointer_t<U> T::*>::Pointer;
     
+    /**
+     *  @brief A helper alias for declaring the type of a member object pointer.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection
+     */
     template<class T, class U>
     using MemberObjectPointer_t = U T::*;
     
     //==================================================================================================================
+    /**
+     *  @brief Determines whether a function pointer is a member function pointer.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isMemberFunction
+     *  @metadata{category, type}
+     */
     template<auto Fn>
     struct isMemberFunction : std::bool_constant<Function<Fn>::isMemberFunction> {};
     
     template<auto Fn>
     constexpr inline bool isMemberFunction_v = isMemberFunction<Fn>::value;
     
+    /**
+     *  @brief Determines whether a function pointer is a const qualified member function pointer.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncConstQualified
+     *  @metadata{category, qualifiers}
+     */
     template<auto Fn>
     struct isFuncConstQualified : std::bool_constant<Function<Fn>::isConstQualified> {};
     
     template<auto Fn>
     constexpr inline bool isFuncConstQualified_v = isFuncConstQualified<Fn>::value;
     
+    /**
+     *  @brief Determines whether a function pointer is a volatile qualified member function pointer.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncVolatileQualified
+     *  @metadata{category, qualifiers}
+     */
     template<auto Fn>
     struct isFuncVolatileQualified : std::bool_constant<Function<Fn>::isVolatileQualified> {};
     
     template<auto Fn>
     constexpr inline bool isFuncVolatileQualified_v = isFuncVolatileQualified<Fn>::value;
     
+    /**
+     *  @brief Determines whether a function pointer is a LValue qualified member function pointer.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncLvalueQualified
+     *  @metadata{category, qualifiers}
+     */
     template<auto Fn>
     struct isFuncLvalueQualified : std::bool_constant<Function<Fn>::isLvalueQualified> {};
     
     template<auto Fn>
     constexpr inline bool isFuncLvalueQualified_v = isFuncLvalueQualified<Fn>::value;
     
+    /**
+     *  @brief Determines whether a function pointer is a RValue qualified member function pointer.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncRvalueQualified
+     *  @metadata{category, qualifiers}
+     */
     template<auto Fn>
     struct isFuncRvalueQualified : std::bool_constant<Function<Fn>::isRvalueQualified> {};
     
     template<auto Fn>
     constexpr inline bool isFuncRvalueQualified_v = isFuncRvalueQualified<Fn>::value;
     
+    /**
+     *  @brief Determines whether a function pointer has been noexcept specified.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncNoexceptSpecified
+     *  @metadata{category, specifiers}
+     */
     template<auto Fn>
     struct isFuncNoexceptSpecified : std::bool_constant<Function<Fn>::isNoexcept> {};
     
     template<auto Fn>
     constexpr inline bool isFuncNoexceptSpecified_v = isFuncNoexceptSpecified<Fn>::value;
     
+    /**
+     *  @brief Gets the number of parameter a function pointer has.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcParameterCount
+     *  @metadata{category, signature}
+     */
     template<auto Fn>
     struct funcParameterCount : std::integral_constant<std::size_t, Function<Fn>::parameterCount> {};
     
     template<auto Fn>
     constexpr inline std::size_t funcParameterCount_v = funcParameterCount<Fn>::value;
     
+    /**
+     *  @brief Gets the parameters of a function pointer as an extrait::TypeArray.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcParameterList
+     *  @metadata{category, signature}
+     */
     template<auto Fn>
     struct funcParameterList
     {
@@ -129,6 +195,11 @@ namespace extrait
     template<auto Fn>
     using funcParameterList_t = typename funcParameterList<Fn>::type;
     
+    /**
+     *  @brief Gets the return type of a function pointer.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcReturnType
+     *  @metadata{category, signature}
+     */
     template<auto Fn>
     struct funcReturnType
     {
@@ -138,6 +209,11 @@ namespace extrait
     template<auto Fn>
     using funcReturnType_t = typename funcReturnType<Fn>::type;
     
+    /**
+     *  @brief Gets the class the function pointer is a member of, if it is a member function.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcOwnerType
+     *  @metadata{category, signature}
+     */
     template<auto Fn>
     struct funcOwnerType
     {
@@ -147,6 +223,11 @@ namespace extrait
     template<auto Fn>
     using funcOwnerType_t = typename funcOwnerType<Fn>::type;
     
+    /**
+     *  @brief Gets the signature type of a function pointer.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcSignature
+     *  @metadata{category, signature}
+     */
     template<auto Fn>
     struct funcSignature
     {
@@ -157,11 +238,19 @@ namespace extrait
     using funcSignature_t = typename funcSignature<Fn>::type;
     
     //==================================================================================================================
+    /**
+     *  @brief Gets the function signature of a function pointer as compile time string.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/funcs/funcToString
+     *  @param funcPtr The function pointer
+     *  @metadata{category, signature}
+     */
     template<class Fn>
     constexpr inline std::string_view funcToString(Fn &&funcPtr)
     {
         return detail::getSignature(std::forward<Fn>(funcPtr));
     }
+    
+    /** @} */
 }
 //======================================================================================================================
 // endregion Function
