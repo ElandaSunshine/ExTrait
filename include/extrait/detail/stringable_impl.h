@@ -102,6 +102,12 @@ namespace extrait::detail
     template<class T>
     struct hasToString<T, std::void_t<decltype(std::declval<T>().toString())>> : std::true_type {};
     
+    template<class T, class = void>
+    struct hasTo_String : std::false_type {};
+    
+    template<class T>
+    struct hasTo_String<T, std::void_t<decltype(std::declval<T>().to_string())>> : std::true_type {};
+    
     //------------------------------------------------------------------------------------------------------------------
     template<class T>
     struct StringableDefault
@@ -109,8 +115,6 @@ namespace extrait::detail
         [[nodiscard]]
         static std::string toString(const T &object)
         {
-            using BType = std::decay_t<T>;
-            
             if constexpr (detail::toStringStdExists<T>::value)
             {
                 return std::to_string(object);
@@ -118,6 +122,10 @@ namespace extrait::detail
             else if constexpr (hasToString<T>::value)
             {
                 return object.toString();
+            }
+            else if constexpr (hasTo_String<T>::value)
+            {
+                return object.to_string();
             }
             else
             {

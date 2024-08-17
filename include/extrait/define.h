@@ -50,9 +50,5 @@
 
 #pragma once
 
-#ifndef EXTRAIT_PREDICATE_MAX_PARAMETER_COUNT
-    #define EXTRAIT_PREDICATE_MAX_PARAMETER_COUNT 20
-#endif
-
 
 

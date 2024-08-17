@@ -112,6 +112,10 @@ namespace extrait
     template<auto Fn>
     struct isMemberFunction : std::bool_constant<Function<Fn>::isMemberFunction> {};
     
+    /**
+     *  @brief Value helper for extrait::isMemberFunction.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isMemberFunction
+     */
     template<auto Fn>
     constexpr inline bool isMemberFunction_v = isMemberFunction<Fn>::value;
     
@@ -123,6 +127,10 @@ namespace extrait
     template<auto Fn>
     struct isFuncConstQualified : std::bool_constant<Function<Fn>::isConstQualified> {};
     
+    /**
+     *  @brief Value helper for extrait::isFuncConstQualified.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncConstQualified
+     */
     template<auto Fn>
     constexpr inline bool isFuncConstQualified_v = isFuncConstQualified<Fn>::value;
     
@@ -134,6 +142,10 @@ namespace extrait
     template<auto Fn>
     struct isFuncVolatileQualified : std::bool_constant<Function<Fn>::isVolatileQualified> {};
     
+    /**
+     *  @brief Value helper for extrait::isFuncVolatileQualified.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncVolatileQualified
+     */
     template<auto Fn>
     constexpr inline bool isFuncVolatileQualified_v = isFuncVolatileQualified<Fn>::value;
     
@@ -145,6 +157,10 @@ namespace extrait
     template<auto Fn>
     struct isFuncLvalueQualified : std::bool_constant<Function<Fn>::isLvalueQualified> {};
     
+    /**
+     *  @brief Value helper for extrait::isFuncLvalueQualified.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncLvalueQualified
+     */
     template<auto Fn>
     constexpr inline bool isFuncLvalueQualified_v = isFuncLvalueQualified<Fn>::value;
     
@@ -156,6 +172,10 @@ namespace extrait
     template<auto Fn>
     struct isFuncRvalueQualified : std::bool_constant<Function<Fn>::isRvalueQualified> {};
     
+    /**
+     *  @brief Value helper for extrait::isFuncRvalueQualified.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncRvalueQualified
+     */
     template<auto Fn>
     constexpr inline bool isFuncRvalueQualified_v = isFuncRvalueQualified<Fn>::value;
     
@@ -167,6 +187,10 @@ namespace extrait
     template<auto Fn>
     struct isFuncNoexceptSpecified : std::bool_constant<Function<Fn>::isNoexcept> {};
     
+    /**
+     *  @brief Value helper for extrait::isFuncNoexceptSpecified.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncNoexceptSpecified
+     */
     template<auto Fn>
     constexpr inline bool isFuncNoexceptSpecified_v = isFuncNoexceptSpecified<Fn>::value;
     
@@ -178,6 +202,10 @@ namespace extrait
     template<auto Fn>
     struct funcParameterCount : std::integral_constant<std::size_t, Function<Fn>::parameterCount> {};
     
+    /**
+     *  @brief Value helper for extrait::funcParameterCount.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcParameterCount
+     */
     template<auto Fn>
     constexpr inline std::size_t funcParameterCount_v = funcParameterCount<Fn>::value;
     
@@ -192,6 +220,10 @@ namespace extrait
         using type = typename Function<Fn>::Parameters;
     };
     
+    /**
+     *  @brief Type helper for extrait::funcParameterList.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcParameterList
+     */
     template<auto Fn>
     using funcParameterList_t = typename funcParameterList<Fn>::type;
     
@@ -206,6 +238,10 @@ namespace extrait
         using type = typename Function<Fn>::Return;
     };
     
+    /**
+     *  @brief Type helper for extrait::funcReturnType.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcReturnType
+     */
     template<auto Fn>
     using funcReturnType_t = typename funcReturnType<Fn>::type;
     
@@ -220,6 +256,10 @@ namespace extrait
         using type = typename Function<Fn>::Owner;
     };
     
+    /**
+     *  @brief Type helper for extrait::funcOwnerType.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcOwnerType
+     */
     template<auto Fn>
     using funcOwnerType_t = typename funcOwnerType<Fn>::type;
     
@@ -234,6 +274,10 @@ namespace extrait
         using type = typename Function<Fn>::Signature;
     };
     
+    /**
+     *  @brief Type helper for extrait::funcSignature.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcSignature
+     */
     template<auto Fn>
     using funcSignature_t = typename funcSignature<Fn>::type;
     

@@ -114,6 +114,11 @@ namespace extrait
 namespace extrait
 {
     //==================================================================================================================
+    /**
+     *  @brief extrait::Stringable specialisation for converting booleans to a string.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<>
     struct Stringable<bool>
     {
@@ -124,6 +129,11 @@ namespace extrait
         }
     };
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::nullptr to a string.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<>
     struct Stringable<std::nullptr_t>
     {
@@ -134,6 +144,11 @@ namespace extrait
         }
     };
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting pointers to a string.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class T>
     struct Stringable<T*>
     {
@@ -142,15 +157,14 @@ namespace extrait
         {
             return (object ? detail::addressToString(object) : "null");
         }
-        
-        [[nodiscard]]
-        static std::string name()
-        {
-            return getActualTypeName<T>() + '*';
-        }
     };
     
     //------------------------------------------------------------------------------------------------------------------
+    /**
+     *  @brief extrait::Stringable specialisation for converting any std::basic_string to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::basic_string<T...>>
     {
@@ -161,6 +175,11 @@ namespace extrait
         }
     };
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting any std::basic_string_view to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::basic_string_view<T...>>
     {
@@ -171,33 +190,83 @@ namespace extrait
         }
     };
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::array to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class T, std::size_t N>
     struct Stringable<std::array<T, N>> : detail::SequencedImpl<std::array<T, N>> {};
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::vector to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::vector<T...>> : detail::SequencedImpl<std::vector<T...>> {};
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::deque to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::deque<T...>> : detail::SequencedImpl<std::deque<T...>> {};
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::list to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::list<T...>> : detail::SequencedImpl<std::list<T...>> {};
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::forward_list to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::forward_list<T...>> : detail::SequencedImpl<std::forward_list<T...>> {};
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::set to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::set<T...>> : detail::SequencedImpl<std::set<T...>> {};
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::multiset to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::multiset<T...>> : detail::SequencedImpl<std::multiset<T...>> {};
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::unordered_set to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::unordered_set<T...>> : detail::SequencedImpl<std::unordered_set<T...>> {};
-        
+    
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::unordered_multiset to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::unordered_multiset<T...>> : detail::SequencedImpl<std::unordered_multiset<T...>> {};
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::queue to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::queue<T...>>
     {
@@ -208,6 +277,11 @@ namespace extrait
         }
     };
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::stack to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::stack<T...>>
     {
@@ -218,6 +292,11 @@ namespace extrait
         }
     };
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::priority_queue to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::priority_queue<T...>>
     {
@@ -228,18 +307,43 @@ namespace extrait
         }
     };
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::map to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::map<T...>> : detail::AssociativeImpl<std::map<T...>> {};
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::multimap to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::multimap<T...>> : detail::AssociativeImpl<std::multimap<T...>> {};
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::unordered_map to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::unordered_map<T...>> : detail::AssociativeImpl<std::unordered_map<T...>> {};
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::unordered_multimap to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<class ...T>
     struct Stringable<std::unordered_multimap<T...>> : detail::AssociativeImpl<std::unordered_multimap<T...>> {};
     
+    /**
+     *  @brief extrait::Stringable specialisation for converting std::thread::id to strings.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
+     *  @metadata{specialisation, extrait::Stringable}
+     */
     template<>
     struct Stringable<std::thread::id>
     {

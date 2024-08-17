@@ -114,8 +114,13 @@
                         </xsl:for-each>
                     </xsl:variable>
                     <xsl:sequence select="doxls:add_key('array', 'tparams', $tparams)"/>
-                </map>
 
+                    <xsl:variable name="properties_map">
+                        <xsl:sequence select="doxls:add_key('boolean', 'properties.member', $member)"/>
+                    </xsl:variable>
+
+                    <xsl:sequence select="doxls:add_key('map', 'properties', $properties_map)"/>
+                </map>
 
                 <xsl:call-template name="process_content">
                     <xsl:with-param name="namespace" select="$cs_name"/>
@@ -176,7 +181,7 @@
                     <xsl:sequence select="doxls:add_key('array', 'tparams', $tparams)"/>
                 </xsl:if>
                 
-                <xsl:if test="@kind = 'variable' and not('properties' = $config('ignoredFields'))">
+                <xsl:if test="@kind = 'variable'">
                     <xsl:variable name="properties_map">
                         <xsl:sequence select="doxls:add_key('boolean', 'properties.static',    if (@static    = 'yes') then true() else false())"/>
                         <xsl:sequence select="doxls:add_key('boolean', 'properties.constexpr', if (@constexpr = 'yes') then true() else false())"/>
@@ -188,6 +193,14 @@
                     <xsl:sequence select="doxls:add_key('map', 'properties', $properties_map)"/>
                 </xsl:if>
                 
+                <xsl:if test="@kind = 'typedef'">
+                    <xsl:variable name="properties_map">
+                        <xsl:sequence select="doxls:add_key('boolean', 'properties.member', $member)"/>
+                    </xsl:variable>
+
+                    <xsl:sequence select="doxls:add_key('map', 'properties', $properties_map)"/>
+                </xsl:if>
+
                 <xsl:if test="@kind = 'function'">
                     <xsl:if test="./param and not('params' = $config('ignoredFields'))">
                         <array key="parameters">

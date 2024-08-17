@@ -81,6 +81,10 @@ namespace extrait
     template<class T>
     struct strip : detail::strip<T> {};
     
+    /**
+     *  @brief Type helper for extrait::strip.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/strip
+     */
     template<class T>
     using strip_t = typename strip<T>::type;
     
@@ -122,6 +126,10 @@ namespace extrait
     template<class ...Branches>
     struct select : detail::select<Branches...> {};
     
+    /**
+     *  @brief Type helper for extrait::select.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/select
+     */
     template<class ...Branches>
     using select_t = typename select<Branches...>::type;
     
@@ -134,6 +142,10 @@ namespace extrait
     template<template<class...> class T, class ...Branches>
     struct assemble : detail::assemble<T, Branches...> {};
     
+    /**
+     *  @brief Type helper for extrait::assemble.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/assemble
+     */
     template<template<class...> class T, class ...Branches>
     using assemble_t = typename assemble<T, Branches...>::type;
     
