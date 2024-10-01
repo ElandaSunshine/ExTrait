@@ -110,8 +110,6 @@ namespace extrait
      *  @brief Determines whether a function pointer is a member function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isMemberFunction
      *  @tparam Fn The function pointer
-     * 
-     *  @metadata{category, type}
      */
     template<auto Fn>
     struct isMemberFunction : std::bool_constant<Function<Fn>::isMemberFunction> {};
@@ -128,8 +126,6 @@ namespace extrait
      *  @brief Determines whether a function pointer is a const qualified member function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncConstQualified
      *  @tparam Fn The function pointer
-     * 
-     *  @metadata{category, qualifiers}
      */
     template<auto Fn>
     struct isFuncConstQualified : std::bool_constant<Function<Fn>::isConstQualified> {};
@@ -146,8 +142,6 @@ namespace extrait
      *  @brief Determines whether a function pointer is a volatile qualified member function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncVolatileQualified
      *  @tparam Fn The function pointer
-     * 
-     *  @metadata{category, qualifiers}
      */
     template<auto Fn>
     struct isFuncVolatileQualified : std::bool_constant<Function<Fn>::isVolatileQualified> {};
@@ -164,8 +158,6 @@ namespace extrait
      *  @brief Determines whether a function pointer is a LValue qualified member function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncLvalueQualified
      *  @tparam Fn The function pointer
-     * 
-     *  @metadata{category, qualifiers}
      */
     template<auto Fn>
     struct isFuncLvalueQualified : std::bool_constant<Function<Fn>::isLvalueQualified> {};
@@ -182,8 +174,6 @@ namespace extrait
      *  @brief Determines whether a function pointer is a RValue qualified member function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncRvalueQualified
      *  @tparam Fn The function pointer
-     * 
-     *  @metadata{category, qualifiers}
      */
     template<auto Fn>
     struct isFuncRvalueQualified : std::bool_constant<Function<Fn>::isRvalueQualified> {};
@@ -200,8 +190,6 @@ namespace extrait
      *  @brief Determines whether a function pointer has been noexcept specified.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncNoexceptSpecified
      *  @tparam Fn The function pointer
-     * 
-     *  @metadata{category, specifiers}
      */
     template<auto Fn>
     struct isFuncNoexceptSpecified : std::bool_constant<Function<Fn>::isNoexcept> {};
@@ -218,8 +206,6 @@ namespace extrait
      *  @brief Gets the number of parameter a function pointer has.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcParameterCount
      *  @tparam Fn The lambda or function pointer
-     * 
-     *  @metadata{category, signature}
      */
     template<auto Fn>
     struct funcParameterCount : std::integral_constant<std::size_t, Function<Fn>::parameterCount> {};
@@ -236,8 +222,6 @@ namespace extrait
      *  @brief Gets the parameters of a function pointer as an extrait::TypeArray.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcParameterList
      *  @tparam Fn The lambda or function pointer
-     * 
-     *  @metadata{category, signature}
      */
     template<auto Fn>
     struct funcParameterList
@@ -257,8 +241,6 @@ namespace extrait
      *  @brief Gets the return type of a function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcReturnType
      *  @tparam Fn The lambda or function pointer
-     * 
-     *  @metadata{category, signature}
      */
     template<auto Fn>
     struct funcReturnType
@@ -278,8 +260,6 @@ namespace extrait
      *  @brief Gets the class the function pointer is a member of, if it is a member function.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcOwnerType
      *  @tparam Fn The function pointer
-     * 
-     *  @metadata{category, signature}
      */
     template<auto Fn>
     struct funcOwnerType
@@ -299,8 +279,6 @@ namespace extrait
      *  @brief Gets the signature type of a function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcSignature
      *  @tparam Fn The function pointer
-     * 
-     *  @metadata{category, signature}
      */
     template<auto Fn>
     struct funcSignature
@@ -322,8 +300,6 @@ namespace extrait
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/funcs/funcToString
      *  @param funcPtr The function pointer
      *  @return The signature of the given function pointer or lambda as compile time string
-     * 
-     *  @metadata{category, signature}
      */
     template<class Fn>
     constexpr inline std::string_view funcToString(Fn &&funcPtr)
