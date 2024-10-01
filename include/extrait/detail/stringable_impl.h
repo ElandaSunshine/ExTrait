@@ -51,7 +51,6 @@
 #pragma once
 
 #include "../common.h"
-
 #include <sstream>
 
 

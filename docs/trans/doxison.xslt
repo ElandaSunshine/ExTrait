@@ -9,9 +9,10 @@
     
     <!--  *********************************************** INTERNAL ************************************************  -->
     <xsl:template match="text()" />
-    <xsl:variable name="config" select="parse-json(unparsed-text('config.json'))"/>
     <xsl:import href="user.xslt"/>
-    <xsl:output method="text" encoding="UTF-8"/>
+
+    <xsl:param    name="config_file" select="'config.json'"/>
+    <xsl:variable name="config"      select="parse-json(unparsed-text($config_file))"/>
 
     <xsl:function name="doxls:append" visibility="public">
         <xsl:param name="type"/>
@@ -41,30 +42,23 @@
     <xsl:template name="process_content" visibility="private">
         <xsl:param name="namespace"/>
         <xsl:param name="member"/>
-        <xsl:param name="groups"/>
 
         <!-- processing top level struct entities -->
         <xsl:for-each select="./*[local-name() = 'innerclass']">
             <xsl:variable name="cs_name"  select="text()"/>
             <xsl:variable name="cs_index" select="concat(@refid, '.xml')"/>
             <xsl:variable name="cs_data">
-                <xsl:copy-of select="document(concat($config('workingDir'), $cs_index))"/>
+                <xsl:copy-of select="document(concat($config('workingDir'), '/', $cs_index))"/>
             </xsl:variable>
-            
+
             <xsl:for-each select="$cs_data/doxygen/compounddef">
                 <map xmlns="http://www.w3.org/2005/xpath-functions">
                     <string key="name"><xsl:value-of  select="if (starts-with($cs_name, concat($namespace, '::'))) then substring-after($cs_name, concat($namespace, '::')) else $cs_name"/></string>
                     <string key="kind"><xsl:value-of  select="@kind"/></string>
                     <string key="scope"><xsl:value-of select="$namespace"/></string>
                     <string key="fqn"><xsl:value-of   select="compoundname/text()"/></string>
+                    <string key="euid"><xsl:value-of  select="generate-id()"/></string>
 
-                    <xsl:variable name="groups_def">
-                        <xsl:for-each select="distinct-values($groups/*[@fqn = current()/compoundname/text() and @kind = 'class']/@group)">
-                            <string><xsl:value-of select="."/></string>
-                        </xsl:for-each>
-                    </xsl:variable>
-
-                    <xsl:sequence select="doxls:add_key('array', 'groups', $groups_def)"/>
                     <xsl:sequence select="doxls:add_key('string', 'visibility', @prot)"/>
 
                     <xsl:if test="basecompoundref">
@@ -81,24 +75,8 @@
                         </xsl:if>
                     </xsl:if>
 
-                    <xsl:if test="not('brief' = $config('ignoredFields'))">
-                        <xsl:variable name="brief" select="normalize-space(string-join(briefdescription//text(), ''))"/>
-                    
-                        <xsl:if test="$brief">
-                            <string key="brief">
-                                <xsl:value-of select="$brief"/>
-                            </string>
-                        </xsl:if>
-                    </xsl:if>
-
-                    <xsl:variable name="details">
-                        <xsl:sequence select="user:parse_details(detaileddescription/para)"/>
-                    </xsl:variable>
-
-                    <xsl:call-template name="get_element_type">
-                        <xsl:with-param name="parent"   select="'xsl.details'"/>
-                        <xsl:with-param name="children" select="$details"/>
-                    </xsl:call-template>
+                    <xsl:sequence select="doxls:add_key('string', 'brief', normalize-space(string-join(briefdescription//text(), '')))"/>
+                    <xsl:sequence select="doxls:add_key('string', 'details', detaileddescription/para)"/>
 
                     <xsl:variable name="tparams">
                         <xsl:for-each select="./templateparamlist/param">
@@ -118,14 +96,12 @@
                     <xsl:variable name="properties_map">
                         <xsl:sequence select="doxls:add_key('boolean', 'properties.member', $member)"/>
                     </xsl:variable>
-
                     <xsl:sequence select="doxls:add_key('map', 'properties', $properties_map)"/>
                 </map>
 
                 <xsl:call-template name="process_content">
                     <xsl:with-param name="namespace" select="$cs_name"/>
                     <xsl:with-param name="member"    select="true()"/>
-                    <xsl:with-param name="groups"    select="$groups"/>
                 </xsl:call-template>
             </xsl:for-each>
         </xsl:for-each>
@@ -137,32 +113,12 @@
                 <string key="kind" ><xsl:value-of select="@kind"/></string>
                 <string key="scope"><xsl:value-of select="$namespace"/></string>
                 <string key="fqn"  ><xsl:value-of select="qualifiedname/text()"/></string>
+                <string key="euid"><xsl:value-of  select="generate-id()"/></string>
 
-                <xsl:variable name="groups_def">
-                    <xsl:for-each select="distinct-values($groups/*[@fqn = current()/qualifiedname/text() and @kind = current()/@kind]/@group)">
-                        <string><xsl:value-of select="."/></string>
-                    </xsl:for-each>
-                </xsl:variable>
-
-                <xsl:sequence select="doxls:add_key('array',  'groups',     $groups_def)"/>
                 <xsl:sequence select="doxls:add_key('string', 'visibility', @prot)"/>
 
-                <xsl:if test="not('brief' = $config('ignoredFields'))">
-                    <xsl:variable name="brief" select="normalize-space(string-join(briefdescription//text(), ''))"/>
-
-                    <xsl:if test="$brief">
-                        <xsl:sequence select="doxls:add_key('string', 'brief', $brief)"/>
-                    </xsl:if>
-                </xsl:if>
-                
-                <xsl:variable name="details">
-                    <xsl:sequence select="user:parse_details(detaileddescription/para)"/>
-                </xsl:variable>
-                
-                <xsl:call-template name="get_element_type">
-                    <xsl:with-param name="parent"   select="'xsl.details'"/>
-                    <xsl:with-param name="children" select="$details"/>
-                </xsl:call-template>
+                <xsl:sequence select="doxls:add_key('string', 'brief', normalize-space(string-join(briefdescription//text(), '')))"/>
+                <xsl:sequence select="doxls:add_key('string', 'details', detaileddescription/para)"/>
                 
                 <xsl:if test="@kind = ('struct', 'class', 'union', 'variable', 'typedef', 'function')">
                     <xsl:variable name="tparams">
@@ -262,79 +218,36 @@
     <!-- Transform all root compounds -->
     <xsl:template name="main" visibility="private">
         <xsl:variable name="index_file">
-            <xsl:copy-of select="document(concat($config('workingDir'), 'index.xml'))"/>
+            <xsl:copy-of select="document(concat($config('workingDir'), '/index.xml'))"/>
         </xsl:variable>
 
-        <xsl:variable name="groups">
-            <xsl:for-each select="$index_file/doxygenindex/compound[@kind='group']">
-                <xsl:variable name="gp_index" select="concat(@refid, '.xml')"/>
-                <xsl:variable name="gp_data">
-                    <xsl:copy-of select="document(concat($config('workingDir'), $gp_index))"/>
+        <xsl:variable name="objects">
+            <xsl:for-each select="$index_file/doxygenindex/compound[@kind='namespace']">
+                <xsl:variable name="ns_name"  select="name/text()"/>
+                <xsl:variable name="ns_index" select="concat(@refid, '.xml')"/>
+                <xsl:variable name="ns_data">
+                    <xsl:copy-of select="document(concat($config('workingDir'), '/', $ns_index))"/>
                 </xsl:variable>
-                <xsl:variable name="gp_name" select="name/text()"/>
-
-                <xsl:for-each select="$gp_data/doxygen/compounddef/*[local-name() = 'innerclass']">
-                    <member kind="class" fqn="{text()}" group="{$gp_name}"/>
-                </xsl:for-each>
-
-                <xsl:for-each select="$gp_data/doxygen/compounddef/*[local-name() = 'sectiondef']/*[local-name() = 'memberdef']">
-                    <member kind="{@kind}" fqn="{qualifiedname/text()}" group="{$gp_name}"/>
+                
+                <xsl:for-each select="$ns_data/doxygen/compounddef">
+                    <xsl:call-template name="process_content">
+                        <xsl:with-param name="namespace" select="$ns_name"/>
+                        <xsl:with-param name="member"    select="false()"/>
+                    </xsl:call-template>
                 </xsl:for-each>
             </xsl:for-each>
         </xsl:variable>
+        
+        <xsl:variable name="output_path" select="concat($config('workingDir'), '/' , $config('output'))"/>
 
-        <xsl:variable name="json">
+        <xsl:variable name="json_array">
             <array xmlns="http://www.w3.org/2005/xpath-functions">
-                <xsl:for-each select="$index_file/doxygenindex/compound[@kind='namespace']">
-                    <xsl:variable name="ns_name"  select="name/text()"/>
-                    <xsl:variable name="ns_index" select="concat(@refid, '.xml')"/>
-                    <xsl:variable name="ns_data">
-                        <xsl:copy-of select="document(concat($config('workingDir'), $ns_index))"/>
-                    </xsl:variable>
-                    
-                    <xsl:for-each select="$ns_data/doxygen/compounddef">
-                        <xsl:call-template name="process_content">
-                            <xsl:with-param name="namespace" select="$ns_name"/>
-                            <xsl:with-param name="member"    select="false()"/>
-                            <xsl:with-param name="groups"    select="$groups"/>
-                        </xsl:call-template>
-                    </xsl:for-each>
-                </xsl:for-each>
+                <xsl:sequence select="user:pre_print_hook($objects)"/>
             </array>
         </xsl:variable>
-        
-        <xsl:value-of select="xml-to-json($json)"/>
-    </xsl:template>
-    
-    <xsl:template name="get_element_type">
-        <xsl:param name="parent"/>
-        <xsl:param name="children"/>
-        <xsl:param name="isParentArray" select="false()"/>
-        
-        <xsl:for-each select="$children/DocElement">
-            <xsl:choose>
-                <xsl:when test="@type = ('string', 'boolean', 'number')">
-                    <xsl:if test="normalize-space(text())">
-                        <xsl:sequence select="doxls:add_key(@type, concat($parent, '.', @key), text())"/>
-                    </xsl:if>
-                </xsl:when>
-                <xsl:when test="@type = ('array', 'map')">
-                    <xsl:variable name="id" select="if ($isParentArray) then concat($parent, '.#') else concat($parent, '.', @key)"/>
 
-                    <xsl:variable name="children_nodes">
-                        <xsl:call-template name="get_element_type">
-                            <xsl:with-param name="parent"        select="$id"/>
-                            <xsl:with-param name="children"      select="."/>
-                            <xsl:with-param name="isParentArray" select="@type = 'array'"/>
-                        </xsl:call-template>
-                    </xsl:variable>
-
-                    <xsl:sequence select="doxls:add_key(@type, $id, $children_nodes)"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:message terminate="yes">Invalid json type "<xsl:value-of select="@type"/>", allowed are string, number, boolean, array or map</xsl:message>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:for-each>
+        <xsl:result-document href="{$output_path}" method="text" encoding="UTF-8" omit-xml-declaration="yes">
+            <xsl:value-of select="xml-to-json($json_array)"/>
+        </xsl:result-document>
     </xsl:template>
  </xsl:stylesheet>

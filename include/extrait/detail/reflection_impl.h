@@ -51,13 +51,10 @@
 
 
 #include "../common.h"
-#include "../type_list.h"
-
-#include <array>
+#include "../type_container.h"
 #include <string_view>
 
-template<class...T>
-struct TypeArray{};
+
 
 //======================================================================================================================
 namespace extrait::detail
@@ -203,11 +200,13 @@ namespace extrait::detail
         /** 
          *  @brief Invokes the current invocable with the specified parameters.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/invoke
+         *  @par owner The owner object
+         *  @par args The arguments passed to the invocable
          */
-        template<class U, class ...Args>
+        template<class U, bool Im = isMemberFunction, class ...Args>
         constexpr static inline auto invoke(U &owner, Args &&...args)
             noexcept(noexcept((owner.*Func)(std::forward<Args>(args)...)))
-            -> decltype((owner.*Func)(std::forward<Args>(args)...))
+            -> std::enable_if_t<Im, decltype((owner.*Func)(std::forward<Args>(args)...))>
         {
             return (owner.*Func)(std::forward<Args>(args)...);
         }
@@ -215,11 +214,13 @@ namespace extrait::detail
         /** 
          *  @brief Invokes the current invocable with the specified parameters.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/invoke
+         *  @par owner The owner object pointer if it is a member function pointer, otherwise nullptr
+         *  @par args The arguments passed to the invocable
          */
-        template<class U, class ...Args>
+        template<class U, bool Im = isMemberFunction, class ...Args>
         constexpr static inline auto invoke(U *owner, Args &&...args)
             noexcept(noexcept((owner->*Func)(std::forward<Args>(args)...)))
-            -> decltype((owner->*Func)(std::forward<Args>(args)...))
+            -> std::enable_if_t<Im, decltype((owner->*Func)(std::forward<Args>(args)...))>
         {
             assert(owner != nullptr); // can't call member of nullptr
             return (owner->*Func)(std::forward<Args>(args)...);
@@ -229,10 +230,10 @@ namespace extrait::detail
          *  @brief Invokes the current invocable with the specified parameters.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/invoke
          */
-        template<class ...Args>
+        template<bool Im = isMemberFunction, class ...Args>
         constexpr static inline auto invoke([[maybe_unused]] std::nullptr_t owner, Args &&...args)
             noexcept(noexcept((Func)(std::forward<Args>(args)...)))
-            -> decltype((Func)(std::forward<Args>(args)...))
+            -> std::enable_if_t<!Im, decltype((Func)(std::forward<Args>(args)...))>
         {
             return (Func)(std::forward<Args>(args)...);
         }
@@ -241,6 +242,7 @@ namespace extrait::detail
         /**
          *  @brief Gets the function signature of this Function's invocable as compile time string.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/toString
+         *  @return The function signature as compile time string
          */
         constexpr static inline std::string_view toString() noexcept
         {
@@ -378,6 +380,8 @@ namespace extrait::detail
         /**
          *  @brief Gets the overloaded function pointer for the specified function signature type.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Overload/of
+         *  @param func The function pointer
+         *  @return The overloaded function pointer
          */
         template<class U = Signature>
         [[nodiscard]]
@@ -387,8 +391,10 @@ namespace extrait::detail
         }
         
         /**
-         *  @brief Gets the overloaded function pointer for the specified function signature type.
+         *  @brief Gets the overloaded member function pointer for the specified function signature type.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Overload/of
+         *  @param func The function pointer
+         *  @return The overloaded function pointer
          */
         template<class Owner>
         [[nodiscard]]
@@ -412,6 +418,8 @@ namespace extrait::detail
         /**
          *  @brief Gets the overloaded function pointer for the specified function signature type.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Overload/of
+         *  @param func The function pointer
+         *  @return The overloaded function pointer
          */
         [[nodiscard]]
         constexpr static auto of(Signature* func) noexcept
@@ -420,8 +428,10 @@ namespace extrait::detail
         }
         
         /**
-         *  @brief Gets the overloaded function pointer for the specified function signature type.
+         *  @brief Gets the overloaded member function pointer for the specified function signature type.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Overload/of
+         *  @param func The function pointer
+         *  @return The overloaded function pointer
          */
         template<class Owner>
         [[nodiscard]]

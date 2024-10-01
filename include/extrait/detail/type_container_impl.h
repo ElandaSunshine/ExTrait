@@ -51,7 +51,6 @@
 #pragma once
 
 #include "../type_list.h"
-
 #include <variant>
 #include <array>
 
@@ -80,12 +79,54 @@ namespace extrait::detail
     struct isCompatibleTypeIt<T<Array, I1, Reverse>, T<Array, I2, Reverse>> : std::true_type {};
     
     //------------------------------------------------------------------------------------------------------------------
-    template<class T, index_t I, class = void>
-    struct iteratorContainer {};
-    
-    template<template<class...> class T, index_t I, class ...Types>
-    struct iteratorContainer<T<Types...>, I, std::enable_if_t<I >= 0 && I < sizeof...(Types)>>
+    template<class Self, class = void>
+    struct TypeIteratorNext_impl {};
+
+    template<template<class, index_t, bool> class Self,
+             template<class...> class T, bool R, index_t I,
+             class ...Types>
+    struct TypeIteratorNext_impl<Self<T<Types...>, I, R>, std::enable_if_t<(I >= 0 && I < sizeof...(Types))>>
     {
+        /**
+         *  @brief Gets a new instantiation of the current iterator with index incremented by one.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase/next
+         *
+         *  @metadata{category, indexing}
+         */
+        using next = Self<T<Types...>, (I + 1), R>;
+    };
+
+    template<class Self, class = void>
+    struct TypeIteratorPrev_impl {};
+
+    template<template<class, index_t, bool> class Self,
+             template<class...> class T, bool R, index_t I,
+             class ...Types>
+    struct TypeIteratorPrev_impl<Self<T<Types...>, I, R>, std::enable_if_t<(I > 0 && I <= sizeof...(Types))>>
+    {
+        /**
+         *  @brief Gets a new instantiation of the current iterator with index decremented by one.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase/next
+         *
+         *  @metadata{category, indexing}
+         */
+        using prev = Self<T<Types...>, (I - 1), R>;
+    };
+    
+
+    template<class Self, class = void>
+    struct TypeIteratorBase_impl {};
+    
+    
+    template<template<class, index_t, bool> class Self,
+             template<class...> class T, bool R, index_t I,
+             class ...Types>
+    struct TypeIteratorBase_impl<Self<T<Types...>, I, R>, std::enable_if_t<(I >= 0 && I < sizeof...(Types))>>
+    {
+        /** 
+         *  @brief Gets the type at the current index.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
+         */
         using type = get_t<T<Types...>, I>;
     };
     

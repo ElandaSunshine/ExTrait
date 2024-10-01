@@ -1,0 +1,14 @@
+{
+    "workingDir": "../out/xml",
+    "output": "../json/symbol_table.json",
+    "entities": [
+        "class", "struct", "union",
+        "function",
+        "variable",
+        "typedef"
+    ],
+    "ignoredFields": [
+        "bases", "visibility", "properties.qualifiers", "properties.virtual", "properties.noexcept",
+        "properties.inline", "properties.explicit", "properties.constexpr", "params"
+    ]
+}

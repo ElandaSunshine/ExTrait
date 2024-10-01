@@ -86,7 +86,7 @@ TEST(CommonSuite, StripTest)
     std::string_view stv = "Hello world!";
     EXPECT_EQ(R"("Hello world!")", toString(stv));
     
-    std::array arr { 0, 1, 3, 5, 7, 42, 69, 140, 420, 666 };
+    std::array arr{ 0, 1, 3, 5, 7, 42, 69, 140, 420, 666 };
     EXPECT_EQ("[0, 1, 3, 5, 7, 42, 69, 140, 420, 666]", toString(arr)) << getActualTypeName(arr);
 
     std::vector<int> vec { 0, 1, 3, 5, 7, 42, 69, 140, 420, 666 };

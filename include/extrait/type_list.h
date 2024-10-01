@@ -56,11 +56,6 @@
 
 namespace extrait
 {
-    /** 
-     *  @defgroup type_list Type List
-     *  @{
-     */
-    
     //==================================================================================================================
     /**
      *  @brief An alias for int, having enough room for indexing template arguments and negative values for
@@ -88,6 +83,8 @@ namespace extrait
     /**
      *  @brief Determines whether a given type is an instantiation of a type list conformant class template.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/hasTypeList
+     *  @tparam T The type to check
+     * 
      *  @metadata{category, conformance_helper}
      */
     template<class T>
@@ -96,6 +93,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::hasTypeList.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/hasTypeList
+     *  @tparam T The type to check
      */
     template<class T>
     constexpr inline bool hasTypeList_v = hasTypeList<T>::value;
@@ -104,6 +102,9 @@ namespace extrait
     /**
      *  @brief Determines whether two types instantiate the same class template.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/sameClassTemplate
+     *  @tparam T The type to compare against U
+     *  @tparam U The type to compare against T
+     * 
      *  @metadata{category, binary_comparative}
      */
     template<class T, class U>
@@ -112,6 +113,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::sameClassTemplate.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/sameClassTemplate
+     *  @tparam T The type to compare against U
+     *  @tparam U The type to compare against T
      */
     template<class T, class U>
     constexpr inline bool sameClassTemplate_v = sameClassTemplate<T, U>::value;
@@ -120,6 +123,9 @@ namespace extrait
     /**
      *  @brief Determines whether two class template type lists are exactly the same.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/sameTemplateArguments
+     *  @tparam T The type to compare against U
+     *  @tparam U The type to compare against T
+     * 
      *  @metadata{category, binary_comparative}
      */
     template<class T, class U>
@@ -128,6 +134,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::sameTemplateArguments.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/sameTemplateArguments
+     *  @tparam T The type to compare against U
+     *  @tparam U The type to compare against T
      */
     template<class T, class U>
     constexpr inline bool sameTemplateArguments_v = sameTemplateArguments<T, U>::value;
@@ -136,6 +144,9 @@ namespace extrait
     /**
      *  @brief Determines whether a type list contains a certain type.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/contains
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Key The type to find
+     * 
      *  @metadata{category, unary_type_search}
      */
     template<class T, class Key>
@@ -144,6 +155,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::contains.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/contains
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Key The type to find
      */
     template<class T, class Key>
     constexpr inline bool contains_v = contains<T, Key>::value;
@@ -152,6 +165,9 @@ namespace extrait
     /**
      *  @brief Determines whether a given type list is empty.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isEmpty
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to evaluate
+     * 
+     *  @metadata{group_by, page}
      *  @metadata{category, unary_list_properties}
      */
     template<class T>
@@ -160,6 +176,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::isEmpty.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isEmpty
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to evaluate
      */
     template<class T>
     constexpr inline bool isEmpty_v = isEmpty<T>::value;
@@ -168,7 +185,8 @@ namespace extrait
     /**
      *  @brief Determines whether a given type list is empty.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isEmpty
-     *  @ref extrait::isEmpty
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to evaluate
+     * 
      *  @metadata{category, unary_list_properties}
      */
     template<class T>
@@ -177,6 +195,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::isEmptyInstantiated.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isEmpty
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to evaluate
      */
     template<class T>
     constexpr inline bool isEmptyInstantiated_v = isEmptyInstantiated<T>::value;
@@ -185,6 +204,10 @@ namespace extrait
     /**
      *  @brief Determines whether a type list starts with a set of types.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/startsWith
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Types The types to find at the beginning of the type list
+     * 
+     *  @metadata{group_by, page}
      *  @metadata{category, unary_type_search}
      *  @metadata{ref_desc, Determines whether a type list starts or ends with a set of types.}
      */
@@ -194,6 +217,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::startsWith.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/startsWith
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Types The types to find at the beginning of the type list
      */
     template<class T, class ...Types>
     constexpr inline bool startsWith_v = startsWith<T, Types...>::value;
@@ -202,7 +227,9 @@ namespace extrait
     /**
      *  @brief Determines whether a type list ends with a set of types.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/startsWith
-     *  @ref extrait::startsWith
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Types The types to find at the end of the type list
+     * 
      *  @metadata{category, unary_type_search}
      */
     template<class T, class ...Types>
@@ -211,6 +238,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::endsWith.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/startsWith
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Types The types to find at the end of the type list
      */
     template<class T, class ...Types>
     constexpr inline bool endsWith_v = endsWith<T, Types...>::value;
@@ -219,6 +248,10 @@ namespace extrait
     /**
      *  @brief Determines the number of types that matched a predicate.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Predicate The predicate class template to match against the types in the type list
+     * 
+     *  @metadata{group_by, page}
      *  @metadata{category, unary_type_search}
      *  @metadata{ref_desc, Determines how types match a predicate.}
      */
@@ -228,6 +261,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::match.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Predicate The predicate class template to match against the types in the type list
      */
     template<class T, template<class> class Predicate>
     constexpr inline std::size_t match_v = match<T, Predicate>::value;
@@ -235,8 +270,10 @@ namespace extrait
     //.............
     /**
      *  @brief Determines the number of types did not match a predicate.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match%23tabber-mismatch
-     *  @ref extrait::match
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Predicate The predicate class template to match against the types in the type list
+     * 
      *  @metadata{category, unary_type_search}
      */
     template<class T, template<class> class Predicate>
@@ -245,6 +282,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::mismatch.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Predicate The predicate class template to match against the types in the type list
      */
     template<class T, template<class> class Predicate>
     constexpr inline std::size_t mismatch_v = mismatch<T, Predicate>::value;
@@ -252,8 +291,10 @@ namespace extrait
     //.............
     /**
      *  @brief Determines if any type matched a predicate.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match%23tabber-matchAny
-     *  @ref extrait::match
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Predicate The predicate class template to match against the types in the type list
+     * 
      *  @metadata{category, unary_type_search}
      */
     template<class T, template<class> class Predicate>
@@ -262,6 +303,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::matchAny.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Predicate The predicate class template to match against the types in the type list
      */
     template<class T, template<class> class Predicate>
     constexpr inline bool matchAny_v = matchAny<T, Predicate>::value;
@@ -269,8 +312,10 @@ namespace extrait
     //.............
     /**
      *  @brief Determines if all types matched a predicate.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match%23tabber-matchAll
-     *  @ref extrait::match
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Predicate The predicate class template to match against the types in the type list
+     * 
      *  @metadata{category, unary_type_search}
      */
     template<class T, template<class> class Predicate>
@@ -279,6 +324,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::matchAll.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Predicate The predicate class template to match against the types in the type list
      */
     template<class T, template<class> class Predicate>
     constexpr inline bool matchAll_v = matchAll<T, Predicate>::value;
@@ -286,8 +333,10 @@ namespace extrait
     //.............
     /**
      *  @brief Determines if no types matched a predicate.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match%23tabber-matchNone
-     *  @ref extrait::match
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Predicate The predicate class template to match against the types in the type list
+     * 
      *  @metadata{category, unary_type_search}
      */
     template<class T, template<class> class Predicate>
@@ -296,6 +345,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::matchNone.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/match
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Predicate The predicate class template to match against the types in the type list
      */
     template<class T, template<class> class Predicate>
     constexpr inline bool matchNone_v = matchNone<T, Predicate>::value;
@@ -304,6 +355,10 @@ namespace extrait
     /**
      *  @brief Determines the index of the first matching type found in a type list.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/indexOf
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Key The type to find in the type list
+     * 
+     *  @metadata{group_by, page}
      *  @metadata{category, unary_type_search}
      *  @metadata{ref_desc, Determines the index of a type in a type list.}
      */
@@ -313,6 +368,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::indexOf.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/indexOf
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Key The type to find in the type list
      */
     template<class T, class Key>
     constexpr inline index_t indexOf_v = indexOf<T, Key>::value;
@@ -321,7 +378,9 @@ namespace extrait
     /**
      *  @brief Determines the index of the last matching type found in a type list.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/indexOf
-     *  @ref extrait::indexOf
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Key The type to find in the type list
+     * 
      *  @metadata{category, unary_type_search}
      */
     template<class T, class Key>
@@ -330,6 +389,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::lastIndexOf.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/indexOf
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to search in
+     *  @tparam Key The type to find in the type list
      */
     template<class T, class Key>
     constexpr inline index_t lastIndexOf_v = lastIndexOf<T, Key>::value;
@@ -338,6 +399,8 @@ namespace extrait
     /**
      *  @brief Queries the length of a type list.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/length
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to query
+     * 
      *  @metadata{category, unary_list_properties}
      */
     template<class T>
@@ -346,6 +409,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::length.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/length
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to query
      */
     template<class T>
     constexpr inline int length_v = length<T>::value;
@@ -354,6 +418,9 @@ namespace extrait
     /**
      *  @brief Transfers the type list of an instantiation to a different class template.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/convert
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to convert
+     *  @tparam U A [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) class template to convert to
+     * 
      *  @metadata{category, trans_list_conversion}
      */
     template<class T, template<class...> class U>
@@ -362,6 +429,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::convert.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/convert
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type to convert
+     *  @tparam U A [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) class template to convert to
      */
     template<class T, template<class...> class U>
     using convert_t = typename convert<T, U>::type;
@@ -370,6 +439,9 @@ namespace extrait
     /**
      *  @brief Re-instantiates a class template instantiation with new template arguments.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/reinstantiate
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to re-instantiate
+     *  @tparam Types A list of types to re-instantiate T with
+     * 
      *  @metadata{category, trans_list_conversion}
      */
     template<class T, class ...Types>
@@ -378,6 +450,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::reinstantiate.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/reinstantiate
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to re-instantiate
+     *  @tparam Types A list of types to re-instantiate T with
      */
     template<class T, class ...Types>
     using reinstantiate_t = typename reinstantiate<T, Types...>::type;
@@ -386,6 +460,8 @@ namespace extrait
     /**
      *  @brief Reverse a type list so that all types appear in opposite direction.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/reverse
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     * 
      *  @metadata{category, trans_arrangement}
      */
     template<class T>
@@ -394,6 +470,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::reverse.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/reverse
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
      */
     template<class T>
     using reverse_t = typename reverse<T>::type;
@@ -402,6 +479,10 @@ namespace extrait
     /**
      *  @brief Instantiates a new type list with a sub-range of the original type list.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/sublist
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Start The start index of the sub-range
+     *  @tparam End The end index of the sub-range (exclusive)
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, index_t Start, index_t End>
@@ -410,6 +491,9 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::sublist.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/sublist
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Start The start index of the sub-range
+     *  @tparam End The end index of the sub-range (exclusive)
      */
     template<class T, index_t Start, index_t End>
     using sublist_t = typename sublist<T, Start, End>::type;
@@ -418,6 +502,9 @@ namespace extrait
     /**
      *  @brief Merges a set of at least one type list into one.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/join
+     *  @tparam T A [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) class template that adapts all the types
+     *  @tparam U A list of [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiations which parameters should be adapted
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<template<class...> class T, class ...U>
@@ -425,7 +512,9 @@ namespace extrait
     
     /**
      *  @brief Type helper for extrait::join.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/join
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/join#
+     *  @tparam T A [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) class template that adapts all the types
+     *  @tparam U A list of [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiations which parameters should be adapted
      */
     template<template<class...> class T, class ...U>
     using join_t = typename join<T, U...>::type;
@@ -434,6 +523,9 @@ namespace extrait
     /**
      *  @brief Gets a type, inside a type list, at a certain index.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/get
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to search
+     *  @tparam I The index of the type to get
+     * 
      *  @metadata{category, trans_type_fetching}
      */
     template<class T, index_t I>
@@ -442,6 +534,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::get.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/get
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to search
+     *  @tparam I The index of the type to get
      */
     template<class T, index_t I>
     using get_t = typename get<T, I>::type;
@@ -450,7 +544,9 @@ namespace extrait
     /**
      *  @brief Gets the first type from a type list.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/get
-     *  @ref extrait::get
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to search
+     * 
+     *  @metadata{group_by, page}
      *  @metadata{category, trans_type_fetching}
      */
     template<class T>
@@ -459,6 +555,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::first.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/get
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to search
      */
     template<class T>
     using first_t = typename first<T>::type;
@@ -467,7 +564,8 @@ namespace extrait
     /**
      *  @brief Gets the last type from a type list.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/get
-     *  @ref extrait::get
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to search
+     * 
      *  @metadata{category, trans_type_fetching}
      */
     template<class T>
@@ -476,6 +574,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::last.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/get
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to search
      */
     template<class T>
     using last_t = typename last<T>::type;
@@ -484,6 +583,10 @@ namespace extrait
     /**
      *  @brief Gets the type that was found to be the minimum among the other types, based on a given comparator.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/minType
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to search
+     *  @tparam Comparator The comparator class template that the types will be compared against each other with
+     * 
+     *  @metadata{group_by, page}
      *  @metadata{category, trans_type_fetching}
      *  @metadata{ref_desc, Gets the type that was found to be the minimum or maximum among the other types\, based on a given comparator.}
      */
@@ -493,6 +596,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::minType.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/minType
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to search
+     *  @tparam Comparator The comparator class template that the types will be compared against each other with
      */
     template<class T, template<class, class> class Comparator>
     using minType_t = typename minType<T, Comparator>::type;
@@ -501,7 +606,9 @@ namespace extrait
     /**
      *  @brief Gets the type that was found to be the maximum among the other types, based on a given comparator.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/minType
-     *  @ref extrait::minType
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to search
+     *  @tparam Comparator The comparator class template that the types will be compared against each other with
+     * 
      *  @metadata{category, trans_type_fetching}
      */
     template<class T, template<class, class> class Comparator>
@@ -510,6 +617,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::maxType.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/minType
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to search
+     *  @tparam Comparator The comparator class template that the types will be compared against each other with
      */
     template<class T, template<class, class> class Comparator>
     using maxType_t = typename maxType<T, Comparator>::type;
@@ -518,6 +627,11 @@ namespace extrait
     /**
      *  @brief Replaces the first occurrence of a type that matches a given type.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Key The type to replace
+     *  @tparam Replacement The list of types to insert where the old type was
+     * 
+     *  @metadata{group_by, page}
      *  @metadata{category, trans_list_mutation}
      *  @metadata{ref_desc, Replaces a type inside a type list based on the given template arguments.}
      */
@@ -527,6 +641,9 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::replace.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Key The type to replace
+     *  @tparam Replacement The list of types to insert where the old type was
      */
     template<class T, class Key, class ...Replacement>
     using replace_t = typename replace<T, Key, Replacement...>::type;
@@ -534,8 +651,11 @@ namespace extrait
     //.............
     /**
      *  @brief Replaces all types that match a given type.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace%23tabber-replaceAll
-     *  @ref extrait::replace
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Key The type to replace
+     *  @tparam Replacement The list of types to insert where the old types were
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, class Key, class ...Replacement>
@@ -544,6 +664,9 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::replaceAll.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Key The type to replace
+     *  @tparam Replacement The list of types to insert where the old types were
      */
     template<class T, class Key, class ...Replacement>
     using replaceAll_t = typename replaceAll<T, Key, Replacement...>::type;
@@ -551,8 +674,11 @@ namespace extrait
     //.............
     /**
      *  @brief Replaces a type inside a type list at the specified index.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace%23tabber-replaceAt
-     *  @ref extrait::replace
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam I The index of the type to replace
+     *  @tparam Replacement The list of types to insert where the old type was 
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, index_t I, class ...Replacement>
@@ -561,6 +687,9 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::replaceAt.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam I The index of the type to replace
+     *  @tparam Replacement The list of types to insert where the old type was
      */
     template<class T, index_t I, class ...Replacement>
     using replaceAt_t = typename replaceAt<T, I, Replacement...>::type;
@@ -568,8 +697,10 @@ namespace extrait
     //.............
     /**
      *  @brief Replaces the first type in a type list.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace%23tabber-replaceFirst
-     *  @ref extrait::replace
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Replacement The list of types to insert where the old type was
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, class ...Replacement>
@@ -578,6 +709,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::replaceFirst.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Replacement The list of types to insert where the old type was
      */
     template<class T, class ...Replacement>
     using replaceFirst_t = typename replaceFirst<T, Replacement...>::type;
@@ -585,8 +718,10 @@ namespace extrait
     //.............
     /**
      *  @brief Replaces the last type in a type list.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace%23tabber-replaceLast
-     *  @ref extrait::replace
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Replacement The list of types to insert where the old type was
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, class ...Replacement>
@@ -595,6 +730,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::replaceLast.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Replacement The list of types to insert where the old type was
      */
     template<class T, class ...Replacement>
     using replaceLast_t = typename replaceLast<T, Replacement...>::type;
@@ -602,8 +739,11 @@ namespace extrait
     //.............
     /**
      *  @brief Replaces exactly one type with another at a specified index.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace%23tabber-set
-     *  @ref extrait::replace
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam I The index of the type to replace
+     *  @tparam Replacement The type to insert where the old type was
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, index_t I, class Replacement>
@@ -612,6 +752,9 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::set.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam I The index of the type to replace
+     *  @tparam Replacement The type to insert where the old type was
      */
     template<class T, index_t I, class Replacement>
     using set_t = typename set<T, I, Replacement>::type;
@@ -619,8 +762,12 @@ namespace extrait
     //.............
     /**
      *  @brief Replaces a range of types inside a type list.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace%23tabber-replaceRange
-     *  @ref extrait::replace
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Start The start index of the range to replace
+     *  @tparam End The end index of the range to replace (exclusive)
+     *  @tparam Replacement The list of types to insert where the old types were
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, index_t Start, index_t End, class ...Replacement>
@@ -629,6 +776,10 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::replaceRange.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Start The start index of the range to replace
+     *  @tparam End The end index of the range to replace (exclusive)
+     *  @tparam Replacement The list of types to insert where the old types were
      */
     template<class T, index_t Start, index_t End, class ...Replacement>
     using replaceRange_t = typename replaceRange<T, Start, End, Replacement...>::type;
@@ -636,8 +787,11 @@ namespace extrait
     //.............
     /**
      *  @brief Replaces all types inside a type list that matched a predicate.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace%23tabber-replaceIf
-     *  @ref extrait::replace
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Predicate The predicate to determine the types to replace
+     *  @tparam Replacement The list of types to insert where the old types were
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, template<class> class Predicate, class ...Replacement>
@@ -646,6 +800,9 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::replaceIf.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Predicate The predicate to determine the types to replace
+     *  @tparam Replacement The list of types to insert where the old types were
      */
     template<class T, template<class> class Predicate, class ...Replacement>
     using replaceIf_t = typename replaceIf<T, Predicate, Replacement...>::type;
@@ -653,8 +810,11 @@ namespace extrait
     //.............
     /**
      *  @brief Replaces all types inside a type list that did not match a predicate.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace%23tabber-replaceIfNot
-     *  @ref extrait::replace
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Predicate The predicate to determine the types to replace
+     *  @tparam Replacement The list of types to insert where the old types were
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, template<class> class Predicate, class ...Replacement>
@@ -663,6 +823,9 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::replaceIfNot.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/replace
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Predicate The predicate to determine the types to replace
+     *  @tparam Replacement The list of types to insert where the old types were
      */
     template<class T, template<class> class Predicate, class ...Replacement>
     using replaceIfNot_t = typename replaceIfNot<T, Predicate, Replacement...>::type;
@@ -671,6 +834,10 @@ namespace extrait
     /**
      *  @brief Removes the first occurrence of a type that matches a given type.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Key The type to remove
+     * 
+     *  @metadata{group_by, page}
      *  @metadata{category, trans_list_mutation}
      *  @metadata{ref_desc, Removes a type from a type list based on the given template arguments.}
      */
@@ -680,6 +847,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::remove.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Key The type to remove
      */
     template<class T, class Key>
     using remove_t = typename remove<T, Key>::type;
@@ -687,8 +856,10 @@ namespace extrait
     //.............
     /**
      *  @brief Removes all types from a type list that match a given type.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove%23tabber-removeAll
-     *  @ref extrait::remove
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Key The type to remove
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, class Key>
@@ -697,6 +868,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::removeAll.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Key The type to remove
      */
     template<class T, class Key>
     using removeAll_t = typename removeAll<T, Key>::type;
@@ -704,8 +877,10 @@ namespace extrait
     //.............
     /**
      *  @brief Removes a type from a type list at the specified index.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove%23tabber-removeAt
-     *  @ref extrait::remove
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam I The index of the type to remove
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, index_t I>
@@ -714,6 +889,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::removeAt.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam I The index of the type to remove
      */
     template<class T, index_t I>
     using removeAt_t = typename removeAt<T, I>::type;
@@ -721,8 +898,9 @@ namespace extrait
     //.............
     /**
      *  @brief Removes the first type from a type list.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove%23tabber-removeFirst
-     *  @ref extrait::remove
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T>
@@ -731,6 +909,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::removeFirst.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
      */
     template<class T>
     using removeFirst_t = typename removeFirst<T>::type;
@@ -738,8 +917,9 @@ namespace extrait
     //.............
     /**
      *  @brief Removes the last type from a type list.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove%23tabber-removeLast
-     *  @ref extrait::remove
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T>
@@ -748,6 +928,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::removeLast.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
      */
     template<class T>
     using removeLast_t = typename removeLast<T>::type;
@@ -755,8 +936,11 @@ namespace extrait
     //.............
     /**
      *  @brief Removes a range of types from a type list.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove%23tabber-removeRange
-     *  @ref extrait::remove
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Start The start index of the range
+     *  @tparam End The end index of the range (exclusive)
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, index_t Start, index_t End>
@@ -765,6 +949,9 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::removeRange.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Start The start index of the range
+     *  @tparam End The end index of the range (exclusive)
      */
     template<class T, index_t Start, index_t End>
     using removeRange_t = typename removeRange<T, Start, End>::type;
@@ -772,8 +959,10 @@ namespace extrait
     //.............
     /**
      *  @brief Removes all types from a type list that matched a predicate.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove%23tabber-removeIf
-     *  @ref extrait::remove
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Predicate The predicate to determine the types to remove
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, template<class> class Predicate>
@@ -782,6 +971,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::removeIf.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Predicate The predicate to determine the types to remove
      */
     template<class T, template<class> class Predicate>
     using removeIf_t = typename removeIf<T, Predicate>::type;
@@ -789,8 +980,10 @@ namespace extrait
     //.............
     /**
      *  @brief Removes all types from a type list that did not match a predicate.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove%23tabber-filter
-     *  @ref extrait::remove
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Predicate The predicate to determine the types to retain
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, template<class> class Predicate>
@@ -799,6 +992,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::filter.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/remove
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Predicate The predicate to determine the types to retain
      */
     template<class T, template<class> class Predicate>
     using filter_t = typename filter<T, Predicate>::type;
@@ -807,6 +1002,8 @@ namespace extrait
     /**
      *  @brief Instantiates a new type list with each repeated occurrence of a type removed.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/deduplicate
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T>
@@ -815,6 +1012,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::deduplicate.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/deduplicate
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
      */
     template<class T>
     using deduplicate_t = typename deduplicate<T>::type;
@@ -823,6 +1021,10 @@ namespace extrait
     /**
      *  @brief Appends new types to the end of a type list.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/add
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Types The list of types to append
+     * 
+     *  @metadata{group_by, page}
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, class ...Types>
@@ -831,6 +1033,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::add.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/add
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Types The list of types to append
      */
     template<class T, class ...Types>
     using add_t = typename add<T, Types...>::type;
@@ -839,7 +1043,9 @@ namespace extrait
     /**
      *  @brief Appends new types to the end of a type list if they aren't already contained.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/add
-     *  @ref extrait::add
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Types The list of types to append
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, class ...Types>
@@ -848,6 +1054,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::addIfAbsent.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/add
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Types The list of types to append
      */
     template<class T, class ...Add>
     using addIfAbsent_t = typename addIfAbsent<T, Add...>::type;
@@ -856,6 +1064,10 @@ namespace extrait
     /**
      *  @brief Inserts a type at a certain index of a type list.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/insert
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam I The index the types should be inserted at
+     *  @tparam Types The list of types to insert
+     * 
      *  @metadata{category, trans_list_mutation}
      */
     template<class T, index_t I, class ...Types>
@@ -864,6 +1076,9 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::insert.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/insert
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam I The index the types should be inserted at
+     *  @tparam Types The list of types to insert
      */
     template<class T, index_t I, class ...Types>
     using insert_t = typename insert<T, I, Types...>::type;
@@ -872,6 +1087,11 @@ namespace extrait
     /**
      *  @brief Left rotates a range of types in a type list.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/rotate
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Start The start index of the range to rotate
+     *  @tparam Middle The index of the type to move to the start of the range
+     *  @tparam End The end index of the range to rotate (exclusive)
+     * 
      *  @metadata{category, trans_arrangement}
      */
     template<class T, index_t Start, index_t Middle, index_t End>
@@ -880,6 +1100,10 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::rotate.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/rotate
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Start The start index of the range to rotate
+     *  @tparam Middle The index of the type to move to the start of the range
+     *  @tparam End The end index of the range to rotate (exclusive)
      */
     template<class T, index_t Start, index_t Middle, index_t End>
     using rotate_t = typename rotate<T, Start, Middle, End>::type;
@@ -888,6 +1112,10 @@ namespace extrait
     /**
      *  @brief Moves a certain type to a new index inside a type list and rotates the types next to it.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/move
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam I The index of the type to move
+     *  @tparam Dest The index of the slot to move the type to (can be one past the end)
+     * 
      *  @metadata{category, trans_arrangement}
      */
     template<class T, index_t I, index_t Dest>
@@ -896,6 +1124,9 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::move.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/move
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam I The index of the type to move
+     *  @tparam Dest The index of the slot to move the type to (can be one past the end)
      */
     template<class T, index_t I, index_t Dest>
     using move_t = typename move<T, I, Dest>::type;
@@ -904,6 +1135,10 @@ namespace extrait
     /**
      *  @brief Moves a certain type to a new index inside a type list without any rotation.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/swap
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam I The index of the type to swap
+     *  @tparam Dest The index of the second type to swap with this one
+     * 
      *  @metadata{category, trans_arrangement}
      */
     template<class T, index_t I, index_t Dest>
@@ -912,6 +1147,9 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::swap.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/swap
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam I The index of the type to swap
+     *  @tparam Dest The index of the second type to swap with this one
      */
     template<class T, index_t I, index_t Dest>
     using swap_t = typename swap<T, I, Dest>::type;
@@ -920,6 +1158,9 @@ namespace extrait
     /**
      *  @brief Sorts the type list of a class template instantiation.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/sort
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Comparator The comparator class template that the types will be compared against each other with
+     * 
      *  @metadata{category, trans_arrangement}
      */
     template<class T, template<class, class> class Comparator>
@@ -928,6 +1169,8 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::sort.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/sort
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Comparator The comparator class template that the types will be compared against each other with
      */
     template<class T, template<class, class> class Comparator>
     using sort_t = typename sort<T, Comparator>::type;
@@ -936,6 +1179,9 @@ namespace extrait
     /**
      *  @brief Transforms the types of a type list based on a given mapper.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/map
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Mapper The mapper class template that will transform every type
+     * 
      *  @metadata{category, trans_argument_mutation}
      */
     template<class T, template<class> class Mapper>
@@ -944,9 +1190,11 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::map.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/map
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) instantiation to modify
+     *  @tparam Mapper The mapper class template that will transform every type
      */
     template<class T, template<class> class Mapper>
     using map_t = typename map<T, Mapper>::type;
-    
-    /** @} */
 }
+
+using somevar = int;

@@ -59,24 +59,21 @@
 //======================================================================================================================
 namespace extrait
 {
-    /** 
-     *  @defgroup reflection "Reflection"
-     *  @{
-     */
-    
     //==================================================================================================================
     /**
      *  @brief A helper class that disassembles any invocable in its single parts like parameters, name ect. and
      *         publishes this information in a concise interface.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+     *  @tparam Fn The lambda or function pointer
      */
     template<auto Fn>
     struct Function : detail::Function<Fn> {};
-    
+
     //==================================================================================================================
     /**
      *  @brief A helper class for extrait::Function, that allows selecting a specific overload of a function.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Overload
+     *  @tparam T The function signature type
      */
     template<class T>
     struct Overload : detail::Overload<T> {};
@@ -84,21 +81,26 @@ namespace extrait
     //==================================================================================================================
     /**
      *  @brief A helper alias for declaring the type of a function pointer.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection%23pointer_helpers
+     *  @tparam T The function signature type
      */
     template<class T>
     using FunctionPointer_t = typename detail::Function<nullptr, std::remove_pointer_t<T>*>::Pointer;
     
     /**
      *  @brief A helper alias for declaring the type of a member function pointer.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection%23pointer_helpers
+     *  @tparam T The function signature type
+     *  @tparam U The owner type of the member function
      */
     template<class T, class U>
     using MemberFunctionPointer_t = typename detail::Function<nullptr, std::remove_pointer_t<U> T::*>::Pointer;
     
     /**
      *  @brief A helper alias for declaring the type of a member object pointer.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection%23pointer_helpers
+     *  @tparam T The type of the member object
+     *  @tparam U The owner type of the member object
      */
     template<class T, class U>
     using MemberObjectPointer_t = U T::*;
@@ -107,6 +109,8 @@ namespace extrait
     /**
      *  @brief Determines whether a function pointer is a member function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isMemberFunction
+     *  @tparam Fn The function pointer
+     * 
      *  @metadata{category, type}
      */
     template<auto Fn>
@@ -115,6 +119,7 @@ namespace extrait
     /**
      *  @brief Value helper for extrait::isMemberFunction.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isMemberFunction
+     *  @tparam Fn The function pointer
      */
     template<auto Fn>
     constexpr inline bool isMemberFunction_v = isMemberFunction<Fn>::value;
@@ -122,6 +127,8 @@ namespace extrait
     /**
      *  @brief Determines whether a function pointer is a const qualified member function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncConstQualified
+     *  @tparam Fn The function pointer
+     * 
      *  @metadata{category, qualifiers}
      */
     template<auto Fn>
@@ -130,6 +137,7 @@ namespace extrait
     /**
      *  @brief Value helper for extrait::isFuncConstQualified.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncConstQualified
+     *  @tparam Fn The function pointer
      */
     template<auto Fn>
     constexpr inline bool isFuncConstQualified_v = isFuncConstQualified<Fn>::value;
@@ -137,6 +145,8 @@ namespace extrait
     /**
      *  @brief Determines whether a function pointer is a volatile qualified member function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncVolatileQualified
+     *  @tparam Fn The function pointer
+     * 
      *  @metadata{category, qualifiers}
      */
     template<auto Fn>
@@ -145,6 +155,7 @@ namespace extrait
     /**
      *  @brief Value helper for extrait::isFuncVolatileQualified.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncVolatileQualified
+     *  @tparam Fn The function pointer
      */
     template<auto Fn>
     constexpr inline bool isFuncVolatileQualified_v = isFuncVolatileQualified<Fn>::value;
@@ -152,6 +163,8 @@ namespace extrait
     /**
      *  @brief Determines whether a function pointer is a LValue qualified member function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncLvalueQualified
+     *  @tparam Fn The function pointer
+     * 
      *  @metadata{category, qualifiers}
      */
     template<auto Fn>
@@ -160,6 +173,7 @@ namespace extrait
     /**
      *  @brief Value helper for extrait::isFuncLvalueQualified.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncLvalueQualified
+     *  @tparam Fn The function pointer
      */
     template<auto Fn>
     constexpr inline bool isFuncLvalueQualified_v = isFuncLvalueQualified<Fn>::value;
@@ -167,6 +181,8 @@ namespace extrait
     /**
      *  @brief Determines whether a function pointer is a RValue qualified member function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncRvalueQualified
+     *  @tparam Fn The function pointer
+     * 
      *  @metadata{category, qualifiers}
      */
     template<auto Fn>
@@ -175,6 +191,7 @@ namespace extrait
     /**
      *  @brief Value helper for extrait::isFuncRvalueQualified.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncRvalueQualified
+     *  @tparam Fn The function pointer
      */
     template<auto Fn>
     constexpr inline bool isFuncRvalueQualified_v = isFuncRvalueQualified<Fn>::value;
@@ -182,6 +199,8 @@ namespace extrait
     /**
      *  @brief Determines whether a function pointer has been noexcept specified.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncNoexceptSpecified
+     *  @tparam Fn The function pointer
+     * 
      *  @metadata{category, specifiers}
      */
     template<auto Fn>
@@ -190,6 +209,7 @@ namespace extrait
     /**
      *  @brief Value helper for extrait::isFuncNoexceptSpecified.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncNoexceptSpecified
+     *  @tparam Fn The function pointer
      */
     template<auto Fn>
     constexpr inline bool isFuncNoexceptSpecified_v = isFuncNoexceptSpecified<Fn>::value;
@@ -197,6 +217,8 @@ namespace extrait
     /**
      *  @brief Gets the number of parameter a function pointer has.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcParameterCount
+     *  @tparam Fn The lambda or function pointer
+     * 
      *  @metadata{category, signature}
      */
     template<auto Fn>
@@ -205,6 +227,7 @@ namespace extrait
     /**
      *  @brief Value helper for extrait::funcParameterCount.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcParameterCount
+     *  @tparam Fn The lambda or function pointer
      */
     template<auto Fn>
     constexpr inline std::size_t funcParameterCount_v = funcParameterCount<Fn>::value;
@@ -212,6 +235,8 @@ namespace extrait
     /**
      *  @brief Gets the parameters of a function pointer as an extrait::TypeArray.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcParameterList
+     *  @tparam Fn The lambda or function pointer
+     * 
      *  @metadata{category, signature}
      */
     template<auto Fn>
@@ -223,6 +248,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::funcParameterList.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcParameterList
+     *  @tparam Fn The lambda or function pointer
      */
     template<auto Fn>
     using funcParameterList_t = typename funcParameterList<Fn>::type;
@@ -230,6 +256,8 @@ namespace extrait
     /**
      *  @brief Gets the return type of a function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcReturnType
+     *  @tparam Fn The lambda or function pointer
+     * 
      *  @metadata{category, signature}
      */
     template<auto Fn>
@@ -241,6 +269,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::funcReturnType.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcReturnType
+     *  @tparam Fn The lambda or function pointer
      */
     template<auto Fn>
     using funcReturnType_t = typename funcReturnType<Fn>::type;
@@ -248,6 +277,8 @@ namespace extrait
     /**
      *  @brief Gets the class the function pointer is a member of, if it is a member function.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcOwnerType
+     *  @tparam Fn The function pointer
+     * 
      *  @metadata{category, signature}
      */
     template<auto Fn>
@@ -259,6 +290,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::funcOwnerType.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcOwnerType
+     *  @tparam Fn The function pointer
      */
     template<auto Fn>
     using funcOwnerType_t = typename funcOwnerType<Fn>::type;
@@ -266,6 +298,8 @@ namespace extrait
     /**
      *  @brief Gets the signature type of a function pointer.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcSignature
+     *  @tparam Fn The function pointer
+     * 
      *  @metadata{category, signature}
      */
     template<auto Fn>
@@ -277,6 +311,7 @@ namespace extrait
     /**
      *  @brief Type helper for extrait::funcSignature.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/funcSignature
+     *  @tparam Fn The function pointer
      */
     template<auto Fn>
     using funcSignature_t = typename funcSignature<Fn>::type;
@@ -286,6 +321,8 @@ namespace extrait
      *  @brief Gets the function signature of a function pointer as compile time string.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/funcs/funcToString
      *  @param funcPtr The function pointer
+     *  @return The signature of the given function pointer or lambda as compile time string
+     * 
      *  @metadata{category, signature}
      */
     template<class Fn>
@@ -293,8 +330,6 @@ namespace extrait
     {
         return detail::getSignature(std::forward<Fn>(funcPtr));
     }
-    
-    /** @} */
 }
 //======================================================================================================================
 // endregion Function

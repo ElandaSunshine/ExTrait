@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "xslt",
+			"label": "Doxygen Wiki Transform",
+			"saxonJar": "${config:XSLT.tasks.saxonJar}",
+			"xsltFile": "${workspaceFolder}/docs/trans/doxison.xslt",
+			"resultPath": "${workspaceFolder}/docs/trans/temp.dat",
+			"initialTemplate": "main",
+			"allowSyntaxExtensions40": "off",
+			"messageEscaping": "adaptive",
+			"parameters": [
+				{
+					"name": "config_file",
+					"value": "wiki-config.json"
+				}
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$saxon-xslt"
+			]
+		}
+	]
+}
