@@ -67,7 +67,7 @@ namespace extrait
     template<class T, index_t I, bool Reverse>
     struct TypeIteratorBase
     {
-        static_assert(assertDep_type<T>, "template argument T is not a type list conformant class template instantiation")
+        static_assert(assertDep_type<T>, "template argument T is not a type list conformant class template instantiation");
     };
 
     template<template<class...> class T, index_t I, bool Reverse,
