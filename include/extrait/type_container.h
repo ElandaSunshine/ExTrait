@@ -56,63 +56,34 @@
 
 namespace extrait
 {
-    /** 
-     *  @addtogroup type_list
-     *  @{
-     */
-     
     //==================================================================================================================
-    //
-    // 
-    // @brief A pseudo-iterator for TypeArray that deals with iteration based on template aliases.
-    // 
-    // Every instantiation of this class template represents a positional interface for any given TypeArray,
-    // providing a set of utilities for the represented type as well as an interface to easily switch back and forth
-    // between any type in the associated TypeArray.
-    // 
-    // Every iterator instantiation comes with the basic index (the type it currently "points to") and an alias for
-    // the associated TypeArray. Thus, every instantiation is unique for each unique TypeArray instantiation and
-    // the corresponding index representing the position.
-    // 
-    // This interface also allows certain helpers in TypeArray to be used with this instead of a plain index_t.
-    // 
-    // This class can also be object-instantiated, which can provide a useful helper utility when passing them across
-    // functions. Functions like forEach() and forAll() require such an instance.
-    // 
-    // A specialisation of this class is provided for the case Index == Array::length, at which point helper alias
-    // "type" is no longer provided (no type exists past the end), for these cases it might be helpful to bounds-check
-    // any usage of said alias.
-    // 
-    // If index is out of bounds of the associated TypeArray (except one past the end), compilation will fail.  
-    // Compilation will also fail if Array is not a valid TypeArray type.
-    // 
-    // @tparam Array The TypeArray the iterator is associated with
-    // @tparam Index The current index inside the type array, if left default instantiated, index will be 0
-    // 
-    //
-    
     /**
      *  @brief A helper class for pseudo-iterating over type lists.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-     *  @tparam T The underlying <a href="https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf">type list conformant</a> type
+     *  @tparam T The underlying [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type
      *  @tparam I The index of the current type inside the type list
      *  @tparam Reverse Whether to index from back to front if true
-     *  @metadata{category, type_iterator}
      */
     template<class T, index_t I, bool Reverse>
-    struct TypeIteratorBase;
-    
-    template<template<class...> class T, index_t I, bool Reverse, class ...Types>
-    struct TypeIteratorBase<T<Types...>, I, Reverse>
-        : detail::iteratorContainer<T<Types...>, I>
+    struct TypeIteratorBase
     {
-        static_assert(I >= 0 && I <= sizeof...(Types), "iterator index out of bounds");
-        
+        static_assert(assertDep_type<T>, "template argument T is not a type list conformant class template instantiation")
+    };
+
+    template<template<class...> class T, index_t I, bool Reverse,
+             class ...Types>
+    struct TypeIteratorBase<T<Types...>, I, Reverse>
+        : detail::TypeIteratorBase_impl<TypeIteratorBase<T<Types...>, I, Reverse>>
+        , detail::TypeIteratorNext_impl<TypeIteratorBase<T<Types...>, I, Reverse>>
+        , detail::TypeIteratorPrev_impl<TypeIteratorBase<T<Types...>, I, Reverse>>
+    {
+        //--------------------------------------------------------------------------------------------------------------
+        static_assert((I >= 0 && I <= sizeof...(Types)), "index out of bounds");
+
         //--------------------------------------------------------------------------------------------------------------
         /** 
-         *  @brief The iterator's underlying <a href="https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf">type list conformant</a> type.
+         *  @brief The iterator's underlying [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, alias}
          */
         using Array = T<Types...>;
         
@@ -120,23 +91,22 @@ namespace extrait
         /** 
          *  @brief The iterator's current index in the type list.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, constant}
          */
         constexpr static index_t index = I;
-        
+
         //--------------------------------------------------------------------------------------------------------------
         /**
          *  @brief Determines whether two iterators index the same type of the same TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, comparison}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase/isEqual
+         *  @tparam Other The other type iterator
          */
         template<class Other, std::enable_if_t<detail::isCompatibleTypeIt<TypeIteratorBase, Other>::value>* = nullptr>
         constexpr static bool isEqual = (index == Other::index);
         
         /**
          *  @brief Determines whether to iterators index different types of the same TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, comparison}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase/isEqual
+         *  @tparam Other The other type iterator
          */
         template<class Other, std::enable_if_t<detail::isCompatibleTypeIt<TypeIteratorBase, Other>::value>* = nullptr>
         constexpr static bool isNotEqual = (index != Other::index);
@@ -144,8 +114,8 @@ namespace extrait
         /**
          *  @brief Determines whether the type indexed by this iterator comes before the type indexed
          *         by the other iterator.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, comparison}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase/isEqual
+         *  @tparam Other The other type iterator
          */
         template<class Other, std::enable_if_t<detail::isCompatibleTypeIt<TypeIteratorBase, Other>::value>* = nullptr>
         constexpr static bool isLessThan = (index < Other::index);
@@ -153,8 +123,8 @@ namespace extrait
         /**
          *  @brief Determines whether the type indexed by this iterator either comes before or is the same type as
          *         the one indexed by the other iterator.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, comparison}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase/isEqual
+         *  @tparam Other The other type iterator
          */
         template<class Other, std::enable_if_t<detail::isCompatibleTypeIt<TypeIteratorBase, Other>::value>* = nullptr>
         constexpr static bool isLessThanOrEqual = (index <= Other::index);
@@ -162,8 +132,8 @@ namespace extrait
         /**
          *  @brief Determines whether the type indexed by this iterator comes after the type indexed
          *         by the other iterator.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, comparison}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase/isEqual
+         *  @tparam Other The other type iterator
          */
         template<class Other, std::enable_if_t<detail::isCompatibleTypeIt<TypeIteratorBase, Other>::value>* = nullptr>
         constexpr static bool isGreaterThan = (index > Other::index);
@@ -171,61 +141,46 @@ namespace extrait
         /**
          *  @brief Determines whether the type indexed by this iterator either comes after or is the same type as
          *         the one indexed by the other iterator.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, comparison}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase/isEqual
+         *  @tparam Other The other type iterator
          */
         template<class Other, std::enable_if_t<detail::isCompatibleTypeIt<TypeIteratorBase, Other>::value>* = nullptr>
         constexpr static bool isGreaterThanOrEqual = (index >= Other::index);
-        
+
         //--------------------------------------------------------------------------------------------------------------
         /**
-         *  @brief Gets a new instantiation of the current iterator with index incremented by one.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, indexing}
-         */
-        template<index_t J = index, std::enable_if_t<(J >= 0 && J < sizeof...(Types))>* = nullptr>
-        using next = TypeIteratorBase<Array, (J + 1), Reverse>;
-        
-        /**
-         *  @brief Gets a new instantiation of the current iterator with index decremented by one.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, indexing}
-         */
-        template<index_t J = index, std::enable_if_t<(J > 0 && J <= sizeof...(Types))>* = nullptr>
-        using prev = TypeIteratorBase<Array, (J - 1), Reverse>;
-        
-        /**
          *  @brief Gets a new instantiation of the current iterator with index incremented by the given amount.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, indexing}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase/inc
+         *  @tparam N The amount to decrement the iterator
          */
         template<index_t N>
         using inc = TypeIteratorBase<Array, (index + N), Reverse>;
-        
+
         /**
          *  @brief Gets a new instantiation of the current iterator with index decremented by the given amount.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, indexing}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase/inc
+         *  @tparam N The amount to decrement the iterator
          */
         template<index_t N>
         using dec = TypeIteratorBase<Array, (index - N), Reverse>;
         
         /**
          *  @brief Gets a new instantiation of the current iterator with the specified fixed index.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-         *  @metadata{category, indexing}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase/with
+         *  @tparam J The new index
          */
         template<index_t J>
         using with = TypeIteratorBase<Array, J, Reverse>;
+
+        //--------------------------------------------------------------------------------------------------------------
+        constexpr TypeIteratorBase() noexcept = default;
     };
-    
+
     /**
      *  @brief A helper alias for extrait::TypeIteratorBase that indexes from front to back.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-     *  @tparam T The underlying <a href="https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf">type list conformant</a> type
+     *  @tparam T The underlying [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type
      *  @tparam I The index of the current type inside the type list
-     *  @ref extrait::TypeIteratorBase
-     *  @metadata{category, helper_alias}
      */
     template<class T, index_t I>
     using TypeIterator = TypeIteratorBase<T, I, false>;
@@ -233,10 +188,8 @@ namespace extrait
     /**
      *  @brief A helper alias for extrait::TypeIteratorBase that indexes from back to front.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeIteratorBase
-     *  @tparam T The underlying <a href="https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf">type list conformant</a> type
+     *  @tparam T The underlying [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) type
      *  @tparam I The index of the current type inside the type list
-     *  @ref extrait::TypeIteratorBase
-     *  @metadata{category, helper_alias}
      */
     template<class T, index_t I>
     using ReverseTypeIterator = TypeIteratorBase<T, I, true>;
@@ -246,7 +199,6 @@ namespace extrait
      *  @brief A tuple-like helper class for holding and manipulating type lists.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray
      *  @tparam Types The types this TypeArray manages
-     *  @metadata{category, type_container}
      */
     template<class ...Types>
     struct TypeArray
@@ -261,14 +213,12 @@ namespace extrait
         /** 
          *  @brief Determines whether this TypeArray is empty.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray
-         *  @metadata{category, list_properties}
          */
         constexpr static bool isEmpty = false;
         
         /**
          *  @brief Determines the number of types in this TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray
-         *  @metadata{category, list_properties}
          */
         constexpr static std::size_t length = sizeof...(Types);
         
@@ -276,7 +226,7 @@ namespace extrait
         /**
          *  @brief Compares a type with this TypeArray for equality.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/equals
-         *  @metadata{category, comparative}
+         *  @tparam Other Another type to compare
          */
         template<class Other>
         constexpr static bool equals = std::is_same_v<TypeArray, Other>;
@@ -284,7 +234,7 @@ namespace extrait
         /**
          *  @brief Determines whether this TypeArray and another class template instantiation share the same type list.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/sameTypeList
-         *  @metadata{category, comparative}
+         *  @tparam Other Another type to compare
          */
         template<class Other>
         constexpr static bool sameTypeList = sameTemplateArguments_v<TypeArray, Other>;
@@ -293,7 +243,7 @@ namespace extrait
         /**
          *  @brief Determines whether this TypeArray contains a certain type.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/contains
-         *  @metadata{category, type_search}
+         *  @tparam Key The type to find
          */
         template<class Key>
         constexpr static bool contains = contains_v<TypeArray, Key>;
@@ -301,8 +251,7 @@ namespace extrait
         /**
          *  @brief Determines whether this TypeArray starts with the given set of types.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/startsWith
-         *  @metadata{category, type_search}
-         *  @metadata{ref_desc, Determines whether a type list starts or ends with a set of types.}
+         *  @tparam Keys The types to find at the start of the type list
          */
         template<class ...Keys>
         constexpr static bool startsWith = startsWith_v<TypeArray, Keys...>;
@@ -310,8 +259,7 @@ namespace extrait
         /**
          *  @brief Determines whether this TypeArray ends with the given set of types.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/startsWith
-         *  @ref extrait::TypeArray::startsWith
-         *  @metadata{category, type_search}
+         *  @tparam Keys The types to find at the end of the type list
          */
         template<class ...Keys>
         constexpr static bool endsWith = endsWith_v<TypeArray, Keys...>;
@@ -319,8 +267,7 @@ namespace extrait
         /**
          *  @brief Determines how many types in this TypeArray matched a given predicate.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/match
-         *  @metadata{category, type_search}
-         *  @metadata{ref_desc, Determines how types match a predicate.}
+         *  @tparam Predicate The predicate to apply to the types
          */
         template<template<class> class Predicate>
         constexpr static std::size_t match = match_v<TypeArray, Predicate>;
@@ -328,8 +275,7 @@ namespace extrait
         /**
          *  @brief Determines how many types in this TypeArray did not match a given predicate.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/match
-         *  @ref extrait::TypeArray::match
-         *  @metadata{category, type_search}
+         *  @tparam Predicate The predicate to apply to the types
          */
         template<template<class> class Predicate>
         constexpr static std::size_t mismatch = match_v<TypeArray, Predicate>;
@@ -337,8 +283,7 @@ namespace extrait
         /**
          *  @brief Determines whether at least one type in this TypeArray matched a given predicate.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/match
-         *  @ref extrait::TypeArray::match
-         *  @metadata{category, type_search}
+         *  @tparam Predicate The predicate to apply to the types
          */
         template<template<class> class Predicate>
         constexpr static bool matchAny = matchAny_v<TypeArray, Predicate>;
@@ -346,8 +291,7 @@ namespace extrait
         /**
          *  @brief Determines whether all types in this TypeArray matched a given predicate.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/match
-         *  @ref extrait::TypeArray::match
-         *  @metadata{category, type_search}
+         *  @tparam Predicate The predicate to apply to the types
          */
         template<template<class> class Predicate>
         constexpr static bool matchAll = matchAll_v<TypeArray, Predicate>;
@@ -355,8 +299,7 @@ namespace extrait
         /**
          *  @brief Determines whether no type in this TypeArray matched a given predicate.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/match
-         *  @ref extrait::TypeArray::match
-         *  @metadata{category, type_search}
+         *  @tparam Predicate The predicate to apply to the types
          */
         template<template<class> class Predicate>
         constexpr static bool matchNone = matchNone_v<TypeArray, Predicate>;
@@ -364,8 +307,7 @@ namespace extrait
         /**
          *  @brief Determines the index of the first matching type found in a type list.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/indexOf
-         *  @metadata{category, type_search}
-         *  @metadata{ref_desc, Determines the index of a type in a type list.}
+         *  @tparam Key The type to find
          */
         template<class Key>
         constexpr static index_t indexOf = indexOf_v<TypeArray, Key>;
@@ -373,8 +315,7 @@ namespace extrait
         /**
          *  @brief Determines the index of the last matching type found in a type list.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/indexOf
-         *  @ref extrait::TypeArray::indexOf
-         *  @metadata{category, type_search}
+         *  @tparam Key The type to find
          */
         template<class Key>
         constexpr static index_t lastIndexOf = lastIndexOf_v<TypeArray, Key>;
@@ -383,7 +324,7 @@ namespace extrait
         /**
          *  @brief Wraps the current type list with a different class template.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/to
-         *  @metadata{category, list_conversion}
+         *  @tparam T Any [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) class template
          */
         template<template<class...> class T>
         using to = T<Types...>;
@@ -392,14 +333,13 @@ namespace extrait
         /**
          *  @brief Gives back an empty TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/clear
-         *  @metadata{category, list_mutation}
          */
         using clear = TypeArray<>;
         
         /**
          *  @brief Joins the type lists of multiple instantiated class template type lists into one TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/join
-         *  @metadata{category, list_mutation}
+         *  @tparam Others A list of [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) template instantiations
          */
         template<class ...Others>
         using join = join_t<TypeArray, TypeArray, Others...>;
@@ -408,7 +348,7 @@ namespace extrait
         /**
          *  @brief Gets the type from this TypeArray at the specified index.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/get
-         *  @metadata{category, type_fetching}
+         *  @tparam I The index of the type to get
          */
         template<auto I>
         using get = get_t<TypeArray, detail::deindex_v<I>>;
@@ -416,24 +356,19 @@ namespace extrait
         /**
          *  @brief Gets the first type from this TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/get
-         *  @ref extrait::TypeArray::get
-         *  @metadata{category, type_fetching}
          */
         using front = first_t<TypeArray>;
         
         /**
          *  @brief Gets the last type from this TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/get
-         *  @ref extrait::TypeArray::get
-         *  @metadata{category, type_fetching}
          */
         using back = last_t<TypeArray>;
         
         /**
          *  @brief Gets the type that was considered the minimum among all other types of this TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/min
-         *  @metadata{category, type_fetching}
-         *  @metadata{ref_desc, Gets the type that was considered the minimum or maximum among all other types of this TypeArray.}
+         *  @tparam Comparator The comparator class template that the types will be compared against each other
          */
         template<template<class, class> class Comparator>
         using min = minType_t<TypeArray, Comparator>;
@@ -441,8 +376,7 @@ namespace extrait
         /**
          *  @brief Gets the type that was considered the maximum among all other types of this TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/min
-         *  @ref extrait::TypeArray::min
-         *  @metadata{category, type_fetching}
+         *  @tparam Comparator The comparator class template that the types will be compared against each other
          */
         template<template<class, class> class Comparator>
         using max = maxType_t<TypeArray, Comparator>;
@@ -451,7 +385,7 @@ namespace extrait
         /**
          *  @brief Appends the specified types at the end of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/add
-         *  @metadata{category, list_mutation}
+         *  @tparam Add The list of types to add
          */
         template<class ...Add>
         using add = TypeArray<Types..., Add...>;
@@ -459,7 +393,7 @@ namespace extrait
         /**
          *  @brief Adds the specified types at the beginning of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/prepend
-         *  @metadata{category, list_mutation}
+         *  @tparam Add The list of types to add
          */
         template<class ...Add>
         using prepend = TypeArray<Add..., Types...>;
@@ -467,8 +401,7 @@ namespace extrait
         /**
          *  @brief Appends the specified types at the end of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/add
-         *  @ref extrait::TypeArray::add
-         *  @metadata{category, list_mutation}
+         *  @tparam Add The list of types to add
          */
         template<class ...Add>
         using addIfAbsent = addIfAbsent_t<TypeArray, Add...>;
@@ -476,7 +409,8 @@ namespace extrait
         /**
          *  @brief Inserts a set of types at a specified index in the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/insert
-         *  @metadata{category, list_mutation}
+         *  @tparam I The index the types should be inserted at
+         *  @tparam Add The list of types to insert
          */
         template<auto I, class ...Add>
         using insert = insert_t<TypeArray, detail::deindex_v<I>, Add...>;
@@ -484,14 +418,14 @@ namespace extrait
         /**
          *  @brief Removes all types that are duplicates of previously occurring types in the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/deduplicate
-         *  @metadata{category, list_mutation}
          */
         using deduplicate = deduplicate_t<TypeArray>;
         
         /**
          *  @brief Creates a TypeArray with a sub-portion of the types (in the specified range) of the original TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/subarray
-         *  @metadata{category, list_mutation}
+         *  @tparam Start The start index of the range
+         *  @tparam End The end index of the range (exclusive)
          */
         template<auto Start, auto End>
         using subarray = sublist_t<TypeArray, detail::deindex_v<Start>, detail::deindex_v<End>>;
@@ -499,69 +433,60 @@ namespace extrait
         /**
          *  @brief Removes the first type that matched key from the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove
-         *  @metadata{category, list_mutation}
-         *  @metadata{ref_desc, Removes a type from the associated TypeArray based on the given template arguments.}
+         *  @tparam Key The type to remove
          */
         template<class Key>
         using remove = remove_t<TypeArray, Key>;
         
         /**
          *  @brief Removes all types that matched key from the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove%23tabber-removeAll
-         *  @ref extrait::TypeArray::remove
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove
+         *  @tparam Key The type to remove
          */
         template<class Key>
         using removeAll = removeAll_t<TypeArray, Key>;
         
         /**
          *  @brief Removes the first type from the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove%23tabber-removeFirst
-         *  @ref extrait::TypeArray::remove
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove
          */
         using removeFirst = removeFirst_t<TypeArray>;
         
         /**
          *  @brief Removes the last type from the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove%23tabber-removeLast
-         *  @ref extrait::TypeArray::remove
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove
          */
         using removeLast = removeLast_t<TypeArray>;
         
         /**
          *  @brief Removes the type at the specified index from the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove%23tabber-removeAt
-         *  @ref extrait::TypeArray::remove
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove
+         *  @tparam I The index of the type to remove
          */
         template<auto I>
         using removeAt = removeAt_t<TypeArray, detail::deindex_v<I>>;
         
         /**
          *  @brief Removes a range of types from the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove%23tabber-removeRange
-         *  @ref extrait::TypeArray::remove
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove
+         *  @tparam Start The start index of the range
+         *  @tparam End The end index of the range (exclusive)
          */
         template<auto Start, auto End>
         using removeRange = removeRange_t<TypeArray, detail::deindex_v<Start>, detail::deindex_v<End>>;
         
         /**
          *  @brief Removes all types that matched a predicate from the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove%23tabber-removeIf
-         *  @ref extrait::TypeArray::remove
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove
+         *  @tparam Predicate The predicate to determine the types to remove
          */
         template<template<class> class Predicate>
         using removeIf = removeIf_t<TypeArray, Predicate>;
         
         /**
          *  @brief Retains all types that matched a predicate in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove%23tabber-filter
-         *  @ref extrait::TypeArray::remove
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove
+         *  @tparam Predicate The predicate to determine the types to retain
          */
         template<template<class> class Predicate>
         using filter = filter_t<TypeArray, Predicate>;
@@ -569,71 +494,70 @@ namespace extrait
         /**
          *  @brief Replaces the first type that matched key from the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace
-         *  @metadata{category, list_mutation}
-         *  @metadata{ref_desc, Replaces types inside the associated TypeArray based on the given template arguments.}
+         *  @tparam Key The type to replace
+         *  @tparam Replacement The list of types to insert where the old type was
          */
         template<class Key, class ...Replacement>
         using replace = replace_t<TypeArray, Key, Replacement...>;
         
         /**
          *  @brief Replaces all types that matched key in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceAll
-         *  @ref extrait::TypeArray::replace
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace
+         *  @tparam Key The type to replace
+         *  @tparam Replacement The list of types to insert where the old types were
          */
         template<class Key, class ...Replacement>
         using replaceAll = replaceAll_t<TypeArray, Key, Replacement...>;
         
         /**
          *  @brief Replaces the first type in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceFirst
-         *  @ref extrait::TypeArray::replace
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace
+         *  @tparam Replacement The list of types to insert where the old type was
          */
         template<class ...Replacement>
         using replaceFirst = replaceFirst_t<TypeArray, Replacement...>;
         
         /**
          *  @brief Replaces the last type in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceLast
-         *  @ref extrait::TypeArray::replace
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace
+         *  @tparam Replacement The list of types to insert where the old type was
          */
         template<class ...Replacement>
         using replaceLast = replaceLast_t<TypeArray, Replacement...>;
         
         /**
          *  @brief Replaces the type at the specified index in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceAt
-         *  @ref extrait::TypeArray::replace
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace
+         *  @tparam I The index of the type to replace
+         *  @tparam Replacement The list of types to insert where the old type was
          */
         template<auto I, class ...Replacement>
         using replaceAt = replaceAt_t<TypeArray, detail::deindex_v<I>, Replacement...>;
         
         /**
          *  @brief Replaces a range of types in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceRange
-         *  @ref extrait::TypeArray::replace
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace
+         *  @tparam Start The start index of the range to replace
+         *  @tparam End The end index of the range to replace (exclusive)
+         *  @tparam Replacement The list of types to insert where the old types were
          */
         template<auto Start, auto End, class ...Replacement>
         using replaceRange = replaceRange_t<TypeArray, detail::deindex_v<Start>, detail::deindex_v<End>, Replacement...>;
         
         /**
          *  @brief Replaces all types that matched a predicate in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceIf
-         *  @ref extrait::TypeArray::replace
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace
+         *  @tparam Predicate The predicate to determine the types to replace
+         *  @tparam Replacement The list of types to insert where the old types were
          */
         template<template<class> class Predicate, class ...Replacement>
         using replaceIf = replaceIf_t<TypeArray, Predicate, Replacement...>;
         
         /**
          *  @brief Replaces all types that did not match a predicate in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceIfNot
-         *  @ref extrait::TypeArray::replace
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace
+         *  @tparam Predicate The predicate to determine the types to retain
+         *  @tparam Replacement The list of types to insert where the old type was
          */
         template<template<class> class Predicate, class ...Replacement>
         using replaceIfNot = replaceIfNot_t<TypeArray, Predicate, Replacement...>;
@@ -642,7 +566,8 @@ namespace extrait
         /**
          *  @brief Moves two types and left rotates the types between the indices.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/move
-         *  @metadata{category, arrangement}
+         *  @tparam I The index of the type to move
+         *  @tparam Dest The index of the slot to move the type to (can be one past the end)
          */
         template<auto I, auto Dest>
         using move = move_t<TypeArray, detail::deindex_v<I>, detail::deindex_v<Dest>>;
@@ -650,7 +575,8 @@ namespace extrait
         /**
          *  @brief Swaps two types in the TypeArray without altering the positions of other types.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/swap
-         *  @metadata{category, arrangement}
+         *  @tparam I The index of the type to swap
+         *  @tparam Dest The index of the second type to swap with this one
          */
         template<auto I, auto Dest>
         using swap = swap_t<TypeArray, detail::deindex_v<I>, detail::deindex_v<Dest>>;
@@ -658,7 +584,9 @@ namespace extrait
         /**
          *  @brief Left rotates the types at in the specified range of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/rotate
-         *  @metadata{category, arrangement}
+         *  @tparam Start The start index of the range to rotate
+         *  @tparam Middle The index of the type to move to the start of the range
+         *  @tparam End The end index of the range to rotate (exclusive)
          */
         template<auto Start, auto Middle, auto End>
         using rotate = rotate_t<TypeArray, detail::deindex_v<Start>, detail::deindex_v<Middle>, detail::deindex_v<End>>;
@@ -666,7 +594,7 @@ namespace extrait
         /**
          *  @brief Sorts the types in the TypeArray based on a given comparator.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/sort
-         *  @metadata{category, arrangement}
+         *  @tparam Comparator The comparator class template that the types will be compared against each other
          */
         template<template<class, class> class Comparator>
         using sort = sort_t<TypeArray, Comparator>;
@@ -674,7 +602,6 @@ namespace extrait
         /**
          *  @brief Reverses the types in the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/reverse
-         *  @metadata{category, arrangement}
          */
         using reverse = reverse_t<TypeArray>;
         
@@ -682,7 +609,7 @@ namespace extrait
         /**
          *  @brief Gives back a new TypeArray with all types mapped to the given mapper.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/map
-         *  @metadata{category, argument_mutation}
+         *  @tparam Mapper The mapper class template that will transform every type
          */
         template<template<class> class Mapper>
         using map = map_t<TypeArray, Mapper>;
@@ -691,28 +618,24 @@ namespace extrait
         /**
          *  @brief A TypeIterator to the beginning (first element) of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/begin
-         *  @metadata{category, iterator}
          */
         constexpr static auto begin = begin_t{};
         
         /**
          *  @brief A TypeIterator to the end (one past last element) of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/end
-         *  @metadata{category, iterator}
          */
         constexpr static auto end = end_t{};
         
         /**
          *  @brief A ReverseTypeIterator to the beginning (last element) of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/rbegin
-         *  @metadata{category, iterator}
          */
         constexpr static auto rbegin = rbegin_t{};
         
         /**
          *  @brief A ReverseTypeIterator to the end (one before first element) of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/rend
-         *  @metadata{category, iterator}
          */
         constexpr static auto rend = rend_t{};
         
@@ -734,7 +657,6 @@ namespace extrait
     /**
      *  @brief A specialisation for extrait::TypeArray that deals with empty type lists.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty
-     *  @metadata{specialisation, extrait::TypeArray}
      */
     template<>
     struct TypeArray<>
@@ -749,14 +671,12 @@ namespace extrait
         /** 
          *  @brief Determines whether this TypeArray is empty.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty
-         *  @metadata{category, list_properties}
          */
         constexpr static bool isEmpty = true;
         
         /**
          *  @brief Determines the number of types in this TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty
-         *  @metadata{category, list_properties}
          */
         constexpr static std::size_t length = 0;
         
@@ -764,7 +684,7 @@ namespace extrait
         /**
          *  @brief Compares a type with this TypeArray for equality.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/equals
-         *  @metadata{category, comparative}
+         *  @tparam Other Another type to compare
          */
         template<class Other>
         constexpr static bool equals = std::is_same_v<TypeArray, Other>;
@@ -772,7 +692,7 @@ namespace extrait
         /**
          *  @brief Determines whether this TypeArray and another class template instantiation share the same type list.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/sameTypeList
-         *  @metadata{category, comparative}
+         *  @tparam Other Another type to compare
          */
         template<class Other>
         constexpr static bool sameTypeList = sameTemplateArguments_v<TypeArray, Other>;
@@ -780,98 +700,89 @@ namespace extrait
         //--------------------------------------------------------------------------------------------------------------
         /**
          *  @brief Determines whether this TypeArray contains a certain type.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/contains
-         *  @metadata{category, type_search}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/contains
+         *  @tparam Key The type to find
          */
         template<class Key>
-        constexpr static bool contains = contains_v<TypeArray, Key>;
+        constexpr static bool contains = false;
         
         /**
          *  @brief Determines whether this TypeArray starts with the given set of types.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/startsWith
-         *  @metadata{category, type_search}
-         *  @metadata{ref_desc, Determines whether a type list starts or ends with a set of types.}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/startsWith
+         *  @tparam Keys The types to find at the start of the type list
          */
         template<class ...Keys>
-        constexpr static bool startsWith = startsWith_v<TypeArray, Keys...>;
+        constexpr static bool startsWith = (sizeof...(Keys) == 0);
         
         /**
          *  @brief Determines whether this TypeArray ends with the given set of types.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/startsWith
-         *  @ref extrait::TypeArray<>::startsWith
-         *  @metadata{category, type_search}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/startsWith
+         *  @tparam Keys The types to find at the end of the type list
          */
         template<class ...Keys>
-        constexpr static bool endsWith = endsWith_v<TypeArray, Keys...>;
+        constexpr static bool endsWith = (sizeof...(Keys) == 0);
         
         /**
          *  @brief Determines how many types in this TypeArray matched a given predicate.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/match
-         *  @metadata{category, type_search}
-         *  @metadata{ref_desc, Determines how types match a predicate.}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/match
+         *  @tparam Predicate The predicate to apply to the types
          */
         template<template<class> class Predicate>
-        constexpr static std::size_t match = match_v<TypeArray, Predicate>;
+        constexpr static std::size_t match = 0;
         
         /**
          *  @brief Determines how many types in this TypeArray did not match a given predicate.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/match
-         *  @ref extrait::TypeArray<>::match
-         *  @metadata{category, type_search}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/match
+         *  @tparam Predicate The predicate to apply to the types
          */
         template<template<class> class Predicate>
-        constexpr static std::size_t mismatch = match_v<TypeArray, Predicate>;
+        constexpr static std::size_t mismatch = 0;
         
         /**
          *  @brief Determines whether at least one type in this TypeArray matched a given predicate.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/match
-         *  @ref extrait::TypeArray<>::match
-         *  @metadata{category, type_search}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/match
+         *  @tparam Predicate The predicate to apply to the types
          */
         template<template<class> class Predicate>
-        constexpr static bool matchAny = matchAny_v<TypeArray, Predicate>;
+        constexpr static bool matchAny = false;
         
         /**
          *  @brief Determines whether all types in this TypeArray matched a given predicate.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/match
-         *  @ref extrait::TypeArray<>::match
-         *  @metadata{category, type_search}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/match
+         *  @tparam Predicate The predicate to apply to the types
          */
         template<template<class> class Predicate>
-        constexpr static bool matchAll = matchAll_v<TypeArray, Predicate>;
+        constexpr static bool matchAll = true;
         
         /**
          *  @brief Determines whether no type in this TypeArray matched a given predicate.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/match
-         *  @ref extrait::TypeArray<>::match
-         *  @metadata{category, type_search}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/match
+         *  @tparam Predicate The predicate to apply to the types
          */
         template<template<class> class Predicate>
-        constexpr static bool matchNone = matchNone_v<TypeArray, Predicate>;
+        constexpr static bool matchNone = true;
         
         /**
          *  @brief Determines the index of the first matching type found in a type list.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/indexOf
-         *  @metadata{category, type_search}
-         *  @metadata{ref_desc, Determines the index of a type in a type list.}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/indexOf
+         *  @tparam Key The type to find
          */
         template<class Key>
-        constexpr static index_t indexOf = indexOf_v<TypeArray, Key>;
+        constexpr static index_t indexOf = endOfTypeList;
         
         /**
          *  @brief Determines the index of the last matching type found in a type list.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/indexOf
-         *  @ref extrait::TypeArray<>::indexOf
-         *  @metadata{category, type_search}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/indexOf
+         *  @tparam Key The type to find
          */
         template<class Key>
-        constexpr static index_t lastIndexOf = lastIndexOf_v<TypeArray, Key>;
+        constexpr static index_t lastIndexOf = endOfTypeList;
         
         //--------------------------------------------------------------------------------------------------------------
         /**
          *  @brief Wraps the current type list with a different class template.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/to
-         *  @metadata{category, list_conversion}
+         *  @tparam T Any [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) class template
          */
         template<template<class...> class T>
         using to = T<>;
@@ -880,50 +791,22 @@ namespace extrait
         /**
          *  @brief Gives back an empty TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/clear
-         *  @metadata{category, list_mutation}
          */
         using clear = TypeArray<>;
         
         /**
          *  @brief Joins the type lists of multiple instantiated class template type lists into one TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/join
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/join
+         *  @tparam Others A list of [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) template instantiations
          */
         template<class ...Others>
-        using join = join_t<TypeArray, TypeArray, Others...>;
-        
-        //--------------------------------------------------------------------------------------------------------------
-        /**
-         *  @brief Gets the type from this TypeArray at the specified index.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/get
-         *  @metadata{category, type_fetching}
-         */
-        template<auto I>
-        using get = get_t<TypeArray, detail::deindex_v<I>>;
-        
-        /**
-         *  @brief Gets the type that was considered the minimum among all other types of this TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/min
-         *  @metadata{category, type_fetching}
-         *  @metadata{ref_desc, Gets the type that was considered the minimum or maximum among all other types of this TypeArray.}
-         */
-        template<template<class, class> class Comparator>
-        using min = minType_t<TypeArray, Comparator>;
-        
-        /**
-         *  @brief Gets the type that was considered the maximum among all other types of this TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/min
-         *  @ref extrait::TypeArray<>::min
-         *  @metadata{category, type_fetching}
-         */
-        template<template<class, class> class Comparator>
-        using max = maxType_t<TypeArray, Comparator>;
+        using join = join_t<TypeArray, Others...>;
         
         //--------------------------------------------------------------------------------------------------------------
         /**
          *  @brief Appends the specified types at the end of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/add
-         *  @metadata{category, list_mutation}
+         *  @tparam Add The list of types to add
          */
         template<class ...Add>
         using add = TypeArray<Add...>;
@@ -931,7 +814,7 @@ namespace extrait
         /**
          *  @brief Adds the specified types at the beginning of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/prepend
-         *  @metadata{category, list_mutation}
+         *  @tparam Add The list of types to add
          */
         template<class ...Add>
         using prepend = TypeArray<Add...>;
@@ -939,8 +822,7 @@ namespace extrait
         /**
          *  @brief Appends the specified types at the end of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/add
-         *  @ref extrait::TypeArray<>::add
-         *  @metadata{category, list_mutation}
+         *  @tparam Add The list of types to add
          */
         template<class ...Add>
         using addIfAbsent = addIfAbsent_t<TypeArray, Add...>;
@@ -948,227 +830,161 @@ namespace extrait
         /**
          *  @brief Inserts a set of types at a specified index in the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/insert
-         *  @metadata{category, list_mutation}
+         *  @tparam I The index the types should be inserted at
+         *  @tparam Add The list of types to insert
          */
         template<auto I, class ...Add>
         using insert = insert_t<TypeArray, detail::deindex_v<I>, Add...>;
         
         /**
          *  @brief Removes all types that are duplicates of previously occurring types in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/deduplicate
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/deduplicate
          */
-        using deduplicate = deduplicate_t<TypeArray>;
+        using deduplicate = TypeArray;
         
         /**
          *  @brief Creates a TypeArray with a sub-portion of the types (in the specified range) of the original TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/subarray
-         *  @metadata{category, list_mutation}
+         *  @tparam Start The start index of the range
+         *  @tparam End The end index of the range (exclusive)
          */
         template<auto Start, auto End>
         using subarray = sublist_t<TypeArray, detail::deindex_v<Start>, detail::deindex_v<End>>;
         
         /**
          *  @brief Removes the first type that matched key from the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove
-         *  @metadata{category, list_mutation}
-         *  @metadata{ref_desc, Removes a type from the associated TypeArray based on the given template arguments.}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/remove
+         *  @tparam Key The type to remove
          */
         template<class Key>
-        using remove = remove_t<TypeArray, Key>;
+        using remove = TypeArray<>;
         
         /**
          *  @brief Removes all types that matched key from the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove%23tabber-removeAll
-         *  @ref extrait::TypeArray<>::remove
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/remove
+         *  @tparam Key The type to remove
          */
         template<class Key>
-        using removeAll = removeAll_t<TypeArray, Key>;
-        
-        /**
-         *  @brief Removes the type at the specified index from the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove%23tabber-removeAt
-         *  @ref extrait::TypeArray<>::remove
-         *  @metadata{category, list_mutation}
-         */
-        template<auto I>
-        using removeAt = removeAt_t<TypeArray, detail::deindex_v<I>>;
+        using removeAll = TypeArray<>;
         
         /**
          *  @brief Removes a range of types from the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove%23tabber-removeRange
-         *  @ref extrait::TypeArray<>::remove
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/remove
+         *  @tparam Start The start index of the range
+         *  @tparam End The end index of the range (exclusive)
          */
         template<auto Start, auto End>
         using removeRange = removeRange_t<TypeArray, detail::deindex_v<Start>, detail::deindex_v<End>>;
         
         /**
          *  @brief Removes all types that matched a predicate from the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove%23tabber-removeIf
-         *  @ref extrait::TypeArray<>::remove
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/remove
+         *  @tparam Predicate The predicate to determine the types to remove
          */
         template<template<class> class Predicate>
-        using removeIf = removeIf_t<TypeArray, Predicate>;
+        using removeIf = TypeArray<>;
         
         /**
          *  @brief Retains all types that matched a predicate in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/remove%23tabber-filter
-         *  @ref extrait::TypeArray<>::remove
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/remove
+         *  @tparam Predicate The predicate to determine the types to retain
+
          */
         template<template<class> class Predicate>
-        using filter = filter_t<TypeArray, Predicate>;
+        using filter = TypeArray<>;
         
         /**
          *  @brief Replaces the first type that matched key from the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace
-         *  @metadata{category, list_mutation}
-         *  @metadata{ref_desc, Replaces types inside the associated TypeArray based on the given template arguments.}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/replace
+         *  @tparam Key The type to replace
+         *  @tparam Replacement The list of types to insert where the old type was
          */
         template<class Key, class ...Replacement>
-        using replace = replace_t<TypeArray, Key, Replacement...>;
+        using replace = TypeArray<>;
         
         /**
          *  @brief Replaces all types that matched key in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceAll
-         *  @ref extrait::TypeArray<>::replace
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/replace
+         *  @tparam Key The type to replace
+         *  @tparam Replacement The list of types to insert where the old types were
          */
         template<class Key, class ...Replacement>
-        using replaceAll = replaceAll_t<TypeArray, Key, Replacement...>;
-        
-        /**
-         *  @brief Replaces the first type in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceFirst
-         *  @ref extrait::TypeArray<>::replace
-         *  @metadata{category, list_mutation}
-         */
-        template<class ...Replacement>
-        using replaceFirst = replaceFirst_t<TypeArray, Replacement...>;
-        
-        /**
-         *  @brief Replaces the last type in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceLast
-         *  @ref extrait::TypeArray<>::replace
-         *  @metadata{category, list_mutation}
-         */
-        template<class ...Replacement>
-        using replaceLast = replaceLast_t<TypeArray, Replacement...>;
-        
-        /**
-         *  @brief Replaces the type at the specified index in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceAt
-         *  @ref extrait::TypeArray<>::replace
-         *  @metadata{category, list_mutation}
-         */
-        template<auto I, class ...Replacement>
-        using replaceAt = replaceAt_t<TypeArray, detail::deindex_v<I>, Replacement...>;
+        using replaceAll = TypeArray<>;
         
         /**
          *  @brief Replaces a range of types in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceRange
-         *  @ref extrait::TypeArray<>::replace
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/replace
+         *  @tparam Start The start index of the range to replace
+         *  @tparam End The end index of the range to replace (exclusive)
+         *  @tparam Replacement The list of types to insert where the old types were
          */
         template<auto Start, auto End, class ...Replacement>
         using replaceRange = replaceRange_t<TypeArray, detail::deindex_v<Start>, detail::deindex_v<End>, Replacement...>;
         
         /**
          *  @brief Replaces all types that matched a predicate in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceIf
-         *  @ref extrait::TypeArray<>::replace
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/replace
+         *  @tparam Predicate The predicate to determine the types to replace
+         *  @tparam Replacement The list of types to insert where the old types were
          */
         template<template<class> class Predicate, class ...Replacement>
-        using replaceIf = replaceIf_t<TypeArray, Predicate, Replacement...>;
+        using replaceIf = TypeArray<>;
         
         /**
          *  @brief Replaces all types that did not match a predicate in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/replace%23tabber-replaceIfNot
-         *  @ref extrait::TypeArray<>::replace
-         *  @metadata{category, list_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/replace
+         *  @tparam Predicate The predicate to determine the types to retain
+         *  @tparam Replacement The list of types to insert where the old type was
          */
         template<template<class> class Predicate, class ...Replacement>
-        using replaceIfNot = replaceIfNot_t<TypeArray, Predicate, Replacement...>;
+        using replaceIfNot = TypeArray<>;
         
-        //--------------------------------------------------------------------------------------------------------------
-        /**
-         *  @brief Moves two types and left rotates the types between the indices.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/move
-         *  @metadata{category, arrangement}
-         */
-        template<auto I, auto Dest>
-        using move = move_t<TypeArray, detail::deindex_v<I>, detail::deindex_v<Dest>>;
-        
-        /**
-         *  @brief Swaps two types in the TypeArray without altering the positions of other types.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/swap
-         *  @metadata{category, arrangement}
-         */
-        template<auto I, auto Dest>
-        using swap = swap_t<TypeArray, detail::deindex_v<I>, detail::deindex_v<Dest>>;
-        
-        /**
-         *  @brief Left rotates the types at in the specified range of the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/rotate
-         *  @metadata{category, arrangement}
-         */
-        template<auto Start, auto Middle, auto End>
-        using rotate = rotate_t<TypeArray, detail::deindex_v<Start>, detail::deindex_v<Middle>, detail::deindex_v<End>>;
-        
+        //--------------------------------------------------------------------------------------------------------------                
         /**
          *  @brief Sorts the types in the TypeArray based on a given comparator.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/sort
-         *  @metadata{category, arrangement}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/sort
+         *  @tparam Comparator The comparator class template that the types will be compared against each other
          */
         template<template<class, class> class Comparator>
-        using sort = sort_t<TypeArray, Comparator>;
+        using sort = TypeArray;
         
         /**
          *  @brief Reverses the types in the TypeArray.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/reverse
-         *  @metadata{category, arrangement}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/reverse
          */
-        using reverse = reverse_t<TypeArray>;
+        using reverse = TypeArray;
         
         //--------------------------------------------------------------------------------------------------------------
         /**
          *  @brief Gives back a new TypeArray with all types mapped to the given mapper.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/map
-         *  @metadata{category, argument_mutation}
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray_empty/map
+         *  @tparam Mapper The mapper class template that will transform every type
          */
         template<template<class> class Mapper>
-        using map = map_t<TypeArray, Mapper>;
+        using map = TypeArray<>;
         
         //--------------------------------------------------------------------------------------------------------------
         /**
          *  @brief A TypeIterator to the beginning (first element) of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/begin
-         *  @metadata{category, iterator}
          */
         constexpr static auto begin = begin_t{};
         
         /**
          *  @brief A TypeIterator to the end (one past last element) of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/end
-         *  @metadata{category, iterator}
          */
         constexpr static auto end = end_t{};
         
         /**
          *  @brief A ReverseTypeIterator to the beginning (last element) of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/rbegin
-         *  @metadata{category, iterator}
          */
         constexpr static auto rbegin = rbegin_t{};
         
         /**
          *  @brief A ReverseTypeIterator to the end (one before first element) of the TypeArray.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray/rend
-         *  @metadata{category, iterator}
          */
         constexpr static auto rend = rend_t{};
         
@@ -1208,6 +1024,7 @@ namespace extrait
      *  @brief Specifies that all types deduced from constructing a TypeArray should be mapped to a different type
      *         first before given to the TypeArray.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/DeductionPolicy%23tabber-map
+     *  @tparam Mapper The mapper class template that will transform every type
      */
     template<template<class> class Mapper>
     struct deductionPolicyMap : DeductionPolicy<2> {};
@@ -1227,11 +1044,13 @@ namespace extrait
     /**
      *  @brief Value helper for extrait::deductionPolicyMap.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/DeductionPolicy
+     *  @tparam Mapper The mapper class template that will transform every type
      */
     template<template<class> class Mapper>
     constexpr inline auto deductionPolicyMap_v = deductionPolicyMap<Mapper>{};
     
     //------------------------------------------------------------------------------------------------------------------
+#if !DOXYGEN
     template<class ...Types>
     TypeArray(deductionPolicyDecay, Types &&...types) -> TypeArray<std::decay_t<Types>...>;
     
@@ -1243,12 +1062,16 @@ namespace extrait
     
     template<class ...Types>
     TypeArray(Types &&...types) -> TypeArray<Types...>;
-    
+#endif
+
     //==================================================================================================================
     /**
-     *  @brief Constructs a variant from a specified <a href="https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf">type list conformant</a>
+     *  @brief Constructs a variant from a specified [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf)
      *         type and given arguments.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/funcs/makeVariant
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) class template instantiation to transform
+     *  @param args The arguments to construct the variant from, see [std::variant constructors](https://en.cppreference.com/w/cpp/utility/variant/variant)
+     *  @return A std::variant created from the given arguments.
      */
     template<class T, class ...Args>
     constexpr inline static auto makeVariant(Args &&...args)
@@ -1258,9 +1081,12 @@ namespace extrait
     }
     
     /**
-     *  @brief Constructs an array with all types from the given <a href="https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf">type list conformant</a>
+     *  @brief Constructs an array with all types from the given [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf)
      *         type with each element being a variant constructed from the type given at the specified position.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/funcs/makeVarArray
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) class template instantiation to transform
+     *  @param args The arguments passed to each variant in the array (via std::in_place_type_t), see [std::variant constructors](https://en.cppreference.com/w/cpp/utility/variant/variant)
+     *  @return A std::array containing as many variants as types in the type list, with each variant constructed with the type at the same position as in the array.
      */
     template<class T, class ...Args>
     constexpr inline static auto makeVarArray(Args &&...args)
@@ -1270,9 +1096,13 @@ namespace extrait
     }
     
     /**
-     *  @brief Calls a callback for each type given in a <a href="https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf">type list conformant</a>
-     *         type, specified by the given TypeIterator for begin and end, and optionally returns an array with the results of each execution.
+     *  @brief Calls a callback for each type given in a [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf)
+     *         type.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/funcs/forEach
+     *  @param start An extrait::TypeIteratorBase pointing to the start of the range
+     *  @param end An extrait::TypeIteratorBase pointing to the end of the range (exclusive)
+     *  @param fn The invocable to execute for each type
+     *  @return If the given invocable returns a value this will return a std::array with all the results of each invocation, otherwise void.
      */
     template<class T, class U, class Fn>
     constexpr inline static auto forEach(T start, U end, Fn &&fn)
@@ -1282,9 +1112,13 @@ namespace extrait
     }
     
     /**
-     *  @brief Calls a callback for all types given in a <a href="https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf">type list conformant</a>
-     *         type at once with a parameter pack, specified by the given TypeIterator for begin and end, and optionally returns the result of this operation.
+     *  @brief Calls a callback for all types given in a [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf)
+     *         type at once with a parameter pack.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/funcs/apply
+     *  @param start An extrait::TypeIteratorBase pointing to the start of the range
+     *  @param end An extrait::TypeIteratorBase pointing to the end of the range (exclusive)
+     *  @param fn The invocable to execute for the parameter pack
+     *  @return If the given invocable returns a value this will return that value, otherwise void.
      */
     template<class T, class U, class Fn>
     constexpr inline static auto apply(T start, U end, Fn &&fn)
@@ -1292,6 +1126,4 @@ namespace extrait
     {
         return detail::apply(start, end, std::forward<Fn>(fn));
     }
-    
-    /** @} */
 }

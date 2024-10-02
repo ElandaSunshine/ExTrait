@@ -50,7 +50,6 @@
 
 #pragma once
 
-#include "../define.h"
 #include <string_view>
 
 
