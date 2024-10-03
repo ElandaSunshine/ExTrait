@@ -152,11 +152,11 @@ namespace extrait::detail
     };
     
     template<auto I>
-    constexpr static index_t deindex_v = deindex<std::decay_t<decltype(I)>, I>::value;
+    constexpr inline index_t deindex_v = deindex<std::decay_t<decltype(I)>, I>::value;
     
     //==================================================================================================================
     template<template<class...> class T, class ...Args, class ...Types>
-    constexpr inline static auto makeVariant(T<Types...>, Args &&...args)
+    constexpr inline auto makeVariant(T<Types...>, Args &&...args)
         noexcept(noexcept(std::variant<Types...>(std::forward<Args>(args)...)))
     {
         return std::variant<Types...>(std::forward<Args>(args)...);
@@ -164,7 +164,7 @@ namespace extrait::detail
     
     //------------------------------------------------------------------------------------------------------------------
     template<template<class...> class T, class ...Args, class ...Types>
-    constexpr inline static auto makeVarArray(T<Types...>, Args &&...args)
+    constexpr inline auto makeVarArray(T<Types...>, Args &&...args)
         noexcept(noexcept(std::array<std::variant<Types...>, sizeof...(Types)> {
             std::variant<Types...>(std::in_place_type<Types>, std::forward<Args>(args)...)...
         }))
@@ -176,7 +176,7 @@ namespace extrait::detail
     
     //------------------------------------------------------------------------------------------------------------------
     template<class Start, class Fn, std::size_t ...I>
-    constexpr inline static auto forEach_helper(Start, std::index_sequence<I...>, Fn &&fn)
+    constexpr inline auto forEach_helper(Start, std::index_sequence<I...>, Fn &&fn)
         noexcept(noexcept((std::forward<Fn>(fn)(typename Start::template inc<I>{}), ...)))
         -> std::enable_if_t<std::is_same_v<void, decltype(std::forward<Fn>(fn)(Start{}))>>
     {
@@ -184,7 +184,7 @@ namespace extrait::detail
     }
     
     template<class Start, class Fn, std::size_t ...I>
-    constexpr inline static auto forEach_helper(Start, std::index_sequence<I...>, Fn &&fn)
+    constexpr inline auto forEach_helper(Start, std::index_sequence<I...>, Fn &&fn)
         noexcept(noexcept((std::forward<Fn>(fn)(typename Start::template inc<I>{}), ...)))
         -> std::enable_if_t<
             !std::is_same_v<void, decltype(std::forward<Fn>(fn)(Start{}))>,
@@ -195,7 +195,7 @@ namespace extrait::detail
     }
     
     template<template<class, index_t, bool> class T, class U, index_t Start, index_t End, bool R, class Fn>
-    constexpr inline static auto forEach(T<U, Start, R> start, T<U, End, R>, Fn &&fn)
+    constexpr inline auto forEach(T<U, Start, R> start, T<U, End, R>, Fn &&fn)
          noexcept(noexcept(forEach_helper(start, std::make_index_sequence<End - Start>{}, std::forward<Fn>(fn))))
     {
         return forEach_helper(start, std::make_index_sequence<End - Start>{}, std::forward<Fn>(fn));
@@ -203,14 +203,14 @@ namespace extrait::detail
     
     //------------------------------------------------------------------------------------------------------------------
     template<class Start, class Fn, std::size_t ...I>
-    constexpr inline static auto apply_helper(Start, std::index_sequence<I...>, Fn &&fn)
+    constexpr inline auto apply_helper(Start, std::index_sequence<I...>, Fn &&fn)
         noexcept(noexcept(std::forward<Fn>(fn)(typename Start::template inc<(Start::index + I)>{}...)))
     {
         return std::forward<Fn>(fn)(typename Start::template inc<(Start::index + I)>{}...);
     }
     
     template<template<class, index_t, bool> class T, class U, index_t Start, index_t End, bool R, class Fn>
-    constexpr inline static auto apply(T<U, Start, R> start, T<U, End, R>, Fn &&fn)
+    constexpr inline auto apply(T<U, Start, R> start, T<U, End, R>, Fn &&fn)
         noexcept(noexcept(apply_helper(start, std::make_index_sequence<End - Start>{}, std::forward<Fn>(fn))))
     {
         return apply_helper(start, std::make_index_sequence<End - Start>{}, std::forward<Fn>(fn));
