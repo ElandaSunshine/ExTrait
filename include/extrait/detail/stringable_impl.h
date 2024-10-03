@@ -179,7 +179,7 @@ namespace extrait::detail
     };
     
     template<class U>
-    static decltype(auto) getAdapterContainer(U &adapter)
+    inline decltype(auto) getAdapterContainer(U &adapter)
     {
         struct Extract : U
         {
