@@ -1066,21 +1066,6 @@ namespace extrait
 
     //==================================================================================================================
     /**
-     *  @brief Constructs a variant from a specified [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf)
-     *         type and given arguments.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/funcs/makeVariant
-     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) class template instantiation to transform
-     *  @param args The arguments to construct the variant from, see [std::variant constructors](https://en.cppreference.com/w/cpp/utility/variant/variant)
-     *  @return A std::variant created from the given arguments.
-     */
-    template<class T, class ...Args>
-    constexpr inline auto makeVariant(Args &&...args)
-        noexcept(noexcept(detail::makeVariant(T{}, std::forward<Args>(args)...)))
-    {
-        return detail::makeVariant(T{}, std::forward<Args>(args)...);
-    }
-    
-    /**
      *  @brief Constructs an array with all types from the given [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf)
      *         type with each element being a variant constructed from the type given at the specified position.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/funcs/makeVarArray
