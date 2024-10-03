@@ -1074,7 +1074,7 @@ namespace extrait
      *  @return A std::variant created from the given arguments.
      */
     template<class T, class ...Args>
-    constexpr inline static auto makeVariant(Args &&...args)
+    constexpr inline auto makeVariant(Args &&...args)
         noexcept(noexcept(detail::makeVariant(T{}, std::forward<Args>(args)...)))
     {
         return detail::makeVariant(T{}, std::forward<Args>(args)...);
@@ -1089,7 +1089,7 @@ namespace extrait
      *  @return A std::array containing as many variants as types in the type list, with each variant constructed with the type at the same position as in the array.
      */
     template<class T, class ...Args>
-    constexpr inline static auto makeVarArray(Args &&...args)
+    constexpr inline auto makeVarArray(Args &&...args)
          noexcept(noexcept(detail::makeVarArray(T{}, std::forward<Args>(args)...)))
     {
         return detail::makeVarArray(T{}, std::forward<Args>(args)...);
@@ -1105,7 +1105,7 @@ namespace extrait
      *  @return If the given invocable returns a value this will return a std::array with all the results of each invocation, otherwise void.
      */
     template<class T, class U, class Fn>
-    constexpr inline static auto forEach(T start, U end, Fn &&fn)
+    constexpr inline auto forEach(T start, U end, Fn &&fn)
          noexcept(noexcept(detail::forEach(start, end, std::forward<Fn>(fn))))
     {
         return detail::forEach(start, end, std::forward<Fn>(fn));
@@ -1121,7 +1121,7 @@ namespace extrait
      *  @return If the given invocable returns a value this will return that value, otherwise void.
      */
     template<class T, class U, class Fn>
-    constexpr inline static auto apply(T start, U end, Fn &&fn)
+    constexpr inline auto apply(T start, U end, Fn &&fn)
          noexcept(noexcept(detail::apply(start, end, std::forward<Fn>(fn))))
     {
         return detail::apply(start, end, std::forward<Fn>(fn));
