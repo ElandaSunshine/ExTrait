@@ -1077,5 +1077,3 @@ namespace extrait
     template<class T, template<class> class Mapper>
     using map_t = typename map<T, Mapper>::type;
 }
-
-using somevar = int;
