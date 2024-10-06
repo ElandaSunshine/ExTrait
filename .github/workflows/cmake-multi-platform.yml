@@ -57,7 +57,7 @@ jobs:
         - name: Setup for Linux only
           if: matrix.os == 'ubuntu-latest'
           run: >
-            sudo apt update
+            sudo apt update && sudo apt install -y gcc-13 g++-13
 
         - name: Configure CMake
           run: >
