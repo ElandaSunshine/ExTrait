@@ -2,10 +2,10 @@ name: CMake on multiple platforms
 
 on:
     push:
-        branches: [ "develop", "master" ]
+        branches: [ develop, main ]
 
     pull_request:
-        branches: [ "develop", "master" ]
+        branches: [ develop, main ]
 
 jobs:
     build:
@@ -15,9 +15,9 @@ jobs:
         fail-fast: false
 
         matrix:
-            os: [ubuntu-latest, windows-latest, macos-latest]
-            build_type: [Release]
-            c_compiler: [gcc, clang, cl, AppleClang]
+            os: [ ubuntu-latest, windows-latest, macos-latest ]
+            build_type: [ Release ]
+            c_compiler: [ gcc, clang, cl, AppleClang ]
 
             include:
             - os: windows-latest
