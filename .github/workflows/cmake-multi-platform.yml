@@ -12,44 +12,44 @@ jobs:
         runs-on: ${{ matrix.os }}
 
         strategy:
-        fail-fast: false
+            fail-fast: false
 
-        matrix:
-            os: [ ubuntu-latest, windows-latest, macos-latest ]
-            build_type: [ Release ]
-            c_compiler: [ gcc, clang, cl, AppleClang ]
-
-            include:
-            - os: windows-latest
-              c_compiler: cl
-              cpp_compiler: cl
-            - os: ubuntu-latest
-              c_compiler: gcc
-              cpp_compiler: g++
-            - os: ubuntu-latest
-              c_compiler: clang
-              cpp_compiler: clang++
-            - os: macos-latest
-              c_compiler: AppleClang
-              cpp_compiler: AppleClang
-
-            exclude:
-            - os: windows-latest
-              c_compiler: gcc
-            - os: windows-latest
-              c_compiler: clang
-            - os: windows-latest
-              c_compiler: AppleClang
-            - os: ubuntu-latest
-              c_compiler: cl
-            - os: ubuntu-latest
-              c_compiler: AppleClang
-            - os: macos-latest
-              c_compiler: gcc
-            - os: macos-latest
-              c_compiler: clang
-            - os: macos-latest
-              c_compiler: cl
+            matrix:
+                os: [ ubuntu-latest, windows-latest, macos-latest ]
+                build_type: [ Release ]
+                c_compiler: [ gcc, clang, cl, AppleClang ]
+    
+                include:
+                - os: windows-latest
+                  c_compiler: cl
+                  cpp_compiler: cl
+                - os: ubuntu-latest
+                  c_compiler: gcc
+                  cpp_compiler: g++
+                - os: ubuntu-latest
+                  c_compiler: clang
+                  cpp_compiler: clang++
+                - os: macos-latest
+                  c_compiler: AppleClang
+                  cpp_compiler: AppleClang
+    
+                exclude:
+                - os: windows-latest
+                  c_compiler: gcc
+                - os: windows-latest
+                  c_compiler: clang
+                - os: windows-latest
+                  c_compiler: AppleClang
+                - os: ubuntu-latest
+                  c_compiler: cl
+                - os: ubuntu-latest
+                  c_compiler: AppleClang
+                - os: macos-latest
+                  c_compiler: gcc
+                - os: macos-latest
+                  c_compiler: clang
+                - os: macos-latest
+                  c_compiler: cl
 
         steps:
         - uses: actions/checkout@v3
