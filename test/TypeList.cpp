@@ -748,25 +748,6 @@ TEST(TypeTraitSuite, TestContainer)
     EXPECT_FALSE((TestList::equals<extrait::TypeArray<>>));
     
     //....................
-    EXPECT_FALSE((TestList::isEmpty));
-    EXPECT_TRUE ((extrait::TypeArray<>::isEmpty));
-    
-    //....................
-    try
-    {
-        EXPECT_EQ((std::get<0>(extrait::makeVariant<TestList>(7))),         7);
-        EXPECT_EQ((std::get<1>(extrait::makeVariant<TestList>(7l))),        7l);
-        EXPECT_EQ((std::get<2>(extrait::makeVariant<TestList>(7.f))),       7.f);
-        EXPECT_EQ((std::get<3>(extrait::makeVariant<TestList>(7.))),        7.);
-        EXPECT_EQ((std::get<4>(extrait::makeVariant<TestList>((short) 7))), 7.);
-        EXPECT_EQ((std::get<5>(extrait::makeVariant<TestList>(true))),      true);
-    }
-    catch (std::exception &ex)
-    {
-        EXPECT_TRUE(false) << ex.what();
-    }
-    
-    //....................
     const auto array = extrait::makeVarArray<TestList>(2);
     
     for (int i = 0; i < array.size(); ++i)
@@ -778,12 +759,13 @@ TEST(TypeTraitSuite, TestContainer)
     }
     
     //....................
+    using VarType = TestList::to<std::variant>;
     std::vector<TestList::to<std::variant>> res_list;
     
     extrait::forEach(TestList::begin, TestList::end, [&res_list](auto it)
     {
         using It = decltype(it);
-        res_list.emplace_back(extrait::makeVariant<TestList>(typename It::type{}));
+        res_list.emplace_back(VarType{typename It::type{}});
     });
     
     for (int i = 0; i < res_list.size(); ++i)

@@ -119,14 +119,6 @@ namespace extrait
     template<class ...Branches>
     struct select : detail::select<Branches...> {};
     
-    /**
-     *  @brief Type helper for extrait::select.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/select
-     *  @tparam Branches A list of extrait::Branch instantiations
-     */
-    template<class ...Branches>
-    using select_t = typename select<Branches...>::type;
-    
     //------------------------------------------------------------------------------------------------------------------
     /**
      *  @brief Creates a new instantiation of the given [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf)
@@ -138,23 +130,14 @@ namespace extrait
     template<template<class...> class T, class ...Branches>
     struct assemble : detail::assemble<T, Branches...> {};
     
-    /**
-     *  @brief Type helper for extrait::assemble.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/assemble
-     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) class template used to instantiate the assembled type
-     *  @tparam Branches A list of extrait::Branch instantiations
-     */
-    template<template<class...> class T, class ...Branches>
-    using assemble_t = typename assemble<T, Branches...>::type;
-    
     //------------------------------------------------------------------------------------------------------------------
     /**
      *  @brief Specifies a branch in a given branching template, and associates a type with a given condition.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/branch
      *  @tparam T The type associated with this branch
-     *  @tparam Condition The condition associated with this branch (already evaluated)
+     *  @tparam Predicate The predicate class template to match with the given case type
      */
-    template<class T, bool Condition>
+    template<class T, template<class> class Predicate>
     struct branch {};
     
     //==================================================================================================================
