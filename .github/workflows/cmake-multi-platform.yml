@@ -17,37 +17,31 @@ jobs:
             matrix:
                 os: [ ubuntu-latest, windows-latest, macos-latest ]
                 build_type: [ Release ]
-                c_compiler: [ gcc, clang, cl, AppleClang ]
+                c_compiler: [ gcc-13, clang, cl ]
     
                 include:
                 - os: windows-latest
                   c_compiler: cl
                   cpp_compiler: cl
                 - os: ubuntu-latest
-                  c_compiler: gcc
-                  cpp_compiler: g++
+                  c_compiler: gcc-13
+                  cpp_compiler: g++-13
                 - os: ubuntu-latest
                   c_compiler: clang
                   cpp_compiler: clang++
                 - os: macos-latest
-                  c_compiler: AppleClang
-                  cpp_compiler: AppleClang
+                  c_compiler: clang
+                  cpp_compiler: clang++
     
                 exclude:
                 - os: windows-latest
-                  c_compiler: gcc
+                  c_compiler: gcc-13
                 - os: windows-latest
                   c_compiler: clang
-                - os: windows-latest
-                  c_compiler: AppleClang
                 - os: ubuntu-latest
                   c_compiler: cl
-                - os: ubuntu-latest
-                  c_compiler: AppleClang
                 - os: macos-latest
-                  c_compiler: gcc
-                - os: macos-latest
-                  c_compiler: clang
+                  c_compiler: gcc-13
                 - os: macos-latest
                   c_compiler: cl
 
