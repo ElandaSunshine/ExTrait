@@ -164,6 +164,7 @@ namespace extrait::detail
         static_assert(sizeof...(Branches) != 0, "no branches were specified");
     };
     
+    //.............
     template<class T, class U, template<class> class Trait, class ...Branches>
     struct select_impl<T, extrait::branch<U, Trait>, Branches...>
     {
@@ -174,6 +175,14 @@ namespace extrait::detail
         >;
     };
     
+    template<class T, class U, template<class> class Trait>
+    struct select_impl<T, extrait::branch<U, Trait>>
+    {
+        static_assert(Trait<T>::value, "no branch succeeded and no fallback provided");
+        using type = U;
+    };
+    
+    //.............
     template<class T, class U, class ...Branches>
     struct select_impl<T, U, Branches...>
     {
