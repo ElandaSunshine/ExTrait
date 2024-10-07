@@ -165,13 +165,13 @@ namespace extrait::detail
     };
     
     //.............
-    template<class T, class U, template<class> class Trait, class ...Branches>
-    struct select_impl<T, extrait::branch<U, Trait>, Branches...>
+    template<class T, class U, template<class> class Trait, class Next, class ...Branches>
+    struct select_impl<T, extrait::branch<U, Trait>, Next, Branches...>
     {
         using type = std::conditional_t<
             Trait<T>::value,
                 U,
-                typename select_impl<T, Branches...>::type
+                typename select_impl<T, Next, Branches...>::type
         >;
     };
     
