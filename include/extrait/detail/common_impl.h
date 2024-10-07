@@ -61,6 +61,9 @@ namespace extrait
     
     template<auto ...V>
     extern const bool assertDep_value;
+
+    template<class, template<class> class>
+    struct branch;
 }
 
 namespace extrait::detail
@@ -161,17 +164,25 @@ namespace extrait::detail
         static_assert(sizeof...(Branches) != 0, "no branches were specified");
     };
     
-    template<class T, template<class, template<class> class> class Branch, class U, template<class> class Trait,
-             class ...Branches>
-    struct select_impl<T, Branch<U, Trait>, Branches...>
+    //.............
+    template<class T, class U, template<class> class Trait, class Next, class ...Branches>
+    struct select_impl<T, extrait::branch<U, Trait>, Next, Branches...>
     {
         using type = std::conditional_t<
             Trait<T>::value,
                 U,
-                typename select_impl<T, Branches...>::type
+                typename select_impl<T, Next, Branches...>::type
         >;
     };
     
+    template<class T, class U, template<class> class Trait>
+    struct select_impl<T, extrait::branch<U, Trait>>
+    {
+        static_assert(Trait<T>::value, "no branch succeeded and no fallback provided");
+        using type = U;
+    };
+    
+    //.............
     template<class T, class U, class ...Branches>
     struct select_impl<T, U, Branches...>
     {
@@ -193,9 +204,9 @@ namespace extrait::detail
     struct assemble_impl;
     
     //.............
-    template<template<class...> class T, class U, template<class, template<class> class> class Branch,
-            class ...Branches, class V, template<class> class Trait, class ...TTypes>
-    struct assemble_impl<T<TTypes...>, U, Branch<V, Trait>, Branches...>
+    template<template<class...> class T, class U, class ...Branches, class V, template<class> class Trait,
+             class ...TTypes>
+    struct assemble_impl<T<TTypes...>, U, extrait::branch<V, Trait>, Branches...>
     {
         using type = std::conditional_t<
             Trait<U>::value,
