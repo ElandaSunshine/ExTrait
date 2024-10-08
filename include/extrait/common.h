@@ -135,9 +135,9 @@ namespace extrait
      *  @brief Specifies a branch in a given branching template, and associates a type with a given condition.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/branch
      *  @tparam T The type associated with this branch
-     *  @tparam Predicate The predicate class template to match with the given case type
+     *  @tparam Condition The condition to evalute
      */
-    template<class T, template<class> class Predicate>
+    template<class T, bool Condition>
     struct branch {};
     
     //==================================================================================================================
