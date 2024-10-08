@@ -114,22 +114,39 @@ namespace extrait
     /**
      *  @brief Selects a type based on the given case branches that hold a condition and a type for that condition.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/select
-     *  @tparam Branches A list of extrait::Branch instantiations
+     *  @tparam ...Branches A list of extrait::Branch instantiations
      */
     template<class ...Branches>
     struct select : detail::select<Branches...> {};
     
+    /**
+     *  @brief Type helper for extrait::select.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/select
+     *  @tparam ...Branches A list of extrait::Branch instantiations
+     */
+    template<class ...Branches>
+    using select_t = typename select<Branches...>::type;
+
     //------------------------------------------------------------------------------------------------------------------
     /**
      *  @brief Creates a new instantiation of the given [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf)
      *         class template with all types that each given branch case's condition evaluated to true.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/assemble
      *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) class template used to instantiate the assembled type
-     *  @tparam Branches A list of extrait::Branch instantiations
+     *  @tparam ...Branches A list of extrait::Branch instantiations
      */
     template<template<class...> class T, class ...Branches>
     struct assemble : detail::assemble<T, Branches...> {};
     
+    /**
+     *  @brief Type helper for extrait::assemble.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/assemble
+     *  @tparam T The [type list conformant](https://elandasunshine.github.io/wiki?page=Extrait/nomenclature%23def-tlist-conf) class template used to instantiate the assembled type
+     *  @tparam ...Branches A list of extrait::Branch instantiations
+     */
+    template<template<class...> class T, class ...Branches>
+    using assemble_t = typename assemble<T, Branches...>::type;
+
     //------------------------------------------------------------------------------------------------------------------
     /**
      *  @brief Specifies a branch in a given branching template, and associates a type with a given condition.

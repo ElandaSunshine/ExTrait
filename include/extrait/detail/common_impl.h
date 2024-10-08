@@ -190,8 +190,7 @@ namespace extrait::detail
     template<class ...Branches>
     struct select
     {
-        template<class T>
-        using type = typename select_impl<T, Branches...>::type;
+        using type = typename select_impl<Branches...>::type;
     };
     
     //==================================================================================================================
@@ -209,6 +208,12 @@ namespace extrait::detail
     struct assemble_impl<T<TTypes...>, extrait::branch<U, false>, Branches...>
     {
         using type = typename assemble_impl<T<TTypes...>, Branches...>::type;
+    };
+
+    template<template<class...> class T, class ...Branches, class U, class ...TTypes>
+    struct assemble_impl<T<TTypes...>, U, Branches...>
+    {
+        using type = typename assemble_impl<T<TTypes..., U>, Branches...>::type;
     };
     
     //.............
