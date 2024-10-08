@@ -68,40 +68,35 @@
 namespace
 {
     //==================================================================================================================
-    template<class T>
-    struct is_size_4
-    {
-        static constexpr bool value = (sizeof(T) == 4);
-    };
-
-    //==================================================================================================================
     struct TestMethod { void someMethod(int, long) {} int (**volatile const *const &hello)[][343]; };
     
     //==================================================================================================================
-    using TestSelect = extrait::select<
+    template<class T>
+    using TestSelect = extrait::select_t<
         // Cases
-        extrait::branch<float,       std::is_floating_point>,
-        extrait::branch<std::size_t, std::is_unsigned>,
-        extrait::branch<int,         is_size_4>,
-        extrait::branch<int*,        std::is_array>,
+        extrait::branch<float,       std::is_floating_point_v<T>>,
+        extrait::branch<std::size_t, std::is_unsigned_v<T>>,
+        extrait::branch<int,         (sizeof(T) == 4)>,
+        extrait::branch<int*,        std::is_array_v<T>>,
         
         // Default
         void
     >;
     
-    using TestAssemble = extrait::assemble<std::tuple,
-        extrait::branch<char, std::is_integral>,
-        extrait::branch<short, std::is_integral>,
+    template<class T>
+    using TestAssemble = extrait::assemble_t<std::tuple,
+        extrait::branch<char, std::is_integral_v<T>>,
+        extrait::branch<short, std::is_integral_v<T>>,
         
         std::nullptr_t,
         
-        extrait::branch<int, std::is_integral>,
-        extrait::branch<long, std::is_integral>,
-        extrait::branch<long long, std::is_integral>,
+        extrait::branch<int, std::is_integral_v<T>>,
+        extrait::branch<long, std::is_integral_v<T>>,
+        extrait::branch<long long, std::is_integral_v<T>>,
         
-        extrait::branch<float, std::is_floating_point>,
-        extrait::branch<double, std::is_floating_point>,
-        extrait::branch<long double, std::is_floating_point>,
+        extrait::branch<float, std::is_floating_point_v<T>>,
+        extrait::branch<double, std::is_floating_point_v<T>>,
+        extrait::branch<long double, std::is_floating_point_v<T>>,
         
         std::tuple<>
     >;
@@ -435,35 +430,35 @@ TEST(CommonSuite, StripTest)
 TEST(CommonSuite, SelectionUtilsTest)
 {
     using namespace extrait;
-    
+
     //....................
-    EXPECT_TRUE((std::is_same_v<int,         ::TestSelect::type<std::int32_t>>));
-    EXPECT_TRUE((std::is_same_v<float,       ::TestSelect::type<double>>));
-    EXPECT_TRUE((std::is_same_v<std::size_t, ::TestSelect::type<unsigned char>>));
-    EXPECT_TRUE((std::is_same_v<int*,        ::TestSelect::type<int[34][34]>>));
-    EXPECT_TRUE((std::is_same_v<void,        ::TestSelect::type<std::nullptr_t>>));
+    EXPECT_TRUE((std::is_same_v<int,         ::TestSelect<std::int32_t>>));
+    EXPECT_TRUE((std::is_same_v<float,       ::TestSelect<double>>));
+    EXPECT_TRUE((std::is_same_v<std::size_t, ::TestSelect<unsigned char>>));
+    EXPECT_TRUE((std::is_same_v<int*,        ::TestSelect<int[34][34]>>));
+    EXPECT_TRUE((std::is_same_v<void,        ::TestSelect<std::nullptr_t>>));
     
     //....................
     EXPECT_TRUE((std::is_same_v<
         std::tuple<char, short, std::nullptr_t, int, long, long long, std::tuple<>>,
-        ::TestAssemble::type<int>
-    >)) << extrait::getActualTypeName<::TestAssemble::type<int>>();
+        ::TestAssemble<int>
+    >)) << extrait::getActualTypeName<::TestAssemble<int>>();
     EXPECT_TRUE((std::is_same_v<
         std::tuple<char, short, std::nullptr_t, int, long, long long, std::tuple<>>,
-        ::TestAssemble::type<char>
-    >)) << extrait::getActualTypeName<::TestAssemble::type<char>>();
+        ::TestAssemble<char>
+    >)) << extrait::getActualTypeName<::TestAssemble<char>>();
     EXPECT_TRUE((std::is_same_v<
         std::tuple<std::nullptr_t, float, double, long double, std::tuple<>>,
-        ::TestAssemble::type<float>
-    >)) << extrait::getActualTypeName<::TestAssemble::type<float>>();
+        ::TestAssemble<float>
+    >)) << extrait::getActualTypeName<::TestAssemble<float>>();
     EXPECT_TRUE((std::is_same_v<
         std::tuple<std::nullptr_t, float, double, long double, std::tuple<>>,
-        ::TestAssemble::type<long double>
-    >)) << extrait::getActualTypeName<::TestAssemble::type<long double>>();
+        ::TestAssemble<long double>
+    >)) << extrait::getActualTypeName<::TestAssemble<long double>>();
     EXPECT_TRUE((std::is_same_v<
         std::tuple<std::nullptr_t, std::tuple<>>,
-        ::TestAssemble::type<std::nullptr_t>
-    >)) << extrait::getActualTypeName<::TestAssemble::type<std::nullptr_t>>();
+        ::TestAssemble<std::nullptr_t>
+    >)) << extrait::getActualTypeName<::TestAssemble<std::nullptr_t>>();
 }
 
 TEST(CommonSuite, MiscTest)
