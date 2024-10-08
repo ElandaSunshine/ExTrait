@@ -62,7 +62,7 @@ namespace extrait
     template<auto ...V>
     extern const bool assertDep_value;
 
-    template<class, template<class> class>
+    template<class, bool>
     struct branch;
 }
 
@@ -158,37 +158,32 @@ namespace extrait::detail
     template<class R, class T> struct strip<R T::*> { using type = typename strip<R>::type; };
     
     //==================================================================================================================
-    template<class T, class ...Branches>
+    template<class ...Branches>
     struct select_impl
     {
-        static_assert(sizeof...(Branches) != 0, "no branches were specified");
+        static_assert(sizeof...(Branches) != 0, "must have at least one branch");
     };
     
     //.............
-    template<class T, class U, template<class> class Trait, class Next, class ...Branches>
-    struct select_impl<T, extrait::branch<U, Trait>, Next, Branches...>
+    template<class T, class ...Branches>
+    struct select_impl<extrait::branch<T, true>, Branches...>
     {
-        using type = std::conditional_t<
-            Trait<T>::value,
-                U,
-                typename select_impl<T, Next, Branches...>::type
-        >;
+        using type = T;
     };
     
-    template<class T, class U, template<class> class Trait>
-    struct select_impl<T, extrait::branch<U, Trait>>
+    template<class T, class ...Branches>
+    struct select_impl<extrait::branch<T, false>, Branches...>
     {
-        static_assert(Trait<T>::value, "no branch succeeded and no fallback provided");
-        using type = U;
+        using type = typename select_impl<Branches...>::type;
     };
     
     //.............
-    template<class T, class U, class ...Branches>
-    struct select_impl<T, U, Branches...>
+    template<class T, class ...Branches>
+    struct select_impl<T, Branches...>
     {
         static_assert(sizeof...(Branches) == 0,
             "a fallback branch must come after all other branches have already occurred");
-        using type = U;
+        using type = T;
     };
 
     //------------------------------------------------------------------------------------------------------------------
@@ -200,30 +195,25 @@ namespace extrait::detail
     };
     
     //==================================================================================================================
-    template<class T, class U, class ...Branches>
+    template<class T, class ...Branches>
     struct assemble_impl;
     
     //.............
-    template<template<class...> class T, class U, class ...Branches, class V, template<class> class Trait,
-             class ...TTypes>
-    struct assemble_impl<T<TTypes...>, U, extrait::branch<V, Trait>, Branches...>
+    template<template<class...> class T, class ...Branches, class U, class ...TTypes>
+    struct assemble_impl<T<TTypes...>, extrait::branch<U, true>, Branches...>
     {
-        using type = std::conditional_t<
-            Trait<U>::value,
-                typename assemble_impl<T<TTypes..., V>, U, Branches...>::type,
-                typename assemble_impl<T<TTypes...>, U, Branches...>::type
-        >;
+        using type = typename assemble_impl<T<TTypes..., U>, Branches...>::type;
     };
     
-    template<template<class...> class T, class U, class ...Branches, class Next, class ...TTypes>
-    struct assemble_impl<T<TTypes...>, U, Next, Branches...>
+    template<template<class...> class T, class ...Branches, class U, class ...TTypes>
+    struct assemble_impl<T<TTypes...>, extrait::branch<U, false>, Branches...>
     {
-        using type = typename assemble_impl<T<TTypes..., Next>, U, Branches...>::type;
+        using type = typename assemble_impl<T<TTypes...>, Branches...>::type;
     };
     
     //.............
-    template<template<class...> class T, class U, class ...TTypes>
-    struct assemble_impl<T<TTypes...>, U>
+    template<template<class...> class T, class ...TTypes>
+    struct assemble_impl<T<TTypes...>>
     {
         using type = T<TTypes...>;
     };
@@ -232,8 +222,7 @@ namespace extrait::detail
     template<template<class...> class T, class ...Branches>
     struct assemble
     {
-        template<class U>
-        using type = typename assemble_impl<TypeList<>, U, Branches...>::type::template to<T>;
+        using type = typename assemble_impl<TypeList<>, Branches...>::type::template to<T>;
     };
     
     //------------------------------------------------------------------------------------------------------------------
