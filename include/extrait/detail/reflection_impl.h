@@ -316,7 +316,7 @@ namespace extrait::detail
     enum class SigPos { BEGIN, END };
 
 #if defined(__GNUG__) || defined(__clang__)
-    template<class _extrait_FuncSig>
+    template<class _extrait_FuncSig, SigPos _extrait_SigPos = SigPos::END>
     [[nodiscard]]
     constexpr inline std::string_view getSignature_impl(_extrait_FuncSig&&) noexcept
     {
@@ -325,7 +325,13 @@ namespace extrait::detail
         std::string_view           result    = signature.substr(signature.find(param) + param.length());
         
         result.remove_prefix(result.find('=') + 1);
-        result = result.substr(0, result.find(';'));
+        result = result.substr(0, result.find("_extrait_SigPos"));
+        
+    #ifdef __clang__
+        result = result.substr(0, result.rfind(','));
+    #else
+        result = result.substr(0, result.rfind(';'));
+    #endif
         
         {
             const std::size_t start = result.find_first_not_of(' ');
