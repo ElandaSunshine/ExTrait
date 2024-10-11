@@ -259,12 +259,10 @@ namespace extrait::detail
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/toString
          *  @return The function signature as compile time string
          */
-        constexpr static inline std::string_view toString() noexcept
-        {
-            return getSignature<Func>();
-        }
+        [[nodiscard]]
+        constexpr static std::string_view toString() noexcept;
     };
-
+    
     //==================================================================================================================
     template<auto V, class T = decltype(V)>
     struct Function
@@ -317,7 +315,7 @@ namespace extrait::detail
     //==================================================================================================================
     enum class SigPos { BEGIN, END };
 
-#ifdef __GNUG__
+#if defined(__GNUG__) || defined(__clang__)
     template<class _extrait_FuncSig>
     [[nodiscard]]
     constexpr inline std::string_view getSignature_impl(_extrait_FuncSig&&) noexcept
@@ -455,4 +453,15 @@ namespace extrait::detail
             return func;
         }
     };
+    
+    //==================================================================================================================
+    template<auto Func, class T, class R, class... Params, bool IsMember, bool QualNoex, bool QualLV, bool QualRV,
+             bool QualCon, bool QualVol>
+    constexpr inline std::string_view
+        FuncBase<
+            Func, T, R, TypeArray<Params...>, IsMember, QualNoex, QualLV, QualRV, QualCon, QualVol
+        >::toString() noexcept
+    {
+        return getSignature<Func>();
+    }
 }
