@@ -462,6 +462,6 @@ namespace extrait::detail
             Func, T, R, TypeArray<Params...>, IsMember, QualNoex, QualLV, QualRV, QualCon, QualVol
         >::toString() noexcept
     {
-        return getSignature<Func>();
+        return getSignature(Func);
     }
 }

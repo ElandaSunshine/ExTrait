@@ -179,6 +179,10 @@ TEST(ReflectionSuite, TestFunction)
     //....................
     EXPECT_EQ((Function<::test>::invoke(nullptr, 2, 5.0f)), 10);
     EXPECT_EQ((Function<ov>::invoke(TestMethod{}, 2, 5)), 10);
+
+    //....................
+    EXPECT_NE(Function<::test>::toString(), "");
+    EXPECT_NE(Function<ov>::toString(),     "");
 }
 
 //======================================================================================================================
