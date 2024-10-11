@@ -70,18 +70,20 @@ namespace
     //==================================================================================================================
     struct TestMethod
     {
-        void someMethod(int, long) const && noexcept {}
+        long someMethod(int x, long y) const && noexcept { return (x * y); }
+        long someMethod(int x, long y) const & noexcept { return (x * y); }
         
         void someOtherMethod(int, long, double) const && noexcept {}
         void someOtherMethod(int) volatile noexcept {}
         void someOtherMethod() const volatile & {}
         
-        int (**volatile const *const &hello)[][343];
+        int (**volatile const *const hello_bla)[][343] {};
+        int (**volatile const *const &hello)[][343] { hello_bla };
     };
     
     //==================================================================================================================
-    long test(int, float) noexcept { return 0; }
-    long test2(int, float, double)  { return 0; }
+    long test(int x, float y) noexcept { return (x * y); }
+    long test2(int x, float y, double z) { return (x * y * z); }
 }
 //======================================================================================================================
 // endregion Suite Setup
@@ -105,7 +107,7 @@ TEST(ReflectionSuite, TestFunction)
     EXPECT_TRUE((std::is_same_v<FreeFunc::Pointer,       long(*)(int, float) noexcept>));
     EXPECT_TRUE((std::is_same_v<FreeFunc::Signature,     long(int, float) noexcept>));
     
-    EXPECT_EQ(FreeFunc::funcPtr, ::test);
+    EXPECT_EQ(FreeFunc::value, ::test);
     EXPECT_EQ(FreeFunc::parameterCount, 2);
     
     EXPECT_FALSE(FreeFunc::isMemberFunction);
@@ -130,17 +132,18 @@ TEST(ReflectionSuite, TestFunction)
     EXPECT_FALSE(isFuncLvalueQualified_v<::test>);
     EXPECT_FALSE(isFuncRvalueQualified_v<::test>);
     
-    EXPECT_TRUE (isFuncNoexceptSpecified_v<::test>);
-    EXPECT_FALSE(isFuncNoexceptSpecified_v<::test2>);
+    EXPECT_TRUE (isFuncNoexcept_v<::test>);
+    EXPECT_FALSE(isFuncNoexcept_v<::test2>);
     
-    using MemFunc = Function<&::TestMethod::someMethod>;
+    static constexpr auto ov = Overload<long(int, long) const && noexcept>::of(&TestMethod::someMethod);
+    using MemFunc = Function<ov>;
     EXPECT_TRUE((std::is_same_v<MemFunc::Parameters,    TypeArray<int, long>>));
     EXPECT_TRUE((std::is_same_v<MemFunc::Owner,         ::TestMethod>));
-    EXPECT_TRUE((std::is_same_v<MemFunc::Return,        void>));
-    EXPECT_TRUE((std::is_same_v<MemFunc::Pointer,       void(TestMethod::*)(int, long) const && noexcept>));
-    EXPECT_TRUE((std::is_same_v<MemFunc::Signature,     void(int, long) const && noexcept>));
+    EXPECT_TRUE((std::is_same_v<MemFunc::Return,        long>));
+    EXPECT_TRUE((std::is_same_v<MemFunc::Pointer,       long(TestMethod::*)(int, long) const && noexcept>));
+    EXPECT_TRUE((std::is_same_v<MemFunc::Signature,     long(int, long) const && noexcept>));
     
-    EXPECT_EQ(MemFunc::funcPtr, &TestMethod::someMethod);
+    EXPECT_EQ(MemFunc::value, ov);
     EXPECT_EQ(MemFunc::parameterCount, 2);
     
     EXPECT_TRUE (MemFunc::isMemberFunction);
@@ -150,19 +153,19 @@ TEST(ReflectionSuite, TestFunction)
     EXPECT_FALSE(MemFunc::isVolatileQualified);
     EXPECT_FALSE(MemFunc::isLvalueQualified);
     
-    EXPECT_TRUE((std::is_same_v<funcParameterList_t<&::TestMethod::someMethod>, TypeArray<int, long>>));
-    EXPECT_TRUE((std::is_same_v<funcOwnerType_t<&::TestMethod::someMethod>,     ::TestMethod>));
-    EXPECT_TRUE((std::is_same_v<funcReturnType_t<&::TestMethod::someMethod>,    void>));
-    EXPECT_TRUE((std::is_same_v<funcSignature_t<&::TestMethod::someMethod>,     void(int, long) const && noexcept>));
+    EXPECT_TRUE((std::is_same_v<funcParameterList_t<ov>, TypeArray<int, long>>));
+    EXPECT_TRUE((std::is_same_v<funcOwnerType_t<ov>,     ::TestMethod>));
+    EXPECT_TRUE((std::is_same_v<funcReturnType_t<ov>,    long>));
+    EXPECT_TRUE((std::is_same_v<funcSignature_t<ov>,     long(int, long) const && noexcept>));
     
-    EXPECT_EQ(funcParameterCount_v<&::TestMethod::someMethod>, 2);
+    EXPECT_EQ(funcParameterCount_v<ov>, 2);
     
-    EXPECT_TRUE (isMemberFunction_v<&::TestMethod::someMethod>);
-    EXPECT_TRUE (isFuncNoexceptSpecified_v<&::TestMethod::someMethod>);
-    EXPECT_TRUE (isFuncConstQualified_v<&::TestMethod::someMethod>);
-    EXPECT_TRUE (isFuncRvalueQualified_v<&::TestMethod::someMethod>);
-    EXPECT_FALSE(isFuncVolatileQualified_v<&::TestMethod::someMethod>);
-    EXPECT_FALSE(isFuncLvalueQualified_v<&::TestMethod::someMethod>);
+    EXPECT_TRUE (isMemberFunction_v<ov>);
+    EXPECT_TRUE (isFuncNoexcept_v<ov>);
+    EXPECT_TRUE (isFuncConstQualified_v<ov>);
+    EXPECT_TRUE (isFuncRvalueQualified_v<ov>);
+    EXPECT_FALSE(isFuncVolatileQualified_v<ov>);
+    EXPECT_FALSE(isFuncLvalueQualified_v<ov>);
     
     //....................
     EXPECT_TRUE((std::is_same_v<decltype(Overload<void(int, long, double) const && noexcept>::of(&TestMethod::someOtherMethod)), void(TestMethod::*)(int, long, double) const && noexcept>));
@@ -172,6 +175,10 @@ TEST(ReflectionSuite, TestFunction)
     EXPECT_FALSE((std::is_same_v<decltype(Overload<void(int, long, double) const && noexcept>::of(&TestMethod::someOtherMethod)), void(TestMethod::*)(int, long, double) const &&>));
     EXPECT_FALSE((std::is_same_v<decltype(Overload<void(int) volatile noexcept>::of(&TestMethod::someOtherMethod)), void(TestMethod::*)(int) noexcept>));
     EXPECT_FALSE((std::is_same_v<decltype(Overload<void() const volatile &>::of(&TestMethod::someOtherMethod)), void(TestMethod::*)() const volatile & noexcept>));
+
+    //....................
+    EXPECT_EQ((Function<::test>::invoke(nullptr, 2, 5.0f)), 10);
+    EXPECT_EQ((Function<ov>::invoke(TestMethod{}, 2, 5)), 10);
 }
 
 //======================================================================================================================

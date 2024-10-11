@@ -81,7 +81,7 @@ namespace extrait
     //==================================================================================================================
     /**
      *  @brief A helper alias for declaring the type of a function pointer.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection%23pointer_helpers
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection/type_helpers%23tabber-FunctionPointer_t
      *  @tparam T The function signature type
      */
     template<class T>
@@ -89,7 +89,7 @@ namespace extrait
     
     /**
      *  @brief A helper alias for declaring the type of a member function pointer.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection%23pointer_helpers
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection/type_helpers%23tabber-MemberFunctionPointer_t
      *  @tparam T The function signature type
      *  @tparam U The owner type of the member function
      */
@@ -98,7 +98,7 @@ namespace extrait
     
     /**
      *  @brief A helper alias for declaring the type of a member object pointer.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection%23pointer_helpers
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/reflection/type_helpers%23tabber-MemberObjectPointer_t
      *  @tparam T The type of the member object
      *  @tparam U The owner type of the member object
      */
@@ -107,7 +107,7 @@ namespace extrait
     
     //==================================================================================================================
     /**
-     *  @brief Determines whether a function pointer is a member function pointer.
+     *  @brief Determines whether a function is a member function.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isMemberFunction
      *  @tparam Fn The function pointer
      */
@@ -123,7 +123,7 @@ namespace extrait
     constexpr inline bool isMemberFunction_v = isMemberFunction<Fn>::value;
     
     /**
-     *  @brief Determines whether a function pointer is a const qualified member function pointer.
+     *  @brief Determines whether a function is a const qualified member function.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncConstQualified
      *  @tparam Fn The function pointer
      */
@@ -139,7 +139,7 @@ namespace extrait
     constexpr inline bool isFuncConstQualified_v = isFuncConstQualified<Fn>::value;
     
     /**
-     *  @brief Determines whether a function pointer is a volatile qualified member function pointer.
+     *  @brief Determines whether a function is a volatile qualified member function.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncVolatileQualified
      *  @tparam Fn The function pointer
      */
@@ -155,7 +155,7 @@ namespace extrait
     constexpr inline bool isFuncVolatileQualified_v = isFuncVolatileQualified<Fn>::value;
     
     /**
-     *  @brief Determines whether a function pointer is a LValue qualified member function pointer.
+     *  @brief Determines whether a function is a LValue qualified member function.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncLvalueQualified
      *  @tparam Fn The function pointer
      */
@@ -171,7 +171,7 @@ namespace extrait
     constexpr inline bool isFuncLvalueQualified_v = isFuncLvalueQualified<Fn>::value;
     
     /**
-     *  @brief Determines whether a function pointer is a RValue qualified member function pointer.
+     *  @brief Determines whether a function is a RValue qualified member function.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncRvalueQualified
      *  @tparam Fn The function pointer
      */
@@ -187,20 +187,20 @@ namespace extrait
     constexpr inline bool isFuncRvalueQualified_v = isFuncRvalueQualified<Fn>::value;
     
     /**
-     *  @brief Determines whether a function pointer has been noexcept specified.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncNoexceptSpecified
+     *  @brief Determines whether a function is noexcept.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncNoexcept
      *  @tparam Fn The function pointer
      */
     template<auto Fn>
-    struct isFuncNoexceptSpecified : std::bool_constant<Function<Fn>::isNoexcept> {};
+    struct isFuncNoexcept : std::bool_constant<Function<Fn>::isNoexcept> {};
     
     /**
-     *  @brief Value helper for extrait::isFuncNoexceptSpecified.
-     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncNoexceptSpecified
+     *  @brief Value helper for extrait::isFuncNoexcept.
+     *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/isFuncNoexcept
      *  @tparam Fn The function pointer
      */
     template<auto Fn>
-    constexpr inline bool isFuncNoexceptSpecified_v = isFuncNoexceptSpecified<Fn>::value;
+    constexpr inline bool isFuncNoexcept_v = isFuncNoexcept<Fn>::value;
     
     /**
      *  @brief Gets the number of parameter a function pointer has.

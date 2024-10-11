@@ -104,6 +104,60 @@ namespace extrait::detail
     };
     
     //==================================================================================================================
+    template<auto Func, bool IsMember>
+    struct InvokeHelper;
+
+    template<auto Func>
+    struct InvokeHelper<Func, true>
+    {
+        /** 
+         *  @brief Invokes the current function with the specified parameters.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/invoke
+         *  @par owner The owner object
+         *  @par args The arguments passed to the invocable
+         *  @return The return value of the function invoked
+         */
+        template<class T, class ...Args>
+        constexpr static inline auto invoke(T &&owner, Args &&...args)
+            noexcept(noexcept((std::forward<T>(owner).*Func)(std::forward<Args>(args)...)))
+        {
+            return (std::forward<T>(owner).*Func)(std::forward<Args>(args)...);
+        }
+        
+        /** 
+         *  @brief Invokes the current function with the specified parameters.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/invoke
+         *  @par owner The owner pointer
+         *  @par args The arguments passed to the invocable
+         *  @return The return value of the function invoked
+         */
+        template<class T, class ...Args>
+        constexpr static inline auto invoke(T *owner, Args &&...args)
+            noexcept(noexcept((owner->*Func)(std::forward<Args>(args)...)))
+        {
+            return (owner->*Func)(std::forward<Args>(args)...);
+        }
+    };
+
+    template<auto Func>
+    struct InvokeHelper<Func, false>
+    {
+        /** 
+         *  @brief Invokes the current function with the specified parameters.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/invoke
+         *  @par owner The owner object
+         *  @par args The arguments passed to the invocable
+         *  @return The return value of the function invoked
+         */
+        template<class ...Args>
+        constexpr static inline auto invoke(std::nullptr_t, Args &&...args)
+            noexcept(noexcept((Func)(std::forward<Args>(args)...)))
+        {
+            return (Func)(std::forward<Args>(args)...);
+        }
+    };
+
+    //==================================================================================================================
     template<auto Func,
              class T, class R, class Params, bool IsMember,
              bool QualNoex, bool QualLV, bool QualRV, bool QualCon, bool QualVol>
@@ -113,130 +167,91 @@ namespace extrait::detail
              class T, class R, class ...Params, bool IsMember,
              bool QualNoex, bool QualLV, bool QualRV, bool QualCon, bool QualVol>
     struct FuncBase<Func, T, R, TypeArray<Params...>, IsMember, QualNoex, QualLV, QualRV, QualCon, QualVol>
+        : InvokeHelper<Func, IsMember>
     {
         //==============================================================================================================
         /** 
-         *  @brief The current Function's invocable parameter list as extrait::TypeArray.
+         *  @brief An extrait::TypeArray with all the parameter types of the function pointer.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
          */
         using Parameters = TypeArray<Params...>;
         
         /** 
-         *  @brief The current Function's invocable class it is a member of.
+         *  @brief The owning type if the Invocable function pointer is a non-static member function pointer,
+         *  otherwise void.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
          */
         using Owner = T;
         
         /** 
-         *  @brief The current Function's invocable return type.
+         *  @brief The return type of the Invocable function pointer.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
          */
         using Return = R;
         
         /** 
-         *  @brief The current Function's invocable pointer type.
+         *  @brief The type of the function pointer that was passed to the extrait::Function template.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
          */
         using Pointer = typename toFunctionPointer<T, R, QualNoex, QualLV, QualRV, QualCon, QualVol, Params...>::type;
         
         /** 
-         *  @brief The current Function's invocable signature type.
+         *  @brief The function signature type without the pointer or reference.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
          */
         using Signature = strip_t<Pointer>;
         
         //--------------------------------------------------------------------------------------------------------------
         /** 
-         *  @brief The current Function's invocable pointer.
+         *  @brief The current extrait::Function's given function pointer object.
          *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
          */
-        constexpr static auto funcPtr = Func;
+        constexpr static auto value = Func;
         
         //--------------------------------------------------------------------------------------------------------------
         /** 
-         *  @brief The number of the current Function's invocable parameters.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         *  @brief An int that determines the number of parameters in a function.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/parameterCount
          */
         constexpr static int parameterCount = sizeof...(Params);
         
         /** 
-         *  @brief Determines whether the current Function's invocable is a member function pointer.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         *  @brief A bool that determines whether a function is a non-static member function.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/isMemberFunction
          */
         constexpr static bool isMemberFunction = IsMember;
         
         //--------------------------------------------------------------------------------------------------------------
         /** 
-         *  @brief Determines whether the current Function's invocable is noexcept specified.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
-         */
-        constexpr static bool isNoexcept = QualNoex;
-        
-        /** 
-         *  @brief Determines whether the current Function's invocable is const qualified.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         *  @brief A bool that determines whether a function is a const qualified member function.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/isConstQualified
          */
         constexpr static bool isConstQualified = QualCon;
         
         /** 
-         *  @brief Determines whether the current Function's invocable is volatile qualified.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         *  @brief A bool that determines whether a function is a volatile qualified member function.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/isVolatileQualified
          */
         constexpr static bool isVolatileQualified = QualVol;
         
         /** 
-         *  @brief Determines whether the current Function's invocable is LValue qualified.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         *  @brief A bool that determines whether a function is an LValue qualified member function.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/isLvalueQualified
          */
         constexpr static bool isLvalueQualified = QualLV;
         
         /** 
-         *  @brief Determines whether the current Function's invocable is RValue qualified.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function
+         *  @brief A bool that determines whether a function is an RValue qualified member function.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/isRvalueQualified
          */
         constexpr static bool isRvalueQualified = QualRV;
         
         //--------------------------------------------------------------------------------------------------------------
         /** 
-         *  @brief Invokes the current invocable with the specified parameters.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/invoke
-         *  @par owner The owner object
-         *  @par args The arguments passed to the invocable
+         *  @brief A bool that determines whether a function is noexcept.
+         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/isNoexcept
          */
-        template<class U, bool Im = isMemberFunction, class ...Args>
-        constexpr static inline auto invoke(U &owner, Args &&...args)
-            noexcept(noexcept((owner.*Func)(std::forward<Args>(args)...)))
-            -> std::enable_if_t<Im, decltype((owner.*Func)(std::forward<Args>(args)...))>
-        {
-            return (owner.*Func)(std::forward<Args>(args)...);
-        }
-        
-        /** 
-         *  @brief Invokes the current invocable with the specified parameters.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/invoke
-         *  @par owner The owner object pointer if it is a member function pointer, otherwise nullptr
-         *  @par args The arguments passed to the invocable
-         */
-        template<class U, bool Im = isMemberFunction, class ...Args>
-        constexpr static inline auto invoke(U *owner, Args &&...args)
-            noexcept(noexcept((owner->*Func)(std::forward<Args>(args)...)))
-            -> std::enable_if_t<Im, decltype((owner->*Func)(std::forward<Args>(args)...))>
-        {
-            assert(owner != nullptr); // can't call member of nullptr
-            return (owner->*Func)(std::forward<Args>(args)...);
-        }
-        
-        /** 
-         *  @brief Invokes the current invocable with the specified parameters.
-         *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Function/invoke
-         */
-        template<bool Im = isMemberFunction, class ...Args>
-        constexpr static inline auto invoke([[maybe_unused]] std::nullptr_t owner, Args &&...args)
-            noexcept(noexcept((Func)(std::forward<Args>(args)...)))
-            -> std::enable_if_t<!Im, decltype((Func)(std::forward<Args>(args)...))>
-        {
-            return (Func)(std::forward<Args>(args)...);
-        }
+        constexpr static bool isNoexcept = QualNoex;
         
         //--------------------------------------------------------------------------------------------------------------
         /**
@@ -383,9 +398,9 @@ namespace extrait::detail
          *  @param func The function pointer
          *  @return The overloaded function pointer
          */
-        template<class U = Signature>
+        template<class U = T>
         [[nodiscard]]
-        constexpr static auto of(...) noexcept
+        constexpr static inline auto of(...) noexcept
         {
             static_assert(assertDep_type<U>, "Argument is not a function pointer or an overload that doesn't exist");
         }
@@ -398,7 +413,7 @@ namespace extrait::detail
          */
         template<class Owner>
         [[nodiscard]]
-        constexpr static auto of(Signature Owner::* func) noexcept
+        constexpr static inline auto of(T Owner::* func) noexcept
         {
             return func;
         }
@@ -422,7 +437,7 @@ namespace extrait::detail
          *  @return The overloaded function pointer
          */
         [[nodiscard]]
-        constexpr static auto of(Signature* func) noexcept
+        constexpr static inline auto of(T* func) noexcept
         {
             return func;
         }
@@ -435,7 +450,7 @@ namespace extrait::detail
          */
         template<class Owner>
         [[nodiscard]]
-        constexpr static auto of(Signature Owner::* func) noexcept
+        constexpr static inline auto of(T Owner::* func) noexcept
         {
             return func;
         }
