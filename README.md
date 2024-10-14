@@ -48,6 +48,15 @@ target_link_libraries(TargetName
 ### Without CMake
 Since this is a header-only library, you can just copy the `includes/extrait` folder into your own header folder, but make sure to copy the `extrait` folder and not only what is in there.
 
+## Usage
+If you decided that you wanted to use this library for your project, there is a full documentation page over on our wiki page.
+
+Here are a few useful links:
+- [ExTrait Wiki Overview](https://elandasunshine.github.io/wiki?page=Extrait)
+- [Guides](https://elandasunshine.github.io/wiki?page=Extrait/guide)
+- [Type Arrays](https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray)
+- [Reflection](https://elandasunshine.github.io/wiki?page=Extrait/reflection)
+
 ## License
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
