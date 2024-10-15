@@ -65,7 +65,7 @@ namespace extrait
     //==================================================================================================================
     template<class T>
     [[nodiscard]]
-    std::string toString(const T &object);
+    inline std::string toString(const T &object);
 }
 
 namespace extrait::detail
@@ -112,7 +112,7 @@ namespace extrait::detail
     struct StringableDefault
     {
         [[nodiscard]]
-        static std::string toString(const T &object)
+        inline static std::string toString(const T &object)
         {
             if constexpr (detail::toStringStdExists<T>::value)
             {
@@ -138,7 +138,7 @@ namespace extrait::detail
     struct SequencedImpl
     {
         [[nodiscard]]
-        static std::string toString(const T &object)
+        inline static std::string toString(const T &object)
         {
             std::stringstream ss;
             
@@ -160,13 +160,21 @@ namespace extrait::detail
     struct AssociativeImpl
     {
         [[nodiscard]]
-        static std::string toString(const T &object)
+        inline static std::string toString(const T &object)
         {
             std::stringstream ss;
             
             for (auto it = object.begin(); it != object.end(); ++it)
             {
-                ss << extrait::toString(it->first) + '=' + extrait::toString(it->second);
+                std::string key = extrait::toString(it->first);
+                
+                if (key.empty() || key[0] != '"')
+                {
+                    std::string new_key = ("\"" + key + "\"");
+                    std::swap(key, new_key);
+                }
+                
+                ss << key << ':' << extrait::toString(it->second);
                 
                 if (std::next(it) != object.end())
                 {
