@@ -127,7 +127,7 @@ namespace extrait::detail
             }
             else
             {
-                return std::string(extrait::getActualTypeName(object)) + "@" + addressToString(std::addressof(object));
+                return std::string(extrait::getActualTypeName<T>()) + "@" + addressToString(std::addressof(object));
             }
         }
     };
