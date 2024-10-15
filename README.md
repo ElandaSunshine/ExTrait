@@ -1,8 +1,12 @@
 ![Banner-rounded](https://github.com/user-attachments/assets/97a9a030-f3e5-4b97-943c-ff806bfc3b36)
-[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/ElandaSunshine/ExTrait/cmake-multi-platform.yml?style=for-the-badge&logo=cmake&logoColor=white&label=CTest)](https://github.com/ElandaSunshine/ExTrait/actions/workflows/cmake-multi-platform.yml)
+
+![Static Badge](https://img.shields.io/badge/Latest%20(main)%3A-%23555555?style=for-the-badge)
 [![GitHub tag (with filter)](https://img.shields.io/github/v/tag/ElandaSunshine/Extrait?filter=!v-*&style=for-the-badge&label=Version)](https://github.com/ElandaSunshine/Extrait/releases)
-[![Codacy grade](https://img.shields.io/codacy/grade/2e299d0fd75a4f92a5d016b3a92eaeee?style=for-the-badge&logo=codacy&label=Code%20Quality)
-](https://app.codacy.com/gh/ElandaSunshine/ExTrait/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade&label=Grade)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ElandaSunshine/ExTrait/cmake-multi-platform.yml?branch=main&style=for-the-badge&logo=cmake&label=CTest)
+![Codacy grade (branch)](https://img.shields.io/codacy/grade/2e299d0fd75a4f92a5d016b3a92eaeee/main?style=for-the-badge&logo=codacy&label=Grade)  
+![Static Badge](https://img.shields.io/badge/Latest%20(develop)%3A-%23555555?style=for-the-badge)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ElandaSunshine/ExTrait/cmake-multi-platform.yml?branch=develop&style=for-the-badge&logo=cmake&label=CTest)
+![Codacy grade (branch)](https://img.shields.io/codacy/grade/2e299d0fd75a4f92a5d016b3a92eaeee/develop?style=for-the-badge&logo=codacy&label=Grade)
 
 ## Introduction
 The __ExTrait__ library is a library that focuses on metaprogramming and templates and types in general.
