@@ -55,7 +55,6 @@
 
 
 
-
 namespace extrait
 {
     //==================================================================================================================
@@ -99,13 +98,13 @@ namespace extrait::detail
     struct hasToString : std::false_type {};
     
     template<class T>
-    struct hasToString<T, std::void_t<decltype(std::declval<T>().toString())>> : std::true_type {};
+    struct hasToString<T, std::void_t<decltype(std::string(std::declval<T>().toString()))>> : std::true_type {};
     
     template<class T, class = void>
     struct hasTo_String : std::false_type {};
     
     template<class T>
-    struct hasTo_String<T, std::void_t<decltype(std::declval<T>().to_string())>> : std::true_type {};
+    struct hasTo_String<T, std::void_t<decltype(std::string(std::declval<T>().to_string()))>> : std::true_type {};
     
     //------------------------------------------------------------------------------------------------------------------
     template<class T>
