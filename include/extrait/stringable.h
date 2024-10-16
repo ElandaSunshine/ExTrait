@@ -167,11 +167,11 @@ namespace extrait
      *  @brief extrait::Stringable specialisation for converting any std::basic_string to strings.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
      */
-    template<class ...T>
-    struct Stringable<std::basic_string<T...>>
+    template<>
+    struct Stringable<std::string>
     {
         [[nodiscard]]
-        static std::string toString(const std::basic_string<T...> &object)
+        static std::string toString(const std::string &object)
         {
             return '"' + object + '"';
         }
@@ -181,11 +181,11 @@ namespace extrait
      *  @brief extrait::Stringable specialisation for converting any std::basic_string_view to strings.
      *  @details https://elandasunshine.github.io/wiki?page=Extrait/types/Stringable
      */
-    template<class ...T>
-    struct Stringable<std::basic_string_view<T...>>
+    template<>
+    struct Stringable<std::string_view>
     {
         [[nodiscard]]
-        static std::string toString(const std::basic_string_view<T...> &object)
+        static std::string toString(const std::string_view &object)
         {
             return extrait::toString(std::string(object));
         }

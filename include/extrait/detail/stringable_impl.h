@@ -55,7 +55,6 @@
 
 
 
-
 namespace extrait
 {
     //==================================================================================================================
@@ -65,7 +64,7 @@ namespace extrait
     //==================================================================================================================
     template<class T>
     [[nodiscard]]
-    std::string toString(const T &object);
+    inline std::string toString(const T &object);
 }
 
 namespace extrait::detail
@@ -99,20 +98,20 @@ namespace extrait::detail
     struct hasToString : std::false_type {};
     
     template<class T>
-    struct hasToString<T, std::void_t<decltype(std::declval<T>().toString())>> : std::true_type {};
+    struct hasToString<T, std::void_t<decltype(std::string(std::declval<T>().toString()))>> : std::true_type {};
     
     template<class T, class = void>
     struct hasTo_String : std::false_type {};
     
     template<class T>
-    struct hasTo_String<T, std::void_t<decltype(std::declval<T>().to_string())>> : std::true_type {};
+    struct hasTo_String<T, std::void_t<decltype(std::string(std::declval<T>().to_string()))>> : std::true_type {};
     
     //------------------------------------------------------------------------------------------------------------------
     template<class T>
     struct StringableDefault
     {
         [[nodiscard]]
-        static std::string toString(const T &object)
+        inline static std::string toString(const T &object)
         {
             if constexpr (detail::toStringStdExists<T>::value)
             {
@@ -128,7 +127,7 @@ namespace extrait::detail
             }
             else
             {
-                return std::string(extrait::getActualTypeName(object)) + "@" + addressToString(std::addressof(object));
+                return std::string(extrait::getActualTypeName<T>()) + "@" + addressToString(std::addressof(object));
             }
         }
     };
@@ -138,7 +137,7 @@ namespace extrait::detail
     struct SequencedImpl
     {
         [[nodiscard]]
-        static std::string toString(const T &object)
+        inline static std::string toString(const T &object)
         {
             std::stringstream ss;
             
@@ -160,13 +159,21 @@ namespace extrait::detail
     struct AssociativeImpl
     {
         [[nodiscard]]
-        static std::string toString(const T &object)
+        inline static std::string toString(const T &object)
         {
             std::stringstream ss;
             
             for (auto it = object.begin(); it != object.end(); ++it)
             {
-                ss << extrait::toString(it->first) + '=' + extrait::toString(it->second);
+                std::string key = extrait::toString(it->first);
+                
+                if (key.empty() || key[0] != '"')
+                {
+                    std::string new_key = ("\"" + key + "\"");
+                    std::swap(key, new_key);
+                }
+                
+                ss << key << ':' << extrait::toString(it->second);
                 
                 if (std::next(it) != object.end())
                 {

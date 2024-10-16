@@ -124,7 +124,7 @@ TEST(CommonSuite, StripTest)
         { 420, "BLAZEIT"     },
         { 666, "six six six" }
     };
-    EXPECT_EQ(R"({0="zero", 7="seven", 42="forty two", 69="sixty nine", 420="BLAZEIT", 666="six six six"})", toString(map)) << getActualTypeName(map);
+    EXPECT_EQ(R"({"0":"zero", "7":"seven", "42":"forty two", "69":"sixty nine", "420":"BLAZEIT", "666":"six six six"})", toString(map)) << getActualTypeName(map);
     
     std::multimap<int, std::string> mmap {
         {  69, "sixty nine"  },
@@ -136,7 +136,7 @@ TEST(CommonSuite, StripTest)
         { 666, "six six six" },
         {  42, "forty two"   }
     };
-    EXPECT_EQ(R"({0="zero", 7="seven", 42="forty two", 42="forty two", 69="sixty nine", 69="sixty nine", 420="BLAZEIT", 666="six six six"})", toString(mmap)) << getActualTypeName(mmap);
+    EXPECT_EQ(R"({"0":"zero", "7":"seven", "42":"forty two", "42":"forty two", "69":"sixty nine", "69":"sixty nine", "420":"BLAZEIT", "666":"six six six"})", toString(mmap)) << getActualTypeName(mmap);
 }
 //======================================================================================================================
 // endregion Unit Tests

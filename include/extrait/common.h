@@ -198,11 +198,9 @@ namespace extrait
     [[nodiscard]]
     constexpr inline Derived stynamic_cast(Base *const base) noexcept
     {
-        // Cannot convert a nullptr
-        assert(base != nullptr);
+        static_assert(std::is_pointer_v<Derived>, "Derived is not a pointer type");
+        assert(dynamic_cast<Derived>(base) != nullptr && "Base was not of type Derived");
         
-        // Tried converting to a derived class that base is not an instance of
-        assert(dynamic_cast<Derived>(base) != nullptr);
         return static_cast<Derived>(base);
     }
     
@@ -219,8 +217,7 @@ namespace extrait
     [[nodiscard]]
     constexpr inline Derived stynamic_cast(Base &base) noexcept
     {
-        // Tried converting to a derived class that base is not an instance of
-        assert(dynamic_cast<Derived>(base) != nullptr);
-        return static_cast<Derived>(base);
+        static_assert(std::is_reference_v<Derived>, "Derived is not a reference type");
+        return static_cast<Derived>(*stynamic_cast<std::add_pointer_t<Derived>>(&base));
     }
 }
