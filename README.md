@@ -90,6 +90,7 @@ Here are a few useful links:
 - [Guides](https://elandasunshine.github.io/wiki?page=Extrait/guide)
 - [Type Arrays](https://elandasunshine.github.io/wiki?page=Extrait/types/TypeArray)
 - [Reflection](https://elandasunshine.github.io/wiki?page=Extrait/reflection)
+- [Serialisation](https://elandasunshine.github.io/wiki?page=Extrait/serialisation)
 
 ## Components
 This library is separated into smaller components that may depend on each other. More information about what a component is [here](https://elandasunshine.github.io/wiki?page=Extrait/component).
